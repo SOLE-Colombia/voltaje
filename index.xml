@@ -6,6 +6,12 @@
       <description>Últimas 10 notas on SOLE Voltaje</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>Tecnología HSPA (Acceso de Paquetes de Alta Velocidad)</title>
+    <link>https://voltaje.solecolombia.org/es/glossary/tecnologia-hspa-acceso-de-paquetes-de-alta-velocidad-hspa-technology-conceptorio</link>
+    <guid>https://voltaje.solecolombia.org/es/glossary/tecnologia-hspa-acceso-de-paquetes-de-alta-velocidad-hspa-technology-conceptorio</guid>
+    <description><![CDATA[ Significa Acceso de Paquetes de Alta Velocidad (High-Speed Packet Access) y es una tecnología de mejora para las redes móviles 3G que aumenta la velocidad y eficiencia de la transferencia de datos, tanto de descarga (HSDPA) como de carga (HSUPA). ]]></description>
+    <pubDate>Tue, 11 Nov 2025 22:17:42 GMT</pubDate>
+  </item><item>
     <title>Conceptorio</title>
     <link>https://voltaje.solecolombia.org/es/glossary/</link>
     <guid>https://voltaje.solecolombia.org/es/glossary/</guid>
@@ -58,12 +64,6 @@
     <link>https://voltaje.solecolombia.org/es/disconnected/como-cacharrear-tu-senal-movil-voltaje-desconectado</link>
     <guid>https://voltaje.solecolombia.org/es/disconnected/como-cacharrear-tu-senal-movil-voltaje-desconectado</guid>
     <description><![CDATA[ ¿Cómo cacharrear tu señal móvil? Creado: 17 de diciembre de 2024 22:22 Etiquetas: Cacharrear, Tarjeta ![Versión Voltaje Virtual_20241202_SOLE_Desconectado v2 (17).png](¿Cómo cacharrear tu señal móvil 3c7c35ed93ea4a03978cf507dbb0328b/Versin_Voltaje_Virtual_20241202_SOLE_Desconectado_v2_(17).png) Diag... ]]></description>
-    <pubDate>Tue, 11 Nov 2025 21:53:06 GMT</pubDate>
-  </item><item>
-    <title>¿Cómo cacharrear tu señal WiFi?</title>
-    <link>https://voltaje.solecolombia.org/es/disconnected/como-cacharrear-tu-senal-wifi-voltaje-desconectado</link>
-    <guid>https://voltaje.solecolombia.org/es/disconnected/como-cacharrear-tu-senal-wifi-voltaje-desconectado</guid>
-    <description><![CDATA[ ¿Cómo cacharrear tu señal WiFi? Creado: 17 de diciembre de 2024 22:14 Etiquetas: Cacharrear, Tarjeta ![Versión Voltaje Virtual_20241202_SOLE_Desconectado v2 (16).png](¿Cómo cacharrear tu señal WiFi 2c54a15e91f6404cac6f9d71b131b8d3/Versin_Voltaje_Virtual_20241202_SOLE_Desconectado_v2_(16).png) Diagnó... ]]></description>
     <pubDate>Tue, 11 Nov 2025 21:53:06 GMT</pubDate>
   </item>
     </channel>
