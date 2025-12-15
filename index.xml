@@ -6,17 +6,23 @@
       <description>Últimas 10 notas on SOLE Voltaje</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>Media</title>
+    <link>https://voltaje.solecolombia.org/es/solve/media-parametros-de-senal-3-4g</link>
+    <guid>https://voltaje.solecolombia.org/es/solve/media-parametros-de-senal-3-4g</guid>
+    <description><![CDATA[ RSRP: -90 dBm a -100 dBm RSRQ: -15 dB a -20 dB RSSI: -75 dBm a -85 dBm SINR: 0 dB a 13 dB. ]]></description>
+    <pubDate>Mon, 15 Dec 2025 16:49:14 GMT</pubDate>
+  </item><item>
     <title>Bicigenerador</title>
     <link>https://voltaje.solecolombia.org/es/solve/solv-bicigenerator</link>
     <guid>https://voltaje.solecolombia.org/es/solve/solv-bicigenerator</guid>
     <description><![CDATA[ Created: 24 de febrero de 2025 7:27 Autor: Nicolás Solucionas: Electricidad Dificultad: Difícil Cuesta: &gt;$200 COP Ayudantes: 2-3 personas Tardas: Días pilar/dispositivos: 0: No aporta a equipos pilar/espacio: 0: No aporta a tener un espacio público pilar/personas: 1: Aporta a que haya una comunid... ]]></description>
-    <pubDate>Tue, 25 Nov 2025 23:03:10 GMT</pubDate>
+    <pubDate>Mon, 15 Dec 2025 16:48:01 GMT</pubDate>
   </item><item>
     <title>La Wikipedia de bolsillo en tu RaspberryPi</title>
     <link>https://voltaje.solecolombia.org/es/solve/solv-pocket-wikipedia</link>
     <guid>https://voltaje.solecolombia.org/es/solve/solv-pocket-wikipedia</guid>
     <description><![CDATA[ La Wikipedia de bolsillo en tu RaspberryPi Created: 30 de julio de 2025 0:14 Autor: Nicolás Solucionas: Dispositivos Dificultad: Fácil Cuesta: Gratis Ayudantes: Nadie Tardas: Horas pilar/dispositivos: 1: Aporta para tener dispositivos unipersonales (Celulares) pilar/espacio: 0: No aporta a tener un ... ]]></description>
-    <pubDate>Tue, 25 Nov 2025 23:03:10 GMT</pubDate>
+    <pubDate>Mon, 15 Dec 2025 16:48:01 GMT</pubDate>
   </item><item>
     <title>WhatsApp</title>
     <link>https://voltaje.solecolombia.org/es/glossary/whatsapp-wapp-conceptorio</link>
@@ -58,12 +64,6 @@
     <link>https://voltaje.solecolombia.org/es/solve/como-comprar-un-plan-celular-adecuado-para-mi-solutions-db</link>
     <guid>https://voltaje.solecolombia.org/es/solve/como-comprar-un-plan-celular-adecuado-para-mi-solutions-db</guid>
     <description><![CDATA[ Created: 25 de octubre de 2024 13:36 Autor: Nicolás Solucionas: Señal Dificultad: Tranqui Cuesta: &gt;$200 COP Ayudantes: Nadie Tardas: Minutos pilar/dispositivos: 1: Aporta para tener dispositivos unipersonales (Celulares) pilar/espacio: 0: No aporta a tener un espacio público pilar/personas: 0: No... ]]></description>
-    <pubDate>Tue, 25 Nov 2025 15:33:51 GMT</pubDate>
-  </item><item>
-    <title>¿Cómo comprar una antena satelital?</title>
-    <link>https://voltaje.solecolombia.org/es/solve/como-comprar-una-antena-satelital-solutions-db</link>
-    <guid>https://voltaje.solecolombia.org/es/solve/como-comprar-una-antena-satelital-solutions-db</guid>
-    <description><![CDATA[ Created: 29 de febrero de 2024 14:57 Autor: Nicolás Solucionas: Señal, Signal Dificultad: Promedio Cuesta: Gratis Ayudantes: Más de 3 personas Tardas: Horas pilar/dispositivos: 0: No aporta a equipos pilar/espacio: 1: Aporta a que haya un espacio o espacios de uso temporal no necesariamente públicos... ]]></description>
     <pubDate>Tue, 25 Nov 2025 15:33:51 GMT</pubDate>
   </item>
     </channel>
