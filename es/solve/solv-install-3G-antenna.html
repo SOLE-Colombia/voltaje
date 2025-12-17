@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr"><head><title>¿Cómo instalar mi antena 3/4G?</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="SOLE Voltaje"/><meta property="og:title" content="¿Cómo instalar mi antena 3/4G?"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="¿Cómo instalar mi antena 3/4G?"/><meta name="twitter:description" content="Created: 25 de octubre de 2024 13:36 Autor: Sanjay Solucionas: Señal Dificultad: Promedio Cuesta: Gasto mensual Ayudantes: 2-3 personas Tardas: Horas pilar/espacio: 0: No aporta a tener un espacio público pilar/senal: 3: Aporta señal permanente (Antena comercial instalada) impacto/personas: 20 impac..."/><meta property="og:description" content="Created: 25 de octubre de 2024 13:36 Autor: Sanjay Solucionas: Señal Dificultad: Promedio Cuesta: Gasto mensual Ayudantes: 2-3 personas Tardas: Horas pilar/espacio: 0: No aporta a tener un espacio público pilar/senal: 3: Aporta señal permanente (Antena comercial instalada) impacto/personas: 20 impac..."/><meta property="og:image:alt" content="Created: 25 de octubre de 2024 13:36 Autor: Sanjay Solucionas: Señal Dificultad: Promedio Cuesta: Gasto mensual Ayudantes: 2-3 personas Tardas: Horas pilar/espacio: 0: No aporta a tener un espacio público pilar/senal: 3: Aporta señal permanente (Antena comercial instalada) impacto/personas: 20 impac..."/><meta property="twitter:domain" content="voltaje.solecolombia.org"/><meta property="og:url" content="https://voltaje.solecolombia.org/es/solve/solv-install-3G-antenna"/><meta property="twitter:url" content="https://voltaje.solecolombia.org/es/solve/solv-install-3G-antenna"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="Created: 25 de octubre de 2024 13:36 Autor: Sanjay Solucionas: Señal Dificultad: Promedio Cuesta: Gasto mensual Ayudantes: 2-3 personas Tardas: Horas pilar/espacio: 0: No aporta a tener un espacio público pilar/senal: 3: Aporta señal permanente (Antena comercial instalada) impacto/personas: 20 impac..."/><meta name="generator" content="Quartz"/><link href="../../index.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL2hvbWUvcnVubmVyL3dvcmsvdm9sdGFqZS1kZXYvdm9sdGFqZS1kZXYvcXVhcnR6L2NvbXBvbmVudHMvc3R5bGVzIiwic291cmNlcyI6WyJtZXJtYWlkLmlubGluZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFHRjtFQUNFOzs7QUFLRjtFQUNFO0VBQ0E7OztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFOztBQUlGO0VBQ0U7RUFDQTtFQUNBIiwic291cmNlc0NvbnRlbnQiOlsiLmV4cGFuZC1idXR0b24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsb2F0OiByaWdodDtcbiAgcGFkZGluZzogMC40cmVtO1xuICBtYXJnaW46IDAuM3JlbTtcbiAgcmlnaHQ6IDA7IC8vIE5PVEU6IHJpZ2h0IHdpbGwgYmUgc2V0IGluIG1lcm1haWQuaW5saW5lLnRzXG4gIGNvbG9yOiB2YXIoLS1ncmF5KTtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICBib3JkZXI6IDFweCBzb2xpZDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBvcGFjaXR5OiAwO1xuICB0cmFuc2l0aW9uOiAwLjJzO1xuXG4gICYgPiBzdmcge1xuICAgIGZpbGw6IHZhcigtLWxpZ2h0KTtcbiAgICBmaWx0ZXI6IGNvbnRyYXN0KDAuMyk7XG4gIH1cblxuICAmOmhvdmVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgYm9yZGVyLWNvbG9yOiB2YXIoLS1zZWNvbmRhcnkpO1xuICB9XG5cbiAgJjpmb2N1cyB7XG4gICAgb3V0bGluZTogMDtcbiAgfVxufVxuXG5wcmUge1xuICAmOmhvdmVyID4gLmV4cGFuZC1idXR0b24ge1xuICAgIG9wYWNpdHk6IDE7XG4gICAgdHJhbnNpdGlvbjogMC4ycztcbiAgfVxufVxuXG4jbWVybWFpZC1jb250YWluZXIge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGNvbnRhaW46IGxheW91dDtcbiAgei1pbmRleDogOTk5O1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxMDB2dztcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogbm9uZTtcbiAgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDRweCk7XG4gIGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC41KTtcblxuICAmLmFjdGl2ZSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB9XG5cbiAgJiA+ICNtZXJtYWlkLXNwYWNlIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogNTAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICBoZWlnaHQ6IDgwdmg7XG4gICAgd2lkdGg6IDgwdnc7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcblxuICAgICYgPiAubWVybWFpZC1jb250ZW50IHtcbiAgICAgIHBhZGRpbmc6IDJyZW07XG4gICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICB0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7XG4gICAgICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4xcyBlYXNlO1xuICAgICAgb3ZlcmZsb3c6IHZpc2libGU7XG4gICAgICBtaW4taGVpZ2h0OiAyMDBweDtcbiAgICAgIG1pbi13aWR0aDogMjAwcHg7XG5cbiAgICAgIHByZSB7XG4gICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgfVxuXG4gICAgICBzdmcge1xuICAgICAgICBtYXgtd2lkdGg6IG5vbmU7XG4gICAgICAgIGhlaWdodDogYXV0bztcbiAgICAgIH1cbiAgICB9XG5cbiAgICAmID4gLm1lcm1haWQtY29udHJvbHMge1xuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgYm90dG9tOiAyMHB4O1xuICAgICAgcmlnaHQ6IDIwcHg7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZ2FwOiA4cHg7XG4gICAgICBwYWRkaW5nOiA4cHg7XG4gICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgYm9yZGVyLXJhZGl1czogNnB4O1xuICAgICAgYm94LXNoYWRvdzogMCAycHggNHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcbiAgICAgIHotaW5kZXg6IDI7XG5cbiAgICAgIC5tZXJtYWlkLWNvbnRyb2wtYnV0dG9uIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgIHdpZHRoOiAzMnB4O1xuICAgICAgICBoZWlnaHQ6IDMycHg7XG4gICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgICAgY29sb3I6IHZhcigtLWRhcmspO1xuICAgICAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICBmb250LWZhbWlseTogdmFyKC0tYm9keUZvbnQpO1xuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBlYXNlO1xuXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIH1cblxuICAgICAgICAmOmFjdGl2ZSB7XG4gICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDFweCk7XG4gICAgICAgIH1cblxuICAgICAgICAvLyBTdHlsZSB0aGUgcmVzZXQgYnV0dG9uIGRpZmZlcmVudGx5XG4gICAgICAgICY6bnRoLWNoaWxkKDIpIHtcbiAgICAgICAgICB3aWR0aDogYXV0bztcbiAgICAgICAgICBwYWRkaW5nOiAwIDEycHg7XG4gICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iXX0= */</style><script src="../../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://voltaje.solecolombia.org/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://voltaje.solecolombia.org/es/solve/solv-install-3G-antenna-og-image.webp"/><meta property="og:image:url" content="https://voltaje.solecolombia.org/es/solve/solv-install-3G-antenna-og-image.webp"/><meta name="twitter:image" content="https://voltaje.solecolombia.org/es/solve/solv-install-3G-antenna-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="es/solve/solv-install-3G-antenna"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../.." aria-label="SOLE Voltaje"><img src="../../static/logo.png" alt class="page-logo"/></a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><details class="lang-toggle" data-lang-toggle="true"><summary class="lang-summary" aria-label="Cambiar idioma"><span class="lang-summary-flag" aria-hidden="true">🇪🇸</span><span class="lang-summary-code">ES</span></summary><div class="lang-menu" role="menu" aria-label="Idiomas disponibles"><button type="button" class="lang-option" role="menuitem" data-lang="es"><span aria-hidden="true">🇪🇸</span> ES</button><button type="button" class="lang-option" role="menuitem" data-lang="en"><span aria-hidden="true">🇺🇸</span> EN</button><button type="button" class="lang-option" role="menuitem" data-lang="pt"><span aria-hidden="true">🇵🇹</span> PT</button></div></details></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Modo oscuro"><title>Modo oscuro</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Modo claro"><title>Modo claro</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="download-button" aria-label="Descargar esta página como PDF" title="Descargar página"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Descargar página</title><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Modo lector"><title>Modo lector</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Buscar</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Busca algo" placeholder="Busca algo"/><div class="search-layout" data-preview="true"></div></div></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-lang-default="es" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>{let customOrder=[\&quot;new-here\&quot;,\&quot;inspire\&quot;,\&quot;solve\&quot;,\&quot;answers-comments\&quot;,\&quot;disconnected\&quot;,\&quot;glossary\&quot;,\&quot;general\&quot;],indexA=customOrder.indexOf(a.slugSegment),indexB=customOrder.indexOf(b.slugSegment);return indexA!==-1&amp;&amp;indexB!==-1?indexA-indexB:indexA!==-1?-1:indexB!==-1?1:!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1}&quot;,&quot;filterFn&quot;:&quot;node=>!(node.slugSegment===\&quot;tags\&quot;||node.slugSegment===\&quot;_staging\&quot;)&quot;,&quot;mapFn&quot;:&quot;node=>{let langFolders=node.children.filter(child=>child.isFolder&amp;&amp;(child.slugSegment===\&quot;es\&quot;||child.slugSegment===\&quot;en\&quot;));if(langFolders.length>0){let promotedChildren=langFolders.flatMap(langFolder=>langFolder.children);node.children=node.children.filter(child=>!langFolders.includes(child)).concat(promotedChildren)}}&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-409"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><div id="explorer-409" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../es/">SOLE Voltaje</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../es/solve/">Soluciona</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>¿Cómo instalar mi antena 3/4G?</a></div></nav><h1 class="article-title">¿Cómo instalar mi antena 3/4G?</h1><p show-comma="true" class="content-meta"><time datetime="2025-12-16T17:02:33.000Z">16 dic 2025</time><span>Se lee en 19 min</span></p></div></div><article class="popover-hint"><p>Created: 25 de octubre de 2024 13:36
+Autor: Sanjay
+Solucionas: Señal
+Dificultad: Promedio
+Cuesta: Gasto mensual
+Ayudantes: 2-3 personas
+Tardas: Horas
+pilar/espacio: 0: No aporta a tener un espacio público
+pilar/senal: 3: Aporta señal permanente (Antena comercial instalada)
+impacto/personas: 20
+impacto/sostenibilidad: 2: Medio
+recursos/dinero: 4: Gasto mensual
+recursos/dificultad: 2: Necesita estar inmerso en un lenguaje nuevo y seguir pocas instrucciones sencillas (Instalar una app y aprender a usarla)
+2025-prueba: No</p>
+<h2 id="instalar-una-antena-para-tener-internet-en-un-espacio-fijo">Instalar una antena, para tener Internet en un espacio fijo<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#instalar-una-antena-para-tener-internet-en-un-espacio-fijo" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><img src="../../assets/images/solv-need-3Gantenna/solve-need-3Gantenna-welcome.webp" alt="Bienvenida"/></p>
+<h3 id="audiolectura-de-la-solución">Audiolectura de la solución<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#audiolectura-de-la-solución" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<hr/>
+<p>Hola, soy Sanjay, y no soy un experto en temas de conectividad, pero he aprendido <em>cacharreando:</em> a punta de prueba y error, y, también, preguntándole a otras personas sobre el tema.</p>
+<p>En esta solución, vas a poder instalar una antena 3/4G que hayas comprado. Si no las has comprado aún, puedes ir a las solución de <a href="../../es/solve/como-comprar-una-antena-satelital-solutions-db" class="internal alias" data-slug="es/solve/como-comprar-una-antena-satelital-solutions-db">¿Cómo comprar una antena 3-4G?</a> para hacer eso antes.</p>
+<p>En esta solución puedes demorarte de <strong>30 minutos a unas cuantas horas</strong>, depende de la dificultad en ubicar la señal idónea para tu antena. Tiene un nivel de <strong>dificultad medio</strong>. Es para hacer entre <strong>3 personas,</strong> idealmente: una, para leer, las otras dos, para conectar y sostener los componentes de la antena.</p>
+<p>¡OJO! Es importante que sepas que hay muchos tipos de antenas 3G o 4G, aunque, en general, lo que te contamos en esta solución debería ayudarte a poder instalar la que tengas.</p>
+<p>Es posible que tu antena venga con un manual o instructivo. Siempre será mejor leerlo primero. Si no lo tiene, o quien te vendió la antena no te explicó cómo hacerlo, lo que viene a continuación te puede servir de referente.</p>
+<p>Recuerda, el contenido de las instrucciones y lo que encuentres aquí puede verse algo diferente.</p>
+<h2 id="para-qué-sirve">¿Para qué sirve?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#para-qué-sirve" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Existen lugares en los que la señal de telefonía celular es muy débil, puedes verlo en la barras de conexión de tu celular. Por ejemplo, se ve una sola barra o algo que dice <em>H+,</em> <em>E</em> o incluso que no hay señal. Una antena, que tenga las características necesarias para las condiciones del lugar desde el que te quieres conectar, puede ayudarte a conseguir una mejor calidad de conexión.</p>
+<p>Hace poco entendí que la señal de Internet, que llega a los celulares, viaja por ondas electromagnéticas invisibles, y que los celulares tienen una antena pequeña en su interior, que captura esas ondas, permitiéndonos tener acceso a internet.</p>
+<p>Lo que la antena hace, sencillamente, es capturar, y amplificar, la señal de datos específica del celular (3G o 4G): la señal viaja, en ondas electromagnéticas, por el aire, desde un lugar más alto que en el que estas tú -por encima de arboles, edificaciones o colinas- y baja, por un cable, a tu altura. Una vez en ese punto, la señal, puede compartirse generando una red WiFi, o por cable, usando un <a href="../../es/glossary/modem-router-o-enrutador-modem-or-router-conceptorio" class="internal alias" data-slug="es/glossary/modem-router-o-enrutador-modem-or-router-conceptorio">módem o enrutador</a>. Sé que estos términos pueden parecer confusos, pero, a medida que avances por los pasos de la instalación, espero puedas tenerlos más claros.</p>
+<h2 id="antes-de-empezar-unas-cuestiones-de-seguridad">Antes de empezar, unas cuestiones de seguridad<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#antes-de-empezar-unas-cuestiones-de-seguridad" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Recuerda que estas trabajando con equipos eléctricos. Ten cuidado al momento de conectar la corriente eléctrica. Sé consciente de la condiciones climáticas, especialmente el riesgo de tormenta: la antena, al momento de instalarla, la haría actuar como un pararrayos. Un rayo en la antena podría causar graves daños personales y materiales.</p>
+<hr/>
+<h2 id="qué-necesitas"><strong>¿Qué necesitas?</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#qué-necesitas" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-materials.webp" alt="Materiales"/></p>
+<ol>
+<li><a href="../../es/glossary/antena-3-4g-3-4g-antenna-conceptorio" class="internal alias" data-slug="es/glossary/antena-3-4g-3-4g-antenna-conceptorio">Antena 3-4G</a> que hayas comprado</li>
+<li><a href="../../es/glossary/cable-coaxial-coaxial-cable-conceptorio" class="internal alias" data-slug="es/glossary/cable-coaxial-coaxial-cable-conceptorio">Cable coaxial</a> de la antena</li>
+<li><a href="../../es/glossary/modem-router-o-enrutador-modem-or-router-conceptorio" class="internal alias" data-slug="es/glossary/modem-router-o-enrutador-modem-or-router-conceptorio">Modem</a> con su respectivo cable de poder, cable de Ethernet y guía de <strong>Inicio Rápido</strong></li>
+<li><a href="../../es/glossary/tarjeta-sim-sim-card-conceptorio" class="internal alias" data-slug="es/glossary/tarjeta-sim-sim-card-conceptorio">Tarjeta SIM</a> del operador celular que tenga mejor señal en la zona</li>
+<li>Computador con <a href="../../es/glossary/conexion-cable-ethernet-ethernet-cable-connection-conceptorio" class="internal alias" data-slug="es/glossary/conexion-cable-ethernet-ethernet-cable-connection-conceptorio">conexión Ethernet</a> y/o <a href="../../es/glossary/wifi-fidelidad-inalambrica-wifi-wireless-fidelity-conceptorio" class="internal alias" data-slug="es/glossary/wifi-fidelidad-inalambrica-wifi-wireless-fidelity-conceptorio">WiFi</a>  o <a href="../../es/glossary/telefono-movil-inteligente-smartphone-conceptorio" class="internal alias" data-slug="es/glossary/telefono-movil-inteligente-smartphone-conceptorio">Teléfono móvil inteligente</a> (Android / IOS)</li>
+<li>Vara alta (de la misma longitud del cable o un poco menos): puede ser un tubo de metal, madera o guadua. Lo importante es que sea lo más recta posible y resistente.</li>
+<li>Soportes de la antena</li>
+<li>Llave para apretar tuercas.</li>
+<li>Materiales y herramientas para fijar la vara (depende de donde la instales)</li>
+</ol>
+<h2 id="cómo-hacerlo"><strong>¿Cómo hacerlo?</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#cómo-hacerlo" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Esta solución tiene 6 pasos, unos más sencillos que otros, pero no te preocupes, si yo pude hacerlo, tú también podrás. Entonces… ¡empecemos!</p>
+<ul>
+<li>
+<p><strong>Paso 1: Define el lugar donde va a quedar instalada tanto la Antena como el módem</strong></p>
+<p>Antes de desempacar tú compra, define dónde quieres, o quieren, que el módem y la antena se queden permanentemente. Si es en tu casa, puede ser en la sala. Si es en un espacio comunitario, puede ser en un cuarto que sea seguro y que quede a mano de todos los que lo puedan usar.</p>
+<p>La antena debe ir sujeta de forma segura a la vara. La vara debe poder asegurarse firmemente, de algún modo, fuera de la vivienda o espacio.  Más adelante te explicaremos cómo.</p>
+<p>El módem necesita electricidad, entonces, identifica la toma de corriente a la que lo vas a conectar.</p>
+<p>Finalmente, ten en cuenta el lugar por el que vas a introducir el cable de la antena al espacio donde vas a dejar el módem. Puede que tengas que taladrar un hueco en la pared, para que no implique dejar una ventana abierta. Por ahora, no necesitas hacerlo hasta que hayas comprobado dónde la antena funciona y conecta mejor.</p>
+<p><img src="../../assets/images/solv-need-3Gantenna/solv-need-3Gantenna-diagram.webp" alt="Diagram"/>
+<img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-locate.webp" alt="Locate"/></p>
+</li>
+<li>
+<p><strong>Paso 2: Identifica las torres de telefonía móvil de la zona</strong></p>
+<p>Para que las antenas funcionen, generalmente, deben poder verse una a otra, o por lo menos deberían apuntar hacia el mismo lugar.</p>
+<p>Si vives en una región con muchas montañas será un poco más difícil acceder a una buena señal, a diferencia de un lugar plano.</p>
+<p>Por lo general, podemos decir que, si hay montañas a tu alrededor, tu antena va a necesitar mayor altura.</p>
+<p>El siguiente paso es buscar la torre de telefonía más cercana: busca torres altas con antenas. Normalmente, están ubicadas en las cumbres de las montañas más altas para permitir mayor cobertura. Es importante que puedas ubicarla, ya que cuando tengas tu antena en las manos, tendrás que ubicarla mirando hacia esa torre de telefonía.</p>
+<p><img src="../../assets/images/solv-need-3Gantenna/solv-need-3Gantenna-transmitter.webp" alt="Trasmicion"/></p>
+<p>Si no sabes dónde queda la torre de telefonía celular más cercana puedes también preguntarle a los vecinos.</p>
+<p><img src="../../assets/images/solv-need-3Gantenna/solv-need-3Gantenna-tower.webp" alt="Torre"/></p>
+<p>Tomado de Wikimedia Commons</p>
+</li>
+</ul>
+<p>💡 Ya has logrado establecer las ubicaciones de los elementos principales de tu solución que son:</p>
+<ul>
+<li>dónde instalar tu antena,</li>
+<li>hacia dónde debe apuntar, es decir, la torre,</li>
+<li>y dónde pondrás el módem que generará la señal de wifi para conectar computadores o celulares.</li>
+</ul>
+<p>¡Vas muy bien! Ahora viene lo fácil: armar la antena.</p>
+<ul>
+<li>
+<p><strong>Paso 3: Inserta la SIM y conecta la electricidad al módem</strong></p>
+<p>Abre la caja del módem. Debe tener su cable de corriente, un cable de Ethernet que es para conectar un computador y una guía de <strong>inicio rápido</strong>. Lee la guía cuidadosamente. Los pasos siguientes que describo coinciden con esos pasos pero es una explicación más detallada.</p>
+<p>Insertar la SIM puede ser complejo. Yo tuve que hacer varios intentos hasta lograrlo. Debes tener cuidado de que la parte metálica o chip de la SIM coincidan con unos contactos metálicos en el modem. Pero no temas, vamos por partes y te acompaño.</p>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-modemelements.webp" alt="Box"/></p>
+<p><strong>Identifica el tamaño de tarjeta SIM que correspondan con la bandeja del modem</strong></p>
+<p>Primero, abre el lugar del modem donde se debe insertar la SIM. Usualmente está en la parte de atrás del modem. Identifica el tamaño de tarjeta que debes insertar. En la guía del modem te lo indica. En el modelo que yo tengo usa el  tamaño Mini SIM.</p>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-insertsim2.webp" alt="Insertsim2"/></p>
+<p><strong>Inserta la tarjeta SIM en la bandeja</strong>
+Notarás que tanto la bandeja de la SIM como la tarjeta SIM tienen una esquina cortada o biselada. Eso te indica la posición en la que debes insertar la tarjeta.</p>
+<p>Insértalo cuidadosamente en la bandeja y tápala.</p>
+<p>Luego conecta <strong>el cable de poder al módem y luego a la toma corriente. Enciende el módem como te indica la guía. Puede ser automático o en un botón de encendido</strong>.</p>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-insertsim.webp" alt="Insertsim"/></p>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-insertsim3.webp" alt="Insertsim3"/></p>
+<p><strong>Revisa si el módem está conectado a internet</strong></p>
+<p>En el frente del módem encuentra los distintos indicadores de conexión. La guía te indica que lo que cada una significa. En el modelo que te mostramos el primer indicador de izquierda a derecha es si está encendido o apagado. El segundo, si está rojo, significa que no tiene señal. Si está azul o verde significa que está conectado (en este caso está conectado). El tercero dice que está emitiendo una señal inalámbrica o wifi en el espacio. El cuarto indica si hay un cable ethernet conectado (en este caso no). El quinto indicador habla de la potencia de la señal - como las barras del celular (en este caso es muy buena).</p>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-modemindicators.webp" alt="Modemindicator"/></p>
+<p>¡Listo! Ya tienes el módem listo y funcional, vas por la mitad de la solución. Sin embargo, es posible que el indicador de señal, el segundo, esté rojo. En ese caso, simplemente apaga el módem y vamos a conectarle la antena.</p>
+</li>
+<li>
+<p><strong>Paso 4: Conecta todos los elementos de la antena e iza la antena</strong></p>
+<p>Llegó el momento de armar tu antena. Te recomiendo comenzar por sacar los elementos de la antena.</p>
+<p><strong>Ajusta la antena al extremo más alto de la vara</strong></p>
+<p>Comienza ajustando el soporte de la antena a la base de la antena usando los tornillos que trae para eso. Aprieta los tornillos con cuidado asegurándote que quede bien ajustado.</p>
+<p>Luego ajusta los soportes de la antena al extremo más alto de la vara. Recuerda que la vara debe ser un poco más corta que la longitud del cable tengas. Los soportes tienen una pieza para “envolver” la vara de tal manera que al apretar las tuercas aprisione la vara como en la imagen.</p>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-antennafix.webp" alt="Antennafix"/></p>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-anetennasupport.webp" alt="Anetennasupport"/></p>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-antennasupport.webp" alt="Antennasupport"/></p>
+<p><strong>Extiende el cable y conecta el extremo que va al cable de la antena</strong>
+Desenrollar el cable y extenderlo a su máxima longitud ayuda a que se más fácil de manipular. Busca el conector que encaja con el conector de la antena y conéctalos.</p>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-connectcable.webp" alt="Connectcable"/></p>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-connectcabletoantenna.webp" alt="Connectcabletoantenna"/></p>
+<p><strong>Busca el conector del módem al cable y conecta</strong></p>
+<p>En este modelo de módem hay una tapa en la parte de atrás del módem que debes retirar con un poco de fuerza (guarda la tapa en la caja del módem). Ahí encuentras el lugar para conectar el cable. Aprieta la rosca del conector al máximo de manera cuidadosa.</p>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-modemprotections.webp" alt="modemprotections"/></p>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-connectcabletomodem.webp" alt="connectcabletomodem"/></p>
+<p>Ahora puedes izar la antena con la ayuda de otra persona y apuntarla hacia la torre de telefonía que identificaste en el segundo paso. Luego enciende el módem y listo. Te quedan solo dos pasos para terminar. ¡Bravo!</p>
+</li>
+<li>
+<p><strong>Paso 5: Conecta el computador/celular al módem</strong></p>
+<p>Es hora de encender el wifi de tu computador o de tu celular y busca la red del módem. Usualmente el nombre de la red la encontrarás en una pegatina en la base del módem. Ahí también encontrarás la contraseña para conectarte. ¡Ya estás listo para navegar en Internet!</p>
+<p>Si tu computador tiene entrada de Ethernet, también puedes conectarte directamente por el cable. Conectarse por el cable siempre te dará la mejor velocidad de navegación en internet posible.</p>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-modemnamepassword.webp" alt="modemnamepassword"/></p>
+<p>Ahora, solo te falta el último paso, fijar la antena.</p>
+<ul>
+<li>
+<p><strong>Si no te conectaste a internet sigue las siguientes recomendaciones</strong></p>
+<p><a href="https://file.notion.so/f/f/d2a8cf29-6055-4dd9-8971-801014f46b2a/92baf0c3-8e30-4f76-83b0-0d3c0d321d75/20240312_Audio_Como_instalar_una_antena_34G_Parte_2.mp3?table=block&amp;id=12a2bd68-c5b6-81f5-aea0-e196bfc2e915&amp;spaceId=d2a8cf29-6055-4dd9-8971-801014f46b2a&amp;expirationTimestamp=1763272800000&amp;signature=_66i37Z2JvXYhelrESLGdzu6iegHan9wo9XXUOAWwuk" class="external">¿Como conectarse a Internet?<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>A veces nos encontramos en lugares distantes de las torres de telefonía celular o con mucha interferencia entre la torre y nuestra antena. Aquí hay unas posibilidades para probar.</p>
+<p><strong>Ingresa a la página web de administración del módem y prueba apuntar la antena en otras direcciones.</strong></p>
+<p>Ingresa por una navegador de tu dispositivo (puede ser Firefox, Google Chrome, Microsoft Edge o Explorer) a la dirección IP de tu módem. Este usualmente se encuentra en las misma pegatina debajo del modem. La IP de este modem es <strong>192.168.8.1.</strong></p>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-modemdetails.webp" alt="modemdetails"/></p>
+<p>Cuando ingresas a esa dirección IP verás la página de ingreso al modem que te pedirá la contraseña que también encuentras en la pegatina. Usualmente, la contraseña es <strong>admin</strong> en minúsculas.</p>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-password.webp" alt="password"/></p>
+<p>Te hará unas preguntas para configurar tus preferencias respecto al módem. Lee cuidadosamente y selecciona lo que mejor te parezca. Finalmente llegarás a la pagina de inicio del módem en donde indica la calidad y velocidad de la conexión.</p>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-setstart.webp" alt="Setstart"/></p>
+<p>Si ves los <em>chulos</em> o <em>tics</em> verdes, significa que todo está bien conectado. En cambio, si ves un signo de exclamación rojo  y una “X” en las barras de internet indica que no hay conexión.</p>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-test.webp" alt="test"/></p>
+<p>Aquí es donde debes comenzar a girar la antena buscando apuntarla en una mejor dirección para tener una mejor conexión con la torre de telefonía celular. Hazlo despacio y en intervalos pequeños. También puedes cambiar que apunte más hacia arriba o hacia abajo usando lo distintos huecos del soporte de la antena a la vara.</p>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-rotatedetail.webp" alt="rotatedetail"/></p>
+<p>Cada vez que cambias la posición de tu antena, espera unos segundos a ver si los indicadores en la pantalla o el dispositivo cambian. Si aparecen la barras de internet y el <em>chulo o tic</em> verde ¡haz logrado conseguir señal! ¡Felicitaciones! Ya puedes navegar en internet.</p>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-antenaequalized.webp" alt="antenaequalized"/></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>💡 <strong>¿Cómo se mide el uso de internet?</strong> El consumo de datos por internet se mide por la cantidad de datos que se descargan en tu computador o celular al hacer una consulta, por ejemplo, ver un video, escuchar una canción, leer un artículo en un periódico en línea o recibir un mensaje de texto. El “peso” de cada uno de esos archivos se mide en <em>bytes</em> de información y la medida más común cuando compras un plan de datos son las Gigas, Gb o <em>Gigabytes.</em> Para que te hagas una referencia aproximada, 1 Giga o 1 Gigabyte (que son 1 millón de <em>bytes</em>) equivalen a 30 minutos de video en alta definición (HD) o 2 horas en baja definición (SD); o 200 canciones; o 4 horas de videollamada; o 600 páginas web; o 350,000 mensajes de texto. Como habrás notado, un video es lo que más “pesa” y un mensaje de texto es lo que menos “pesa”. Por eso los operadores de telefonía a veces te “regalan” mensajes de texto pero te cobran por ver videos.</p>
+<p>💡 <strong>¿Qué tan rápido se puede acceder a la información en internet?</strong> Al igual que saber cuánto “pesan” es importante saber a qué velocidad puedes acceder esos archivos que estas consultando. Esto se mide en los <em>Megabytes por segundo o Mbps</em> que se descargan a tu computador o celular. Tener más de 5 Mbps de descarga permite que puedas ver un video sin que se corte y tener otros 4 computadores haciendo consultas en internet a la vez. Tener entre 1 y 5 Mbps te permite hacer una videollamada aunque puede tener interrupciones. Tener menos de 1 Mbps permite solo consultar páginas web con paciencia o enviar y recibir mensajes de texto. Si quieres jugar videojuegos o ver películas en línea probablemente necesites al menos 25 Mbps de descarga.</p>
+<p><strong>Haz pruebas de la velocidad</strong></p>
+<p>Puede ser útil que hagas una <em>prueba de la velocidad</em> de descarga y de subida de la señal para mejorar la calidad de la conexión. Esto te dice que tan rápido está descargando datos del internet. Para eso ingresa en un navegadorr y busca prueba de velocidad. Saldrán varias opciones de pruebas, aquí te muestro la del Google Chrome.</p>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-speedtest.webp" alt="speedtest"/></p>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-speedtest2.webp" alt="speedtest2"/></p>
+<p>Así sabrás qué tan rápido estas descargando los datos y qué tipo de consultas te funcionarán.</p>
+<p>Si estás conectado a internet, pues a disfrutarlo y aprender todo lo que quieras.</p>
+<p>Si no, sigue haciendo pruebas tanto mirando la página de inicio del módem como haciendo pruebas de velocidad girando la antena en pequeños intervalos como las manecillas del reloj hasta que logres la mayor velocidad de descarga.</p>
+<p>Si pruebas y aumenta la velocidad o los indicadores del módem sigue girando un poquito más. Si en la siguiente, se reduce la señal o la velocidad de descarga entonces regresa al punto anterior y marca ese punto de algún modo pues ese es el mejor mejor punto de la conexión. Así puedes fijar la antena mirando en esa dirección en el último paso. Esto sí que estuvo largo. ¡Tremendo que lo hayas logrado!</p>
+<ul>
+<li><strong>Si todavía no te conecta, aquí hay más recomendaciones</strong></li>
+</ul>
+<p>Para mayor precisión, <strong>haz pruebas de la potencia de la señal</strong> girando la antena en distintas direcciones.</p>
+<p>A veces las condiciones geográficas son más complejas de lo que imaginamos. Ahí tendremos que determinar si efectivamente tu antena está conectada a la torre de telefonía celular y con qué calidad.</p>
+<p>Para eso ingresa a la sección de <strong>Avanzados</strong> en el menú del módem y busca Sistema y luego Información del dispositivo. Así sale en mi módem, pero debe ser algo similar en el tuyo.</p>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-setadvanced.webp" alt="setadvanced"/></p>
+<p>Si buscas en ese listado de información encontrarás varios datos. Los 4 parámetros que estás buscando son RSRQ, que indica la calidad de la señal; RSRP, que indica la potencia de la señal; RSSI, que indica la fuerza de la señal; y SINR, que indica la relación entre la señal y el ruido que se está generando. Recuerda que esto son ondas electromagnéticas que viajan por el aire.</p>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-rsrp.webp" alt="rsrp"/></p>
+<p>A continuación puedes ver una tabla que te indica los parámetros de la cobertura de la señal de celular que está recibiendo tu antena. Nota que tres de ellos son números negativos y a medida que se van acercando a cero es que la señal mejora. Puede parecer un poco técnica esta información, pero no te preocupes, no es necesario entenderla con mucha profundidad para que funcione.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Cobertura</th><th>RSRQ</th><th>RSRP</th><th>RSSI</th><th>SINR</th></tr></thead><tbody><tr><td>Excelente</td><td>> -10 dB</td><td>> -80 dBm</td><td>> -65 dBm</td><td>> 20 dB</td></tr><tr><td>Buena</td><td>-10 dB a -15dB</td><td>-80 dBm a -90 dBm</td><td>-65 dBm a -75 dBm</td><td>13 dB a 20 dB</td></tr><tr><td>Media</td><td>-15 dB a -20 dB</td><td>-90 dBm a -100 dBm</td><td>-75 dBm a -85 dBm</td><td>0 dB a 13 dB</td></tr><tr><td>Baja</td><td><span>←</span>20 dB</td><td><span>←</span>100 dBm</td><td><span>←</span>85 dBm</td><td><span>←</span>0 dB</td></tr></tbody></table></div>
+<p>Lo que debes hacer, de nuevo, es ir rotando la antena izada en pequeños intervalos y esperar unos segundos para notar cómo cambian esos números. Yo me fijo principalmente en el RSRP que es el de la potencia de la conexión. Si quieres puedes dibujar un círculo en el piso alrededor de la vara de la antena y dibujar líneas que dividan el círculo en pedazos iguales. Entonces apuntas la antena en la dirección de la línea y verificas si el parámetro mejoró o empeoró. Si mejoró sigue girando y revisando el parámetro. Si empeoró regresa al punto anterior.</p>
+<p>Así es como se apunta la antena con mayor precisión. ¡Buena suerte capturando la señal! Te haz vuelto un verdadero cacharrero o cacharrera del internet. Estoy muy orgulloso de ti.</p>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-rotatedetail2.webp" alt="rotatedetail"/></p>
+<p>💡 <strong>Ten en cuenta que el clima afecta:</strong> Como estás usando una antena exterior puede que las condiciones climáticas afecten qué tan rápida o lenta sea tu conexión. Por ejemplo, un día muy húmedo puede hacer que tu conexión se vuelva más lenta. No te preocupes, poco a poco irás mejorando tu experiencia de usar el internet juntos a medida que vayas probando nuevas soluciones.</p>
+<ul>
+<li>
+<p><strong>Paso 6: Fija la antena</strong></p>
+<p>Hemos llegado a nuestro último paso. Que gran trabajo haz hecho.</p>
+<p>Ahora, con la dirección de la antena clara ya puedes dejar tu antena instalada permanentemente a un muro o una columna o un árbol; el lugar que hayas determinado en el Paso 1.</p>
+<p><strong>Aprieta los soportes de la antena a la vara e iza la antena</strong></p>
+<p>Primero, como ya determinaste la dirección aprieta los soportes de la antena a la vara al máximo para asegurar que no se muevan con el viento o la lluvia o si un pájaro se posa encima. Si ya los tenías bien apretados no es necesario hacer esto de nuevo.</p>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-antennafix.webp" alt="antennafix"/>
+<img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-installed1.webp" alt="installed1"/></p>
+<p><strong>Ancla la vara a la pared o al soporte que tengas</strong>
+Luego, utiliza soportes adecuados para anclar las vara a la base. Si es a una pared, taladra y pon chazos y tornillos para asegurarlo. Si es a un árbol amarrala con alambre.</p>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-antennafixtowall.webp" alt="antennafixtowall"/></p>
+<p><img src="../../assets/images/solv-install3Gantenna/solv-install3Gantenna-installed2.webp" alt="installed2"/></p>
+</li>
+</ul>
+<p>¡Listo! Con trabajo en equipo haz logrado instalar una antena 3/4G para tener señal wifi en un espacio fijo. Ya eres el cacharrero oficial de tu hogar o comunidad.</p>
+<hr/>
+<h2 id="qué-se-logra"><strong>¿Qué se logra?</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#qué-se-logra" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Entre muchas soluciones de conectividad que he probado, esta es de las mejores para generar un espacio para acceder al Internet juntos, permitiendo que varias personas puedan conectarse a una señal wifi al tiempo en lugares donde la señal de 3 o 4G es débil. Si no hay cobertura de telefonía móvil, esta solución no servirá. Sin embargo, la cobertura de la telefonía está aumentando paulatinamente en todo el planeta.</p>
+<p>La recomiendo no solo para el hogar, sino para espacios comunes como colegios, bibliotecas, negocios o salones comunales. También sirve en espacios públicos como parques si tienen algún lugar para dejarla bajo seguro y con electricidad constante.</p>
+<hr/>
+<h2 id="hasta-dónde-se-puede-llegar"><strong>¿Hasta dónde se puede llegar?</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#hasta-dónde-se-puede-llegar" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>No es una solución económica, pero he visto que puede tener una gran alcance en la medida que se vuelva un punto de acceso a internet comunitario. Para hacer esto, es necesario que la comunidad se ponga de acuerdo en comprarla con aportes de los miembros y mantenerla  juntos. Esto puede resultar como un gasto inicial considerable, pero resulta más económico en el tiempo que si cada persona compra su propio plan de datos individualmente.</p>
+<p>💡 En SOLE Colombia la hemos llevado a comunidades en donde la instalan en un espacio comunitario al cual todos pueden acceder y deciden cuánto, cuándo y para qué se puede utilizar. Así, la comunidad regula la recarga de datos según su uso y se aprovechan los datos colectivamente al máximo. Por ejemplo, se prioriza que los niños puedan hacer tareas o que la comunidad pueda ver una película todos juntos, por encima de que usen los datos para acceder a sus redes sociales individuales. Pero esto es otro reto. El caso es que ¡ya tienes acceso a Internet!</p>
+<p>Te invito a pensar hasta dónde puedes llegar tú y ¡que lo compartas con otros cacharreros!</p>
+<hr/>
+<h2 id="soluciones-recomendadas">Soluciones recomendadas<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#soluciones-recomendadas" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><a href="../../es/solve/como-comprar-una-antena-satelital-solutions-db" class="internal alias" data-slug="es/solve/como-comprar-una-antena-satelital-solutions-db">¿Cómo comprar una antena satelital?</a></li>
+<li><a href="../../es/solve/como-usar-el-juego-para-aprender-a-cuidar-equipos-en-comunidad-solutions-db" class="internal alias" data-slug="es/solve/como-usar-el-juego-para-aprender-a-cuidar-equipos-en-comunidad-solutions-db">¿Cómo usar el juego para aprender a cuidar equipos en comunidad?</a></li>
+</ul>
+<h2 id="referencias">Referencias<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#referencias" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><a href="https://problemasconinternet.com/router-blu-castle-4g/" class="external">Problemas con el internet<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul></article><hr/><div class="page-footer"><div class="waline-feedback"><link rel="stylesheet" href="https://unpkg.com/@waline/client@3.4.2/dist/waline.css"/><div id="waline"></div><style>
+.waline-feedback {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+/* Ocultar todo excepto reacciones */
+.waline-feedback .wl-editor,
+.waline-feedback .wl-header,
+.waline-feedback .wl-list,
+.waline-feedback .wl-count,
+.waline-feedback .wl-powered,
+.waline-feedback .wl-login,
+.waline-feedback .wl-footer {
+  display: none !important;
+}
+
+/* Contenedor de reacciones */
+.waline-feedback .wl-reaction {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+}
+
+/* Botones base */
+.waline-feedback .wl-reaction-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 0.9rem;
+  min-width: 180px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: var(--light);
+  color: var(--darkgray);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  position: relative;
+}
+
+.waline-feedback .wl-reaction-item span {
+  font-size: 1rem;
+}
+
+.waline-feedback .wl-reaction-item::after {
+  content: "";
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.waline-feedback .wl-reaction-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+/* 1) ❌ */
+.waline-feedback .wl-reaction-item:nth-child(1) {
+  background: #fee2e2;
+  border-color: #ef4444;
+}
+.waline-feedback .wl-reaction-item:nth-child(1)::after {
+  content: "No me funcionó";
+  color: #b91c1c;
+}
+
+/* 2) 😓 */
+.waline-feedback .wl-reaction-item:nth-child(2) {
+  background: #ffedd5;
+  border-color: #f97316;
+}
+.waline-feedback .wl-reaction-item:nth-child(2)::after {
+  content: "Difícil";
+  color: #c2410c;
+}
+
+/* 3) 😐 */
+.waline-feedback .wl-reaction-item:nth-child(3) {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+.waline-feedback .wl-reaction-item:nth-child(3)::after {
+  content: "Regular";
+  color: #4b5563;
+}
+
+/* 4) 🙂 */
+.waline-feedback .wl-reaction-item:nth-child(4) {
+  background: #dbeafe;
+  border-color: #3b82f6;
+}
+.waline-feedback .wl-reaction-item:nth-child(4)::after {
+  content: "Útil";
+  color: #1d4ed8;
+}
+
+/* 5) 🚀 */
+.waline-feedback .wl-reaction-item:nth-child(5) {
+  background: #dcfce7;
+  border-color: #22c55e;
+}
+.waline-feedback .wl-reaction-item:nth-child(5)::after {
+  content: "¡Me funcionó!";
+  color: #15803d;
+}
+
+@media (max-width: 700px) {
+  .waline-feedback .wl-reaction {
+    flex-direction: column;
+  }
+  .waline-feedback .wl-reaction-item {
+    width: 100%;
+  }
+}
+</style></div></div></div><div class="right sidebar"><div class="graph"><h3>Vista Gráfica</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-140" aria-expanded="true"><h3>Tabla de Contenidos</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#instalar-una-antena-para-tener-internet-en-un-espacio-fijo" data-for="instalar-una-antena-para-tener-internet-en-un-espacio-fijo">Instalar una antena, para tener Internet en un espacio fijo</a></li><li class="depth-1"><a href="#audiolectura-de-la-solución" data-for="audiolectura-de-la-solución">Audiolectura de la solución</a></li><li class="depth-0"><a href="#para-qué-sirve" data-for="para-qué-sirve">¿Para qué sirve?</a></li><li class="depth-0"><a href="#antes-de-empezar-unas-cuestiones-de-seguridad" data-for="antes-de-empezar-unas-cuestiones-de-seguridad">Antes de empezar, unas cuestiones de seguridad</a></li><li class="depth-0"><a href="#qué-necesitas" data-for="qué-necesitas">¿Qué necesitas?</a></li><li class="depth-0"><a href="#cómo-hacerlo" data-for="cómo-hacerlo">¿Cómo hacerlo?</a></li><li class="depth-0"><a href="#qué-se-logra" data-for="qué-se-logra">¿Qué se logra?</a></li><li class="depth-0"><a href="#hasta-dónde-se-puede-llegar" data-for="hasta-dónde-se-puede-llegar">¿Hasta dónde se puede llegar?</a></li><li class="depth-0"><a href="#soluciones-recomendadas" data-for="soluciones-recomendadas">Soluciones recomendadas</a></li><li class="depth-0"><a href="#referencias" data-for="referencias">Referencias</a></li><li class="overflow-end"></li></ul></div></div><footer class><div class="footer-section footer-links"><h3>Enlaces rápidos</h3><ul><li><a href="/nuevo-aqui-sole-voltaje">¿Nuevo aquí?</a></li><li><a href="/inspirate-sole-voltaje">Inspírate</a></li><li><a href="/soluciona-sole-voltaje">Soluciona</a></li><li><a href="/pregunta-comenta-sole-voltaje">Pregunta/Comenta</a></li><li><a href="/desconectado-sole-voltaje">¿Desconectado?</a></li><li><a href="/conceptorio-sole-voltaje">Conceptorio</a></li></ul></div><div class="footer-section footer-info"><p class="footer-project"><a href="http://voltaje.solecolombia.org/">SOLE Voltaje</a> es un proyecto de <a href="https://www.solecolombia.org/" target="_blank" rel="noopener noreferrer">SOLE Colombia</a> con el apoyo de <a href="https://www.isocfoundation.org/" target="_blank" rel="noopener noreferrer">Internet Society Foundation</a></p><p class="footer-license"><a href="http://voltaje.solecolombia.org/">SOLE Voltaje</a> 2025 by <a href="http://www.solecolombia.org/" target="_blank" rel="noopener noreferrer">Fundación SOLE Colombia</a> is licensed by <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-ShareAlike 4.0 International</a></p><p class="footer-tech">Creado con <a href="https://quartz.jzhao.xyz/" target="_blank" rel="noopener noreferrer">Quartz v4.5.2</a></p></div><div class="footer-section footer-custom"><ul><li><a href="/es">Página Principal</a></li><li><a href="https://www.solecolombia.org/" target="_blank" rel="noopener noreferrer">SOLE Colombia</a></li><li><a href="https://github.com/SOLE-Colombia/voltaje" target="_blank" rel="noopener noreferrer">GitHub</a></li></ul><div class="footer-branding"><img src="/static/icon.png" alt="SOLE Voltaje" class="footer-logo"/></div></div></footer></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="../../postscript.js" type="module"></script></html>

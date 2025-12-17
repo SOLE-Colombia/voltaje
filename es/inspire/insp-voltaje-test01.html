@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr"><head><title>Prueba #01 SOLE Voltaje</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="SOLE Voltaje"/><meta property="og:title" content="Prueba #01 SOLE Voltaje"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Prueba #01 SOLE Voltaje"/><meta name="twitter:description" content="Presentación Hola soy nicolás, el cacharerro en Voltaje, hoy les queremos compartir el diseño de esta Prueba de usuario que diseñamos y ejecutamos a principios de 2024."/><meta property="og:description" content="Presentación Hola soy nicolás, el cacharerro en Voltaje, hoy les queremos compartir el diseño de esta Prueba de usuario que diseñamos y ejecutamos a principios de 2024."/><meta property="og:image:alt" content="Presentación Hola soy nicolás, el cacharerro en Voltaje, hoy les queremos compartir el diseño de esta Prueba de usuario que diseñamos y ejecutamos a principios de 2024."/><meta property="twitter:domain" content="voltaje.solecolombia.org"/><meta property="og:url" content="https://voltaje.solecolombia.org/es/inspire/insp-voltaje-test01"/><meta property="twitter:url" content="https://voltaje.solecolombia.org/es/inspire/insp-voltaje-test01"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="Presentación Hola soy nicolás, el cacharerro en Voltaje, hoy les queremos compartir el diseño de esta Prueba de usuario que diseñamos y ejecutamos a principios de 2024."/><meta name="generator" content="Quartz"/><link href="../../index.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL2hvbWUvcnVubmVyL3dvcmsvdm9sdGFqZS1kZXYvdm9sdGFqZS1kZXYvcXVhcnR6L2NvbXBvbmVudHMvc3R5bGVzIiwic291cmNlcyI6WyJtZXJtYWlkLmlubGluZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFHRjtFQUNFOzs7QUFLRjtFQUNFO0VBQ0E7OztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFOztBQUlGO0VBQ0U7RUFDQTtFQUNBIiwic291cmNlc0NvbnRlbnQiOlsiLmV4cGFuZC1idXR0b24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsb2F0OiByaWdodDtcbiAgcGFkZGluZzogMC40cmVtO1xuICBtYXJnaW46IDAuM3JlbTtcbiAgcmlnaHQ6IDA7IC8vIE5PVEU6IHJpZ2h0IHdpbGwgYmUgc2V0IGluIG1lcm1haWQuaW5saW5lLnRzXG4gIGNvbG9yOiB2YXIoLS1ncmF5KTtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICBib3JkZXI6IDFweCBzb2xpZDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBvcGFjaXR5OiAwO1xuICB0cmFuc2l0aW9uOiAwLjJzO1xuXG4gICYgPiBzdmcge1xuICAgIGZpbGw6IHZhcigtLWxpZ2h0KTtcbiAgICBmaWx0ZXI6IGNvbnRyYXN0KDAuMyk7XG4gIH1cblxuICAmOmhvdmVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgYm9yZGVyLWNvbG9yOiB2YXIoLS1zZWNvbmRhcnkpO1xuICB9XG5cbiAgJjpmb2N1cyB7XG4gICAgb3V0bGluZTogMDtcbiAgfVxufVxuXG5wcmUge1xuICAmOmhvdmVyID4gLmV4cGFuZC1idXR0b24ge1xuICAgIG9wYWNpdHk6IDE7XG4gICAgdHJhbnNpdGlvbjogMC4ycztcbiAgfVxufVxuXG4jbWVybWFpZC1jb250YWluZXIge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGNvbnRhaW46IGxheW91dDtcbiAgei1pbmRleDogOTk5O1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxMDB2dztcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogbm9uZTtcbiAgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDRweCk7XG4gIGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC41KTtcblxuICAmLmFjdGl2ZSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB9XG5cbiAgJiA+ICNtZXJtYWlkLXNwYWNlIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogNTAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICBoZWlnaHQ6IDgwdmg7XG4gICAgd2lkdGg6IDgwdnc7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcblxuICAgICYgPiAubWVybWFpZC1jb250ZW50IHtcbiAgICAgIHBhZGRpbmc6IDJyZW07XG4gICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICB0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7XG4gICAgICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4xcyBlYXNlO1xuICAgICAgb3ZlcmZsb3c6IHZpc2libGU7XG4gICAgICBtaW4taGVpZ2h0OiAyMDBweDtcbiAgICAgIG1pbi13aWR0aDogMjAwcHg7XG5cbiAgICAgIHByZSB7XG4gICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgfVxuXG4gICAgICBzdmcge1xuICAgICAgICBtYXgtd2lkdGg6IG5vbmU7XG4gICAgICAgIGhlaWdodDogYXV0bztcbiAgICAgIH1cbiAgICB9XG5cbiAgICAmID4gLm1lcm1haWQtY29udHJvbHMge1xuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgYm90dG9tOiAyMHB4O1xuICAgICAgcmlnaHQ6IDIwcHg7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZ2FwOiA4cHg7XG4gICAgICBwYWRkaW5nOiA4cHg7XG4gICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgYm9yZGVyLXJhZGl1czogNnB4O1xuICAgICAgYm94LXNoYWRvdzogMCAycHggNHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcbiAgICAgIHotaW5kZXg6IDI7XG5cbiAgICAgIC5tZXJtYWlkLWNvbnRyb2wtYnV0dG9uIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgIHdpZHRoOiAzMnB4O1xuICAgICAgICBoZWlnaHQ6IDMycHg7XG4gICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgICAgY29sb3I6IHZhcigtLWRhcmspO1xuICAgICAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICBmb250LWZhbWlseTogdmFyKC0tYm9keUZvbnQpO1xuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBlYXNlO1xuXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIH1cblxuICAgICAgICAmOmFjdGl2ZSB7XG4gICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDFweCk7XG4gICAgICAgIH1cblxuICAgICAgICAvLyBTdHlsZSB0aGUgcmVzZXQgYnV0dG9uIGRpZmZlcmVudGx5XG4gICAgICAgICY6bnRoLWNoaWxkKDIpIHtcbiAgICAgICAgICB3aWR0aDogYXV0bztcbiAgICAgICAgICBwYWRkaW5nOiAwIDEycHg7XG4gICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iXX0= */</style><script src="../../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://voltaje.solecolombia.org/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://voltaje.solecolombia.org/es/inspire/insp-voltaje-test01-og-image.webp"/><meta property="og:image:url" content="https://voltaje.solecolombia.org/es/inspire/insp-voltaje-test01-og-image.webp"/><meta name="twitter:image" content="https://voltaje.solecolombia.org/es/inspire/insp-voltaje-test01-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="es/inspire/insp-voltaje-test01"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../.." aria-label="SOLE Voltaje"><img src="../../static/logo.png" alt class="page-logo"/></a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><details class="lang-toggle" data-lang-toggle="true"><summary class="lang-summary" aria-label="Cambiar idioma"><span class="lang-summary-flag" aria-hidden="true">🇪🇸</span><span class="lang-summary-code">ES</span></summary><div class="lang-menu" role="menu" aria-label="Idiomas disponibles"><button type="button" class="lang-option" role="menuitem" data-lang="es"><span aria-hidden="true">🇪🇸</span> ES</button><button type="button" class="lang-option" role="menuitem" data-lang="en"><span aria-hidden="true">🇺🇸</span> EN</button><button type="button" class="lang-option" role="menuitem" data-lang="pt"><span aria-hidden="true">🇵🇹</span> PT</button></div></details></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Modo oscuro"><title>Modo oscuro</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Modo claro"><title>Modo claro</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="download-button" aria-label="Descargar esta página como PDF" title="Descargar página"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Descargar página</title><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Modo lector"><title>Modo lector</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Buscar</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Busca algo" placeholder="Busca algo"/><div class="search-layout" data-preview="true"></div></div></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-lang-default="es" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>{let customOrder=[\&quot;new-here\&quot;,\&quot;inspire\&quot;,\&quot;solve\&quot;,\&quot;answers-comments\&quot;,\&quot;disconnected\&quot;,\&quot;glossary\&quot;,\&quot;general\&quot;],indexA=customOrder.indexOf(a.slugSegment),indexB=customOrder.indexOf(b.slugSegment);return indexA!==-1&amp;&amp;indexB!==-1?indexA-indexB:indexA!==-1?-1:indexB!==-1?1:!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1}&quot;,&quot;filterFn&quot;:&quot;node=>!(node.slugSegment===\&quot;tags\&quot;||node.slugSegment===\&quot;_staging\&quot;)&quot;,&quot;mapFn&quot;:&quot;node=>{let langFolders=node.children.filter(child=>child.isFolder&amp;&amp;(child.slugSegment===\&quot;es\&quot;||child.slugSegment===\&quot;en\&quot;));if(langFolders.length>0){let promotedChildren=langFolders.flatMap(langFolder=>langFolder.children);node.children=node.children.filter(child=>!langFolders.includes(child)).concat(promotedChildren)}}&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-380"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><div id="explorer-380" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../es/">SOLE Voltaje</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../es/inspire/">Inspírate</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Prueba #01 SOLE Voltaje</a></div></nav><h1 class="article-title">Prueba #01 SOLE Voltaje</h1><p show-comma="true" class="content-meta"><time datetime="2025-12-16T23:37:17.000Z">16 dic 2025</time><span>Se lee en 15 min</span></p><ul class="tags"><li><a href="../../tags/Metodología" class="internal tag-link">Metodología</a></li><li><a href="../../tags/Prueba" class="internal tag-link">Prueba</a></li></ul></div></div><article class="popover-hint"><h1 id="presentación">Presentación<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#presentación" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Hola soy nicolás, el cacharerro en Voltaje, hoy les queremos compartir el diseño de esta <strong>Prueba de usuario</strong> que diseñamos y ejecutamos a principios de 2024. Aprendimos un montón en este proceso y nos gustaría que ustedes, pueden apropiarlos y usarlos para interacturar con sus comunidades.</p>
+<h1 id="objetivo">Objetivo<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#objetivo" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Evaluar la funcionalidad de tres soluciones de conectividad actualmente documentadas en la plataforma de Voltaje.</p>
+<h1 id="soluciones">Soluciones<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#soluciones" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h2 id="la-técnica-difícil">La técnica difícil<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#la-técnica-difícil" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Instalar un servidor web en un computador de bolsillo.</p>
+<p><a href="https://voltaje.solecolombia.org/#Una%20peque%C3%B1a%20Internet%20de%20bolsillo" class="external">SOLE – Voltaje · Guía de soluciones de conectividad<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<hr/>
+<h2 id="la-cacharrera-fácil">La cacharrera fácil<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#la-cacharrera-fácil" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>¿Cómo mejorar mi señal con una lata?<br/>
+Duración estimada: 10–15 minutos.</p>
+<p><a href="https://voltaje.solecolombia.org/#C%C3%B3mo%20mejorar%20mi%20se%C3%B1al%20con%20una%20lata" class="external">SOLE – Voltaje · Guía de soluciones de conectividad<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<hr/>
+<h2 id="la-técnica-fácil">La técnica fácil<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#la-técnica-fácil" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Reiniciar y compartir el internet del teléfono con otras personas.<br/>
+Duración estimada: 10 minutos.</p>
+<p><a href="https://voltaje.solecolombia.org/#Punto%20de%20acceso%20o%20Zona%20Wifi%20Personal" class="external">SOLE – Voltaje · Guía de soluciones de conectividad<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<hr/>
+<h2 id="la-cacharrera-difícil">La cacharrera difícil<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#la-cacharrera-difícil" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Construir una antena 3G casera.<br/>
+Duración estimada: 40–60 minutos.</p>
+<p><a href="https://voltaje.solecolombia.org/#Construye%20una%20antena%203G%20casera" class="external">SOLE – Voltaje · Guía de soluciones de conectividad<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<h1 id="público">Público<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#público" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h2 id="perfil-1---doña-marlén-interesada--destreza--">Perfil 1 - Doña Marlén, interesada (+), destreza (-)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#perfil-1---doña-marlén-interesada--destreza--" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Es una persona mayor de 50 años, con interés genuino en saber cómo utilizar internet para mejorar su modo de vida, le es difícil usar el celular, el computador y navegar en internet, es madre de familia.</p>
+<h2 id="perfil-3--pepito-interesado---conocimiento-">Perfil 3 – Pepito, interesado (-), conocimiento (+)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#perfil-3--pepito-interesado---conocimiento-" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Es una persona entre 14-21 años, es estudiante, le gusta usar redes sociales, jugar videojuegos, actualmente está estudiando. Le gusta tener los últimos artilugios tecnológicos y está informado de esto.</p>
+<h2 id="perfil-2---paila-gorrea-interesada---destreza-">Perfil 2 - Paila Gorrea, interesada (-), destreza (+)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#perfil-2---paila-gorrea-interesada---destreza-" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Es una persona de 30-40 años, trabaja con ONG coordinando proyectos, habita entre la ciudad y las comunidades rurales con las que trabaja. Interactúa con grandes financiadoras para conseguir financiación para los proyectos de la ONG.</p>
+<h2 id="perfil-4--juanita-necesidad--conocimiento--">Perfil 4 – Juanita, necesidad (+), conocimiento (-)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#perfil-4--juanita-necesidad--conocimiento--" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h1 id="metodología">Metodología<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#metodología" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Se presenta VOLTAJE junto con unas categorías de interés para nosotros en relación a la funcionalidad de la misma. Luego se permite a los invitados leer y desarrollar una solución de manera individual, mientras de manera paralela, ellos comentan sus observaciones en relación a las categorías presentadas. Lo anterior se repite con otra solución. Al finalizar la realización de la solución se hacen preguntas específicas en relación a las categorías de interés y finalmente se hará una retroalimentación grupal abierta.</p>
+<h2 id="observador">Observador<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#observador" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Su tarea es estar presente tomando atenta nota de la manera en que el usuario desarrolla una solución a través de la lectura de la instrucción. Debe estar atento a notar puntos de aburrimiento y frustración.</p>
+<h2 id="moderador">Moderador<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#moderador" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Es la persona que presenta y da dirección a la retroalimentación final. Los demás observadores pùeden participar formulando preguntas ocasionales teniendo en cuenta la siguientes recomendaciones:</p>
+<ul>
+<li>Deben evitar dar juicios y reflexiones.</li>
+<li>No pueden dar opiniones sobre las soluciones.</li>
+</ul>
+<p>Esto no significa que no pueden inducir respuestas de las personas.</p>
+<p>Al ser las categorías centrales “lecturabilidad y viabilidad” sobre estas se concentrará la conversación. La categoría de “accesibilidad” pinza poder ser explorada con detalle en un momento donde VOLTAJE esté más avanzado.</p>
+<h1 id="agenda">Agenda<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#agenda" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Hora</th><th>Momento</th><th>Descripción</th><th>Herramientas</th></tr></thead><tbody><tr><td>9:00–9:15</td><td>Bienvenida</td><td>• Gracias por venir, bienvenidos a SOLE<br/>• Conozcámonos: Nombre, qué hacen<br/>• (Opcional) Cuéntanos un momento en que hayan tenido un problema con internet y qué hicieron<br/>• ¿Dónde te ubicas? Líneas de Perfil (Conocimiento, destreza, motivación y necesidad)</td><td>Mecato<br/>Planos posicionales<br/>Post-it</td></tr><tr><td>9:15–9:25</td><td>Exploración de Voltaje</td><td>• ¿Qué saben de SOLE?<br/>• (Opcional) Video corto de SOLE<br/>• ¿Por qué están aquí? (Sanjay)<br/>• Guía de Soluciones de conectividad<br/>• Razones para no tener internet: plata, señal, conocimiento<br/>• Autogestión de la conectividad (usar internet en grupo: aprender, barato, seguro, divertido)<br/>• Probarán dos soluciones priorizadas y darán retroalimentación<br/>• Primera solución: 20–30 min<br/>• Segunda solución: 40–60 min<br/>• No se evalúan habilidades, sino las soluciones</td><td></td></tr><tr><td>9:25–9:30</td><td>Presentación de SOLE Voltaje y el ejercicio</td><td>• Cómo está armada la página de Voltaje<br/>• Tipos de soluciones<br/>• Significado de íconos<br/>• Estructura de una solución</td><td></td></tr><tr><td>9:30–11:00</td><td>Prueba de las soluciones</td><td>• Dispositivo: celular o computador<br/>• Enlace enviado por WhatsApp<br/>• Presentación de las 2 soluciones y tiempos<br/>• Construye una antena 3G casera (40–60’)<br/><a href="https://voltaje.solecolombia.org/#Construye%20una%20Antena%203G%20casera" class="external">https://voltaje.solecolombia.org/#Construye%20una%20Antena%203G%20casera<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a><br/>• Cómo mejorar mi señal con una lata (10–15’)<br/><a href="https://voltaje.solecolombia.org/#%C2%BF%C3%B3mo%20mejorar%20mi%20se%C3%B1al%20con%20una%20lata%3F" class="external">https://voltaje.solecolombia.org/#%C2%BF%C3%B3mo%20mejorar%20mi%20se%C3%B1al%20con%20una%20lata%3F<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a><br/>• Grupos de 2 participantes por solución<br/>• Observador por invitado (toma notas)<br/>• El participante puede expresar frustración o bloqueo</td><td>Formato de Evaluación</td></tr><tr><td>11:00–13:00</td><td>Retroalimentación grupal</td><td>• Conversación guiada con preguntas<br/>• Escuchar comentarios de los participantes<br/>• Tomar notas en la sección de retroalimentación</td><td></td></tr></tbody></table></div>
+<h1 id="observación-durante-la-prueba"><strong>Observación durante la prueba</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#observación-durante-la-prueba" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p><strong>Instrucciones:</strong></p>
+<ul>
+<li>Antes de que el invitado empiece a trabajar en la solución, explícale de manera concreta cuál será tu rol y el porqué.</li>
+<li>Puedes entregarle el formato de evaluación al participante una vez haya terminado la solución o haya decidido parar.</li>
+<li>Indícale a cada participante que se tome el tiempo necesario y lea con atención cada una de las afirmaciones que va a evaluar.</li>
+<li>10 minutos antes de terminar la prueba, pídele al participante que pare su trabajo y diligencie la evaluación.</li>
+</ul>
+<p><strong>Rol del observador:</strong></p>
+<ol>
+<li><strong>Propiciar un espacio tranquilo y de confianza</strong> para cada participante.El observador <strong>no debe juzgar</strong> lo que está haciendo el participante. Este debe ser un rol de compañía.</li>
+<li><strong>Tomar nota de las reacciones y comportamientos</strong> de los participantes mientras trabajan en la solución; sin incomodar, ser invasivo o intimidar al participante.</li>
+<li><strong>Tomar nota de las preguntas</strong> que tenga cada participante y sugerir que lo hagan/resuelvan como crean; pero <strong>sin extenderse, ayudar o intentar responder sus dudas.</strong></li>
+</ol>
+<p><em>Preguntas de sugerencia: ¿Cómo solucionarías esa duda o problema? ¿Qué crees que está fallando en la explicación o solución para que tengas esa duda o problema?</em></p>
+<ol>
+<li><strong>Invitar a los participantes a que evalúen con tranquilidad y honestidad</strong> cada una de las soluciones. Entre más objetivos y críticos sean los participantes, más provechosa será la jornada.</li>
+</ol>
+<p>Si tienes alguna duda de tu rol como observador durante la prueba, toma nota de la duda que tienes. Solo puedes intervenir si ves algún riesgo inminente.</p>
+<h1 id="preguntas-de-retroalimentación-final">Preguntas de retroalimentación final<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#preguntas-de-retroalimentación-final" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h3 id="reflexión-sobre-el-cambio-en-dispositivo-de-perfilar-interés-conocimiento-necesidades-y-destreza">Reflexión sobre el cambio en dispositivo de perfilar interés, conocimiento, necesidades y destreza<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#reflexión-sobre-el-cambio-en-dispositivo-de-perfilar-interés-conocimiento-necesidades-y-destreza" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>¿Hubo cambios en qué tan interesado estas en cacharreo con aparatos?</li>
+<li>¿Hubo cambio en qué tantos conocimientos crees tener?</li>
+<li>¿Hubo cambio en qué tanta destreza crees tener..?</li>
+<li>¿Cómo les pareció la experiencia, cómo se sintieron?</li>
+<li>¿Cómo se sintieron?</li>
+<li>¿Qué tal el tiempo?</li>
+<li>¿Qué le pareció lo más difícil?</li>
+<li>¿Qué le pareció más fácil?</li>
+<li>¿Qué aprendieron?</li>
+<li>¿Si volvieran a hacer este ejercicio que le cambiarían?</li>
+</ul>
+<h1 id="herramientas-de-análisis">Herramientas de análisis<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#herramientas-de-análisis" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h2 id="posibles-categorías-borrador">Posibles categorías (borrador)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#posibles-categorías-borrador" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Bajo la sombrilla de funcionalidad podemos acoger diferentes categorías de nuestro interés, yo propongo las siguientes que son cualidades recomendadas a la hora de realizar textos instructivos.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>Concepto</strong></th><th><strong>Definición</strong></th><th><strong>Preguntas</strong></th></tr></thead><tbody><tr><td>Legibilidad</td><td>Este concepto se refiere a los aspectos gráficos, tipografía, color, contraste, distribución del texto, diagramación, etc.</td><td>¿El tipo de fuente y su tamaño facilitan la lectura?</td></tr><tr><td>¿Los colores facilitan la lectura?</td><td></td><td></td></tr><tr><td>¿La diagramación de de la página es adecuada?</td><td></td><td></td></tr><tr><td>¿Las imágenes que acompañan los textos son suficientes o son excesivas?</td><td></td><td></td></tr><tr><td>Lecturabilidad</td><td>Este concepto se refiere a la facilidad con la que se puede leer el texto, la claridad del mismo, lo atractivo,lo completo,  tiempo y lo comprensible.</td><td>¿Hay instrucciones ambiguas?</td></tr><tr><td>¿Hay instrucciones incompletas?</td><td></td><td></td></tr><tr><td>¿Los tiempos gramaticales, y la redacción de las soluciones las considera adecuada para esta instrucción? </td><td></td><td></td></tr><tr><td>¿La solución está completa o falta explicar algún detalle?</td><td></td><td></td></tr><tr><td>Se me dificulta la lectura por la forma de redacción.</td><td></td><td></td></tr><tr><td>Estructuración</td><td>Este concepto se refiere al orden en las secciones y en general la  manera en que está organizada la instrucción. Su lógica interna y la relación que ésta facilita al lector no hace perder tiempo al lector.</td><td>¿Le parece que la estructura es adecuada o piensa que puede ordenarse mejor de otra manera?, ¿Todas las secciones son útiles o considera que alguna sobra o falta?</td></tr><tr><td>Accesibilidad</td><td>Este concepto se refiere a si las soluciones contemplan múltiples formas de recibir la información: texto, audio, video, descripción de imágenes, etc.</td><td>¿Considera que la solución es accesible para diferentes públicos?</td></tr><tr><td>¿Considera que hay algún grupo poblacional que se le dificulte el acceso a la solución?</td><td></td><td></td></tr><tr><td>¿Considera que la solución está presentada de tal forma que sea accesible para personas novatas en el tema?</td><td></td><td></td></tr></tbody></table></div>
+<ul>
+<li>Si la redacción dificulta la lectura. |
+| Viabilidad | Este concepto se refiere a si la solución puede llevarse a cabo, si funciona; sobre los recursos necesarios para hacerla y si la solución es segura. | ¿Pudo cumplir la tarea que se proponía resolver esta solución?
+¿Le pareció peligrosa en algún momento la actividad? |
+| Tracción | Este concepto se refiere a si la solución despierta el interés del lector para hacer la solución, y fomenta a seguir desarrollando soluciones relacionadas. | ¿La manera en que se presenta la solución lo incentivó a desarrollar?
+¿La manera en la que está presentada la solución lo animó a seguir desarrollando soluciones similares?
+¿La manera en que se presenta la solución te generó interés/motivación para continuar desarrollándose? |
+| Aprendizaje | Este concepto se refiere a si la instrucción le permitió aprender nuevos conceptos que permitan entender el funcionamiento de la solución. | ¿Entendió cómo funciona la solución?
+¿Aprendió nuevos conceptos? |
+| Prueba de usuario | Es una categoría abierta para que los participantes retroalimenta el diseño del ejercicio. |  |</li>
+</ul>
+<h2 id="matriz-de-evaluación-de-criterios">Matriz de evaluación de criterios<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#matriz-de-evaluación-de-criterios" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>#</strong></th><th><strong>Criterio</strong></th><th><strong>Afirmación</strong></th><th><strong>1</strong></th><th><strong>2</strong></th><th><strong>3</strong></th><th><strong>4</strong></th></tr></thead><tbody><tr><td>1.1</td><td>Legibilidad</td><td>Considero que el tamaño y tipo de letra son adecuados para mi lectura.</td><td></td><td></td><td></td><td></td></tr><tr><td>1.2</td><td></td><td>El color de la letra y el contraste con el fondo facilitan mi lectura.</td><td></td><td></td><td></td><td></td></tr><tr><td>1.3</td><td></td><td>La distribución y justificación  entre los textos e imágenes facilita la lectura y la comprensión de los textos.</td><td></td><td></td><td></td><td></td></tr><tr><td>2.1</td><td>Lecturabilidad</td><td>La forma en la que están escritos los textos facilita mi lectura.</td><td></td><td></td><td></td><td></td></tr><tr><td>2.2</td><td></td><td>Los textos comunican instrucciones completas.</td><td></td><td></td><td></td><td></td></tr><tr><td>2.3</td><td></td><td>Conozco todas las palabras usadas.</td><td></td><td></td><td></td><td></td></tr><tr><td>3.1</td><td>Estructuración</td><td>El orden de las instrucciones es adecuado.</td><td></td><td></td><td></td><td></td></tr><tr><td>3.2</td><td></td><td>La cantidad de imágenes que acompañan el texto son suficientes.</td><td></td><td></td><td></td><td></td></tr><tr><td>3.3</td><td></td><td>La manera en la que están organizadas las instrucciones me permite ahorrar tiempo.</td><td></td><td></td><td></td><td></td></tr><tr><td>4.1</td><td>Accesibilidad</td><td>Las instrucciones son adecuadas para personas novatas en el tema.</td><td></td><td></td><td></td><td></td></tr><tr><td>4.2</td><td></td><td>Las instrucciones se presentan para ser usadas desde diferentes dispositivos.</td><td></td><td></td><td></td><td></td></tr><tr><td>4.3</td><td></td><td>Las instrucciones permiten el acceso a diferentes tipos de públicos.</td><td></td><td></td><td></td><td></td></tr><tr><td>Las instrucciones me permiten desarrollar la solución de manera individual y grupal.</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>5.1</td><td>Viabilidad</td><td>La instrucción permite desarrollar una solución que funciona.</td><td></td><td></td><td></td><td></td></tr><tr><td>5.2</td><td></td><td>Los materiales necesarios para desarrollar la solución son de fácil acceso.</td><td></td><td></td><td></td><td></td></tr><tr><td>5.3</td><td></td><td>Las instrucciones tienen algún paso peligroso.</td><td></td><td></td><td></td><td></td></tr><tr><td>6.1</td><td>Tracción</td><td>La forma en la que está presentada la solución me anima a desarrollarla.</td><td></td><td></td><td></td><td></td></tr><tr><td>6.2</td><td></td><td>La forma en la que está presentada la solución me anima a conocer otras soluciones relacionadas.</td><td></td><td></td><td></td><td></td></tr><tr><td>6.3</td><td></td><td>La forma en la que esta presentada la solución me invita a saber más sobre este tema.</td><td></td><td></td><td></td><td></td></tr><tr><td>7.1</td><td>Aprendizaje</td><td>Entendí claramente cómo funciona la solución.</td><td></td><td></td><td></td><td></td></tr><tr><td>7.2</td><td></td><td>Aprendí nuevos conceptos relacionados con el tema.</td><td></td><td></td><td></td><td></td></tr><tr><td>7.3</td><td></td><td>Puedo explicarle a alguien como desarrollar la solución.</td><td></td><td></td><td></td><td></td></tr></tbody></table></div>
+<h1 id="materiales">Materiales<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#materiales" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>#</strong></th><th><strong>Material</strong></th><th><strong>Cant.</strong></th><th><strong>Enlace</strong></th></tr></thead><tbody><tr><td>1</td><td>Cable de Ethernet (m)</td><td>1</td><td>Hay en la oficina.</td></tr><tr><td>2</td><td>Pegante epóxico de secado rápido.</td><td>5</td><td>la marca sintesolda ha servido<a href="https://ferreco.com/inicio/6276-adhesivo-epoxico-sintesolda-rapido-transparente.html?gad_source=1&amp;gclid=CjwKCAiA5L2tBhBTEiwAdSxJX04bEtS41rbVOsr43-N0YdiqLhXxm--CLQ7n5qPA_NQjMA_PR7nAZRoC2WEQAvD_BwE" class="external">https://ferreco.com/inicio/6276-adhesivo-epoxico-sintesolda-rapido-transparente.html?gad_source=1&amp;gclid=CjwKCAiA5L2tBhBTEiwAdSxJX04bEtS41rbVOsr43-N0YdiqLhXxm—CLQ7n5qPA_NQjMA_PR7nAZRoC2WEQAvD_BwE<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></td></tr><tr><td>3</td><td>Canaleta plástica (2 cm)</td><td>250</td><td></td></tr><tr><td>4</td><td>Guantes anticorte</td><td>2</td><td><a href="https://articulo.mercadolibre.com.co/MCO-502525366-guantes-anti-corte-proteccion-trabajo-nitrilo-industriales-_JM#position=6&amp;search_layout=stack&amp;type=item&amp;tracking_id=3c36b974-e272-4bf2-b8c2-692cbf774a85" class="external">https://articulo.mercadolibre.com.co/MCO-502525366-guantes-anti-corte-proteccion-trabajo-nitrilo-industriales-_JM#position=6&amp;search_layout=stack&amp;type=item&amp;tracking_id=3c36b974-e272-4bf2-b8c2-692cbf774a85<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></td></tr><tr><td>5</td><td>Poste rigido para montar la antena (una guadua lo más larga posible, <del>6</del>  3 metros).</td><td>3</td><td></td></tr><tr><td>6</td><td>Cable coaxial (m)</td><td>12</td><td></td></tr><tr><td>7</td><td>Paquete de amarres plásticos (10-20 cm)</td><td>1</td><td></td></tr></tbody></table></div>
+<h1 id="conceptos-de-apoyo">Conceptos de apoyo<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#conceptos-de-apoyo" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h2 id="instrucción">Instrucción<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#instrucción" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Con el término instrucciones me refiero a todos los discursos que ordenan el comportamiento o establecen conductas, con imperativos, perífrasis de obligación, enumeraciones de acciones, listas de hechos, ilustraciones gráficas, etc. Son instrucciones las recetas de cocina, el código de circulación, las bases de un concurso, los manuales de uso de los electrodomésticos, los prospectos de los medicamentos, los contratos laborales o las guías de bricolaje. Este tipo de textos gobiernan nuestras vidas.</p>
+<h2 id="criterios">Criterios<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#criterios" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Las instrucciones deberían ser:</p>
+<ul>
+<li>Para todo el mundo. Para los novatos, que no saben nada, y para los expertos, que verifican detalles o solucionan problemas.</li>
+<li>Completas y precisas: Lo deben tratar todo: todas las funciones, todos los pasos, todas las condiciones o todas las características del objeto o tarea.</li>
+<li>Adecuadas. Conviene ordenarlas para «servir» al lector. No hay estructuras universales ni un orden canónico. No hacen perder tiempo.</li>
+<li>Manejables. Además de comprenderse, cada instrucción debe ser operativa. El lector debe captarla con una lectura y debe poder ejecutarla sin dificultad.</li>
+<li>Neutras. Sin emotividad, ni cortesía, ironía o humor.</li>
+<li>Seguras. Unas instrucciones confusas pueden provocar accidentes.</li>
+<li>Cómodas: Conviene prever cómo se usarán las instrucciones y adaptarlas a la situación.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>Criterios de legibilidad</strong></th><th><strong>Explicación</strong></th></tr></thead><tbody><tr><td>1.1. Tamaño</td><td>El tamaño de la letra debe ser de mínimo de 14 pt.</td></tr><tr><td>1.2. Textos</td><td>Los textos deben estar justificados.</td></tr><tr><td>1.3. Contraste</td><td>El contraste debe ser opuestos y que faciliten la lectura.</td></tr><tr><td>1.4. Diagramación</td><td>La distribución entre los textos e imágenes facilita la lectura y la comprensión de los textos.</td></tr><tr><td><strong>1.5. Tipografía</strong></td><td>El curso utiliza una tipografía accesible. Ejemplo: Verdana o Trebuchet.</td></tr></tbody></table></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>Criterios de lecturabilidad</strong></th><th><strong>Explicación</strong></th></tr></thead><tbody><tr><td>2.1. Redacción</td><td>La redacción de la solución facilita la comprensión de los textos.</td></tr><tr><td>2.2. Comprensión</td><td>Las instrucciones son de fácil comprensión, independientemente del uso del lenguaje técnico.</td></tr><tr><td>2.3. Motivación</td><td>La redacción del texto estimula y motiva el avance en el desarrollo de la solución.</td></tr><tr><td>2.4. Duración y tiempos del curso</td><td>Los tiempos de realización de la solución son coherentes con las instrucciones.</td></tr><tr><td>2.5. Estructura</td><td>Las instrucciones de las soluciones están completas</td></tr><tr><td>2.6.</td><td>A las soluciones les hace falta explicar detalles</td></tr></tbody></table></div>
+<h2 id="recomendaciones">Recomendaciones<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#recomendaciones" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>A continuación, se presentan sus otros consejos para escribir instrucciones y recomendaciones:</p>
+<p>Ponle título a cada grupo de instrucciones. Este puede ser el objetivo (instalar un programa en la PC), el producto final (presupuesto del proyecto) o el tema (reglas de etiqueta en la oficina). El título permite referirse a las instrucciones en otros puntos del texto.</p>
+<p>Elige los términos más adecuados. Estos deben ser precisos y también sencillos para que el lector pueda comprenderlos. Además, se deben evitar las formulaciones ambiguas y confusas.</p>
+<p>Selecciona la forma verbal adecuada. Es mejor emplear el modo verbal imperativo, que expresa mandato o exhortación, usando los tratamientos de tú (p. ej., evita los términos) o usted (p. ej., evite). Así nos dirigimos directamente al lector. El imperativo es más claro que la impersonalidad (p. ej., se responde) o el infinitivo (p. ej., responder). Respecto del tratamiento (tú o usted), en el Manual de escritura se señala que ello dependerá del grado de formalidad del texto.</p>
+<ul>
+<li>Empieza con el verbo. Iniciar cada instrucción con el verbo hace más clara la redacción. Lo primero que ve el lector, al principio de cada línea, es lo que debe hacer.</li>
+<li>Evita las negaciones, siempre que sea posible. Estas son más difíciles de comprender que las afirmaciones. Es mejor formular las instrucciones de manera afirmativa, si es factible.</li>
+<li>Elimina las repeticiones. Se debe evitar reiterar las indicaciones. Es mejor resumirlas.</li>
+<li>Homogeneidad. Conviene mantener en todas las instrucciones la forma de redactar elegida. Por ejemplo, es un error iniciar con un sustantivo -como aquí, con homogeneidad- si en el resto de las instrucciones se utiliza un verbo conjugado. Sería mejor decir Escribe instrucciones homogéneas.</li>
+</ul>
+<h2 id="características-de-un-texto-instructivo">Características de un texto instructivo<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#características-de-un-texto-instructivo" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li>Se presenta la secuencia de las actividades en un orden cronológico correcto y entendible, enumerarlas y utilizar conectores que ayuden a la comprensión de las acciones para conseguir un resultado.</li>
+<li>Se emplean marcas gráficas como números, asteriscos o guiones para diferenciar o secuenciar la serie de pasos.</li>
+<li>Puede acompañarse con gráficos, ilustraciones y/o dibujos, según el tipo de texto instructivo a desarrollar.</li>
+<li>Presenta un lenguaje claro, preciso y lineal. Debe ser entendido por cualquier persona</li>
+</ul>
+<h2 id="pautas-para-escribir-un-texto-instructivo">Pautas para escribir un texto instructivo<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#pautas-para-escribir-un-texto-instructivo" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li>Determina cuál es la intención del texto.</li>
+<li>Describe los recursos físicos y las funciones, que componen la acción a realizar.</li>
+<li>Organiza el escrito en dos partes, encabezados por un subtítulo que identifique su contenido.</li>
+<li>Numera cada uno de los pasos.</li>
+<li>Respeta en la redacción la secuencia cronológica de los pasos del proceso.</li>
+<li>Utiliza los verbos en infinitivo, imperativo, o en 3ª persona.</li>
+<li>Utiliza conectores cronológicos: para comenzar, en primer lugar, en segundo lugar, finalmente,</li>
+<li>luego, después, entonces, a partir de, antes de, a continuación, inmediatamente, etc.</li>
+<li>Agrega algunas advertencias y precauciones que el usuario debe tener en cuenta.</li>
+<li>Utiliza el lenguaje adecuado acorde a la actividad.</li>
+<li>Escribe con oraciones claras y sencillas.</li>
+</ol>
+<h2 id="recursos">Recursos<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#recursos" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><a href="https://www.usability.gov/how-to-and-tools/resources/templates.html" class="external">https://www.usability.gov/how-to-and-tools/resources/templates.html<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Afilar el lapicero: guía de redacción para profesionales, Daniel Cassany, Editorial Anagrama, 2007.</li>
+<li>Recomendaciones_redaccion_instrucciones -BID, Maria Enriqueta Ponce Ponce</li>
+<li>Organización de un texto instructivo <a href="https://contenidosparaaprender.colombiaaprende.edu.co/G_9/L/SM/SM_L_G09_U02_L07.pdf" class="external">https://contenidosparaaprender.colombiaaprende.edu.co/G_9/L/SM/SM_L_G09_U02_L07.pdf<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Cómo escribir instrucciones y recomendaciones precisas. Redactar textos funcionales y eficaces en el ámbito laboral <a href="https://www.meer.com/es/70130-como-escribir-instrucciones-y-recomendaciones-precisas" class="external">https://www.meer.com/es/70130-como-escribir-instrucciones-y-recomendaciones-precisas<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<h2 id="instrucciones-para-subir-una-escalera">Instrucciones para subir una escalera<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#instrucciones-para-subir-una-escalera" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Julio Cortázar*</p>
+<hr/>
+<p>Nadie habrá dejado de observar que con frecuencia el suelo se pliega de manera tal que una parte sube en ángulo recto con el plano del suelo, y luego la parte siguiente se coloca paralela a este plano, para dar paso a una nueva perpendicular, conducta que se repite en espiral o en línea quebrada hasta alturas sumamente variables. Agachándose y poniendo la mano izquierda en una de las partes verticales, y la derecha en la horizontal correspondiente, se está en posesión momentánea de un peldaño o escalón. Cada uno de estos peldaños, formados como se ve por dos elementos, se sitúa un tanto más arriba y adelante que el anterior, principio que da sentido a la escalera, ya que cualquiera otra combinación producirá formas quizá más bellas o pintorescas, pero incapaces de trasladar de una planta baja a un primer piso.</p>
+<p>Las escaleras se suben de frente, pues hacia atrás o de costado resultan particularmente incómodas. La actitud natural consiste en mantenerse de pie, los brazos colgando sin esfuerzo, la cabeza erguida aunque no tanto que los ojos dejen de ver los peldaños inmediatamente superiores al que se pisa, y respirando lenta y regularmente. Para subir una escalera se comienza por levantar esa parte del cuerpo situada a la derecha abajo, envuelta casi siempre en cuero o gamuza, y que salvo excepciones cabe exactamente en el escalón. Puesta en el primer peldaño dicha parte, que para abreviar llamaremos pie, se recoge la parte equivalente de la izquierda (también llamada pie, pero que no ha de confundirse con el pie antes citado), y llevándola a la altura del pie, se le hace seguir hasta colocarla en el segundo peldaño, con lo cual en éste descansará el pie, y en el primero descansará el pie. (Los primeros peldaños son siempre los más difíciles, hasta adquirir la coordinación necesaria. La coincidencia de nombre entre el pie y el pie hace difícil la explicación. Cuídese especialmente de no levantar al mismo tiempo el pie y el pie).</p>
+<p>Llegado en esta forma al segundo peldaño, basta repetir alternadamente los movimientos hasta encontrarse con el final de la escalera. Se sale de ella fácilmente, con un ligero golpe de talón que la fija en su sitio, del que no se moverá hasta el momento del descenso.</p>
+<ul>
+<li>FIN*</li>
+</ul>
+<p><a href="https://notionreactions.com/embed/3hKhHwqyFs0y4vPfEX0n" class="external">https://notionreactions.com/embed/3hKhHwqyFs0y4vPfEX0n<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<hr/>
+<hr/>
+<p><a href="../../nuevo-aqui-sole-voltaje" class="internal alias" data-slug="nuevo-aqui-sole-voltaje">¿Nuevo aquí?</a></p>
+<p><a href="../../es/_staging/inspirate-sole-voltaje" class="internal alias" data-slug="es/_staging/inspirate-sole-voltaje">Inspírate</a></p>
+<p><a href="../../es/_staging/soluciona-sole-voltaje" class="internal alias" data-slug="es/_staging/soluciona-sole-voltaje">Soluciona</a></p>
+<p><a href="../../es/answers-comments/pregunta-comenta-sole-voltaje" class="internal alias" data-slug="es/answers-comments/pregunta-comenta-sole-voltaje">Comenta</a></p>
+<p><a href="../../es/disconnected/desconectado-sole-voltaje" class="internal alias" data-slug="es/disconnected/desconectado-sole-voltaje">¿Desconectado?</a></p>
+<p><a href="../../es/_staging/conceptorio-sole-voltaje" class="internal alias" data-slug="es/_staging/conceptorio-sole-voltaje">Conceptorio</a></p>
+<p><em>SOLE Voltaje is a project by <a href="https://www.solecolombia.org/" class="external">SOLE Colombia<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> supported by <a href="https://www.isocfoundation.org/" class="external">Internet Society Foundation<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></em></p>
+<p><a href="http://voltaje.solecolombia.org/" class="external">SOLE Voltaje<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>  2024 by <a href="http://www.solecolombia.org/" class="external">Fundación SOLE Colombia<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> is licensed by <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" class="external">Creative Commons Attribution-ShareAlike 4.0 International<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p></article><hr/><div class="page-footer"><div class="waline-feedback"><link rel="stylesheet" href="https://unpkg.com/@waline/client@3.4.2/dist/waline.css"/><div id="waline"></div><style>
+.waline-feedback {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+/* Ocultar todo excepto reacciones */
+.waline-feedback .wl-editor,
+.waline-feedback .wl-header,
+.waline-feedback .wl-list,
+.waline-feedback .wl-count,
+.waline-feedback .wl-powered,
+.waline-feedback .wl-login,
+.waline-feedback .wl-footer {
+  display: none !important;
+}
+
+/* Contenedor de reacciones */
+.waline-feedback .wl-reaction {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+}
+
+/* Botones base */
+.waline-feedback .wl-reaction-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 0.9rem;
+  min-width: 180px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: var(--light);
+  color: var(--darkgray);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  position: relative;
+}
+
+.waline-feedback .wl-reaction-item span {
+  font-size: 1rem;
+}
+
+.waline-feedback .wl-reaction-item::after {
+  content: "";
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.waline-feedback .wl-reaction-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+/* 1) ❌ */
+.waline-feedback .wl-reaction-item:nth-child(1) {
+  background: #fee2e2;
+  border-color: #ef4444;
+}
+.waline-feedback .wl-reaction-item:nth-child(1)::after {
+  content: "No me funcionó";
+  color: #b91c1c;
+}
+
+/* 2) 😓 */
+.waline-feedback .wl-reaction-item:nth-child(2) {
+  background: #ffedd5;
+  border-color: #f97316;
+}
+.waline-feedback .wl-reaction-item:nth-child(2)::after {
+  content: "Difícil";
+  color: #c2410c;
+}
+
+/* 3) 😐 */
+.waline-feedback .wl-reaction-item:nth-child(3) {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+.waline-feedback .wl-reaction-item:nth-child(3)::after {
+  content: "Regular";
+  color: #4b5563;
+}
+
+/* 4) 🙂 */
+.waline-feedback .wl-reaction-item:nth-child(4) {
+  background: #dbeafe;
+  border-color: #3b82f6;
+}
+.waline-feedback .wl-reaction-item:nth-child(4)::after {
+  content: "Útil";
+  color: #1d4ed8;
+}
+
+/* 5) 🚀 */
+.waline-feedback .wl-reaction-item:nth-child(5) {
+  background: #dcfce7;
+  border-color: #22c55e;
+}
+.waline-feedback .wl-reaction-item:nth-child(5)::after {
+  content: "¡Me funcionó!";
+  color: #15803d;
+}
+
+@media (max-width: 700px) {
+  .waline-feedback .wl-reaction {
+    flex-direction: column;
+  }
+  .waline-feedback .wl-reaction-item {
+    width: 100%;
+  }
+}
+</style></div></div></div><div class="right sidebar"><div class="graph"><h3>Vista Gráfica</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-115" aria-expanded="true"><h3>Tabla de Contenidos</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#presentación" data-for="presentación">Presentación</a></li><li class="depth-0"><a href="#objetivo" data-for="objetivo">Objetivo</a></li><li class="depth-0"><a href="#soluciones" data-for="soluciones">Soluciones</a></li><li class="depth-1"><a href="#la-técnica-difícil" data-for="la-técnica-difícil">La técnica difícil</a></li><li class="depth-1"><a href="#la-cacharrera-fácil" data-for="la-cacharrera-fácil">La cacharrera fácil</a></li><li class="depth-1"><a href="#la-técnica-fácil" data-for="la-técnica-fácil">La técnica fácil</a></li><li class="depth-1"><a href="#la-cacharrera-difícil" data-for="la-cacharrera-difícil">La cacharrera difícil</a></li><li class="depth-0"><a href="#público" data-for="público">Público</a></li><li class="depth-1"><a href="#perfil-1---doña-marlén-interesada--destreza--" data-for="perfil-1---doña-marlén-interesada--destreza--">Perfil 1 - Doña Marlén, interesada (+), destreza (-)</a></li><li class="depth-1"><a href="#perfil-3--pepito-interesado---conocimiento-" data-for="perfil-3--pepito-interesado---conocimiento-">Perfil 3 – Pepito, interesado (-), conocimiento (+)</a></li><li class="depth-1"><a href="#perfil-2---paila-gorrea-interesada---destreza-" data-for="perfil-2---paila-gorrea-interesada---destreza-">Perfil 2 - Paila Gorrea, interesada (-), destreza (+)</a></li><li class="depth-1"><a href="#perfil-4--juanita-necesidad--conocimiento--" data-for="perfil-4--juanita-necesidad--conocimiento--">Perfil 4 – Juanita, necesidad (+), conocimiento (-)</a></li><li class="depth-0"><a href="#metodología" data-for="metodología">Metodología</a></li><li class="depth-1"><a href="#observador" data-for="observador">Observador</a></li><li class="depth-1"><a href="#moderador" data-for="moderador">Moderador</a></li><li class="depth-0"><a href="#agenda" data-for="agenda">Agenda</a></li><li class="depth-0"><a href="#observación-durante-la-prueba" data-for="observación-durante-la-prueba">Observación durante la prueba</a></li><li class="depth-0"><a href="#preguntas-de-retroalimentación-final" data-for="preguntas-de-retroalimentación-final">Preguntas de retroalimentación final</a></li><li class="depth-2"><a href="#reflexión-sobre-el-cambio-en-dispositivo-de-perfilar-interés-conocimiento-necesidades-y-destreza" data-for="reflexión-sobre-el-cambio-en-dispositivo-de-perfilar-interés-conocimiento-necesidades-y-destreza">Reflexión sobre el cambio en dispositivo de perfilar interés, conocimiento, necesidades y destreza</a></li><li class="depth-0"><a href="#herramientas-de-análisis" data-for="herramientas-de-análisis">Herramientas de análisis</a></li><li class="depth-1"><a href="#posibles-categorías-borrador" data-for="posibles-categorías-borrador">Posibles categorías (borrador)</a></li><li class="depth-1"><a href="#matriz-de-evaluación-de-criterios" data-for="matriz-de-evaluación-de-criterios">Matriz de evaluación de criterios</a></li><li class="depth-0"><a href="#materiales" data-for="materiales">Materiales</a></li><li class="depth-0"><a href="#conceptos-de-apoyo" data-for="conceptos-de-apoyo">Conceptos de apoyo</a></li><li class="depth-1"><a href="#instrucción" data-for="instrucción">Instrucción</a></li><li class="depth-1"><a href="#criterios" data-for="criterios">Criterios</a></li><li class="depth-1"><a href="#recomendaciones" data-for="recomendaciones">Recomendaciones</a></li><li class="depth-1"><a href="#características-de-un-texto-instructivo" data-for="características-de-un-texto-instructivo">Características de un texto instructivo</a></li><li class="depth-1"><a href="#pautas-para-escribir-un-texto-instructivo" data-for="pautas-para-escribir-un-texto-instructivo">Pautas para escribir un texto instructivo</a></li><li class="depth-1"><a href="#recursos" data-for="recursos">Recursos</a></li><li class="depth-1"><a href="#instrucciones-para-subir-una-escalera" data-for="instrucciones-para-subir-una-escalera">Instrucciones para subir una escalera</a></li><li class="overflow-end"></li></ul></div></div><footer class><div class="footer-section footer-links"><h3>Enlaces rápidos</h3><ul><li><a href="/nuevo-aqui-sole-voltaje">¿Nuevo aquí?</a></li><li><a href="/inspirate-sole-voltaje">Inspírate</a></li><li><a href="/soluciona-sole-voltaje">Soluciona</a></li><li><a href="/pregunta-comenta-sole-voltaje">Pregunta/Comenta</a></li><li><a href="/desconectado-sole-voltaje">¿Desconectado?</a></li><li><a href="/conceptorio-sole-voltaje">Conceptorio</a></li></ul></div><div class="footer-section footer-info"><p class="footer-project"><a href="http://voltaje.solecolombia.org/">SOLE Voltaje</a> es un proyecto de <a href="https://www.solecolombia.org/" target="_blank" rel="noopener noreferrer">SOLE Colombia</a> con el apoyo de <a href="https://www.isocfoundation.org/" target="_blank" rel="noopener noreferrer">Internet Society Foundation</a></p><p class="footer-license"><a href="http://voltaje.solecolombia.org/">SOLE Voltaje</a> 2025 by <a href="http://www.solecolombia.org/" target="_blank" rel="noopener noreferrer">Fundación SOLE Colombia</a> is licensed by <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-ShareAlike 4.0 International</a></p><p class="footer-tech">Creado con <a href="https://quartz.jzhao.xyz/" target="_blank" rel="noopener noreferrer">Quartz v4.5.2</a></p></div><div class="footer-section footer-custom"><ul><li><a href="/es">Página Principal</a></li><li><a href="https://www.solecolombia.org/" target="_blank" rel="noopener noreferrer">SOLE Colombia</a></li><li><a href="https://github.com/SOLE-Colombia/voltaje" target="_blank" rel="noopener noreferrer">GitHub</a></li></ul><div class="footer-branding"><img src="/static/icon.png" alt="SOLE Voltaje" class="footer-logo"/></div></div></footer></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="../../postscript.js" type="module"></script></html>

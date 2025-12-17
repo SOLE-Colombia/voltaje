@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr"><head><title>Prueba #04 SOLE Voltaje</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="SOLE Voltaje"/><meta property="og:title" content="Prueba #04 SOLE Voltaje"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Prueba #04 SOLE Voltaje"/><meta name="twitter:description" content="PROPÓSITO Aclarar la contribución de los usuarios a SOLE Voltaje Preguntas ¿Quién quiere contribuir? ¿Por qué quieren contribuir? ¿Cómo se produce la contribución en la actualidad? ¿Qué obstáculos (técnicos y no técnicos) encuentran los usuarios para contribuir? ¿Qué cambios no técnicos pueden intro..."/><meta property="og:description" content="PROPÓSITO Aclarar la contribución de los usuarios a SOLE Voltaje Preguntas ¿Quién quiere contribuir? ¿Por qué quieren contribuir? ¿Cómo se produce la contribución en la actualidad? ¿Qué obstáculos (técnicos y no técnicos) encuentran los usuarios para contribuir? ¿Qué cambios no técnicos pueden intro..."/><meta property="og:image:alt" content="PROPÓSITO Aclarar la contribución de los usuarios a SOLE Voltaje Preguntas ¿Quién quiere contribuir? ¿Por qué quieren contribuir? ¿Cómo se produce la contribución en la actualidad? ¿Qué obstáculos (técnicos y no técnicos) encuentran los usuarios para contribuir? ¿Qué cambios no técnicos pueden intro..."/><meta property="twitter:domain" content="voltaje.solecolombia.org"/><meta property="og:url" content="https://voltaje.solecolombia.org/es/inspire/insp-voltaje-test04"/><meta property="twitter:url" content="https://voltaje.solecolombia.org/es/inspire/insp-voltaje-test04"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="PROPÓSITO Aclarar la contribución de los usuarios a SOLE Voltaje Preguntas ¿Quién quiere contribuir? ¿Por qué quieren contribuir? ¿Cómo se produce la contribución en la actualidad? ¿Qué obstáculos (técnicos y no técnicos) encuentran los usuarios para contribuir? ¿Qué cambios no técnicos pueden intro..."/><meta name="generator" content="Quartz"/><link href="../../index.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL2hvbWUvcnVubmVyL3dvcmsvdm9sdGFqZS1kZXYvdm9sdGFqZS1kZXYvcXVhcnR6L2NvbXBvbmVudHMvc3R5bGVzIiwic291cmNlcyI6WyJtZXJtYWlkLmlubGluZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFHRjtFQUNFOzs7QUFLRjtFQUNFO0VBQ0E7OztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFOztBQUlGO0VBQ0U7RUFDQTtFQUNBIiwic291cmNlc0NvbnRlbnQiOlsiLmV4cGFuZC1idXR0b24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsb2F0OiByaWdodDtcbiAgcGFkZGluZzogMC40cmVtO1xuICBtYXJnaW46IDAuM3JlbTtcbiAgcmlnaHQ6IDA7IC8vIE5PVEU6IHJpZ2h0IHdpbGwgYmUgc2V0IGluIG1lcm1haWQuaW5saW5lLnRzXG4gIGNvbG9yOiB2YXIoLS1ncmF5KTtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICBib3JkZXI6IDFweCBzb2xpZDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBvcGFjaXR5OiAwO1xuICB0cmFuc2l0aW9uOiAwLjJzO1xuXG4gICYgPiBzdmcge1xuICAgIGZpbGw6IHZhcigtLWxpZ2h0KTtcbiAgICBmaWx0ZXI6IGNvbnRyYXN0KDAuMyk7XG4gIH1cblxuICAmOmhvdmVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgYm9yZGVyLWNvbG9yOiB2YXIoLS1zZWNvbmRhcnkpO1xuICB9XG5cbiAgJjpmb2N1cyB7XG4gICAgb3V0bGluZTogMDtcbiAgfVxufVxuXG5wcmUge1xuICAmOmhvdmVyID4gLmV4cGFuZC1idXR0b24ge1xuICAgIG9wYWNpdHk6IDE7XG4gICAgdHJhbnNpdGlvbjogMC4ycztcbiAgfVxufVxuXG4jbWVybWFpZC1jb250YWluZXIge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGNvbnRhaW46IGxheW91dDtcbiAgei1pbmRleDogOTk5O1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxMDB2dztcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogbm9uZTtcbiAgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDRweCk7XG4gIGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC41KTtcblxuICAmLmFjdGl2ZSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB9XG5cbiAgJiA+ICNtZXJtYWlkLXNwYWNlIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogNTAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICBoZWlnaHQ6IDgwdmg7XG4gICAgd2lkdGg6IDgwdnc7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcblxuICAgICYgPiAubWVybWFpZC1jb250ZW50IHtcbiAgICAgIHBhZGRpbmc6IDJyZW07XG4gICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICB0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7XG4gICAgICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4xcyBlYXNlO1xuICAgICAgb3ZlcmZsb3c6IHZpc2libGU7XG4gICAgICBtaW4taGVpZ2h0OiAyMDBweDtcbiAgICAgIG1pbi13aWR0aDogMjAwcHg7XG5cbiAgICAgIHByZSB7XG4gICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgfVxuXG4gICAgICBzdmcge1xuICAgICAgICBtYXgtd2lkdGg6IG5vbmU7XG4gICAgICAgIGhlaWdodDogYXV0bztcbiAgICAgIH1cbiAgICB9XG5cbiAgICAmID4gLm1lcm1haWQtY29udHJvbHMge1xuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgYm90dG9tOiAyMHB4O1xuICAgICAgcmlnaHQ6IDIwcHg7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZ2FwOiA4cHg7XG4gICAgICBwYWRkaW5nOiA4cHg7XG4gICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgYm9yZGVyLXJhZGl1czogNnB4O1xuICAgICAgYm94LXNoYWRvdzogMCAycHggNHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcbiAgICAgIHotaW5kZXg6IDI7XG5cbiAgICAgIC5tZXJtYWlkLWNvbnRyb2wtYnV0dG9uIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgIHdpZHRoOiAzMnB4O1xuICAgICAgICBoZWlnaHQ6IDMycHg7XG4gICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgICAgY29sb3I6IHZhcigtLWRhcmspO1xuICAgICAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICBmb250LWZhbWlseTogdmFyKC0tYm9keUZvbnQpO1xuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBlYXNlO1xuXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIH1cblxuICAgICAgICAmOmFjdGl2ZSB7XG4gICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDFweCk7XG4gICAgICAgIH1cblxuICAgICAgICAvLyBTdHlsZSB0aGUgcmVzZXQgYnV0dG9uIGRpZmZlcmVudGx5XG4gICAgICAgICY6bnRoLWNoaWxkKDIpIHtcbiAgICAgICAgICB3aWR0aDogYXV0bztcbiAgICAgICAgICBwYWRkaW5nOiAwIDEycHg7XG4gICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iXX0= */</style><script src="../../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://voltaje.solecolombia.org/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://voltaje.solecolombia.org/es/inspire/insp-voltaje-test04-og-image.webp"/><meta property="og:image:url" content="https://voltaje.solecolombia.org/es/inspire/insp-voltaje-test04-og-image.webp"/><meta name="twitter:image" content="https://voltaje.solecolombia.org/es/inspire/insp-voltaje-test04-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="es/inspire/insp-voltaje-test04"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../.." aria-label="SOLE Voltaje"><img src="../../static/logo.png" alt class="page-logo"/></a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><details class="lang-toggle" data-lang-toggle="true"><summary class="lang-summary" aria-label="Cambiar idioma"><span class="lang-summary-flag" aria-hidden="true">🇪🇸</span><span class="lang-summary-code">ES</span></summary><div class="lang-menu" role="menu" aria-label="Idiomas disponibles"><button type="button" class="lang-option" role="menuitem" data-lang="es"><span aria-hidden="true">🇪🇸</span> ES</button><button type="button" class="lang-option" role="menuitem" data-lang="en"><span aria-hidden="true">🇺🇸</span> EN</button><button type="button" class="lang-option" role="menuitem" data-lang="pt"><span aria-hidden="true">🇵🇹</span> PT</button></div></details></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Modo oscuro"><title>Modo oscuro</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Modo claro"><title>Modo claro</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="download-button" aria-label="Descargar esta página como PDF" title="Descargar página"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Descargar página</title><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Modo lector"><title>Modo lector</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Buscar</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Busca algo" placeholder="Busca algo"/><div class="search-layout" data-preview="true"></div></div></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-lang-default="es" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>{let customOrder=[\&quot;new-here\&quot;,\&quot;inspire\&quot;,\&quot;solve\&quot;,\&quot;answers-comments\&quot;,\&quot;disconnected\&quot;,\&quot;glossary\&quot;,\&quot;general\&quot;],indexA=customOrder.indexOf(a.slugSegment),indexB=customOrder.indexOf(b.slugSegment);return indexA!==-1&amp;&amp;indexB!==-1?indexA-indexB:indexA!==-1?-1:indexB!==-1?1:!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1}&quot;,&quot;filterFn&quot;:&quot;node=>!(node.slugSegment===\&quot;tags\&quot;||node.slugSegment===\&quot;_staging\&quot;)&quot;,&quot;mapFn&quot;:&quot;node=>{let langFolders=node.children.filter(child=>child.isFolder&amp;&amp;(child.slugSegment===\&quot;es\&quot;||child.slugSegment===\&quot;en\&quot;));if(langFolders.length>0){let promotedChildren=langFolders.flatMap(langFolder=>langFolder.children);node.children=node.children.filter(child=>!langFolders.includes(child)).concat(promotedChildren)}}&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-383"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><div id="explorer-383" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../es/">SOLE Voltaje</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../es/inspire/">Inspírate</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Prueba #04 SOLE Voltaje</a></div></nav><h1 class="article-title">Prueba #04 SOLE Voltaje</h1><p show-comma="true" class="content-meta"><time datetime="2025-12-16T23:37:17.000Z">16 dic 2025</time><span>Se lee en 17 min</span></p><ul class="tags"><li><a href="../../tags/Metodología" class="internal tag-link">Metodología</a></li><li><a href="../../tags/Prueba" class="internal tag-link">Prueba</a></li></ul></div></div><article class="popover-hint"><h1 id="propósito"><strong>PROPÓSITO</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#propósito" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Aclarar la contribución de los usuarios a SOLE Voltaje</p>
+<h2 id="preguntas">Preguntas<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#preguntas" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>¿Quién quiere contribuir?</p>
+<p>¿Por qué quieren contribuir?</p>
+<p>¿Cómo se produce la contribución en la actualidad?</p>
+<p>¿Qué obstáculos (técnicos y no técnicos) encuentran los usuarios para contribuir?</p>
+<p>¿Qué cambios no técnicos pueden introducirse para incentivar la contribución?</p>
+<p>El día después, ¿cómo la contribución de los participantes se vuelve en algo cotidiano?</p>
+<p>¿Qué elementos son relevantes/importantes para la interacción en grupo con SOLE Voltaje?</p>
+<h1 id="momentos">Momentos<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#momentos" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h2 id="el-práctico-estación-de-cacharreo-y-de-sole-como-práctica">El práctico: Estación de cacharreo y  de SOLE como práctica<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#el-práctico-estación-de-cacharreo-y-de-sole-como-práctica" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="descripción">DESCRIPCIÓN<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#descripción" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>¿Qué se va a hacer?: Aclarar la contribución de los usuarios mediante su participación activa en talleres de cacharreo y prácticas de SOLE alternativas (a la práctica habitual en condiciones idóneas).</li>
+<li>¿Cómo se va hacer?: A través de actividades de cacharreo y de SOLEs alternativos en donde participantes pueden probar esta Estación según su motivación.</li>
+<li>¿Para qué?: Si la gente experimenta un taller creativo de cacharreo y SOLEo alternativo puede vivir e imaginar casos de uso en sus retos o proyectos personales u organizacionales y darnos retroalimentación respecto a las preguntas del propósito del evento.</li>
+</ul>
+<p><a href="../../downloads/20240523-solebolt-voltaje-evento-pre-lanzamiento-sole-voltaje-estacin-cacharreo-y-sole-alternativo.pdf" class="internal alias" data-slug="downloads/20240523-solebolt-voltaje-evento-pre-lanzamiento-sole-voltaje-estacin-cacharreo-y-sole-alternativo.pdf">20240523_SOLE+BOLT_Voltaje_Evento Pre-lanzamiento SOLE Voltaje_Estación cacharreo y SOLE alternativo.pdf</a></p>
+<h2 id="online">Online<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#online" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>Momento</strong></th><th><strong>t</strong></th><th><strong>Descripción</strong></th><th><strong>Recursos</strong></th></tr></thead><tbody><tr><td>0. Introducción</td><td>5</td><td>Lo primero que se encuentran es una cartelera con algunas instrucciones, luego está el compu y al otro lado de la cartelera unos buzones numerados con 1,2 y 3, que siguen el hilo de las instrucciones.</td><td></td></tr><tr><td><strong>Cartelera</strong></td><td></td><td></td><td></td></tr><tr><td>Hola, </td><td></td><td></td><td></td></tr><tr><td>Te encuentras en la estación online, acá podrás interactuar con la primera versión de Voltaje desarrollada hace 2 años.Hemos diseñado una experiencia guiada para provocarte a conocer las diferentes soluciones que comprende esta guía de conectividad. A continuación te dejamos una serie de instrucciones para facilitar esta experiencia:</td><td></td><td></td><td></td></tr></tbody></table></div>
+<ol>
+<li>xxx</li>
+<li>xxx</li>
+<li>| Cartelera
+Buzón |
+| 1. Explora el Helper de SOLE Voltaje | 5 | Acercate al computador y escribe “Sole Colombia Voltaje” en un buscador, apenas entras a la página navega por el cuestionario que hemos creado para seleccionar las soluciones más adecuadas para ti.
+Escribe las soluciones que te aparecieron en la agenda que te dimos al inicio del bazar.
+Ahora vuelve a la cartelera y lee la siguiente instrucción. | Computador |
+| 2. Buzón de preguntas | 5 | Destapa el buzón y saca la primera carta. Piensa un momento en la pregunta que te salió y escribe tu respuesta en la agenda que te dimos al inicio del bazar. 
+<em>P1: ¿Te has preguntado cómo llega el Internet, la luz,o la señal móvil a ti?</em>
+<em>P1: ¿Has tenido alguna vez problemas para conectarte a Internet?</em>
+<em>P1: ¿Te imaginas viviendo desconectado de Internet?</em> | Buzón
+Fichas de cartulina con preguntas.
+Agenda
+Esfero |
+| 3. Navega las soluciones | 5 | ¡Navega por las soluciones seleccionadas, descubre todas las  categorías y todas las soluciones disponibles para ti! Cuando termines destapa la segunda carta del buzón. | Computador |
+| 4. Buzón de preguntas 2 | 5 | Destapa el buzón y saca la segunda carta. Piensa un momento en la pregunta que te salió y escribe tu respuesta en la agenda que te dimos al inicio del bazar.
+<em>¿Hay algo de la lista de soluciones que te haya cautivado?</em>
+<em>¿Te atreverías a probarlo?¿Qué es lo que te motiva a querer probarlo?</em> 
+Ve a la cartelera de instrucciones para poder destapar la última carta que hemos escrito para ti | Buzón |
+| 5. Hazlo tú mismo: Escoge una solución que te llame la atención y abre la última    carta. | 5 | Buzón de preguntas: (pensar en frase de apertura) Sorpresa ¡Tenemos todos los materiales que necesitas para hacer tu solución! Busca en la mesa de materiales y sigue el paso a paso de SOLE Voltaje. | Buzón |</li>
+</ol>
+<p><strong>A.Cartelera que acompaña el compu con instrucción:</strong></p>
+<p><strong>A.1. Tiddly:</strong> Lo primero que se encuentran es una cartelera con algunas instrucciones, luego está el compu y al otro lado de la cartelera unos buzones numerados con 1,2 y 3, que siguen el hilo de las instrucciones 🙂</p>
+<p><strong>1. Explora el Helper de SOLE Voltaje:</strong></p>
+<p>(5 min) ¡Navega por el cuestionario que hemos creado para seleccionar las soluciones más adecuadas para ti! y cuando termines, destapa el buzón y saca la primera carta.</p>
+<p><strong>(2 min) Buzón de preguntas:</strong></p>
+<p><em><strong>(pensar en frases de apertura)</strong></em></p>
+<p><em>¿Te has preguntado cómo llega el Internet, la luz,o la señal móvil a ti?</em></p>
+<p><em>¿Has tenido alguna vez problemas para conectarte a Internet?</em></p>
+<p><em>¿Te imaginas viviendo desconectado de Internet….</em></p>
+<p>Vuelve a la cartelera de instrucciones y sigue con el segundo paso.</p>
+<p><strong>2. Las soluciones:</strong></p>
+<p>(5 min) ¡Navega por las soluciones seleccionadas, descubre todas las  categorías y todas las soluciones disponibles para ti! Cuando termines destapa la siguiente carta del buzón.</p>
+<p><strong>(2 min) Buzón de preguntas:(pensar frases de apertura)</strong></p>
+<p><em>¿Hay algo de la lista de soluciones que te haya cautivado?</em></p>
+<p><em>¿Te atreverías a probarlo?¿Qué es lo que te motiva a querer probarlo?</em></p>
+<p>Ve a la cartelera de instrucciones para poder destapar la última carta que hemos escrito para ti.</p>
+<p><strong>3. Hazlo tú mismo: Escoge una solución que te llame la atención y abre la última    carta.</strong></p>
+<p><strong>(5 min) Buzón de preguntas: (pensar en frase de apertura) Sorpresa</strong> <em>¡Tenemos todos los materiales que necesitas para hacer tu solución! Busca en <strong>la mesa</strong> de materiales y sigue el paso a paso de SOLE Voltaje.</em></p>
+<p><strong>A.2. Notion:</strong></p>
+<p><strong>1.Descripción: Hay 20 buzones con una carta, por un lado está la pregunta para motivarlos a hacer alguna de las soluciones y por detrás está el llamado a la acción de la solución que corresponde a esa pregunta.</strong></p>
+<p><strong>1. Las soluciones:</strong></p>
+<p>(5 min) ¡Navega por la página que hemos creado y descubre múltiples soluciones para volverte un cacharrero!</p>
+<p><em>¿Hay algo de la lista de soluciones que te haya cautivado?</em></p>
+<p><em>¿Te atreverías a probarlo?¿Qué es lo que te motiva a querer probarlo?</em></p>
+<p>Ve a la cartelera de instrucciones para poder destapar la última carta que hemos escrito para ti.</p>
+<p>Vuelve a la cartela de instrucciones y sigue con el segundo paso.</p>
+<p><strong>2. Hazlo tú mismo: Escoge una solución que te llame la atención y abre la última    carta.</strong></p>
+<p>Ve a los buzones y toma la carta con la pregunta que más te llame la atención, ahora volteala y haz la solución siguiendo el paso a paso en Notion. En la mesa de materiales encontrarás todo lo necesario para desarrollarla. ¡Manos a la obra!</p>
+<p><strong>Buzón de preguntas:</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>Solución</strong></th><th><strong>Mensaje carta</strong></th></tr></thead><tbody><tr><td>¡Aprende a diseñar tu invitación sin ser un experto!</td><td>¿Quieres que tus publicaciones en Redes llamen más la atención?</td></tr><tr><td>¿Cómo calcular un sistema de micro generación hidráulica que te sirva para tu finca?</td><td>¿Tienes una finca con río?¿Te gustaría tener electricidad gratis?</td></tr><tr><td>Paneles, turbinas o generadores para generar mi propia electricidad</td><td>¿Has pensado en desconectarte de la red eléctrica? o ¿No tienes electricidad? ¡Autogestionala!</td></tr><tr><td>¿Cómo comprar un computador para ti?</td><td>¡No te dejes estafar! ¿sabes cómo comprar el computador que se ajusta a tu presupuesto y necesidades? Descúbrelo aquí.</td></tr><tr><td>¿Cómo calcular un sistema de paneles solares que te sirva?</td><td>¡Aprovecha el sol al máximo y genera electricidad para tu casa!</td></tr><tr><td>¿Cómo comprar un servicio de internet satelital para lugares no interconectados?</td><td>¿Te has preguntado cuántas Gigas necesitas y por cuántas pagas? ¡No tienes que pagar de más para estar conectado a Internet! Descubre aquí por qué…</td></tr><tr><td>Internet para lugares no interconectados</td><td>¿Cómo demonios pongo internet en mi finca?</td></tr><tr><td>¿Cómo mejorar mi señal con una lata?</td><td>El Mc Gibber: Mejora tu señal con una lata</td></tr><tr><td>¿Cómo usar el juego para aprender a cuidar equipos en comunidad?</td><td>¡Un juego de mesa nuevo para tu comunidad!</td></tr><tr><td>Construye una antena 3G casera</td><td>¡Mejora la señal de tu celular con $50,000 pesos!</td></tr><tr><td>¿Cómo comprar una antena 3/4G?</td><td>La solución ideal para el campo si no quieres darle tu plata a Starlink</td></tr><tr><td>¿Cómo instalar una antena 3/4G?</td><td>¡Aprende a montar una antena!</td></tr><tr><td>Pide un salón comunal</td><td>Consigue un espacio gratuito para tus eventos</td></tr><tr><td>Consigue gratis un Big Box de Jangala</td><td>¡Gestiona un super-router gratis para tu comunidad!</td></tr><tr><td>¿Cómo amplificar tu señal móvil dentro de un espacio?</td><td>Tips sencillos para mejorara la señal de tu cel</td></tr><tr><td>¿Cómo hacer una buena invitación?</td><td>¿Quieres que tus amigos te copien para ir a un concierto?</td></tr><tr><td>Crea un mensaje potente</td><td>¿Te ha pasado que compartes tus ideas, pero no encuentras</td></tr><tr><td>¿Cómo comprar un plan celular adecuado para mi?</td><td>Has el mejor negocio posible al comprar tu celular</td></tr><tr><td>Descubre a tu audiencia</td><td>¿Has pensado si lo que haces llega a quiénes quieres dirigirte?</td></tr><tr><td>Difunde tu mensaje</td><td>¿Te gustaría que tu mensaje llegue al infinito y más allá?</td></tr></tbody></table></div>
+<h1 id="estación-chatbox">Estación Chatbox<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#estación-chatbox" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h3 id="descripción-1">DESCRIPCIÓN<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#descripción-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>¿Podríamos plantear una relación con un Chatbot más allá de entradas y salidas? ¿Podría un Chatbot, de ahora en adelante Chatbox, invitarnos a descubrir el internet de una manera que ni el mismo Chatbox pueda anticipar?</p>
+<p>Con esta estación queremos invitar a los/as participantes a descubrir las posibilidades que tiene SOLE Voltaje y el espíritu cacharrero por medio de la circulación por el espacio. Por otra parte, es una provocación para reflexionar sobre aquellas relaciones entre los humanos que las máquinas no puedan anticipar.</p>
+<h3 id="fases">Fases<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#fases" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Momento 1:</strong> Camino Chat Box: las personas recorreran un tapete con OCHO (8) posibilidades que tiene SOLE Voltaje. Dependiendo de dónde se paren las personas, un sensor de infrarojo con arduino producirá sonidos y efectos que invitan a los/as participantes a recorrer el espacio con respecto al lugar en el que está parado.</p>
+<ol>
+<li>CONVOCAR/PERSONAS: ¿Quieres conocer herramientas para convocar a otras personas a usar el internet en grupo?</li>
+<li>ESPACIO: ¿Quieres encontrar un espacio público para usar el internet?</li>
+<li>EQUIPOS: ¿Quieres conseguir la tecnología necesaria para conectarte a internet?</li>
+<li>ELECTRICIDAD: ¿Quieres encontrar una solución cuando la electricidad falla o es intermitente?</li>
+<li>SEÑAL: ¿Quieres encontrar soluciones cuando la señal de internet falla o es intermitente?</li>
+<li>EXPERIENCIAS: ¿Quieres conocer experiencias comunidades que están mejorando su conectividad a internet?</li>
+<li>CACHARRERO OFFLINE: ¿Quieres conocer cómo funciona el internet y la conectividad en el lugar en el que estás?</li>
+<li>PREGUNTAS (DATOS): ¿Quieres reflexionar sobre nuestra relación con el internet?</li>
+</ol>
+<p><strong>Momento 2:</strong> Descubre el espacio: al escoger una opción, el ChatBox y el espacio le indica a la persona que puede ir a recorrer el espacio a descubrir aquello que le interesó. Cada momento debería tener una reflexión o historia que invite a leer, escuchar y conocer más.</p>
+<ol>
+<li>PERSONAS: recorre el espacio y encuentra las herramientas para convocar a otras personas a usar el internet en grupo</li>
+<li>ESPACIO: recorre el espacio y encuentra un espacio público para usar el internet</li>
+<li>EQUIPOS: recorre el espacio y consigue la tecnología necesaria para conectarte a internet</li>
+<li>ELECTRICIDAD: recorre el espacio y encuentra una solución cuando la electricidad falla o es intermitente</li>
+<li>SEÑAL: recorre el espacio y encuentra soluciones cuando la señal de internet falla o es intermitente</li>
+<li>EXPERIENCIAS: recorre el espacio y conoce experiencias comunidades que están mejorando su conectividad a internet</li>
+<li>CACHARRERO OFFLINE: recorre el espacio y conoce cómo funciona el internet y la conectividad en el lugar en el que estás</li>
+<li>PREGUNTAS (DATOS): recorre el espacio y reflexiona con algunas preguntas sobre nuestra relación con el internet</li>
+</ol>
+<p><strong>Momento 3:</strong> Volver o continuar:</p>
+<p>Cada momento tendrá 3 opciones que estarán distribuidas de manera aleatoria por el espacio y que posibilitarán múltiples posibilidades para descubrir y recorrer Voltaje. Al finalizar una opción, el/la participante podrá volver (o ir por primera vez) al ChatBox o continuar con otras historias de la misma opción u otras opciones.</p>
+<h2 id="recursos">Recursos<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#recursos" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li>Lana de diferentes colores</li>
+<li>Post It</li>
+<li>Cartón corrugado medio pliego</li>
+</ul>
+<h2 id="cómo-se-recibe-retroalimentación-en-términos-de-retoalimentación-cómo-surge-el-espiritu-cacharrero-según-la-experiencia">¿Cómo se recibe retroalimentación en términos de retoalimentación? ¿Cómo surge el espiritu cacharrero según la experiencia?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#cómo-se-recibe-retroalimentación-en-términos-de-retoalimentación-cómo-surge-el-espiritu-cacharrero-según-la-experiencia" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Las personas dejarán un puntico en aquellas opciones que visitaron a lo largo del recorrido. Al final haremos una pregunta de por qué visitaron esas opciones y qué sintieron al visitarlas.</p>
+<h1 id="estación-chatcacharreo">Estación ChatCacharreo<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#estación-chatcacharreo" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h2 id="descripción-2">DESCRIPCIÓN<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#descripción-2" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>¿Cómo nos damos cuenta de que no estamos solos en este asunto de la cacharrería? ¿Cómo nos acompañamos y apoyamos en la exploración de soluciones para mejorar nuestra experiencia de usar el Internet en grupo?</p>
+<p>El chat de whatsapp es un lugar para que las personas que están teniendo retos de conectividad o que estén construyendo las soluciones de Voltaje:</p>
+<ul>
+<li>encuentren una comunidad que les ayude a salir del paso con las dificultades puntuales que tengan</li>
+<li>puedan compartir/recibir nuevas soluciones que no están en Voltaje</li>
+<li>compartir/recibir cómo en otros lugares están utilizando soluciones que pueden o no estar en voltaje (por ejemplo, “5 trucos para…” o demás contenidos que podamos encontrar en internet y ver cómo reaccionan las personas) - ojo al final, la invitación es usar el internet en grupo</li>
+<li>compartir / recibir información interesante sobre retos y soluciones de conectividad en el mundo, descubrimientos, trabajo en otros lugares, iniciativas…</li>
+<li>prestar apoyo a quienes se aventuren a explorar el espacio de voltaje, y de la prueba, y se encuentren perdidos - helper?</li>
+</ul>
+<p>El propósito de la actividad es observar cómo las personas que participan de los retos interactúan con este canal, analizar si es importante y útil para ellos, y recibir retroalimentación sobre la interacción que se desarrolle ese día para hacer las construcciones y/o modificaciones que requiera para cumplir su cometido, y prestar apoyo entre todos a las personas que interactúen con Voltaje y con la prueba.”</p>
+<h2 id="fases-1">FASES<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#fases-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="propósito-1">Propósito:<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#propósito-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Experimentar el uso del chat de whatsapp para compartir y discutir soluciones de conectividad. Cada desafío dura 30 minutos y los desafíos pueden tener lugar al mismo tiempo que los participantes interactúan con el resto de actividades de la instalación. Hay un grupo que comienza en esta estación y que se encarga de empezar el desafío 1, a los 30 minutos avisamos para que el siguiente grupo inicie el desafío 2 (se repite lo mismo con el 3).</p>
+<h3 id="actividades">Actividades:<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#actividades" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>La presentación de cada desafío la hace Bel por el grupo de wapp</p>
+<ul>
+<li>Desafío 1 (30 minutos): El grupo encargado del desafío debe decidir entre todas las entradas de presentación cuál es le reto de conectividad que les parece más chévere. La discusión se da en directo (entre las personas que interactúan en este grupo) y en el chat, con las personas que no están en el lugar. También las personas que están en otras estaciones pueden participar de la discusión pero quienes dinamizan o dirigen este desafío son los del grupo que inicia. En el chat debe quedar claro cuál es el reto de conectividad que eligen para resolver.</li>
+<li>Desafío 2 (30 minutos): El grupo que quede encargado del Desafío 2 debe encontrar la solución para el reto propuesto en el primer desafío, consultando en la guía de SOLE Voltaje y lo que hayan experimentado en el resto del espacio. La discusión debe quedar reflejada en el chat y la decisión de qué solución es la más apropiada debe ser clara para todos los integrantes del chat. Pueden solicitar opiniones y experiencias de todos los miembros. Las cacharreras del chat pueden estimular la discusión y también pueden animar a la exploración del espacio en el taller, o la experimentación en las demás estaciones.</li>
+<li>Desafío 3 (30 minutos): el grupo encargado recoge el testigo del grupo anterior (debe comprenderlo leyendo el chat) y selecciona las interacciones en el chat que les hayan parecido especialmente útiles o interesantes. Luego, deben analizar cómo la estructura del chat (como la organización de mensajes, el tipo de respuestas, el uso de multimedia) contribuyó a la comprensión y resolución del problema.”</li>
+</ul>
+<h2 id="recursos-1">RECURSOS<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#recursos-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>impresiones:</p>
+<ul>
+<li>letrero de pesentación de la estación - ok</li>
+<li>poster con la información del chat: qr + descripción de la estación - ok</li>
+</ul>
+<p>otros:</p>
+<ul>
+<li>vídeo de presentación de toda la experiencia - elaborar el guión</li>
+<li>vídeo de presentación del chat-chatarreras - elaborar el guión</li>
+</ul>
+<h2 id="materiales">materiales:<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#materiales" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>comprar + intervenir
+· 1 bolsa de globos para señalizar en el espacio cuáles son los lugares de chateo
+· cuerdita para colgarlos del techo a diferente altura
+· elemento &quot;&quot;testigo&quot;&quot; - ¿puede ser el mismo reloj? poner la hora para el siguiente corte
+· reloj análógico para medir el tiempo (<a href="mailto:nicolas@solecolombia.org" class="external">nicolas@solecolombia.org<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>)</p>
+<h2 id="cómo-se-recibe-retroalimentación">¿Cómo se recibe retroalimentación?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#cómo-se-recibe-retroalimentación" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>¿Cómo surge el espiritu cacharrero según la experiencia?</p>
+<ul>
+<li>analizaremos la conversación que se dará en el chat</li>
+<li>hipótesis: la gente se animará a colaborar, aunque sea en diferido, de la experiencia de elección del reto + encontrar la solución más adecuada + cuáles son los pasos de la conversación que más ayudaron</li>
+<li>plantilla de sistematización de la experiencia (<a href="mailto:mateo@solecolombia.org" class="external">mateo@solecolombia.org<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> )</li>
+</ul>
+<h1 id="estación-qué-video">Estación ¡Qué Video!<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#estación-qué-video" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h2 id="descripcion">DESCRIPCION<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#descripcion" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>En esta estación los asistentes podrán elegir qué video de Voltaje ver (Técnica Antena Casera, Gancho Antena Casera, Gancho Jangala, Reflexión Juego de Peces). La experiencia se dará de manera individual, pues la persona se pondrá unos audífonos y verá el video que haya elegido.</p>
+<h2 id="fases-2">Fases<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#fases-2" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li>Experiencia viendo uno o más videos</li>
+<li>Retroalimentación a partir de la interacción con el cartel y los buzones de conexión y desconexión.</li>
+</ol>
+<h2 id="recursos-2">RECURSOS<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#recursos-2" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Televisor, audífonos, letrero estación, impresión cartel, buzón de desconexión.
+¿Cómo se recibe retroalimentación en términos de retoalimentación? ¿Cómo surge el espiritu cacharrero según la experiencia?</p>
+<p>En un cartel, las personas podrán marcar en una casilla, cuál o cuáles video(s) vieron. En otra casilla del cartel podrán marcar en una escala de 0-5 qué tanto los motivo a cacharrear o a descubrir la solución planteada en cada uno de los videos que vieron.</p>
+<h2 id="materiales-1">Materiales<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#materiales-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>2 buzones, papeles, stickers.</p>
+<h1 id="agenda-general">Agenda general<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#agenda-general" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>º</strong></th><th><strong>MOMENTO</strong></th><th><strong>MOMENTO DE LA EXPERIENCIA DE USUARIO</strong></th><th><strong>DESCRIPCIÓN</strong></th><th><strong>ENCARGADO</strong></th><th><strong>RECURSOS</strong></th><th><strong>DATOS</strong> ¿Cómo se recibe retroalimentación en términos de MOTIVACIÓN? ¿Cómo surge el espiritu cacharrero según la experiencia? ¿Cómo sabemos si les gusta o no?</th><th></th></tr></thead><tbody><tr><td>8:30</td><td>LLEGADA E INTERACCIÓN CON DISPOSITIVOS</td><td>0. BEING PROVOKED</td><td>las personas van explorando el espacio e interactuando con los dispositivos:Árbol de decisión: Compartir y privilegioEscalera de los privilegios tecnológicosPreguntas motivación(No hacer reflexión sino preguntar, dejar abierto y recordar que al final se retoma la reflexión.)</td><td>Manu: ÁrbolMate: PreguntasNico: Escalera</td><td>3 dispositivos</td><td></td><td></td></tr><tr><td>9:00</td><td>APERTURA</td><td>0. BEING PROVOKED</td><td>1. Saludo + Presentaciones + Autorización uso de imagen2. Presentar SOLE Voltaje + Presentación del Bazar (Recorrido). El Bazar es una forma de vivir Voltaje3. Invitación al Chat de Whatsapp4. Soltar: las personas descubren el Bazar..</td><td>1.San 2.San + Estación3.Bel</td><td>videobeam</td><td></td><td></td></tr><tr><td>9:30</td><td>BAZAR</td><td>1. ACCESING CONTENT2. Finding Relevant / Meaningful Content3. Engaging with Content4. Putting Learnings from Content into Practice</td><td>Estaciones: 1. Estación Cacharreo (San) + Seguridad2. Cacharrero Offline (Mate)3. Estación ¡Qué video! (Maria José) 4. Enchúfate (Manu y Nico)5. Chatbox (Mate)6. Chat Cacharreras (Bels)</td><td></td><td><a href="https://docs.google.com/document/d/1pLuqkrSL47U5cr7q2K5_aq5uJQ0Yd2iqBQKwWeI1BDs/edit?pli=1" class="external">20240801_SOLE+BOLT_Preguntas para sistematizar el Bazar<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></td><td></td><td></td></tr><tr><td>11:15</td><td>RETROALIMENTACIÓN</td><td>5. Verify Success of Learnings6. A. Contributing Content B. Sharing Content</td><td><strong>1. PREGUNTAS DE MOTIVACIÓN Apartir del lienzo y de la segunda intervención de las personas en el lienzo hacemos una reflexión e inciamos la conversación..¿en que consiste esta conversación?  2. COLLAGE: INSTRUCCIONES (MATE)¿Cómo se sintieron durante el espacio? (MATE)¿Hay algo que les gustaría decir sobre lo que vivieron esta mañana? (MANU)¿Qué te motivo y desmotivo en las estaciones con las que interactuaste? De qué estación estás hablando. (BELS)¿Qué barreras e incentivos crees que habría para cacharrear con Voltaje? (NICO)3. CIERRE (SAN)¿Por qué estamos aquí? Qué es Voltaje, ¿por qué estamos haciendo una prueba? ¿Por qué los invitamos? ¿Por qué hablamos de una comunidad de cacharerros?- ¿Cuál es el porqué de cada estación?</strong></td><td>1. MATE2. TODOS3. SAN</td><td></td><td></td><td>- ¿piensan que estaban relacionadas? ¿en qué puntos se expresaba esa conexión? - ¿qué piensan de la estética del espacio y de los recursos? - ¿qué fue lo que más les gustó? - ¿algo los confundió? ¿qué cosas y en qué momento sintieron esa confusión? el espíritu cacharrero es esa motivación que tenemos a aventurarnos en la tecnología, entendida de manera amplia, es esas ganas que tenemos de experimentar y solucionar los retos por nuestra cuenta, incluso con nuestras propias manos, ¿cómo se sintieron en la experiencia completa? ¿qué tan cacharreros se sintieron?</td></tr><tr><td>12:00</td><td>DESPEDIDA</td><td>6. A. Contributing Content B. Sharing Content</td><td>1. Llamado a la acción: Permitanos alimentar nuestra guía con sus soluciones - estamos en el chat-cacharreros 2. ¿Qué se llevan? lo que comenzaron a armar y la invitación para que traigan a otros al grupo de Whatsapp</td><td>SAN</td><td></td><td></td><td></td></tr></tbody></table></div>
+<h1 id="as">as<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#as" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p><a href="https://notionreactions.com/embed/iRGshw9x6PbHd6lYmFH9" class="external">https://notionreactions.com/embed/iRGshw9x6PbHd6lYmFH9<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<hr/>
+<p><a href="../../nuevo-aqui-sole-voltaje" class="internal alias" data-slug="nuevo-aqui-sole-voltaje">¿Nuevo aquí?</a></p>
+<p><a href="../../es/_staging/inspirate-sole-voltaje" class="internal alias" data-slug="es/_staging/inspirate-sole-voltaje">Inspírate</a></p>
+<p><a href="../../es/_staging/soluciona-sole-voltaje" class="internal alias" data-slug="es/_staging/soluciona-sole-voltaje">Soluciona</a></p>
+<p><a href="../../es/answers-comments/pregunta-comenta-sole-voltaje" class="internal alias" data-slug="es/answers-comments/pregunta-comenta-sole-voltaje">Comenta</a></p>
+<p><a href="../../es/disconnected/desconectado-sole-voltaje" class="internal alias" data-slug="es/disconnected/desconectado-sole-voltaje">¿Desconectado?</a></p>
+<p><a href="../../es/_staging/conceptorio-sole-voltaje" class="internal alias" data-slug="es/_staging/conceptorio-sole-voltaje">Conceptorio</a></p>
+<p><em>SOLE Voltaje is a project by <a href="https://www.solecolombia.org/" class="external">SOLE Colombia<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> supported by <a href="https://www.isocfoundation.org/" class="external">Internet Society Foundation<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></em></p>
+<p><a href="http://voltaje.solecolombia.org/" class="external">SOLE Voltaje<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>  2024 by <a href="http://www.solecolombia.org/" class="external">Fundación SOLE Colombia<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> is licensed by <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" class="external">Creative Commons Attribution-ShareAlike 4.0 International<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p></article><hr/><div class="page-footer"><div class="waline-feedback"><link rel="stylesheet" href="https://unpkg.com/@waline/client@3.4.2/dist/waline.css"/><div id="waline"></div><style>
+.waline-feedback {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+/* Ocultar todo excepto reacciones */
+.waline-feedback .wl-editor,
+.waline-feedback .wl-header,
+.waline-feedback .wl-list,
+.waline-feedback .wl-count,
+.waline-feedback .wl-powered,
+.waline-feedback .wl-login,
+.waline-feedback .wl-footer {
+  display: none !important;
+}
+
+/* Contenedor de reacciones */
+.waline-feedback .wl-reaction {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+}
+
+/* Botones base */
+.waline-feedback .wl-reaction-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 0.9rem;
+  min-width: 180px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: var(--light);
+  color: var(--darkgray);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  position: relative;
+}
+
+.waline-feedback .wl-reaction-item span {
+  font-size: 1rem;
+}
+
+.waline-feedback .wl-reaction-item::after {
+  content: "";
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.waline-feedback .wl-reaction-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+/* 1) ❌ */
+.waline-feedback .wl-reaction-item:nth-child(1) {
+  background: #fee2e2;
+  border-color: #ef4444;
+}
+.waline-feedback .wl-reaction-item:nth-child(1)::after {
+  content: "No me funcionó";
+  color: #b91c1c;
+}
+
+/* 2) 😓 */
+.waline-feedback .wl-reaction-item:nth-child(2) {
+  background: #ffedd5;
+  border-color: #f97316;
+}
+.waline-feedback .wl-reaction-item:nth-child(2)::after {
+  content: "Difícil";
+  color: #c2410c;
+}
+
+/* 3) 😐 */
+.waline-feedback .wl-reaction-item:nth-child(3) {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+.waline-feedback .wl-reaction-item:nth-child(3)::after {
+  content: "Regular";
+  color: #4b5563;
+}
+
+/* 4) 🙂 */
+.waline-feedback .wl-reaction-item:nth-child(4) {
+  background: #dbeafe;
+  border-color: #3b82f6;
+}
+.waline-feedback .wl-reaction-item:nth-child(4)::after {
+  content: "Útil";
+  color: #1d4ed8;
+}
+
+/* 5) 🚀 */
+.waline-feedback .wl-reaction-item:nth-child(5) {
+  background: #dcfce7;
+  border-color: #22c55e;
+}
+.waline-feedback .wl-reaction-item:nth-child(5)::after {
+  content: "¡Me funcionó!";
+  color: #15803d;
+}
+
+@media (max-width: 700px) {
+  .waline-feedback .wl-reaction {
+    flex-direction: column;
+  }
+  .waline-feedback .wl-reaction-item {
+    width: 100%;
+  }
+}
+</style></div></div></div><div class="right sidebar"><div class="graph"><h3>Vista Gráfica</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-117" aria-expanded="true"><h3>Tabla de Contenidos</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#propósito" data-for="propósito">PROPÓSITO</a></li><li class="depth-1"><a href="#preguntas" data-for="preguntas">Preguntas</a></li><li class="depth-0"><a href="#momentos" data-for="momentos">Momentos</a></li><li class="depth-1"><a href="#el-práctico-estación-de-cacharreo-y-de-sole-como-práctica" data-for="el-práctico-estación-de-cacharreo-y-de-sole-como-práctica">El práctico: Estación de cacharreo y  de SOLE como práctica</a></li><li class="depth-2"><a href="#descripción" data-for="descripción">DESCRIPCIÓN</a></li><li class="depth-1"><a href="#online" data-for="online">Online</a></li><li class="depth-0"><a href="#estación-chatbox" data-for="estación-chatbox">Estación Chatbox</a></li><li class="depth-2"><a href="#descripción-1" data-for="descripción-1">DESCRIPCIÓN</a></li><li class="depth-2"><a href="#fases" data-for="fases">Fases</a></li><li class="depth-1"><a href="#recursos" data-for="recursos">Recursos</a></li><li class="depth-1"><a href="#cómo-se-recibe-retroalimentación-en-términos-de-retoalimentación-cómo-surge-el-espiritu-cacharrero-según-la-experiencia" data-for="cómo-se-recibe-retroalimentación-en-términos-de-retoalimentación-cómo-surge-el-espiritu-cacharrero-según-la-experiencia">¿Cómo se recibe retroalimentación en términos de retoalimentación? ¿Cómo surge el espiritu cacharrero según la experiencia?</a></li><li class="depth-0"><a href="#estación-chatcacharreo" data-for="estación-chatcacharreo">Estación ChatCacharreo</a></li><li class="depth-1"><a href="#descripción-2" data-for="descripción-2">DESCRIPCIÓN</a></li><li class="depth-1"><a href="#fases-1" data-for="fases-1">FASES</a></li><li class="depth-2"><a href="#propósito-1" data-for="propósito-1">Propósito:</a></li><li class="depth-2"><a href="#actividades" data-for="actividades">Actividades:</a></li><li class="depth-1"><a href="#recursos-1" data-for="recursos-1">RECURSOS</a></li><li class="depth-1"><a href="#materiales" data-for="materiales">materiales:</a></li><li class="depth-1"><a href="#cómo-se-recibe-retroalimentación" data-for="cómo-se-recibe-retroalimentación">¿Cómo se recibe retroalimentación?</a></li><li class="depth-0"><a href="#estación-qué-video" data-for="estación-qué-video">Estación ¡Qué Video!</a></li><li class="depth-1"><a href="#descripcion" data-for="descripcion">DESCRIPCION</a></li><li class="depth-1"><a href="#fases-2" data-for="fases-2">Fases</a></li><li class="depth-1"><a href="#recursos-2" data-for="recursos-2">RECURSOS</a></li><li class="depth-1"><a href="#materiales-1" data-for="materiales-1">Materiales</a></li><li class="depth-0"><a href="#agenda-general" data-for="agenda-general">Agenda general</a></li><li class="depth-0"><a href="#as" data-for="as">as</a></li><li class="overflow-end"></li></ul></div></div><footer class><div class="footer-section footer-links"><h3>Enlaces rápidos</h3><ul><li><a href="/nuevo-aqui-sole-voltaje">¿Nuevo aquí?</a></li><li><a href="/inspirate-sole-voltaje">Inspírate</a></li><li><a href="/soluciona-sole-voltaje">Soluciona</a></li><li><a href="/pregunta-comenta-sole-voltaje">Pregunta/Comenta</a></li><li><a href="/desconectado-sole-voltaje">¿Desconectado?</a></li><li><a href="/conceptorio-sole-voltaje">Conceptorio</a></li></ul></div><div class="footer-section footer-info"><p class="footer-project"><a href="http://voltaje.solecolombia.org/">SOLE Voltaje</a> es un proyecto de <a href="https://www.solecolombia.org/" target="_blank" rel="noopener noreferrer">SOLE Colombia</a> con el apoyo de <a href="https://www.isocfoundation.org/" target="_blank" rel="noopener noreferrer">Internet Society Foundation</a></p><p class="footer-license"><a href="http://voltaje.solecolombia.org/">SOLE Voltaje</a> 2025 by <a href="http://www.solecolombia.org/" target="_blank" rel="noopener noreferrer">Fundación SOLE Colombia</a> is licensed by <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-ShareAlike 4.0 International</a></p><p class="footer-tech">Creado con <a href="https://quartz.jzhao.xyz/" target="_blank" rel="noopener noreferrer">Quartz v4.5.2</a></p></div><div class="footer-section footer-custom"><ul><li><a href="/es">Página Principal</a></li><li><a href="https://www.solecolombia.org/" target="_blank" rel="noopener noreferrer">SOLE Colombia</a></li><li><a href="https://github.com/SOLE-Colombia/voltaje" target="_blank" rel="noopener noreferrer">GitHub</a></li></ul><div class="footer-branding"><img src="/static/icon.png" alt="SOLE Voltaje" class="footer-logo"/></div></div></footer></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="../../postscript.js" type="module"></script></html>
