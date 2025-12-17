@@ -140,7 +140,124 @@ pre:hover > .expand-button {
 <li><strong>What do you need to have Wi-Fi?</strong> You need a Wi-Fi router, which is the device that creates the wireless network, and Wi-Fi capable devices to connect to it.</li>
 <li><strong>How do you set it up?</strong> Generally, you access the device’s Wi-Fi settings, select the desired network and enter the password if necessary.</li>
 <li><strong>What are the advantages?</strong> It enables mobility, eliminates the need for cables, makes it easier to connect multiple devices, and offers greater flexibility in device placement.</li>
-</ul></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Vista Gráfica</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+</ul></article><hr/><div class="page-footer"><div class="waline-feedback"><link rel="stylesheet" href="https://unpkg.com/@waline/client@3.4.2/dist/waline.css"/><div id="waline"></div><style>
+.waline-feedback {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+/* Ocultar todo excepto reacciones */
+.waline-feedback .wl-editor,
+.waline-feedback .wl-header,
+.waline-feedback .wl-list,
+.waline-feedback .wl-count,
+.waline-feedback .wl-powered,
+.waline-feedback .wl-login,
+.waline-feedback .wl-footer {
+  display: none !important;
+}
+
+/* Contenedor de reacciones */
+.waline-feedback .wl-reaction {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+}
+
+/* Botones base */
+.waline-feedback .wl-reaction-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 0.9rem;
+  min-width: 180px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: var(--light);
+  color: var(--darkgray);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  position: relative;
+}
+
+.waline-feedback .wl-reaction-item span {
+  font-size: 1rem;
+}
+
+.waline-feedback .wl-reaction-item::after {
+  content: "";
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.waline-feedback .wl-reaction-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+/* 1) ❌ */
+.waline-feedback .wl-reaction-item:nth-child(1) {
+  background: #fee2e2;
+  border-color: #ef4444;
+}
+.waline-feedback .wl-reaction-item:nth-child(1)::after {
+  content: "No me funcionó";
+  color: #b91c1c;
+}
+
+/* 2) 😓 */
+.waline-feedback .wl-reaction-item:nth-child(2) {
+  background: #ffedd5;
+  border-color: #f97316;
+}
+.waline-feedback .wl-reaction-item:nth-child(2)::after {
+  content: "Difícil";
+  color: #c2410c;
+}
+
+/* 3) 😐 */
+.waline-feedback .wl-reaction-item:nth-child(3) {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+.waline-feedback .wl-reaction-item:nth-child(3)::after {
+  content: "Regular";
+  color: #4b5563;
+}
+
+/* 4) 🙂 */
+.waline-feedback .wl-reaction-item:nth-child(4) {
+  background: #dbeafe;
+  border-color: #3b82f6;
+}
+.waline-feedback .wl-reaction-item:nth-child(4)::after {
+  content: "Útil";
+  color: #1d4ed8;
+}
+
+/* 5) 🚀 */
+.waline-feedback .wl-reaction-item:nth-child(5) {
+  background: #dcfce7;
+  border-color: #22c55e;
+}
+.waline-feedback .wl-reaction-item:nth-child(5)::after {
+  content: "¡Me funcionó!";
+  color: #15803d;
+}
+
+@media (max-width: 700px) {
+  .waline-feedback .wl-reaction {
+    flex-direction: column;
+  }
+  .waline-feedback .wl-reaction-item {
+    width: 100%;
+  }
+}
+</style></div></div></div><div class="right sidebar"><div class="graph"><h3>Vista Gráfica</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
                 s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
                 c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
                 C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
