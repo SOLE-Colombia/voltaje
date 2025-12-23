@@ -272,120 +272,189 @@ Hay diferentes tipos de pantalla, pero en el mercado actual dos son las más pop
 <li><a href="https://d3fyizz0b46qgr.cloudfront.net/global/store/pc1980_900.png" class="external">Cloudfront<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
 </ul>
 <hr/></article><hr/><div class="page-footer"><div class="waline-feedback"><link rel="stylesheet" href="https://unpkg.com/@waline/client@3.4.2/dist/waline.css"/><div id="waline"></div><style>
-.waline-feedback {
-  margin-top: 3rem;
-  margin-bottom: 2rem;
+:root {
+  /* Mapeo de variables Quartz -> Waline */
+  --waline-theme-color: var(--secondary);
+  --waline-bgcolor: var(--light);
+  --waline-bgcolor-light: var(--lightgray);
+  --waline-text-color: var(--darkgray);
+  --waline-border-color: var(--lightgray);
+  --waline-disable-bgcolor: var(--lightgray);
+  --waline-info-bgcolor: var(--lightgray);
+  --waline-white: var(--light);
 }
 
-/* Ocultar todo excepto reacciones */
-.waline-feedback .wl-editor,
-.waline-feedback .wl-header,
-.waline-feedback .wl-list,
-.waline-feedback .wl-count,
-.waline-feedback .wl-powered,
-.waline-feedback .wl-login,
-.waline-feedback .wl-footer {
+.waline-feedback {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  border-top: 1px solid var(--lightgray);
+  padding-top: 2rem;
+}
+
+/* 1. LIMPIEZA DE INTERFAZ (Ocultar extras) */
+.wl-header, .wl-editor, .wl-footer, .wl-info, .wl-sort, .wl-refresh, .wl-count, .wl-powered {
   display: none !important;
 }
 
-/* Contenedor de reacciones */
-.waline-feedback .wl-reaction {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  padding: 0;
-  margin: 0;
+.wl-panel {
+  border: none !important;
+  background: transparent !important;
+  margin: 0 !important;
 }
 
-/* Botones base */
-.waline-feedback .wl-reaction-item {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.65rem 0.9rem;
-  min-width: 180px;
-  border-radius: 8px;
-  border: 1px solid transparent;
-  background: var(--light);
-  color: var(--darkgray);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-weight: 600;
-  position: relative;
+.wl-reaction-title {
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  color: var(--dark) !important;
+  margin-bottom: 1.5rem !important;
+  text-align: center !important;
 }
 
-.waline-feedback .wl-reaction-item span {
-  font-size: 1rem;
+/* 2. LAYOUT BASE (Horizontal/compacto, responsive-first) */
+.wl-reaction-list {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  gap: 0.75rem !important;
+  width: 100% !important;
+  padding: 0 !important;
+  flex-wrap: wrap !important;
 }
 
-.waline-feedback .wl-reaction-item::after {
-  content: "";
-  font-size: 0.95rem;
-  font-weight: 700;
+.wl-reaction-item {
+  /* Fluido: evita cortes en desktop y se adapta en tablet/móvil */
+  flex: 1 1 12.5rem !important;
+  min-width: 9.5rem !important;
+  max-width: 16rem !important;
+  margin: 0 !important;
+  padding: 0.75rem 1rem !important;
+  border: 1px solid var(--lightgray) !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  background: var(--light) !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  cursor: pointer !important;
+  box-shadow: none !important; /* flat por defecto */
+  line-height: 1.1 !important;
 }
 
-.waline-feedback .wl-reaction-item:hover {
+/* Accesibilidad / UX: foco visible */
+.wl-reaction-item:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--secondary) 60%, transparent);
+  outline-offset: 2px;
+}
+
+.wl-reaction-item.active {
+  /* El color real de active se define por estado (ver reglas nth-child) */
   transform: translateY(-1px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
 }
 
-/* 1) ❌ */
-.waline-feedback .wl-reaction-item:nth-child(1) {
-  background: #fee2e2;
-  border-color: #ef4444;
-}
-.waline-feedback .wl-reaction-item:nth-child(1)::after {
-  content: "No me funcionó";
-  color: #b91c1c;
+/* 3. SOLUCIÓN SVGS EN LÍNEA */
+.wl-reaction-img {
+  display: none !important; /* Ocultamos los broken icons de Waline */
 }
 
-/* 2) 😓 */
-.waline-feedback .wl-reaction-item:nth-child(2) {
-  background: #ffedd5;
-  border-color: #f97316;
-}
-.waline-feedback .wl-reaction-item:nth-child(2)::after {
-  content: "Difícil";
-  color: #c2410c;
-}
-
-/* 3) 😐 */
-.waline-feedback .wl-reaction-item:nth-child(3) {
-  background: #f3f4f6;
-  border-color: #9ca3af;
-}
-.waline-feedback .wl-reaction-item:nth-child(3)::after {
-  content: "Regular";
-  color: #4b5563;
+.wl-reaction-item::before {
+  content: "";
+  width: 1.4rem;
+  height: 1.4rem;
+  background-color: currentColor;
+  display: inline-block;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
 }
 
-/* 4) 🙂 */
-.waline-feedback .wl-reaction-item:nth-child(4) {
-  background: #dbeafe;
-  border-color: #3b82f6;
+/* Icono 1: No funcionó (X) */
+.wl-reaction-item:nth-child(1)::before {
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>');
 }
-.waline-feedback .wl-reaction-item:nth-child(4)::after {
-  content: "Útil";
-  color: #1d4ed8;
-}
-
-/* 5) 🚀 */
-.waline-feedback .wl-reaction-item:nth-child(5) {
-  background: #dcfce7;
-  border-color: #22c55e;
-}
-.waline-feedback .wl-reaction-item:nth-child(5)::after {
-  content: "¡Me funcionó!";
-  color: #15803d;
+.wl-reaction-item:nth-child(1) { color: #ef4444; border-color: color-mix(in srgb, #ef4444 35%, var(--lightgray)); }
+.wl-reaction-item:nth-child(1):hover,
+.wl-reaction-item:nth-child(1).active {
+  background: #ef4444 !important;
+  color: white !important;
+  border-color: #ef4444 !important;
 }
 
-@media (max-width: 700px) {
-  .waline-feedback .wl-reaction {
-    flex-direction: column;
+/* Icono 2: Regular (Neutro) */
+.wl-reaction-item:nth-child(2)::before {
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="8" y1="12" x2="16" y2="12"></line></svg>');
+}
+.wl-reaction-item:nth-child(2) { color: #f59e0b; border-color: color-mix(in srgb, #f59e0b 35%, var(--lightgray)); }
+.wl-reaction-item:nth-child(2):hover,
+.wl-reaction-item:nth-child(2).active {
+  background: #f59e0b !important;
+  color: white !important;
+  border-color: #f59e0b !important;
+}
+
+/* Icono 3: Funcionó (Check/Rocket) */
+.wl-reaction-item:nth-child(3)::before {
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>');
+}
+.wl-reaction-item:nth-child(3) { color: #10b981; border-color: color-mix(in srgb, #10b981 35%, var(--lightgray)); }
+.wl-reaction-item:nth-child(3):hover,
+.wl-reaction-item:nth-child(3).active {
+  background: #10b981 !important;
+  color: white !important;
+  border-color: #10b981 !important;
+}
+
+/* Textos personalizados vía CSS si Waline no los inyecta bien */
+.wl-reaction-item::after {
+  /* Previene “corte” y desbordes: se mantiene en una sola línea */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.wl-reaction-item:nth-child(1)::after { content: "No funcionó"; font-weight: 600; font-size: 0.9rem; }
+.wl-reaction-item:nth-child(2)::after { content: "Regular"; font-weight: 600; font-size: 0.9rem; }
+.wl-reaction-item:nth-child(3)::after { content: "Funcionó"; font-weight: 600; font-size: 0.9rem; }
+
+.wl-reaction-votes {
+  font-size: 0.8rem !important;
+  opacity: 0.65 !important;
+  font-family: var(--codeFont) !important;
+  color: var(--darkgray) !important;
+}
+
+/* Hover “flat”: solo levanta un poco + refuerzo de contraste */
+.wl-reaction-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+.wl-reaction-item:hover .wl-reaction-votes,
+.wl-reaction-item.active .wl-reaction-votes {
+  color: currentColor !important; /* en hover/active queda blanco por la regla de estado */
+  opacity: 0.9 !important;
+}
+
+@media (max-width: 600px) {
+  .wl-reaction-list {
+    /* Mobile compacto: fila/rejilla, no “tarjetas gigantes” */
+    justify-content: center !important;
+    gap: 0.6rem !important;
   }
-  .waline-feedback .wl-reaction-item {
-    width: 100%;
+  .wl-reaction-item {
+    padding: 0.6rem 0.75rem !important;
+    flex: 1 1 9.5rem !important;
+    min-width: 8.75rem !important;
+    max-width: 100% !important;
+  }
+  .wl-reaction-item::before {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+  .wl-reaction-item:nth-child(1)::after,
+  .wl-reaction-item:nth-child(2)::after,
+  .wl-reaction-item:nth-child(3)::after {
+    font-size: 0.85rem;
   }
 }
 </style></div></div></div><div class="right sidebar"><div class="graph"><h3>Vista Gráfica</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
@@ -398,6 +467,6 @@ Hay diferentes tipos de pantalla, pero en el mercado actual dos son las más pop
                 C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
                 S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
                 s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
-                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-36" aria-expanded="true"><h3>Tabla de Contenidos</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#comprar-un-celular-que-se-ajuste-a-tus-capacidades-y-necesidades" data-for="comprar-un-celular-que-se-ajuste-a-tus-capacidades-y-necesidades">Comprar un celular que se ajuste a tus capacidades y necesidades</a></li><li class="depth-0"><a href="#qué-es-comprar-un-celular-adecuado-para-ti" data-for="qué-es-comprar-un-celular-adecuado-para-ti">¿Qué es comprar un celular adecuado para ti?</a></li><li class="depth-0"><a href="#para-qué-sirve" data-for="para-qué-sirve">¿Para qué sirve?</a></li><li class="depth-0"><a href="#antes-de-empezar-algunas-cuestiones-éticas" data-for="antes-de-empezar-algunas-cuestiones-éticas">¡Antes de empezar, algunas cuestiones éticas!</a></li><li class="depth-0"><a href="#qué-necesitas" data-for="qué-necesitas">¿Qué necesitas?</a></li><li class="depth-0"><a href="#cómo-hacerlo" data-for="cómo-hacerlo">¿Cómo hacerlo?</a></li><li class="depth-0"><a href="#no-te-dejes-engañar" data-for="no-te-dejes-engañar">No te dejes engañar</a></li><li class="depth-0"><a href="#cuánto-es-suficiente" data-for="cuánto-es-suficiente">¿Cuánto es suficiente?</a></li><li class="depth-0"><a href="#referencias" data-for="referencias">Referencias</a></li><li class="depth-0"><a href="#soluciones-relacionadas" data-for="soluciones-relacionadas">Soluciones relacionadas</a></li><li class="depth-0"><a href="#imagenes" data-for="imagenes">Imagenes</a></li><li class="overflow-end"></li></ul></div></div><footer class><div class="footer-section footer-links"><h3>Enlaces rápidos</h3><ul><li><a href="/nuevo-aqui-sole-voltaje">¿Nuevo aquí?</a></li><li><a href="/inspirate-sole-voltaje">Inspírate</a></li><li><a href="/soluciona-sole-voltaje">Soluciona</a></li><li><a href="/pregunta-comenta-sole-voltaje">Pregunta/Comenta</a></li><li><a href="/desconectado-sole-voltaje">¿Desconectado?</a></li><li><a href="/conceptorio-sole-voltaje">Conceptorio</a></li></ul></div><div class="footer-section footer-info"><p class="footer-project"><a href="http://voltaje.solecolombia.org/">SOLE Voltaje</a> es un proyecto de <a href="https://www.solecolombia.org/" target="_blank" rel="noopener noreferrer">SOLE Colombia</a> con el apoyo de <a href="https://www.isocfoundation.org/" target="_blank" rel="noopener noreferrer">Internet Society Foundation</a></p><p class="footer-license"><a href="http://voltaje.solecolombia.org/">SOLE Voltaje</a> 2025 by <a href="http://www.solecolombia.org/" target="_blank" rel="noopener noreferrer">Fundación SOLE Colombia</a> is licensed by <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-ShareAlike 4.0 International</a></p><p class="footer-tech">Creado con <a href="https://quartz.jzhao.xyz/" target="_blank" rel="noopener noreferrer">Quartz v4.5.2</a></p></div><div class="footer-section footer-custom"><ul><li><a href="/es">Página Principal</a></li><li><a href="https://www.solecolombia.org/" target="_blank" rel="noopener noreferrer">SOLE Colombia</a></li><li><a href="https://github.com/SOLE-Colombia/voltaje" target="_blank" rel="noopener noreferrer">GitHub</a></li></ul><div class="footer-branding"><img src="/static/icon.png" alt="SOLE Voltaje" class="footer-logo"/></div></div></footer></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-35" aria-expanded="true"><h3>Tabla de Contenidos</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#comprar-un-celular-que-se-ajuste-a-tus-capacidades-y-necesidades" data-for="comprar-un-celular-que-se-ajuste-a-tus-capacidades-y-necesidades">Comprar un celular que se ajuste a tus capacidades y necesidades</a></li><li class="depth-0"><a href="#qué-es-comprar-un-celular-adecuado-para-ti" data-for="qué-es-comprar-un-celular-adecuado-para-ti">¿Qué es comprar un celular adecuado para ti?</a></li><li class="depth-0"><a href="#para-qué-sirve" data-for="para-qué-sirve">¿Para qué sirve?</a></li><li class="depth-0"><a href="#antes-de-empezar-algunas-cuestiones-éticas" data-for="antes-de-empezar-algunas-cuestiones-éticas">¡Antes de empezar, algunas cuestiones éticas!</a></li><li class="depth-0"><a href="#qué-necesitas" data-for="qué-necesitas">¿Qué necesitas?</a></li><li class="depth-0"><a href="#cómo-hacerlo" data-for="cómo-hacerlo">¿Cómo hacerlo?</a></li><li class="depth-0"><a href="#no-te-dejes-engañar" data-for="no-te-dejes-engañar">No te dejes engañar</a></li><li class="depth-0"><a href="#cuánto-es-suficiente" data-for="cuánto-es-suficiente">¿Cuánto es suficiente?</a></li><li class="depth-0"><a href="#referencias" data-for="referencias">Referencias</a></li><li class="depth-0"><a href="#soluciones-relacionadas" data-for="soluciones-relacionadas">Soluciones relacionadas</a></li><li class="depth-0"><a href="#imagenes" data-for="imagenes">Imagenes</a></li><li class="overflow-end"></li></ul></div></div><footer class><div class="footer-section footer-links"><h3>Enlaces rápidos</h3><ul><li><a href="/nuevo-aqui-sole-voltaje">¿Nuevo aquí?</a></li><li><a href="/inspirate-sole-voltaje">Inspírate</a></li><li><a href="/soluciona-sole-voltaje">Soluciona</a></li><li><a href="/pregunta-comenta-sole-voltaje">Pregunta/Comenta</a></li><li><a href="/desconectado-sole-voltaje">¿Desconectado?</a></li><li><a href="/conceptorio-sole-voltaje">Conceptorio</a></li></ul></div><div class="footer-section footer-info"><p class="footer-project"><a href="http://voltaje.solecolombia.org/">SOLE Voltaje</a> es un proyecto de <a href="https://www.solecolombia.org/" target="_blank" rel="noopener noreferrer">SOLE Colombia</a> con el apoyo de <a href="https://www.isocfoundation.org/" target="_blank" rel="noopener noreferrer">Internet Society Foundation</a></p><p class="footer-license"><a href="http://voltaje.solecolombia.org/">SOLE Voltaje</a> 2025 by <a href="http://www.solecolombia.org/" target="_blank" rel="noopener noreferrer">Fundación SOLE Colombia</a> is licensed by <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-ShareAlike 4.0 International</a></p><p class="footer-tech">Creado con <a href="https://quartz.jzhao.xyz/" target="_blank" rel="noopener noreferrer">Quartz v4.5.2</a></p></div><div class="footer-section footer-custom"><ul><li><a href="/es">Página Principal</a></li><li><a href="https://www.solecolombia.org/" target="_blank" rel="noopener noreferrer">SOLE Colombia</a></li><li><a href="https://github.com/SOLE-Colombia/voltaje" target="_blank" rel="noopener noreferrer">GitHub</a></li></ul><div class="footer-branding"><img src="/static/icon.png" alt="SOLE Voltaje" class="footer-logo"/></div></div></footer></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
 </script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
 </script><script src="../../postscript.js" type="module"></script></html>
