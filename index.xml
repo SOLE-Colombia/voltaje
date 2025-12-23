@@ -6,11 +6,17 @@
       <description>Últimas 10 notas on SOLE Voltaje</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>SOLE Voltaje</title>
+    <link>https://voltaje.solecolombia.org/es/</link>
+    <guid>https://voltaje.solecolombia.org/es/</guid>
+    <description><![CDATA[ Explora, aprende y soluciona problemas de conectividad ]]></description>
+    <pubDate>Tue, 23 Dec 2025 04:55:16 GMT</pubDate>
+  </item><item>
     <title>Nombre de dominio | Domain name</title>
     <link>https://voltaje.solecolombia.org/es/glossary/conc-domain-name</link>
     <guid>https://voltaje.solecolombia.org/es/glossary/conc-domain-name</guid>
     <description><![CDATA[ Un nombre de dominio es una dirección única y fácil de recordar que se utiliza para acceder a un sitio web o a un servicio en internet. ]]></description>
-    <pubDate>Tue, 23 Dec 2025 04:37:39 GMT</pubDate>
+    <pubDate>Tue, 23 Dec 2025 04:54:17 GMT</pubDate>
   </item><item>
     <title>Inspírate</title>
     <link>https://voltaje.solecolombia.org/es/inspire/</link>
@@ -58,12 +64,6 @@
     <link>https://voltaje.solecolombia.org/es/solve/solv-bicigenerator</link>
     <guid>https://voltaje.solecolombia.org/es/solve/solv-bicigenerator</guid>
     <description><![CDATA[ Consigue electricidad con una bicicleta. Comprar y montar un sistema de generación eléctrica con una bicicleta Hola, soy Nicolás. ]]></description>
-    <pubDate>Wed, 17 Dec 2025 05:00:00 GMT</pubDate>
-  </item><item>
-    <title>Construye una antena 3G casera</title>
-    <link>https://voltaje.solecolombia.org/es/solve/solv-build-3Gantenna</link>
-    <guid>https://voltaje.solecolombia.org/es/solve/solv-build-3Gantenna</guid>
-    <description><![CDATA[ Captura señal con una antena hecha en casa. ]]></description>
     <pubDate>Wed, 17 Dec 2025 05:00:00 GMT</pubDate>
   </item>
     </channel>
