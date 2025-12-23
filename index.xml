@@ -6,11 +6,23 @@
       <description>Últimas 10 notas on SOLE Voltaje</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>Inspírate</title>
+    <link>https://voltaje.solecolombia.org/es/inspire/</link>
+    <guid>https://voltaje.solecolombia.org/es/inspire/</guid>
+    <description><![CDATA[ Descubre historias de éxito, ideas innovadoras y ejemplos de cómo otras comunidades han logrado conectarse. ]]></description>
+    <pubDate>Tue, 23 Dec 2025 04:19:45 GMT</pubDate>
+  </item><item>
+    <title>Soluciona</title>
+    <link>https://voltaje.solecolombia.org/es/solve/</link>
+    <guid>https://voltaje.solecolombia.org/es/solve/</guid>
+    <description><![CDATA[ Encuentra soluciones prácticas y herramientas para mejorar la conectividad y resolver problemas técnicos en tu comunidad. ]]></description>
+    <pubDate>Tue, 23 Dec 2025 04:19:45 GMT</pubDate>
+  </item><item>
     <title>Nombre de dominio | Domain name</title>
     <link>https://voltaje.solecolombia.org/es/glossary/conc-domain-name</link>
     <guid>https://voltaje.solecolombia.org/es/glossary/conc-domain-name</guid>
     <description><![CDATA[ Un nombre de dominio es una dirección única y fácil de recordar que se utiliza para acceder a un sitio web o a un servicio en internet. ]]></description>
-    <pubDate>Tue, 23 Dec 2025 02:56:02 GMT</pubDate>
+    <pubDate>Tue, 23 Dec 2025 04:18:42 GMT</pubDate>
   </item><item>
     <title>Ser internet para viajar por un cable a través de la tierra y los oceanos</title>
     <link>https://voltaje.solecolombia.org/es/disconnected/ser-internet-para-viajar-por-un-cable-a-traves-de-la-tierra-y-los-oceanos-sin-titulo</link>
@@ -52,18 +64,6 @@
     <link>https://voltaje.solecolombia.org/es/solve/solv-build-3Gantenna</link>
     <guid>https://voltaje.solecolombia.org/es/solve/solv-build-3Gantenna</guid>
     <description><![CDATA[ Mejora tu conexión a la red móvil Audiolectura de la solución Puedes escuchar esta audiolectura mientras desarrollas esta solución. ]]></description>
-    <pubDate>Wed, 17 Dec 2025 05:00:00 GMT</pubDate>
-  </item><item>
-    <title>¿Cómo comprar un celular adecuado para mí?</title>
-    <link>https://voltaje.solecolombia.org/es/solve/solv-buy-cellphone</link>
-    <guid>https://voltaje.solecolombia.org/es/solve/solv-buy-cellphone</guid>
-    <description><![CDATA[ Comprar un celular que se ajuste a tus capacidades y necesidades Hola soy Nicolás, y al igual que tú, he estado aprendiendo progresivamente como mejorar mi conectividad para hacer SOLE. ]]></description>
-    <pubDate>Wed, 17 Dec 2025 05:00:00 GMT</pubDate>
-  </item><item>
-    <title>¿Cómo comprar un computador para ti?</title>
-    <link>https://voltaje.solecolombia.org/es/solve/solv-buy-computer</link>
-    <guid>https://voltaje.solecolombia.org/es/solve/solv-buy-computer</guid>
-    <description><![CDATA[ Comprar el mejor computador para mi caso Hola, soy Nicolás y, al igual que tú, he estado aprendiendo sobre cómo mejorar mi conexión a internet. ]]></description>
     <pubDate>Wed, 17 Dec 2025 05:00:00 GMT</pubDate>
   </item>
     </channel>
