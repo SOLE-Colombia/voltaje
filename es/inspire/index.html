@@ -127,6 +127,14 @@ pre:hover > .expand-button {
         // Helper para obtener tarjetas (siempre busca en el DOM actual)
         const getCards = () => document.querySelectorAll('.page-card-grid.section-inspire .page-card');
 
+        // Mostrar el filtro arriba cuando el sidebar derecho no esté visible
+        const updateFilterPlacement = () => {
+          const prefersSidebar = window.matchMedia('(min-width: 1201px)').matches;
+          const rightFilter = document.querySelector('.sidebar.right .inspire-filter');
+          const rightVisible = prefersSidebar && rightFilter instanceof HTMLElement && rightFilter.offsetParent !== null;
+          document.body?.classList.toggle('inspire-filter-top', !rightVisible);
+        };
+
         // Función de filtrado
         const filterCards = () => {
           const cards = getCards();
@@ -194,14 +202,24 @@ pre:hover > .expand-button {
         // Re-aplicar filtro al navegar (por si el DOM cambió pero el estado visual se perdió o para inicializar)
         document.addEventListener('nav', () => {
              // Pequeño delay para asegurar que el DOM nuevo esté listo
-             setTimeout(filterCards, 50);
+             setTimeout(() => {
+               filterCards();
+               updateFilterPlacement();
+             }, 50);
         });
+
+        window.addEventListener('resize', updateFilterPlacement);
+        window.addCleanup?.(() => window.removeEventListener('resize', updateFilterPlacement));
         
         // Ejecución inicial
         if (document.readyState === 'complete' || document.readyState === 'interactive') {
             filterCards();
+            updateFilterPlacement();
         } else {
-            document.addEventListener('DOMContentLoaded', filterCards);
+            document.addEventListener('DOMContentLoaded', () => {
+              filterCards();
+              updateFilterPlacement();
+            });
         }
 
       })();
@@ -216,6 +234,14 @@ pre:hover > .expand-button {
         // Helper para obtener tarjetas (siempre busca en el DOM actual)
         const getCards = () => document.querySelectorAll('.page-card-grid.section-inspire .page-card');
 
+        // Mostrar el filtro arriba cuando el sidebar derecho no esté visible
+        const updateFilterPlacement = () => {
+          const prefersSidebar = window.matchMedia('(min-width: 1201px)').matches;
+          const rightFilter = document.querySelector('.sidebar.right .inspire-filter');
+          const rightVisible = prefersSidebar && rightFilter instanceof HTMLElement && rightFilter.offsetParent !== null;
+          document.body?.classList.toggle('inspire-filter-top', !rightVisible);
+        };
+
         // Función de filtrado
         const filterCards = () => {
           const cards = getCards();
@@ -283,14 +309,24 @@ pre:hover > .expand-button {
         // Re-aplicar filtro al navegar (por si el DOM cambió pero el estado visual se perdió o para inicializar)
         document.addEventListener('nav', () => {
              // Pequeño delay para asegurar que el DOM nuevo esté listo
-             setTimeout(filterCards, 50);
+             setTimeout(() => {
+               filterCards();
+               updateFilterPlacement();
+             }, 50);
         });
+
+        window.addEventListener('resize', updateFilterPlacement);
+        window.addCleanup?.(() => window.removeEventListener('resize', updateFilterPlacement));
         
         // Ejecución inicial
         if (document.readyState === 'complete' || document.readyState === 'interactive') {
             filterCards();
+            updateFilterPlacement();
         } else {
-            document.addEventListener('DOMContentLoaded', filterCards);
+            document.addEventListener('DOMContentLoaded', () => {
+              filterCards();
+              updateFilterPlacement();
+            });
         }
 
       })();
