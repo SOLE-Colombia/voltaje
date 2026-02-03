@@ -6,6 +6,12 @@
       <description>Últimas 10 notas on SOLE Voltaje</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>Un pedazo de internet en los computadores</title>
+    <link>https://sole-colombia.github.io/voltaje/es/solve/solv-endless</link>
+    <guid>https://sole-colombia.github.io/voltaje/es/solve/solv-endless</guid>
+    <description><![CDATA[ Un pedazo de internet en los computadores: Instalando Endless OS ¡Qué onda! Soy Nicolás. ]]></description>
+    <pubDate>Mon, 02 Feb 2026 05:00:00 GMT</pubDate>
+  </item><item>
     <title>Inicio</title>
     <link>https://sole-colombia.github.io/voltaje/es/</link>
     <guid>https://sole-colombia.github.io/voltaje/es/</guid>
@@ -59,12 +65,6 @@
     <guid>https://sole-colombia.github.io/voltaje/es/solve/solv-internet-in-pocket</guid>
     <description><![CDATA[ Instalar Endless en los computadores sin conexión ¿Para qué sirve? Endless es un sistema operativo (como Windows) que se puede instalar en casi cualquier computador. ]]></description>
     <pubDate>Fri, 23 Jan 2026 05:00:00 GMT</pubDate>
-  </item><item>
-    <title>¿Cómo hacer SOLE?</title>
-    <link>https://sole-colombia.github.io/voltaje/es/inspire/insp-make-SOLE</link>
-    <guid>https://sole-colombia.github.io/voltaje/es/inspire/insp-make-SOLE</guid>
-    <description><![CDATA[ Tutorial para fomentar el aprendizaje autogestionado. En este video tutorial te explicamos cómo puedes crear tu espacio aprendizaje auto organizado. ]]></description>
-    <pubDate>Mon, 19 Jan 2026 04:07:34 GMT</pubDate>
   </item>
     </channel>
   </rss>
