@@ -6,6 +6,18 @@
       <description>Últimas 10 notas on SOLE Voltaje</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>Construye una antena 3G casera</title>
+    <link>https://sole-colombia.github.io/voltaje/es/solve/solv-build-3Gantenna</link>
+    <guid>https://sole-colombia.github.io/voltaje/es/solve/solv-build-3Gantenna</guid>
+    <description><![CDATA[ Hola soy Nicolás y desde hace un tiempo he estado aprendiendo cómo mejorar mi conectividad. ]]></description>
+    <pubDate>Mon, 02 Mar 2026 05:00:00 GMT</pubDate>
+  </item><item>
+    <title>Contactémonos</title>
+    <link>https://sole-colombia.github.io/voltaje/es/answers-comments/</link>
+    <guid>https://sole-colombia.github.io/voltaje/es/answers-comments/</guid>
+    <description><![CDATA[ ¿Quieres hablar con otro humano? Aquí estamos a través de diferentes canales. ]]></description>
+    <pubDate>Wed, 04 Feb 2026 05:15:43 GMT</pubDate>
+  </item><item>
     <title>¿Cómo conseguir equipos donados?</title>
     <link>https://sole-colombia.github.io/voltaje/es/solve/solv-donated-equipment</link>
     <guid>https://sole-colombia.github.io/voltaje/es/solve/solv-donated-equipment</guid>
@@ -16,6 +28,12 @@
     <link>https://sole-colombia.github.io/voltaje/es/solve/solv-endless</link>
     <guid>https://sole-colombia.github.io/voltaje/es/solve/solv-endless</guid>
     <description><![CDATA[ Un pedazo de internet en los computadores: Instalando Endless OS Si estás leyendo esto es porque, como yo, eres de los que no se queda quieto y le gusta “cacharrear” con los computadores para que sirvan de algo más que para escribir en Word. ]]></description>
+    <pubDate>Mon, 02 Feb 2026 05:00:00 GMT</pubDate>
+  </item><item>
+    <title>¿Cómo saber las contraseñas WiFi de mi celular?</title>
+    <link>https://sole-colombia.github.io/voltaje/es/solve/solv-know-wifi-passwords</link>
+    <guid>https://sole-colombia.github.io/voltaje/es/solve/solv-know-wifi-passwords</guid>
+    <description><![CDATA[ Hola, soy Belén. No soy experta en tecnología y he aprendido a usarla, a medida que ha ido apareciendo. ]]></description>
     <pubDate>Mon, 02 Feb 2026 05:00:00 GMT</pubDate>
   </item><item>
     <title>Inicio</title>
@@ -47,24 +65,6 @@
     <guid>https://sole-colombia.github.io/voltaje/es/solve/solv-internet-speedtest</guid>
     <description><![CDATA[ Hola, soy Belén. Hasta hace muy poco, no sabía que uno podría probar la velocidad de mi conexión a Internet. ]]></description>
     <pubDate>Mon, 26 Jan 2026 05:00:00 GMT</pubDate>
-  </item><item>
-    <title>¿Cómo instalar el Bog Box de Jangala?</title>
-    <link>https://sole-colombia.github.io/voltaje/es/solve/solv-jangala-install-box</link>
-    <guid>https://sole-colombia.github.io/voltaje/es/solve/solv-jangala-install-box</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 26 Jan 2026 05:00:00 GMT</pubDate>
-  </item><item>
-    <title>El internet en un caja: Big Box de Jangala</title>
-    <link>https://sole-colombia.github.io/voltaje/es/solve/solv-jangala-internet-box</link>
-    <guid>https://sole-colombia.github.io/voltaje/es/solve/solv-jangala-internet-box</guid>
-    <description><![CDATA[ Hola, soy Sanjay y aunque no soy un experto en temas de conectividad, he aprendido cacharreando, es decir, a punta de prueba y error, investigando en internet junto con otras personas y aprendiendo de quienes tienen la experiencia. ]]></description>
-    <pubDate>Mon, 26 Jan 2026 05:00:00 GMT</pubDate>
-  </item><item>
-    <title>¿Cómo mejorar mi señal móvil con una lata?</title>
-    <link>https://sole-colombia.github.io/voltaje/es/solve/solv-improve-signal-can</link>
-    <guid>https://sole-colombia.github.io/voltaje/es/solve/solv-improve-signal-can</guid>
-    <description><![CDATA[ ¡Hola! Es un gusto saludarte, mi nombre es Mateo y te acompañaré en el desarrollo de esta solución. ]]></description>
-    <pubDate>Sun, 25 Jan 2026 05:00:00 GMT</pubDate>
   </item>
     </channel>
   </rss>
