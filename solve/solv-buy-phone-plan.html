@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr"><head><title>¿Cómo comprar un plan celular adecuado para mi?</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323:wght@400;700&amp;family=Roboto Mono:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="SOLE Voltaje"/><meta property="og:title" content="¿Cómo comprar un plan celular adecuado para mi?"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="¿Cómo comprar un plan celular adecuado para mi?"/><meta name="twitter:description" content="Comprar un plan de celular que se ajuste a tus capacidades y necesidades Hola, soy Nicolás y, al igual que tú, he estado aprendiendo progresivamente como mejorar mi conectividad."/><meta property="og:description" content="Comprar un plan de celular que se ajuste a tus capacidades y necesidades Hola, soy Nicolás y, al igual que tú, he estado aprendiendo progresivamente como mejorar mi conectividad."/><meta property="og:image:alt" content="Comprar un plan de celular que se ajuste a tus capacidades y necesidades Hola, soy Nicolás y, al igual que tú, he estado aprendiendo progresivamente como mejorar mi conectividad."/><meta property="twitter:domain" content="voltaje.solecolombia.org"/><meta property="og:url" content="https://voltaje.solecolombia.org/solve/solv-buy-phone-plan"/><meta property="twitter:url" content="https://voltaje.solecolombia.org/solve/solv-buy-phone-plan"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="Comprar un plan de celular que se ajuste a tus capacidades y necesidades Hola, soy Nicolás y, al igual que tú, he estado aprendiendo progresivamente como mejorar mi conectividad."/><meta name="generator" content="Quartz"/><script>(function () {
+  var STORAGE_KEY = "contentLang";
+  var FALLBACK_AVAILABLE = { en: false, pt: false };
+  var SITE_ROOT = "/";
+  var normalizePath = function (value) {
+    return (value || "").replace(/\/+$/g, "") || "/";
+  };
+  var isRootPath = function () {
+    return normalizePath(window.location.pathname) === normalizePath(SITE_ROOT);
+  };
+  var resolveLangPath = function (lang) {
+    return SITE_ROOT === "/" ? "/" + lang : SITE_ROOT + "/" + lang;
+  };
+  var detectPreferredLang = function () {
+    var stored = (localStorage.getItem(STORAGE_KEY) || "").toLowerCase();
+    if (stored) return stored;
+    var browser = (navigator.language || (navigator.languages && navigator.languages[0]) || "").toLowerCase();
+    return browser;
+  };
+  var resolveAvailableLanguages = async function () {
+    try {
+      var fetchIndex = globalThis.fetchData;
+      if (!fetchIndex || typeof fetchIndex.then !== "function") {
+        return FALLBACK_AVAILABLE;
+      }
+      var data = await fetchIndex;
+      var slugs = Object.keys(data || {});
+      if (slugs.length === 0) {
+        return FALLBACK_AVAILABLE;
+      }
+      return {
+        en: slugs.some(function (slug) { return slug === "en" || slug.startsWith("en/"); }),
+        pt: slugs.some(function (slug) { return slug === "pt" || slug.startsWith("pt/"); }),
+      };
+    } catch (_err) {
+      return FALLBACK_AVAILABLE;
+    }
+  };
+  if (!isRootPath()) return;
+  resolveAvailableLanguages().then(function (available) {
+    var preferred = detectPreferredLang();
+    if (preferred.startsWith("en") && available.en) {
+      window.location.replace(resolveLangPath("en"));
+      return;
+    }
+    if (preferred.startsWith("pt") && available.pt) {
+      window.location.replace(resolveLangPath("pt"));
+    }
+  });
+})();</script><link href="../index.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL2hvbWUvcnVubmVyL3dvcmsvdm9sdGFqZS1kZXYvdm9sdGFqZS1kZXYvcXVhcnR6L2NvbXBvbmVudHMvc3R5bGVzIiwic291cmNlcyI6WyJtZXJtYWlkLmlubGluZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFHRjtFQUNFOzs7QUFLRjtFQUNFO0VBQ0E7OztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFOztBQUlGO0VBQ0U7RUFDQTtFQUNBIiwic291cmNlc0NvbnRlbnQiOlsiLmV4cGFuZC1idXR0b24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsb2F0OiByaWdodDtcbiAgcGFkZGluZzogMC40cmVtO1xuICBtYXJnaW46IDAuM3JlbTtcbiAgcmlnaHQ6IDA7IC8vIE5PVEU6IHJpZ2h0IHdpbGwgYmUgc2V0IGluIG1lcm1haWQuaW5saW5lLnRzXG4gIGNvbG9yOiB2YXIoLS1ncmF5KTtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICBib3JkZXI6IDFweCBzb2xpZDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBvcGFjaXR5OiAwO1xuICB0cmFuc2l0aW9uOiAwLjJzO1xuXG4gICYgPiBzdmcge1xuICAgIGZpbGw6IHZhcigtLWxpZ2h0KTtcbiAgICBmaWx0ZXI6IGNvbnRyYXN0KDAuMyk7XG4gIH1cblxuICAmOmhvdmVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgYm9yZGVyLWNvbG9yOiB2YXIoLS1zZWNvbmRhcnkpO1xuICB9XG5cbiAgJjpmb2N1cyB7XG4gICAgb3V0bGluZTogMDtcbiAgfVxufVxuXG5wcmUge1xuICAmOmhvdmVyID4gLmV4cGFuZC1idXR0b24ge1xuICAgIG9wYWNpdHk6IDE7XG4gICAgdHJhbnNpdGlvbjogMC4ycztcbiAgfVxufVxuXG4jbWVybWFpZC1jb250YWluZXIge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGNvbnRhaW46IGxheW91dDtcbiAgei1pbmRleDogOTk5O1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxMDB2dztcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogbm9uZTtcbiAgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDRweCk7XG4gIGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC41KTtcblxuICAmLmFjdGl2ZSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB9XG5cbiAgJiA+ICNtZXJtYWlkLXNwYWNlIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogNTAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICBoZWlnaHQ6IDgwdmg7XG4gICAgd2lkdGg6IDgwdnc7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcblxuICAgICYgPiAubWVybWFpZC1jb250ZW50IHtcbiAgICAgIHBhZGRpbmc6IDJyZW07XG4gICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICB0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7XG4gICAgICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4xcyBlYXNlO1xuICAgICAgb3ZlcmZsb3c6IHZpc2libGU7XG4gICAgICBtaW4taGVpZ2h0OiAyMDBweDtcbiAgICAgIG1pbi13aWR0aDogMjAwcHg7XG5cbiAgICAgIHByZSB7XG4gICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgfVxuXG4gICAgICBzdmcge1xuICAgICAgICBtYXgtd2lkdGg6IG5vbmU7XG4gICAgICAgIGhlaWdodDogYXV0bztcbiAgICAgIH1cbiAgICB9XG5cbiAgICAmID4gLm1lcm1haWQtY29udHJvbHMge1xuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgYm90dG9tOiAyMHB4O1xuICAgICAgcmlnaHQ6IDIwcHg7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZ2FwOiA4cHg7XG4gICAgICBwYWRkaW5nOiA4cHg7XG4gICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgYm9yZGVyLXJhZGl1czogNnB4O1xuICAgICAgYm94LXNoYWRvdzogMCAycHggNHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcbiAgICAgIHotaW5kZXg6IDI7XG5cbiAgICAgIC5tZXJtYWlkLWNvbnRyb2wtYnV0dG9uIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgIHdpZHRoOiAzMnB4O1xuICAgICAgICBoZWlnaHQ6IDMycHg7XG4gICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgICAgY29sb3I6IHZhcigtLWRhcmspO1xuICAgICAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICBmb250LWZhbWlseTogdmFyKC0tYm9keUZvbnQpO1xuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBlYXNlO1xuXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIH1cblxuICAgICAgICAmOmFjdGl2ZSB7XG4gICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDFweCk7XG4gICAgICAgIH1cblxuICAgICAgICAvLyBTdHlsZSB0aGUgcmVzZXQgYnV0dG9uIGRpZmZlcmVudGx5XG4gICAgICAgICY6bnRoLWNoaWxkKDIpIHtcbiAgICAgICAgICB3aWR0aDogYXV0bztcbiAgICAgICAgICBwYWRkaW5nOiAwIDEycHg7XG4gICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iXX0= */</style><script src="../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://voltaje.solecolombia.org/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://voltaje.solecolombia.org/solve/solv-buy-phone-plan-og-image.webp"/><meta property="og:image:url" content="https://voltaje.solecolombia.org/solve/solv-buy-phone-plan-og-image.webp"/><meta name="twitter:image" content="https://voltaje.solecolombia.org/solve/solv-buy-phone-plan-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="solve/solv-buy-phone-plan" data-basepath><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".." aria-label="SOLE Voltaje"><img src="https://voltaje.solecolombia.org/static/logo.png" alt class="page-logo"/></a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><details class="lang-toggle" data-lang-toggle="true"><summary class="lang-summary" aria-label="Cambiar idioma"><span class="lang-summary-flag" aria-hidden="true">🇪🇸</span><span class="lang-summary-code">ES</span></summary><div class="lang-menu" role="menu" aria-label="Idiomas disponibles"><button type="button" class="lang-option" role="menuitem" data-lang="es"><span aria-hidden="true">🇪🇸</span> ES</button><button type="button" class="lang-option" role="menuitem" data-lang="en"><span aria-hidden="true">🇺🇸</span> EN</button><button type="button" class="lang-option" role="menuitem" data-lang="pt"><span aria-hidden="true">🇵🇹</span> PT</button></div></details></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Modo oscuro"><title>Modo oscuro</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Modo claro"><title>Modo claro</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div></div><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Buscar</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Busca algo" placeholder="Busca algo"/><div class="search-layout" data-preview="true"></div></div></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-lang-default="es" data-data-fns="{&quot;order&quot;:[&quot;map&quot;,&quot;filter&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>{let customOrder=[\&quot;new-here\&quot;,\&quot;solve\&quot;,\&quot;inspire\&quot;,\&quot;glossary\&quot;,\&quot;disconnected\&quot;,\&quot;answers-comments\&quot;],indexA=customOrder.indexOf(a.slugSegment),indexB=customOrder.indexOf(b.slugSegment);return indexA!==-1&amp;&amp;indexB!==-1?indexA-indexB:indexA!==-1?-1:indexB!==-1?1:!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1}&quot;,&quot;filterFn&quot;:&quot;node=>{let mainMenuOrder=[\&quot;new-here\&quot;,\&quot;solve\&quot;,\&quot;inspire\&quot;,\&quot;glossary\&quot;,\&quot;disconnected\&quot;,\&quot;answers-comments\&quot;];return node.slugSegment===\&quot;tags\&quot;||node.slugSegment===\&quot;_staging\&quot;||node.slugSegment===\&quot;descargas\&quot;?!1:node.slugSegment?mainMenuOrder.includes(node.slugSegment):!0}&quot;,&quot;mapFn&quot;:&quot;node=>{let langFolders=node.children.filter(child=>child.isFolder&amp;&amp;(child.slugSegment===\&quot;es\&quot;||child.slugSegment===\&quot;en\&quot;||child.slugSegment===\&quot;pt\&quot;));if(langFolders.length>0){let promotedChildren=langFolders.flatMap(langFolder=>langFolder.children);node.children=node.children.filter(child=>!langFolders.includes(child)).concat(promotedChildren)}if(!node.slugSegment)for(let child of node.children)child.slugSegment===\&quot;answers-comments\&quot;&amp;&amp;(child.displayName=\&quot;\\xBFQuieres hablar con otro humano?\&quot;),child.children=[],child.isFolder=!1}&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-166"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><div id="explorer-166" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Inicio</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../solve/">Soluciona</a></div></nav><h1 class="article-title section-solve ">¿Cómo comprar un plan celular adecuado para mi?</h1><p class="section-solve  article-resumen">Un plan de celular que se ajuste a tus capacidades y necesidades.</p></div></div><article class="popover-hint"><h2 id="comprar-un-plan-de-celular-que-se-ajuste-a-tus-capacidades-y-necesidades">Comprar un plan de celular que se ajuste a tus capacidades y necesidades<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#comprar-un-plan-de-celular-que-se-ajuste-a-tus-capacidades-y-necesidades" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><img src="../assets/images/solv-buy-cellplan/solv-buy-cellplan-particularneeds.webp" alt="Particularneeds"/></p>
+<p>Hola, soy Nicolás y, al igual que tú, he estado aprendiendo progresivamente como mejorar mi conectividad.</p>
+<p>No soy un experto en el tema, pero mediante búsquedas en internet, tutoriales y, sobre todo, prueba y error, he aprendido un montón y he montado soluciones funcionales.</p>
+<h2 id="qué-es-comprar-un-plan-de-celular-adecuado-para-ti">¿Qué es comprar un plan de celular adecuado para ti?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#qué-es-comprar-un-plan-de-celular-adecuado-para-ti" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>A continuación, vas a encontrar una serie de <strong>información, criterios y consejos</strong> que tratan de ser lo más claras posibles, para que puedas sentirte acompañado en la toma de decisión de qué plan de celular puedes comprar.</p>
+<p>El tiempo estimado de lectura es de unas <strong>9 minutos y consta de 10 ítems,</strong> pero, no te asustes, puedes leer estos ítems con ayuda de otras personas. Recuerda que en SOLE Voltaje queremos promover el uso colectivo de internet.</p>
+<h2 id="para-qué-sirve">¿Para qué sirve?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#para-qué-sirve" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>En esta solución, encontrarás unos cuantos consejos prácticos para poder tomar una decisión mucho más informada sobre cuáles son los planes de celular más adecuados para ti.</p>
+<h2 id="antes-de-empezar-algunas-cuestiones-éticas"><strong>Antes de empezar, algunas cuestiones éticas</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#antes-de-empezar-algunas-cuestiones-éticas" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>En SOLE Voltaje, queremos aclarar la implicación ética de las decisiones que tomamos, y nos gusta poner el foco en la circunstancia que te lleva a tomar esa decisión. Solemos usar preguntas incómodas para cuestionarnos.</p>
+<p>¿Jugamos? Deseas comprar un plan de celular con datos, <strong>¿será que sí lo necesitas realmente?</strong> Piénsalo, puede que no sea la mejor opción para ti.</p>
+<p>A veces, dispones de internet gratuito en las bibliotecas públicas. Quizá puedes usar la red WiFi de alguno de tus vecinos, o puedes comprar un PIN de celular para acceder por unas horas a Internet.</p>
+<p>Si, después de hacer un barrido de tus opciones, definitivamente consideras que necesitas comprar un plan de celular ¡este es el lugar adecuado para ti! <strong>Acá te aconsejamos que planes de internet prepago y pospago pueden ser pertinentes.</strong></p>
+<h2 id="qué-necesitas"><strong>¿Qué necesitas?</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#qué-necesitas" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li>Ahorrar dinero para la compra</li>
+<li>Información de los operadores disponibles</li>
+<li>Un sitio donde puedas recargar o suscribirte al plan</li>
+<li>Curiosidad</li>
+</ul>
+<h2 id="cómo-hacerlo"><strong>¿Cómo hacerlo?</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#cómo-hacerlo" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><img src="../assets/images/solv-buy-cellplan/solv-buy-cellplan-particularneeds2.webp" alt="Particularneeds2"/></p>
+<ul>
+<li>
+<p><strong>Antes de empezar: ¡ALERTA! ¿prepago o pospago?</strong></p>
+<p>Para poder tener claridad al leer esta solución, primero, debemos abordar algunos conceptos. En este caso la diferencia entre un <strong>plan pospago y uno prepago.</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>Prepago</strong></th><th><strong>Pospago</strong></th></tr></thead><tbody><tr><td>Es cuando el usuario paga por los servicios móviles antes de usarlos.</td><td>Es cuando el usuario paga por los servicios móviles después de usarlos.</td></tr><tr><td>Puedes recargar cuando desees.</td><td>Mes a mes tendrás que pagar tu factura.</td></tr><tr><td>Puedes adquirir tu plan prepago por suscripción o demanda.</td><td>Promueve tu vida crediticia.</td></tr><tr><td>No te llega ninguna factura mensual.</td><td>Te otorga beneficios adicionales como tarifas más económicas</td></tr></tbody></table></div>
+<p>No hay una respuesta absoluta sobre el tipo de servicio a escoger. Depende de los hábitos, posibilidades y necesidades de cada persona.</p>
+</li>
+<li>
+<p><strong>Momento 0: ¿Cómo saber si necesito comprar un plan de celular?</strong></p>
+<p>Una de las características de nuestra época actual es el gran desarrollo de mercados internacionales y nacionales. Nuestros celulares los hacen en China y podemos comprarlo en Colombia, podemos ir al mercado y comprar arroz traído de Brasil. Además, encontramos desproporcionadas opciones de consumo, podemos comprar arroz blanco, arroz amarillo, arroz a granel, arroz con sabor a limón, etc.</p>
+<p>Hay un sin fin de opciones para convertirnos en consumidores de productos, que, muchas veces, no necesitamos. Así, terminamos comprando alimentos no nutritivos y recaemos en gastos que no satisfacen la principal función de la alimentación.</p>
+<p>Del mismo modo, nos llenamos de un sin fin de mercancía en casa, que termina arrumada o desechada porque, al final, no nos servía para nada.</p>
+<p>En SOLE Colombia, queremos promover un <strong>consumo responsable.</strong></p>
+<p>¿Es la elección de tu plan de celular con datos una elección responsable? Te animamos a que respondas las siguientes preguntas:</p>
+<ul>
+<li>¿Necesitas comprar un plan celular o tienes otras opciones para acceder a internet?</li>
+<li>¿Hay alguna otra opción que supla tu conexión a internet y pueda ser pagada por varias personas?</li>
+<li>Si compras un plan celular, ¿realmente mejoraras tu calidad de vida o esta empeorará? ¿cuánto tiempo estarás conectado a redes sociales? ¿será difícil para ti desconectar del contenido? ¿implicará una dosis de estrés mensual saber cómo pagarás este nuevo gasto?</li>
+<li>Por último ¿realmente es una prioridad para ti este nuevo consumo? ¿qué uso real le darás?</li>
+<li>No olvides esta consideración: la decisión que tomes puede ser reversible cuando las condiciones cambien. No es un hijo, es sólo un plan de pago que puedes cambiar cuando y como necesites.</li>
+</ul>
+</li>
+<li>
+<p><strong>Momento 1: ¿Para qué necesito un plan de celular?</strong></p>
+<p>Ahora que has decidido, es hora de entender para que lo vas a necesitar.</p>
+<p>¿Necesitas el plan para facilitar tu trabajo, para estudiar, para estar conectado con tu familia y amigos, para pasar tiempo de ocio? Dependiendo de tu respuesta identificarás patrones de uso.</p>
+<p>Usemos mi caso de ejemplo:</p>
+</li>
+</ul>
+<p>💡 En 2022 tenía dos trabajos y no tenía oficina. Además, me movía mucho: viajaba por Bogotá y a diferentes partes del país de forma recurrente. Necesitaba conectarme a reuniones virtuales, uno de mis trabajos requería tener videollamadas por Zoom. Así que necesitaba de una conexión de datos y hacer llamadas a muchas personas. En ese momento, decidí tener un plan pospago con 10 Gb y minutos ilimitados.</p>
+<p>Poco después, empecé a viajar y quedarme constantemente en una finca familiar, donde la señal de datos era muy mala. Decidí comprar un plan de internet fijo para la finca.</p>
+<p>En 2023 solo tuve un trabajo y tenía oficina con internet. Ya no necesitaba viajar tanto. Cambie mi plan pospago a uno más económico, y cancele el plan de internet en la finca.</p>
+<p>¡Ahora es tu turno de identificar para que necesitas el plan de internet!</p>
+<ul>
+<li>
+<p><strong>Momento 2: De acuerdo con lo que necesitas, estas son las preguntas para hacerte</strong></p>
+<ul>
+<li>¿Necesitas minutos, datos o ambas?</li>
+<li>¿Necesitas una alta velocidad de conexión para descargar archivos pesados o tener videollamadas?</li>
+<li>¿Necesitas constantemente tener este servicio o solo es por unos días de la semana?</li>
+<li>¿Necesitas cobertura en varios territorios o solo en uno?</li>
+<li>¿Qué presupuesto tienes disponible para este gasto?</li>
+</ul>
+</li>
+<li>
+<p><strong>Momento 3: De acuerdo con lo que está disponible, estas son las preguntas para hacerte</strong></p>
+<p>¡Ahora vamos a la acción! necesitamos conseguir la siguiente información:</p>
+<p><strong>¿Qué operadores móviles están disponibles en mi territorio?</strong></p>
+<ul>
+<li>Pregúntale a tus vecinos ¿qué operador usan o han usado en el pasado? ¿cuál funciona mejor? ¿cuál tiene mejor asistencia técnica? ¿cuál tiene mejores tarifas?</li>
+<li>Puedes ir a las tiendas de telefonía celular en el centro urbano más cercano y preguntar directamente sobre que operadores tienen disponibles. En Colombia para 2024 hay múltiples opciones: <strong>Claro, Movistar, TIGO, WOM, Virgin Mobile, Avantel y Móvil Éxito</strong> son los principales operadores del mercado. Estos dos últimos son operadores pequeños que alquilan las infraestructura de los grandes operadores para prestar sus servicios.</li>
+</ul>
+<p><strong>¿Qué planes tienen disponibles estos operadores?</strong></p>
+<p>Luego de tener claro los operadores disponibles en tu territorio y saber cuales son los de mejor desempeño, procede a preguntar sobre los planes prepago y pospago que ofrecen. A continuación te presentamos unas tablas comparativas de los <strong>planes prepago pospago</strong> que ofrecían para 2023.</p>
+<p>Tarifas planes prepago 7-10 días</p>
+<p><em>Selectra, ¿Cuál es el mejor plan prepago celular en Colombia?</em></p>
+<p><img src="../assets/images/solv-buy-cellplan/solv-buy-cellplan-postpaidtariffs.webp" alt="Postpaidtariffs"/></p>
+</li>
+<li>
+<p><strong>Momento 4: Evaluar cuál es la mejor opción: ¿Qué es lo que realmente necesito?</strong></p>
+<p>¡Es hora de tomar una decisión! Con la información que conseguiste, te daremos algunos criterios que consideramos fundamentales a la hora de tomar una decisión:</p>
+<ul>
+<li>
+<p><strong>Frecuencia de uso, ¿qué tanto lo vas a usar?</strong></p>
+<p><img src="../assets/images/solv-buy-cellplan/solv-buy-cellplan-time.webp" alt="Time"/></p>
+<p> <a href="https://pixabay.com/photos/iphone-smartphone-apps-apple-inc-410324/" class="external">Pixabay License<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>Si, por ejemplo, <strong>la mayor parte de tus días</strong> necesitas hacer llamadas y estar conectado a internet, haciendo un balance, los planes pospago terminan siendo la mejor opción.</p>
+<p>Pero si, por otro lado, tu <strong>demanda es ocasional</strong>, tiene variabilidades a lo largo del mes y/o puede estar constantemente conectado a una red <strong>WiFi</strong> en tu lugar de trabajo o casa, puede que hacer recargas prepago esporádicamente sea lo más útil.</p>
+</li>
+<li>
+<p><strong>Presupuesto, ¿cuánto dinero te quieres gastar?</strong></p>
+<p>¡Ahora es tiempo de definir un presupuesto! Una cuenta fácil: ¿cuántas horas de trabajo a la semana representan este nuevo consumo? Este puede convertirse en un gasto permanente, por lo que es importante razonar la compra.</p>
+<p><strong>La decisión final puede que recaiga sobre este punto:</strong> las personas que usan planes prepago, normalmente no tienen un flujo constante de dinero que les asegure pagar una mensualidad. Mientras que el uso de pospago está asociado a personas que pueden garantizar el pago de una mensualidad de manera constante.</p>
+<p>Actualmente, las recargas prepago, en el mercado colombiano, van desde <strong>$2.000 COP con un día de vigencia.</strong> Por otro lado, los planes pospago más económicos se encuentran alrededor de <strong>$27.000 COP</strong> al mes**.** </p>
+<p>Para tomar esta decisión haz un recuento de cuanto estas dispuesto a invertir en este servicio y cuál es su frecuencia de uso.</p>
+</li>
+<li>
+<p><strong>Hábitos de uso, ¿para qué y cómo lo vas a usar?</strong></p>
+<p>¿Eres una persona que hace llamadas de larga duración o más bien te la pasas conectado a internet? Dependiendo de esto, podrás darle prioridad a la <strong>cantidad de minutos, a la cantidad de Gigas Bytes</strong> o ambas, a la hora de escoger tu opción de consumo.</p>
+<p>A continuación, te explicamos cada una de estas variables si aún no tienes muy claro cómo funcionan:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>Minutos</strong></th><th><strong>Datos</strong></th></tr></thead><tbody><tr><td>Los minutos asociados a tu plan determinan <strong>cuánto tiempo puedes durar hablando con otros móviles a nivel nacional</strong>, en algunos casos también se incluye una cantidad de minutos a otros países como Venezuela, Canadá o Estados Unidos. <strong>Actualmente, la mayoría de los planes pospago vienen con minutos ilimitados.</strong></td><td>Son la <strong>cantidad de datos móviles destinados para el uso de internet en tú teléfonos</strong>. Su uso es la cantidad que sube o descarga tu celular al utilizarlos. Puedes configurarlos para no gastarlos, ahorrarlos o restringir para que se usan. Recuerda que dependiendo del contenido que subas o bajes será mayor o menor el consumo de datos, por ejemplo, <strong>ver una película de dos horas desde tu celular puede consumir aproximadamente 300 MB</strong>, casi la tercera parte de un Gigabyte. Contenido como videos, audios o imágenes de alta resolución tiene un alto consumo de datos en comparación con otro tipo de archivos como los textos.</td></tr><tr><td></td><td></td></tr></tbody></table></div>
+<p><img src="../assets/images/solv-buy-cellplan/solv-buy-cellplan-use.webp" alt="Use"/></p>
+<p><a href="https://pxhere.com/en/photo/645095" class="external">CC0 Public Domain,<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>Por ejemplo, cuando hacemos SOLE, necesitamos conectar unos cuantos computadores para poder investigar sobre Grandes Preguntas.</p>
+<p>Eso quiere decir que, el plan que contratemos, necesariamente debe tener datos.</p>
+<p>Puedes poner a disposición del grupo la conexión a Internet de tu teléfono, para que todos puedan usarlos.</p>
+<p>Aunque las búsquedas en Internet que tienen lugar en un SOLE no usan muchos datos, puede que quieran ver vídeos u otro contenido que requiera mayor cantidad de datos de los que tienes contratados. Sin embargo, no necesitas esa cantidad de datos disponible todo el tiempo.</p>
+<p>Así que puedes comprar un plan prepago que les permita estar conectados, puntualmente para el SOLE, y resolver sus Grandes Preguntas.</p>
+<p>Si deciden verse una vez a la semana o quieren tener disponible el espacio con la conexión a cualquier hora, pueden plantearse en pagar un plan pospago entre todos… ¿cómo suena eso?</p>
+</li>
+<li>
+<p><strong>Señal, ¿en dónde lo vas a usar?</strong></p>
+<p>Tenemos que mirar cobertura, velocidad de carga y descarga, señal 3G, 4G. </p>
+<p><strong>Aunque muchas veces escuchamos a las personas decir que un operador es mejor que otro, esto dependerá de la región y puede cambiar con el paso del tiempo.</strong> </p>
+<p>A veces instalan más antenas o se saturan sus redes por exceso de usuarios.</p>
+</li>
+<li>
+<p><strong>Otros beneficios, información que puede ser de utilidad</strong></p>
+<blockquote>
+<p><strong>Ojo con el “Uso de datos ‘gratis’ en aplicaciones”</strong>
+<br/><strong>Recuerda, ¡nada es gratis!</strong></p>
+</blockquote>
+<p><br/>La mayor parte de planes actualmente en Colombia tienen el uso de aplicaciones como <em>Facebook o</em> <em>WhatsApp</em> de manera “ilimitada” mientras dure la carga o durante todo el mes en caso de planes pospago.</p>
+<p>Nunca nos explican que este consumo ilimitado <strong>solo esta relacionado con los mensajes que contienen textos</strong>, es decir, si ves una foto o un video, por Whatsapp o Facebook, los datos asociados a este consumo se descontarán de tu plan.</p>
+</li>
+<li>
+<p><strong>Aplicaciones ‘gratis’</strong></p>
+<p>Algunos planes pospago nos ofrecen licencia de aplicaciones como <em>Amazon Prime</em> (plataforma de series y películas) o <em>Spotify</em> (aplicación de reproducción de música), es decir por el pago de un plan de celular ellos te dan acceso a la versión Premium de estas plataformas. Esto puede ser beneficioso si son plataformas de las cuales ya haces uso, si no es así, ignóralo, será un consumo más.</p>
+<p>Tampoco te cuentan que esta manera de ‘obligarte’ a usar determinadas aplicaciones para comunicarte, entretenerte, informarte o crear tu presencia digital, es parte de una estrategia comercial. Es decir, las empresas usarán la información de tus perfiles para ofrecerte bienes de consumo, que repercutirán en el beneficio de las corporaciones responsables de su tratamiento… es decir, esas empresas se están lucrando con la información que sacan sobre ti. Así que, ojo, cuando un producto es gratis, es porque tú eres el producto.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="no-te-dejes-engañar"><strong>No te dejes engañar</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#no-te-dejes-engañar" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Es importante que, constantemente, revises los planes y ofertas de los operadores.</p>
+<p>Actualmente, en Colombia, puedes hacer <strong>“portabilidad”,</strong> es decir, pasarte de un operador a otro, cambiarte del plan de un operador a otro conservando tu número, solo solicitando en el nuevo operador que hagan este proceso**. Ya no hay cláusulas de permanencia que te obliguen a quedarte en un mismo operador por un tiempo determinado**. Entonces si ves que hay una opción mejor para ti ****¡no dudes en hacer portabilidad!</p>
+<p>Hay un pequeña oferta disponible en operadores pequeños, estos son planes prepago con vigencias largas.</p>
+<p>Yo, que vivo en Bogotá, estoy evaluando cambiarme a Móvil Éxito. Actualmente tengo un plan pospago en WOM en el que <strong>pago $40,000 COP</strong>, esto me da derecho a <strong>60 Gb y minutos ilimitados</strong> ¡esto es un montón! Inicialmente, me pasé a WOM porque, haciendo portabilidad, me daban los <strong>tres primeros meses gratis, más 20Gb</strong> y me <strong>cobraban $35,000 COP.</strong> Ahora que ando en Bogotá y trabajo desde casa y oficina, tengo internet disponible desde estos lugares. Estuve revisando opciones mientras escribía esta solución y vi que Móvil Éxito ofrece los suientes planes prepago:</p>
+<p><img src="../assets/images/solv-buy-cellplan/solv-buy-cellplan-compare.webp" alt="Compare"/></p>
+<p>Al mes, mi consumo no supera los 5 Gb y hago, por mucho, 30 llamadas al mes. Por esta razón el primer plan me saldría a <strong>$13,000 COP, ¡Menos de la tercera parte de lo que pago ahora!</strong> Eso si, tengo que hacer el pago de todo el año de una sola vez, pero no estoy atado a ningún tipo de contrato.</p>
+<h2 id="cuánto-es-suficiente"><strong>¿Cuánto es suficiente?</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#cuánto-es-suficiente" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Esta pregunta es difícil de responder, pero creo que la podemos reformular de la siguiente manera: <strong>la opción que escogiste, ¿cumple con la necesidad y intención que proyectaste en un inicio?</strong></p>
+<p>En ejemplo anterior, les mostré cómo considero que el plan que tengo actualmente es excesivo y encontré opciones que sí cumplen mi requerimiento inicial, a un tercio del precio que pago actualmente.</p>
+<p>Este tipo de razonamientos son los que nos gustaría que tuvieras al tomar una decisión sobre la opción que vas comprar.</p>
+<h2 id="soluciones-recomendadas">Soluciones recomendadas<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#soluciones-recomendadas" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><strong>Cómo comprar una conexión temporal a internet satelital</strong></li>
+<li>¿Cómo aprovechar mi ancho de banda?</li>
+<li>¿Cómo comprar un celular adecuado para mí?</li>
+<li><strong>Haz una colecta para pagar internet comunitario</strong></li>
+<li>¿Cómo comprar una antena satelital?</li>
+</ul>
+<h2 id="referencias">Referencias<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#referencias" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><a href="https://www.youtube.com/embed/6jGYxMKqOTE" class="external">Youtube<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://www.youtube.com/embed/6jGYxMKqOTE" class="external">Youtube<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://www.phoneservicecenter.es/blog/que-son-los-datos-moviles/" class="external">Phoneservicecenter<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://www.youtube.com/embed/pS_es1-4keo" class="external">Youtube<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://www.youtube.com/embed/pS_es1-4keo" class="external">Youtube<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://www.opensignal.com/" class="external">Opensignal<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://www.semana.com/prepago-vs-pospago-cuando-elegir-cual/201500/" class="external">Semana<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://www.larepublica.co/empresas/la-batalla-de-los-operadores-en-colombia-inicio-con-planes-desde-35-000-3150492" class="external">Larepublica<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://selectra.com.co/celular/planes-prepago" class="external">Selectra<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<hr/></article><hr/><div class="page-footer"><div class="waline-feedback"><link rel="stylesheet" href="https://unpkg.com/@waline/client@3.4.2/dist/waline.css"/><div id="waline"></div><style>
+:root {
+  /* Mapeo de variables Quartz -> Waline */
+  --waline-theme-color: var(--secondary);
+  --waline-bgcolor: var(--light);
+  --waline-bgcolor-light: var(--lightgray);
+  --waline-text-color: var(--darkgray);
+  --waline-border-color: #4f4f4f;
+  --waline-color: var(--darkgray);
+  --waline-info-color: var(--darkgray);
+  --waline-disable-bgcolor: var(--lightgray);
+  --waline-info-bgcolor: var(--lightgray);
+  --waline-white: var(--light);
+}
+
+.waline-feedback {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  border-top: 1px solid var(--lightgray);
+  padding-top: 2rem;
+  font-family: var(--bodyFont);
+}
+
+/* 1. LIMPIEZA DE INTERFAZ (Ocultar extras) */
+.wl-info, .wl-sort, .wl-refresh, .wl-count, .wl-powered {
+  display: none !important;
+}
+
+.wl-panel {
+  margin: 0 !important;
+  padding: 1rem 1.25rem !important;
+  border: 3px solid #4f4f4f !important;
+  border-radius: 1px !important;
+  background: var(--light) !important;
+  box-shadow: none !important;
+}
+
+.wl-header {
+  border-bottom: 2px solid #4f4f4f !important;
+}
+
+.wl-header-item {
+  align-items: stretch !important;
+}
+
+.wl-header-item:not(:last-child) {
+  border-right: 2px solid #4f4f4f !important;
+}
+
+.wl-header label {
+  font-family: var(--bodyFont) !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--dark) !important;
+}
+
+.wl-input {
+  font-family: var(--bodyFont) !important;
+  font-size: 0.85rem !important;
+}
+
+.wl-editor {
+  background: var(--light) !important;
+  font-family: var(--bodyFont) !important;
+  padding: 0.75rem !important;
+  padding-right: -80px !important;
+}
+
+.wl-editor:focus,
+.wl-input:focus {
+  background: var(--lightgray) !important;
+}
+
+.wl-footer {
+  border-top: 2px solid #4f4f4f !important;
+  margin-top: 0.75rem !important;
+  padding-top: 0.75rem !important;
+}
+
+.wl-btn {
+  border: 2px solid #4f4f4f !important;
+  border-radius: 1px !important;
+  font-family: var(--bodyFont) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  background: var(--light) !important;
+  color: var(--dark) !important;
+  box-shadow: none !important;
+}
+
+.wl-btn.primary {
+  background: var(--secondary) !important;
+  color: var(--light) !important;
+}
+
+.wl-btn.primary:hover,
+.wl-btn.primary:active {
+  background: var(--dark) !important;
+}
+
+.wl-cards .wl-user .wl-user-avatar {
+  border: 2px solid #4f4f4f !important;
+}
+
+.wl-card {
+  border: 2px solid #4f4f4f !important;
+  border-radius: 1px !important;
+  background: var(--light) !important;
+  padding: 0.75rem 1rem !important;
+  box-shadow: none !important;
+}
+
+.wl-card-item {
+  padding: 0.5rem 0 !important;
+}
+
+.wl-card .wl-nick,
+.wl-card span.wl-nick {
+  font-family: var(--bodyFont) !important;
+  color: var(--dark) !important;
+}
+
+.wl-card .wl-content {
+  font-family: var(--bodyFont) !important;
+}
+
+.wl-empty {
+  font-family: var(--bodyFont) !important;
+  font-size: 0.95rem !important;
+  color: var(--dark) !important;
+}
+
+/* Acciones pesadas desactivadas (gif, upload, preview) */
+.wl-action[title="GIF"],
+.wl-action[title="Previsualizar"],
+label[for="wl-image-upload"],
+#wl-image-upload,
+.wl-gif-popup {
+  display: none !important;
+}
+
+.wl-reaction-title {
+  font-family: var(--headerFont) !important;
+  font-size: clamp(1.2rem, 2.4vw, 1.6rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em;
+  color: var(--dark) !important;
+  margin-bottom: 1.5rem !important;
+  text-align: center !important;
+}
+
+/* 2. LAYOUT BASE (Horizontal/compacto, responsive-first) */
+.wl-reaction-list {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  gap: 0.75rem !important;
+  width: 100% !important;
+  padding: 0 !important;
+  flex-wrap: wrap !important;
+}
+
+.wl-reaction-item {
+  /* Fluido: evita cortes en desktop y se adapta en tablet/móvil */
+  flex: 1 1 12.5rem !important;
+  min-width: 9.5rem !important;
+  max-width: 16rem !important;
+  margin: 0 !important;
+  padding: 0.75rem 1rem !important;
+  border: 3px solid #4f4f4f !important;
+  border-radius: 1px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  background: var(--light) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease !important;
+  cursor: pointer !important;
+  line-height: 1.1 !important;
+}
+
+/* Accesibilidad / UX: foco visible */
+.wl-reaction-item:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--secondary) 60%, transparent);
+  outline-offset: 2px;
+}
+
+.wl-reaction-item.active {
+  /* El color real de active se define por estado (ver reglas nth-child) */
+  transform: translateY(-1px);
+  box-shadow: 8px 8px 0 #4f4f4f !important;
+}
+
+/* 3. SOLUCIÓN SVGS EN LÍNEA */
+.wl-reaction-img {
+  display: none !important; /* Ocultamos los broken icons de Waline */
+}
+
+.wl-reaction-item::before {
+  content: "";
+  width: 1.4rem;
+  height: 1.4rem;
+  background-color: currentColor;
+  display: inline-block;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+/* Icono 1: No funcionó (X) */
+.wl-reaction-item:nth-child(1)::before {
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>');
+}
+.wl-reaction-item:nth-child(1) { color: #ef4444; }
+.wl-reaction-item:nth-child(1):hover,
+.wl-reaction-item:nth-child(1).active {
+  background: #ef4444 !important;
+  color: white !important;
+  border-color: #4f4f4f !important;
+}
+
+/* Icono 2: Regular (Neutro) */
+.wl-reaction-item:nth-child(2)::before {
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="8" y1="12" x2="16" y2="12"></line></svg>');
+}
+.wl-reaction-item:nth-child(2) { color: #f59e0b; }
+.wl-reaction-item:nth-child(2):hover,
+.wl-reaction-item:nth-child(2).active {
+  background: #f59e0b !important;
+  color: white !important;
+  border-color: #4f4f4f !important;
+}
+
+/* Icono 3: Funcionó (Check/Rocket) */
+.wl-reaction-item:nth-child(3)::before {
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>');
+}
+.wl-reaction-item:nth-child(3) { color: #10b981; }
+.wl-reaction-item:nth-child(3):hover,
+.wl-reaction-item:nth-child(3).active {
+  background: #10b981 !important;
+  color: white !important;
+  border-color: #4f4f4f !important;
+}
+
+/* Textos personalizados vía CSS si Waline no los inyecta bien */
+.wl-reaction-item::after {
+  /* Previene “corte” y desbordes: se mantiene en una sola línea */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  font-family: var(--bodyFont) !important;
+}
+.wl-reaction-item:nth-child(1)::after { content: "No"; font-weight: 600; font-size: 0.9rem; }
+.wl-reaction-item:nth-child(2)::after { content: "Tal vez"; font-weight: 600; font-size: 0.9rem; }
+.wl-reaction-item:nth-child(3)::after { content: "Sí"; font-weight: 600; font-size: 0.9rem; }
+
+.wl-reaction-votes {
+  font-size: 0.8rem !important;
+  opacity: 0.65 !important;
+  font-family: var(--codeFont) !important;
+  color: var(--darkgray) !important;
+}
+
+/* Hover “flat”: solo levanta un poco + refuerzo de contraste */
+.wl-reaction-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 8px 8px 0 #4f4f4f !important;
+}
+.wl-reaction-item:hover .wl-reaction-votes,
+.wl-reaction-item.active .wl-reaction-votes {
+  color: currentColor !important; /* en hover/active queda blanco por la regla de estado */
+  opacity: 0.9 !important;
+}
+
+@media (max-width: 600px) {
+  .wl-header-item:not(:last-child) {
+    border-right: none !important;
+    border-bottom: 2px solid #4f4f4f !important;
+  }
+
+  .wl-reaction-list {
+    /* Mobile compacto: fila/rejilla, no “tarjetas gigantes” */
+    justify-content: center !important;
+    gap: 0.6rem !important;
+  }
+  .wl-reaction-item {
+    padding: 0.6rem 0.75rem !important;
+    flex: 1 1 9.5rem !important;
+    min-width: 8.75rem !important;
+    max-width: 100% !important;
+  }
+  .wl-reaction-item::before {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+  .wl-reaction-item:nth-child(1)::after,
+  .wl-reaction-item:nth-child(2)::after,
+  .wl-reaction-item:nth-child(3)::after {
+    font-size: 0.85rem;
+  }
+}
+</style></div></div></div><div class="right sidebar"><div class="solve-meta-sidebar "><h3 class="solve-meta-title">Sobre este artículo</h3><div class="solve-meta-section"><span class="solve-meta-label">Categorías:</span><div class="solve-meta-tags"><span class="solve-meta-tag">#Dispositivos</span></div></div><div class="solve-meta-metrics"><div class="solve-meta-row"><span class="solve-meta-label">Dificultad:</span><span class="solve-meta-badge" style="background-color: #FFCEA0"><img class="solve-meta-icon" data-icon="solve-difficulty-2.svg" alt aria-hidden="true"/><span class="solve-meta-value">Medio</span></span></div><div class="solve-meta-row"><span class="solve-meta-label">Costo:</span><span class="solve-meta-badge" style="background-color: #FFB6B6"><img class="solve-meta-icon" data-icon="solve-cost-4.svg" alt aria-hidden="true"/><span class="solve-meta-value">> USD 50</span></span></div><div class="solve-meta-row"><span class="solve-meta-label">Tarda:</span><span class="solve-meta-badge" style="background-color: #B6FAA4"><img class="solve-meta-icon" data-icon="solve-time-1.svg" alt aria-hidden="true"/><span class="solve-meta-value">Minutos</span></span></div><div class="solve-meta-row"><span class="solve-meta-label">Ayudantes:</span><span class="solve-meta-badge" style="background-color: #B6FAA4"><img class="solve-meta-icon" data-icon="solve-helpers-1.svg" alt aria-hidden="true"/><span class="solve-meta-value">Sin ayudantes</span></span></div><div class="solve-meta-row solve-meta-permite"><span class="solve-meta-label">Permite:</span><div class="solve-meta-permite-badges"><span class="solve-meta-badge solve-meta-badge-small" style="background-color: #A6EFFF"><span class="solve-meta-value">Conseguir</span></span></div></div></div><div class="solve-meta-footer"><div class="solve-meta-author"><span class="solve-meta-label-bold">Autor:</span> Nicolás</div><div class="solve-meta-date"><span class="solve-meta-label-bold">Publicado:</span> <time datetime="2025-12-17T05:00:00.000Z">17 dic 2025</time></div></div></div></div></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="../postscript.js" type="module"></script></html>
