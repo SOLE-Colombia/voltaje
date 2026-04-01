@@ -6,16 +6,22 @@
       <description>Últimas 10 notas on SOLE Voltaje</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>¿Cómo elegir una batería que aguante el trabajo pesado en el campo?</title>
+    <title>Revivir un computador con Linux</title>
+    <link>https://voltaje.solecolombia.org/solve/solv-second-life-computer</link>
+    <guid>https://voltaje.solecolombia.org/solve/solv-second-life-computer</guid>
+    <description><![CDATA[ ¡Hola! Soy David. ]]></description>
+    <pubDate>Wed, 01 Apr 2026 05:00:00 GMT</pubDate>
+  </item><item>
+    <title>Como elegir la bateria correcta</title>
     <link>https://voltaje.solecolombia.org/solve/solv-powerbank</link>
     <guid>https://voltaje.solecolombia.org/solve/solv-powerbank</guid>
-    <description><![CDATA[ Hola, soy David. Hace poco estuve grabando unos videos en la Sierra Nevada y allá la luz es un tesoro. ]]></description>
+    <description><![CDATA[ Hola, soy David. Soy tu cacharrero guía. ]]></description>
     <pubDate>Wed, 11 Mar 2026 05:00:00 GMT</pubDate>
   </item><item>
     <title>¿Cómo adecuar un espacio para usar el Internet en grupo?</title>
     <link>https://voltaje.solecolombia.org/solve/solv-organize-space</link>
     <guid>https://voltaje.solecolombia.org/solve/solv-organize-space</guid>
-    <description><![CDATA[ ¡Hola! Soy Catalina, bienvenido a esta solución 👋🏽 ¿Alguna vez te has preguntado qué significa usar el Internet en grupo? En SOLE nos lo hemos preguntado varias veces. ]]></description>
+    <description><![CDATA[ ¡Hola! Soy Catalina, bienvenido 👋🏽 Escribí esta solución porque, con el tiempo, he descubierto cómo los objetos que nos rodean moldean la forma en como nos relacionamos. ]]></description>
     <pubDate>Wed, 04 Mar 2026 05:00:00 GMT</pubDate>
   </item><item>
     <title>¿Cómo compartir internet desde tu computador?</title>
@@ -57,12 +63,6 @@
     <title>internet-satelital-compartido-voltaje-desconectado</title>
     <link>https://voltaje.solecolombia.org/disconnected/internet-satelital-compartido-voltaje-desconectado</link>
     <guid>https://voltaje.solecolombia.org/disconnected/internet-satelital-compartido-voltaje-desconectado</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 23 Feb 2026 14:37:04 GMT</pubDate>
-  </item><item>
-    <title>preguntas-provocadoras-inspirate</title>
-    <link>https://voltaje.solecolombia.org/preguntas-provocadoras-inspirate</link>
-    <guid>https://voltaje.solecolombia.org/preguntas-provocadoras-inspirate</guid>
     <description><![CDATA[  ]]></description>
     <pubDate>Mon, 23 Feb 2026 14:37:04 GMT</pubDate>
   </item>
