@@ -1,0 +1,1 @@
+Router blanco con ranura abierta para insertar la tarjeta SIM. Se lee: RESET, POWER, LAN/WAN, TEL. Al lado, la tarjeta SIM con su soporte y tapa.

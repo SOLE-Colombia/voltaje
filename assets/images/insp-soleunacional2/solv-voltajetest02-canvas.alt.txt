@@ -1,0 +1,1 @@
+Diagrama de flujo: personas pasan por un escenario, un círculo con iconos, una campana de Gauss y un cuadro hacia la "RTA" (respuesta).

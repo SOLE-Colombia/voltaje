@@ -1,0 +1,1 @@
+Panel de configuración Huawei mostrando el estado de conexión entre la antena, el módem y tus dispositivos.

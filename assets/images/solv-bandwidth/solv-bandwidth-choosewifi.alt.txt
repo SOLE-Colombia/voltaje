@@ -1,0 +1,1 @@
+Menú de configuración Wi-Fi en un celular mostrando redes disponibles: My_Wifi (5G), My_Wifi_dual (2.4G/5G) y My_Wifi_2.4.

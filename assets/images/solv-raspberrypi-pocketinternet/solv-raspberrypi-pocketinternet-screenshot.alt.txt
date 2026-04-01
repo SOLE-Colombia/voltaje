@@ -1,0 +1,1 @@
+Ventana del programa Raspberry Pi Imager mostrando una lista de sistemas operativos disponibles para descargar, como Raspberry Pi OS.

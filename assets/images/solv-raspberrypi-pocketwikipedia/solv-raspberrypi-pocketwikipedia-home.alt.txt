@@ -1,0 +1,1 @@
+Navegador mostrando la página de inicio de Wikipedia Offline, con categorías de conocimiento como Artes, Geografía, Historia, Ciencias, Sociedad y Sports.

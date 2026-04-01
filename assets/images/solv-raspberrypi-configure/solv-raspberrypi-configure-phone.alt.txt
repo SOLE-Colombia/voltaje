@@ -1,0 +1,1 @@
+Pantalla de configuración Wi-Fi en iPhone mostrando detalles de red, dirección IP y el interruptor activado para "Limit IP Address Tracking".

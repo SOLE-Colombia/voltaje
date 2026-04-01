@@ -1,0 +1,1 @@
+Esquema de conectividad: muestra el flujo de datos entre un cliente y un servidor mediante antenas y cables submarinos o subterráneos.

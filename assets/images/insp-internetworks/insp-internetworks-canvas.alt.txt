@@ -1,0 +1,1 @@
+Diagrama ¿Cómo funciona el Internet?: equipos CLIENTE (celular, portátil, pantalla) se conectan con el SERVIDOR por la nube INTERNET.

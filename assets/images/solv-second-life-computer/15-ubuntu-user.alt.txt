@@ -1,0 +1,1 @@
+Ventana de instalación de sistema operativo solicitando nombre, nombre de equipo y usuario para configurar el equipo. Aparece el botón Continuar.

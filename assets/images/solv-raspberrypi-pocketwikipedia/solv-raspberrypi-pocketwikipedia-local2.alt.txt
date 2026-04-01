@@ -1,0 +1,1 @@
+Terminal ejecutando el comando: sudo mv wikipedia_es_all_mini_2022-11.zim /var/local/, para mover un archivo en el sistema.

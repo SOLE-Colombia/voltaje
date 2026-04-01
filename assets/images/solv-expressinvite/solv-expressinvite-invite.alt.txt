@@ -1,0 +1,1 @@
+Interfaz de Canva mostrando un volante digital para invitar al SOLE Lab, que incluye un código QR para unirse a un grupo de WhatsApp comunitario.

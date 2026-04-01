@@ -1,0 +1,1 @@
+Página web de Kiwix-Serve con enlaces de descarga para diversos sistemas. Se destaca en un recuadro rojo: "GNU/Linux ARM (32 Bits)".

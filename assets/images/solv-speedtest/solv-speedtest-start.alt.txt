@@ -1,0 +1,1 @@
+Interfaz de la app Speedtest con el botón "INICIO" para medir la velocidad de internet, mostrando información de red de Movistar y Claro Colombia.

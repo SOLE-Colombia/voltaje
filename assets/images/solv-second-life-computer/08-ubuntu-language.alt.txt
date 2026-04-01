@@ -1,0 +1,1 @@
+Ventana de instalación de Ubuntu ofreciendo las opciones "Try Ubuntu" y "Install Ubuntu" para elegir el idioma y comenzar el proceso en el equipo.

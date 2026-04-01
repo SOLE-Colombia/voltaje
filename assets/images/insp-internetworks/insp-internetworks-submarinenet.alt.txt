@@ -1,0 +1,1 @@
+Mapa mundial que muestra la red de cables submarinos de internet conectando países. Incluye texto: "Map data © OpenStreetMap, Cable data from cablemap.info".

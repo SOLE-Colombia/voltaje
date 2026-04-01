@@ -1,0 +1,1 @@
+Ventana de terminal ejecutando el comando "wget" para descargar archivos de herramientas de Kiwix en un sistema Linux.

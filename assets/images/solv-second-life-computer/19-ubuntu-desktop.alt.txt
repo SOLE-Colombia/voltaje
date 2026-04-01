@@ -1,0 +1,1 @@
+Ventana de configuración del sistema mostrando las opciones de personalización de apariencia, colores y el dock de Ubuntu.

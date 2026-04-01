@@ -1,0 +1,1 @@
+Diagrama que muestra cómo conectar una antena al módem para recibir señal 3G y wifi. Indica: SEÑAL 3G, ANTENA, CABLE, WIFI, MÓDEM/ENRUTADOR, ELECTRICIDAD.

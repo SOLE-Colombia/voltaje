@@ -1,0 +1,1 @@
+Panel de control de un celular mostrando Wi-Fi "NA_2.4G" conectado, datos móviles activados y otras configuraciones rápidas como Bluetooth y linterna.

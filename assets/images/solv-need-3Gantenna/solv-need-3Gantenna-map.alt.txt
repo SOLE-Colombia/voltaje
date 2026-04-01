@@ -1,0 +1,1 @@
+Mapa digital con iconos de antenas; un globo informativo detalla: "GSM, Area: 30, Cell: 14902, 22,6 km". Muestra la ubicación de redes en una zona rural.

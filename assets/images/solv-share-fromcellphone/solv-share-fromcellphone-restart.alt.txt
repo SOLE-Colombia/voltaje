@@ -1,0 +1,1 @@
+Panel de control de un celular mostrando cómo activar los "Datos móviles", cambiando de "Desactivado" a "Activado".

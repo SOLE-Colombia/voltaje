@@ -1,0 +1,1 @@
+Comparación de resolución en el London Eye. Muestra cómo la calidad de la imagen disminuye al bajar de 24 a 0.3 megapíxeles.

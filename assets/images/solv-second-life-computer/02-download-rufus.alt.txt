@@ -1,0 +1,1 @@
+Ventana del programa Rufus seleccionando el dispositivo de almacenamiento para preparar una unidad USB. Texto: "Propiedades de la unidad", "PREPARADO".

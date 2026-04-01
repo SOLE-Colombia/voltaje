@@ -1,0 +1,1 @@
+Pantalla del sitio web de Rufus mostrando su programa para crear memorias USB de arranque y opciones de configuración para instalar Windows.

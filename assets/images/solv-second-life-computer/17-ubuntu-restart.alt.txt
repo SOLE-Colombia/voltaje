@@ -1,0 +1,1 @@
+Pantalla de computador con aviso: "Instalación terminada. La instalación se ha completado. Necesita reiniciar el equipo para poder usar la nueva instalación".

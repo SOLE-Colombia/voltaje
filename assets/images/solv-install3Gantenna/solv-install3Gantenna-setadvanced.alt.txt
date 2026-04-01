@@ -1,0 +1,1 @@
+Panel web de configuración de un router Huawei mostrando la sección "Información del dispositivo" con flechas rojas que indican pasos de navegación.

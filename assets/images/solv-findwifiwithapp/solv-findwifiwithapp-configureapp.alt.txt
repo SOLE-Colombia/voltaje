@@ -1,0 +1,1 @@
+Pantalla de celular mostrando los "Términos de Uso" de una aplicación sobre conectividad, con un botón verde en la parte inferior que dice "ACEPTAR".

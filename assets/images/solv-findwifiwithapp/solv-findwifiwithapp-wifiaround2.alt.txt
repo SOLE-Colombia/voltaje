@@ -1,0 +1,1 @@
+Mapa de Google Maps que muestra la ubicación actual y señala "6 Wi-Fi cercano disponible" para encontrar conexión a internet en la zona.

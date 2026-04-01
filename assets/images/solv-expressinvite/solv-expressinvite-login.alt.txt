@@ -1,0 +1,1 @@
+Ventana emergente en Canva para seleccionar una cuenta de usuario entre varias opciones registradas para iniciar sesión.

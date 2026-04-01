@@ -1,0 +1,1 @@
+Panel de configuración Huawei mostrando error de conexión por tarjeta SIM inválida o faltante entre el internet y el dispositivo.

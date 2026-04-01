@@ -1,0 +1,1 @@
+Ventana de terminal mostrando un archivo de configuración de red con comandos para habilitar protección y reenvío de paquetes IPv4 e IPv6.

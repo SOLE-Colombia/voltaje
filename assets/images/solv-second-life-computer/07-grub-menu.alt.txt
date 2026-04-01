@@ -1,0 +1,1 @@
+Menú de instalación de Ubuntu en pantalla negra. Muestra opciones como "Try or Install Ubuntu" y guía sobre cómo usar las teclas para iniciar el sistema.

@@ -1,0 +1,1 @@
+Configuración del programa Rufus para crear una unidad USB booteable con Ubuntu. Se muestra el botón "EMPEZAR" listo para iniciar el proceso.

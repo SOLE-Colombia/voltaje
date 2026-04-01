@@ -1,0 +1,1 @@
+Componentes de antena alineados con sus medidas. Texto: "MEDIDAS", "Reflector", "Dipolo", "Director #1" al "#8" y valores numéricos en milímetros.

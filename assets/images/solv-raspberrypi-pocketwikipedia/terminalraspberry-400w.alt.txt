@@ -1,0 +1,1 @@
+Terminal de comandos descargando archivos de Kiwix. Se observa el progreso de la descarga mediante el comando "wget" en una consola de texto.

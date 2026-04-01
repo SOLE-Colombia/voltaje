@@ -1,0 +1,1 @@
+Terminal de comandos solicitando la contraseña para establecer una conexión SSH segura con el servidor local 'solevoltaje'.

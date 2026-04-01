@@ -1,0 +1,1 @@
+Menú de configuración de red Wi-Fi resaltando en un círculo rojo la "Banda de red: 5 GHz" y el "Canal de red: 153" con un ícono de visto bueno.

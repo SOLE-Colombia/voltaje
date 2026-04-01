@@ -1,0 +1,1 @@
+Ventana de instalación de Ubuntu que presenta "Shotwell", un gestor para organizar y editar fotos, mostrando opciones de software relacionado.

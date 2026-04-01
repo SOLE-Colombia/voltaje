@@ -1,0 +1,1 @@
+Terminal mostrando la configuración de red en hostapd.conf con detalles como ssid=SOLEVOLTAJE y wpa_passphrase=LACONTRASENADEACCESO.

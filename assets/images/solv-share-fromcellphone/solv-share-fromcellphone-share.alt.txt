@@ -1,0 +1,1 @@
+Pantallas de un celular mostrando el panel de control. Se resaltan los "Datos móviles" activados y otras opciones de configuración rápida.

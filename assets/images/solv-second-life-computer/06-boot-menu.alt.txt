@@ -1,0 +1,1 @@
+Menú azul de inicio de un computador mostrando la opción "USB KEY1: SanDi" para arrancar desde una memoria USB.

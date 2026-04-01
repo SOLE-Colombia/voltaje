@@ -1,0 +1,1 @@
+Resultado de una prueba de velocidad en Fast.com que muestra: "Tu velocidad de internet es de 230 Mbps" y un botón para "Mostrar más información".

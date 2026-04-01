@@ -1,0 +1,1 @@
+Terminal de computador ejecutando el comando "tar" para descomprimir archivos de Kiwix, mostrando la lista de archivos extraídos.

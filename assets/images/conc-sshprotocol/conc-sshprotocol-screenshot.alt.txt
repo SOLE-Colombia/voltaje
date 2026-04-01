@@ -1,0 +1,1 @@
+Ventana de terminal PuTTY. Se ve el 'login as: root' a 192.168.1.1, el logo 'OPENWRT WIRELESS FREEDOM' y una receta de cóctel.

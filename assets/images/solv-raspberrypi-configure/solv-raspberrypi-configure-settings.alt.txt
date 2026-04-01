@@ -1,0 +1,1 @@
+Ventana de terminal escribiendo un comando para guardar configuraciones de firewall: "sudo sh -c "iptables-save > /etc/iptables.ipv4.nat"".

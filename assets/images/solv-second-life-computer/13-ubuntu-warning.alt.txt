@@ -1,0 +1,1 @@
+Ventana de confirmación del instalador preguntando: "¿Desea escribir los cambios en los discos?" para proceder con el formateo de particiones.

@@ -1,0 +1,1 @@
+Página web sobre SOLE Voltaje con una ventana emergente que muestra un asistente de IA seleccionando el idioma inglés para traducir el contenido.

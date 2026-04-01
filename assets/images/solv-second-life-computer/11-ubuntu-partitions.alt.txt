@@ -1,0 +1,1 @@
+Ventana de instalación de sistema operativo mostrando "Tipo de instalación" y la partición seleccionada /dev/sda2 para configurar el almacenamiento.

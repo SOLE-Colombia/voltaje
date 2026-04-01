@@ -1,0 +1,1 @@
+Cables de red conectados a los puertos LAN de un módem con luces verdes encendidas. Se lee: 10/100/1000 PCI-E, eth0, eth1, eth2 y USB 2.0.

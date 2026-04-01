@@ -1,0 +1,1 @@
+Menú de configuración "Edit Location" para definir el "parque San Jacinto" con sus coordenadas, altitud y opciones de seguimiento activadas.

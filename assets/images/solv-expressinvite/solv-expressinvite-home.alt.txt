@@ -1,0 +1,1 @@
+Pantalla principal de la herramienta de diseño Canva con la pregunta "¿Qué diseñamos hoy?" y una barra para buscar plantillas según lo que necesites.

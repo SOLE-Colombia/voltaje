@@ -1,0 +1,1 @@
+Pantalla de instalación de Ubuntu solicitando retirar el medio de instalación y presionar ENTER para continuar.

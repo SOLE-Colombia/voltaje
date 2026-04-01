@@ -1,0 +1,1 @@
+Ventana de instalación de Ubuntu mostrando la opción para borrar el disco y reemplazar Windows 10. Selecciona "Instalar ahora" para continuar.

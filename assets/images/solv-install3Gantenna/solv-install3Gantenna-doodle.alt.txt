@@ -1,0 +1,1 @@
+Diagrama que muestra cómo conectar una antena exterior al módem para obtener señal 3G y WiFi en casa. Incluye textos: ANTENA, CABLE, SEÑAL 3G, WIFI.

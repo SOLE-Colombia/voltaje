@@ -1,0 +1,1 @@
+Guía sobre el diagnóstico de señal móvil en cuatro pasos: verificar barras de señal, identificar tipo de conexión y realizar pruebas de velocidad.

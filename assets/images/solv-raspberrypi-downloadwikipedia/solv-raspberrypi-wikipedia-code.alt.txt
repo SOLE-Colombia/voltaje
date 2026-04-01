@@ -1,0 +1,1 @@
+Ventana de terminal solicitando contraseña tras autenticar una conexión SSH a "solevoltaje.local". Texto: "solevoltaje@solevoltaje.local's password:".

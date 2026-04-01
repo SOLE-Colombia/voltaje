@@ -1,0 +1,1 @@
+Menú de configuración de Windows señalando la opción "Comparte mi conexión a Internet con otros dispositivos", que actualmente está desactivada.

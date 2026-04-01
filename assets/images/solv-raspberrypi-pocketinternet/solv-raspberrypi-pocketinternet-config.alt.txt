@@ -1,0 +1,1 @@
+Ventana de terminal mostrando los resultados de un comando "ping" exitoso a "solevoltaje.local", confirmando la conexión con 0% de pérdida de paquetes.

@@ -1,0 +1,1 @@
+Menú de configuración "Disposición del teclado" seleccionando "Spanish - Spanish (Windows)" para configurar el idioma del sistema operativo.

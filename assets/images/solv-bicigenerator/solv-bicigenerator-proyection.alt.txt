@@ -1,0 +1,1 @@
+Tabla comparativa "Proyección de pérdidas (AWG Vs. mm²)" que muestra la resistencia y pérdidas porcentuales según el calibre del cable eléctrico.

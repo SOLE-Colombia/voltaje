@@ -1,0 +1,1 @@
+Pantalla de un celular mostrando la página de bienvenida de Nginx, confirmando que el servidor web está instalado y funcionando correctamente.

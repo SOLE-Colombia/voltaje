@@ -1,0 +1,1 @@
+Ventana de instalación que muestra un mapamundi para seleccionar la ubicación. Dice: "¿Dónde se encuentra?", "Montevideo", "Atrás" y "Continuar".

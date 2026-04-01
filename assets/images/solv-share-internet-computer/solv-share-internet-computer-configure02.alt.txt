@@ -1,0 +1,1 @@
+Menú de configuración de Windows que resalta con un círculo morado la opción: "Zona con cobertura inalámbrica móvil" para compartir internet.

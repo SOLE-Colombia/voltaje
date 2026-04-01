@@ -1,0 +1,1 @@
+Panel de configuración de router con una flecha señalando el valor RSRP y el texto: "Potencia de la conexión con la torre de telefonía celular".

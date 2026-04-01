@@ -1,0 +1,1 @@
+Tres íconos de descarga indicando tamaño de archivo: Menos de 1MB, Entre 1MB y 5MB, Mas de 5MB.

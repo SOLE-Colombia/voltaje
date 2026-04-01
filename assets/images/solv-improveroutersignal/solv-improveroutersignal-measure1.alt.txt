@@ -1,0 +1,1 @@
+Resultado de un test de velocidad que marca 300 Mbps con el texto: "Tu velocidad de internet es de 300 Mbps" y un botón para "Mostrar más información".

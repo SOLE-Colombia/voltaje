@@ -1,0 +1,1 @@
+Terminal de computadora ejecutando el comando: sudo mv kiwix-tools_linux-armhf-3.3.0-1/* /usr/local/bin, para mover archivos de Kiwix.

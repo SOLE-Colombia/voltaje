@@ -1,0 +1,1 @@
+Ventana de terminal PuTTY mostrando el inicio de sesión de un equipo con OpenWrt y una receta de coctel White Russian en su interfaz de texto.

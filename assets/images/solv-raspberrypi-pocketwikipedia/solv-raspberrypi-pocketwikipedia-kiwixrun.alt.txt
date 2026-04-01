@@ -1,0 +1,1 @@
+Terminal mostrando la configuración de un servicio Kiwix, con comandos como ExecStart, User=root y WantedBy=multi-user.target para conectividad local.

@@ -1,0 +1,1 @@
+Dos flechas estilo pixel, una rosada a la izquierda y una azul a la derecha, separadas por una línea. Texto: "¿Qué te gustaría más?".

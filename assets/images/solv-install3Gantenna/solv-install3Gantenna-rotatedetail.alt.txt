@@ -1,0 +1,1 @@
+Dibujo de una antena con flechas curvas alrededor que indican que debe girarse para mejorar la señal de internet.

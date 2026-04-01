@@ -1,0 +1,1 @@
+Ventana de terminal instalando paquetes con el comando "sudo apt install -y hostapd dnsmasq", mostrando el proceso de descarga y advertencias de sistema.

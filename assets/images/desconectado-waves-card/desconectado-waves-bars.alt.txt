@@ -1,0 +1,1 @@
+Celular mostrando el nivel de señal junto a una guía de 0 a 3 barras para identificar la intensidad de la conexión a internet.

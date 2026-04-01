@@ -1,0 +1,1 @@
+Tres iconos de descarga en colores rosa, azul y verde, indicando velocidades: "Menos de 1MB", "Entre 1MB y 5MB" y "Mas de 5MB".

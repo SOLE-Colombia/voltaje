@@ -1,0 +1,1 @@
+Medidor de velocidad Speedtest mostrando una descarga de 13.13 Mbps, con ping de 52 ms en Bogotá mediante el proveedor Movistar.

@@ -1,0 +1,1 @@
+Menú de configuración en Canva para elegir el tipo, tamaño y calidad antes de presionar el botón "Descargar" un archivo.

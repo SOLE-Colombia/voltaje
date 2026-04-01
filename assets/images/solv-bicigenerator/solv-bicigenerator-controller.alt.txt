@@ -1,0 +1,1 @@
+Controlador de carga solar carSPA azul con indicadores LED y puertos para conectar panel, batería y luz. Incluye botón ON/OFF y marcas de polaridad.

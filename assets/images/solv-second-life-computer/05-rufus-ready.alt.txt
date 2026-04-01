@@ -1,0 +1,1 @@
+Ventana del programa Rufus configurando una memoria USB para instalar Ubuntu. Se observa el botón "EMPEZAR" y el estado "PREPARADO".

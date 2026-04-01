@@ -1,0 +1,1 @@
+Ventana emergente "Download" sobre el servidor Kiwix, mostrando opciones de descarga para contenidos educativos sin conexión a internet.

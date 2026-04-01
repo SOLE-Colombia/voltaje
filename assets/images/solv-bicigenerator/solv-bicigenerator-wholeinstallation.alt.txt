@@ -1,0 +1,1 @@
+Bicicleta montada en un soporte conectado a un generador casero que carga una batería y alimenta un portátil. Se lee "750 W" en el inversor.

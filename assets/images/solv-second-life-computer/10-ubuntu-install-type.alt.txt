@@ -1,0 +1,1 @@
+Pantalla de instalación con la opción "Borrar disco e instalar Ubuntu" seleccionada, advirtiendo sobre el borrado de archivos del equipo.

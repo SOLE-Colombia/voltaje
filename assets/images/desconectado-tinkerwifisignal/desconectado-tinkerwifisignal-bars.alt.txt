@@ -1,0 +1,1 @@
+Íconos de señal WiFi que muestran desde cero hasta tres o más barritas, indicando la calidad de la conexión con su respectivo texto explicativo.

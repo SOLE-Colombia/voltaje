@@ -1,0 +1,1 @@
+Batería conectada a un controlador de carga solar CarSPA y a un inversor de corriente Truper de 750 W para suministrar energía.
