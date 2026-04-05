@@ -204,7 +204,7 @@ pre:hover > .expand-button {
 </li>
 <li>
 <p><strong>Conecta la MicroSD a tu computador</strong></p>
-<p>Antes de ejecutar el Raspberry Pi Imager, debes conectar la memoria [[es/glossary/conc-sdmemory|<strong>MicroSD</strong> →]] a tu computador.</p>
+<p>Antes de ejecutar el Raspberry Pi Imager, debes conectar la memoria <a href="../es/glossary/conc-sdmemory" class="internal alias" data-slug="es/glossary/conc-sdmemory">MicroSD →</a> a tu computador.</p>
 <p>Para ello es necesario usar un adaptador a USB si tu equipo no cuenta un la ranura para ello.</p>
 <p>Una vez compruebes que la memoria está en el equipo ejecuta el Raspberry Pi Imager y continúa con la solución.</p>
 </li>
@@ -221,14 +221,14 @@ pre:hover > .expand-button {
 <p><strong>Ubícalo en el Pi Imager</strong></p>
 <p>Ahora que ya está nuestro Pi conectado a la corriente, y a nuestra <strong>red local</strong>,** debemos ubicarlo para poder conectarnos a él.</p>
 <p>Antes de esto, una pequeña nota: <strong>los pasos que vienen a continuación los realizaremos por medio de un</strong> Terminal. Si usas un sistema operativo%20Operating%20system%20(OS)%202342bd68c5b68003b66beb552afaa17a.md) tipo Unix (Linux, MacOs), simplemente, busca el terminal y ahí podrás seguir los pasos (más abajo tienes cómo hacerlo). Si usas Windows, puedes usar el CMD en este paso y, para conectarte al Pi, puedes usar <a href="https://www.putty.org/" class="external">Putty<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</p>
-<p>Para ubicar el Pi en un Terminal usamos el programa ping, este intentará enviar un pequeño paquete de datos a la dirección que le indiquemos y nos dirá entre otras cosas la dirección [[es/glossary/conc-ip-address|<strong>IP</strong> →]] del computador.</p>
-<p>Acá vamos a hacer uso del nombre que le pusimos a nuestro Pi, en nuestro caso <em>solevoltaje</em>. En el terminal escribimos <code>ping solevoltaje.local</code> el programa nos responde entre otras cosas con la [[es/glossary/conc-ip-address|<strong>IP</strong> →]] <code>192.168.0.25</code>, lo que indica que nuestro Pi está disponible para que nos conectemos y empecemos a trabajar.</p>
+<p>Para ubicar el Pi en un Terminal usamos el programa ping, este intentará enviar un pequeño paquete de datos a la dirección que le indiquemos y nos dirá entre otras cosas la dirección <a href="../es/glossary/conc-ip-address" class="internal alias" data-slug="es/glossary/conc-ip-address">IP →</a> del computador.</p>
+<p>Acá vamos a hacer uso del nombre que le pusimos a nuestro Pi, en nuestro caso <em>solevoltaje</em>. En el terminal escribimos <code>ping solevoltaje.local</code> el programa nos responde entre otras cosas con la <a href="../es/glossary/conc-ip-address" class="internal alias" data-slug="es/glossary/conc-ip-address">IP →</a> <code>192.168.0.25</code>, lo que indica que nuestro Pi está disponible para que nos conectemos y empecemos a trabajar.</p>
 <p><img src="../assets/images/solv-raspberrypi-pocketinternet/solv-raspberrypi-pocketinternet-config.webp" alt="Ventana de terminal mostrando los resultados de un comando &quot;ping&quot; exitoso a &quot;solevoltaje.local&quot;, confirmando la conexión con 0% de pérdida de paquetes."/></p>
 </li>
 <li>
 <p><strong>Conéctate al Pi</strong></p>
 <p>Para que la conexión entre tu Pi y el resto de dispositivos sea segura, nos conectamos por medio de un Protocolo <a href="../es/glossary/conc-ssh-protocol" class="internal alias" data-slug="es/glossary/conc-ssh-protocol">SSH →</a> a nuestro Pi. Para ello, escribimos en nuestra terminal <code>ssh solevoltaje@solevoltaje.local</code> o con la Dirección IP <code>ssh solevoltaje@192.168.0.25</code></p>
-<p>Recuerda que debemos colocar nuestro nombre de usuario y nombre de dominio o [[es/glossary/conc-ip-address|<strong>IP</strong> →]] en los parámetros que entregamos a <strong>SSH</strong> <code>ssh &lt;nombre de usuario>@&lt;nombre de dominio></code>.</p>
+<p>Recuerda que debemos colocar nuestro nombre de usuario y nombre de dominio o <a href="../es/glossary/conc-ip-address" class="internal alias" data-slug="es/glossary/conc-ip-address">IP →</a> en los parámetros que entregamos a <strong>SSH</strong> <code>ssh &lt;nombre de usuario>@&lt;nombre de dominio></code>.</p>
 <p>Tan pronto se establezca la conexión, el sistema nos pedirá la contraseña. Escribe la misma que ingresaste en la configuración en los pasos anteriores y termina presionando la tecla <code>enter</code>.</p>
 </li>
 <li>
