@@ -104,8 +104,14 @@
     <loc>https://voltaje.solecolombia.org/glossary/conc-3g-4g-antennas</loc>
     <lastmod>2025-09-11T05:00:00.000Z</lastmod>
   </url><url>
+    <loc>https://voltaje.solecolombia.org/glossary/conc-ai-helper</loc>
+    <lastmod>2026-04-05T05:00:00.000Z</lastmod>
+  </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-antenna</loc>
     <lastmod>2025-02-24T05:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://voltaje.solecolombia.org/glossary/conc-bandwidth</loc>
+    <lastmod>2026-04-05T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-canva</loc>
     <lastmod>2025-07-15T05:00:00.000Z</lastmod>
@@ -119,17 +125,23 @@
     <loc>https://voltaje.solecolombia.org/glossary/conc-command-prompt</loc>
     <lastmod>2025-07-17T05:00:00.000Z</lastmod>
   </url><url>
+    <loc>https://voltaje.solecolombia.org/glossary/conc-cpu-processor</loc>
+    <lastmod>2026-04-05T05:00:00.000Z</lastmod>
+  </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-daemon</loc>
     <lastmod>2025-07-22T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-dhcp-protocol</loc>
-    <lastmod>2025-07-22T05:00:00.000Z</lastmod>
+    <lastmod>2026-04-05T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-dns</loc>
-    <lastmod>2025-02-24T05:00:00.000Z</lastmod>
+    <lastmod>2026-04-05T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-dnsmasq</loc>
     <lastmod>2025-07-22T05:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://voltaje.solecolombia.org/glossary/conc-docker-container</loc>
+    <lastmod>2026-04-05T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-domain-name</loc>
     <lastmod>2025-02-17T05:00:00.000Z</lastmod>
@@ -141,10 +153,19 @@
     <lastmod>2025-07-09T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-firewall</loc>
-    <lastmod>2025-07-22T05:00:00.000Z</lastmod>
+    <lastmod>2026-04-05T05:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://voltaje.solecolombia.org/glossary/conc-firmware</loc>
+    <lastmod>2026-04-05T05:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://voltaje.solecolombia.org/glossary/conc-flashdrive-usb</loc>
+    <lastmod>2026-04-05T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-gprs</loc>
     <lastmod>2025-08-25T05:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://voltaje.solecolombia.org/glossary/conc-hardware</loc>
+    <lastmod>2026-04-05T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-hostapd-daemon</loc>
     <lastmod>2025-07-22T05:00:00.000Z</lastmod>
@@ -162,10 +183,16 @@
     <lastmod>2025-07-22T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-ip-address</loc>
-    <lastmod>2025-07-17T05:00:00.000Z</lastmod>
+    <lastmod>2026-04-05T05:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://voltaje.solecolombia.org/glossary/conc-javascript-language</loc>
+    <lastmod>2026-04-05T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-latency</loc>
     <lastmod>2024-02-29T05:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://voltaje.solecolombia.org/glossary/conc-linux-system</loc>
+    <lastmod>2026-04-05T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-local-network</loc>
     <lastmod>2025-02-24T05:00:00.000Z</lastmod>
@@ -176,14 +203,26 @@
     <loc>https://voltaje.solecolombia.org/glossary/conc-mifi-modem</loc>
     <lastmod>2025-07-29T05:00:00.000Z</lastmod>
   </url><url>
+    <loc>https://voltaje.solecolombia.org/glossary/conc-network-agents</loc>
+    <lastmod>2026-04-05T05:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://voltaje.solecolombia.org/glossary/conc-nginx</loc>
+    <lastmod>2026-04-05T05:00:00.000Z</lastmod>
+  </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-operating-system</loc>
-    <lastmod>2025-07-17T05:00:00.000Z</lastmod>
+    <lastmod>2026-04-05T05:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://voltaje.solecolombia.org/glossary/conc-php-language</loc>
+    <lastmod>2026-04-05T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-ping-program</loc>
     <lastmod>2025-07-17T05:00:00.000Z</lastmod>
   </url><url>
+    <loc>https://voltaje.solecolombia.org/glossary/conc-python-language</loc>
+    <lastmod>2026-04-05T05:00:00.000Z</lastmod>
+  </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-ram-memory</loc>
-    <lastmod>2025-02-24T05:00:00.000Z</lastmod>
+    <lastmod>2026-04-05T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-raspberry-pi</loc>
     <lastmod>2025-02-24T05:00:00.000Z</lastmod>
@@ -192,7 +231,7 @@
     <lastmod>2025-07-09T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-router</loc>
-    <lastmod>2025-02-24T05:00:00.000Z</lastmod>
+    <lastmod>2026-04-05T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-sdmemory</loc>
     <lastmod>2025-07-15T05:00:00.000Z</lastmod>
@@ -207,13 +246,19 @@
     <lastmod>2025-07-09T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-ssh-protocol</loc>
-    <lastmod>2025-07-17T05:00:00.000Z</lastmod>
+    <lastmod>2026-04-05T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-ssid-identifier</loc>
     <lastmod>2025-07-22T05:00:00.000Z</lastmod>
   </url><url>
+    <loc>https://voltaje.solecolombia.org/glossary/conc-storage-disk</loc>
+    <lastmod>2026-04-05T05:00:00.000Z</lastmod>
+  </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-swap-memory</loc>
     <lastmod>2025-07-17T05:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://voltaje.solecolombia.org/glossary/conc-system-folders</loc>
+    <lastmod>2026-04-05T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-terminal</loc>
     <lastmod>2025-07-17T05:00:00.000Z</lastmod>
@@ -222,7 +267,7 @@
     <lastmod>2025-08-25T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-usb-connection</loc>
-    <lastmod>2025-07-15T05:00:00.000Z</lastmod>
+    <lastmod>2026-04-05T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-username</loc>
     <lastmod>2025-07-17T05:00:00.000Z</lastmod>
@@ -230,8 +275,8 @@
     <loc>https://voltaje.solecolombia.org/glossary/conc-whatsapp</loc>
     <lastmod>2025-07-15T05:00:00.000Z</lastmod>
   </url><url>
-    <loc>https://voltaje.solecolombia.org/glossary/conc-wireless-fidelity</loc>
-    <lastmod>2025-02-24T05:00:00.000Z</lastmod>
+    <loc>https://voltaje.solecolombia.org/glossary/conc-wifi</loc>
+    <lastmod>2026-04-05T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-yagi-antenna</loc>
     <lastmod>2025-09-11T05:00:00.000Z</lastmod>
@@ -461,6 +506,9 @@
     <loc>https://voltaje.solecolombia.org/solve/solv-fish-game</loc>
     <lastmod>2025-12-17T05:00:00.000Z</lastmod>
   </url><url>
+    <loc>https://voltaje.solecolombia.org/solve/solv-full-server</loc>
+    <lastmod>2026-04-05T05:00:00.000Z</lastmod>
+  </url><url>
     <loc>https://voltaje.solecolombia.org/solve/solv-funding-community-internet</loc>
     <lastmod>2025-12-17T05:00:00.000Z</lastmod>
   </url><url>
@@ -484,6 +532,9 @@
   </url><url>
     <loc>https://voltaje.solecolombia.org/solve/solv-jangala-internet-box</loc>
     <lastmod>2026-01-26T05:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://voltaje.solecolombia.org/solve/solv-know-ram</loc>
+    <lastmod>2026-04-05T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/solve/solv-know-wifi-passwords</loc>
     <lastmod>2026-02-02T05:00:00.000Z</lastmod>
@@ -543,5 +594,5 @@
     <lastmod>2026-02-23T14:37:04.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/test</loc>
-    <lastmod>2026-04-01T23:42:00.000Z</lastmod>
+    <lastmod>2026-04-01T23:55:07.000Z</lastmod>
   </url></urlset>
