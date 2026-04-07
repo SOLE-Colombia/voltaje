@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr"><head><title>Sua comunidade precisa de apoio financeiro para se conectar à internet?</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=Roboto+Mono:wght@400;500;600;700&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="SOLE Voltaje"/><meta property="og:title" content="Sua comunidade precisa de apoio financeiro para se conectar à internet?"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Sua comunidade precisa de apoio financeiro para se conectar à internet?"/><meta name="twitter:description" content="Olá, sou a Belén. Embora eu não tenha escrito o original desta solução, estou revisando-a hoje para que você possa entendê-la melhor."/><meta property="og:description" content="Olá, sou a Belén. Embora eu não tenha escrito o original desta solução, estou revisando-a hoje para que você possa entendê-la melhor."/><meta property="og:image:alt" content="Olá, sou a Belén. Embora eu não tenha escrito o original desta solução, estou revisando-a hoje para que você possa entendê-la melhor."/><meta property="twitter:domain" content="voltaje.solecolombia.org"/><meta property="og:url" content="https://voltaje.solecolombia.org/pt/solve/solv-financial-support-connect"/><meta property="twitter:url" content="https://voltaje.solecolombia.org/pt/solve/solv-financial-support-connect"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="Olá, sou a Belén. Embora eu não tenha escrito o original desta solução, estou revisando-a hoje para que você possa entendê-la melhor."/><meta name="generator" content="Quartz"/><script>(function () {
+  var STORAGE_KEY = "contentLang";
+  var FALLBACK_AVAILABLE = { en: true, pt: true };
+  var SITE_ROOT = "/";
+  var normalizePath = function (value) {
+    return (value || "").replace(/\/+$/g, "") || "/";
+  };
+  var isRootPath = function () {
+    return normalizePath(window.location.pathname) === normalizePath(SITE_ROOT);
+  };
+  var resolveLangPath = function (lang) {
+    return SITE_ROOT === "/" ? "/" + lang : SITE_ROOT + "/" + lang;
+  };
+  var detectPreferredLang = function () {
+    var stored = (localStorage.getItem(STORAGE_KEY) || "").toLowerCase();
+    if (stored) return stored;
+    var browser = (navigator.language || (navigator.languages && navigator.languages[0]) || "").toLowerCase();
+    return browser;
+  };
+  var resolveAvailableLanguages = async function () {
+    try {
+      var fetchIndex = globalThis.fetchData;
+      if (!fetchIndex || typeof fetchIndex.then !== "function") {
+        return FALLBACK_AVAILABLE;
+      }
+      var data = await fetchIndex;
+      var slugs = Object.keys(data || {});
+      if (slugs.length === 0) {
+        return FALLBACK_AVAILABLE;
+      }
+      return {
+        en: slugs.some(function (slug) { return slug === "en" || slug.startsWith("en/"); }),
+        pt: slugs.some(function (slug) { return slug === "pt" || slug.startsWith("pt/"); }),
+      };
+    } catch (_err) {
+      return FALLBACK_AVAILABLE;
+    }
+  };
+  if (!isRootPath()) return;
+  resolveAvailableLanguages().then(function (available) {
+    var preferred = detectPreferredLang();
+    if (preferred.startsWith("en") && available.en) {
+      window.location.replace(resolveLangPath("en"));
+      return;
+    }
+    if (preferred.startsWith("pt") && available.pt) {
+      window.location.replace(resolveLangPath("pt"));
+    }
+  });
+})();</script><link href="../../index.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL2hvbWUvcnVubmVyL3dvcmsvdm9sdGFqZS1kZXYvdm9sdGFqZS1kZXYvcXVhcnR6L2NvbXBvbmVudHMvc3R5bGVzIiwic291cmNlcyI6WyJtZXJtYWlkLmlubGluZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFHRjtFQUNFOzs7QUFLRjtFQUNFO0VBQ0E7OztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFOztBQUlGO0VBQ0U7RUFDQTtFQUNBIiwic291cmNlc0NvbnRlbnQiOlsiLmV4cGFuZC1idXR0b24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsb2F0OiByaWdodDtcbiAgcGFkZGluZzogMC40cmVtO1xuICBtYXJnaW46IDAuM3JlbTtcbiAgcmlnaHQ6IDA7IC8vIE5PVEU6IHJpZ2h0IHdpbGwgYmUgc2V0IGluIG1lcm1haWQuaW5saW5lLnRzXG4gIGNvbG9yOiB2YXIoLS1ncmF5KTtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICBib3JkZXI6IDFweCBzb2xpZDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBvcGFjaXR5OiAwO1xuICB0cmFuc2l0aW9uOiAwLjJzO1xuXG4gICYgPiBzdmcge1xuICAgIGZpbGw6IHZhcigtLWxpZ2h0KTtcbiAgICBmaWx0ZXI6IGNvbnRyYXN0KDAuMyk7XG4gIH1cblxuICAmOmhvdmVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgYm9yZGVyLWNvbG9yOiB2YXIoLS1zZWNvbmRhcnkpO1xuICB9XG5cbiAgJjpmb2N1cyB7XG4gICAgb3V0bGluZTogMDtcbiAgfVxufVxuXG5wcmUge1xuICAmOmhvdmVyID4gLmV4cGFuZC1idXR0b24ge1xuICAgIG9wYWNpdHk6IDE7XG4gICAgdHJhbnNpdGlvbjogMC4ycztcbiAgfVxufVxuXG4jbWVybWFpZC1jb250YWluZXIge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGNvbnRhaW46IGxheW91dDtcbiAgei1pbmRleDogOTk5O1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxMDB2dztcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogbm9uZTtcbiAgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDRweCk7XG4gIGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC41KTtcblxuICAmLmFjdGl2ZSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB9XG5cbiAgJiA+ICNtZXJtYWlkLXNwYWNlIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogNTAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICBoZWlnaHQ6IDgwdmg7XG4gICAgd2lkdGg6IDgwdnc7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcblxuICAgICYgPiAubWVybWFpZC1jb250ZW50IHtcbiAgICAgIHBhZGRpbmc6IDJyZW07XG4gICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICB0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7XG4gICAgICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4xcyBlYXNlO1xuICAgICAgb3ZlcmZsb3c6IHZpc2libGU7XG4gICAgICBtaW4taGVpZ2h0OiAyMDBweDtcbiAgICAgIG1pbi13aWR0aDogMjAwcHg7XG5cbiAgICAgIHByZSB7XG4gICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgfVxuXG4gICAgICBzdmcge1xuICAgICAgICBtYXgtd2lkdGg6IG5vbmU7XG4gICAgICAgIGhlaWdodDogYXV0bztcbiAgICAgIH1cbiAgICB9XG5cbiAgICAmID4gLm1lcm1haWQtY29udHJvbHMge1xuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgYm90dG9tOiAyMHB4O1xuICAgICAgcmlnaHQ6IDIwcHg7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZ2FwOiA4cHg7XG4gICAgICBwYWRkaW5nOiA4cHg7XG4gICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgYm9yZGVyLXJhZGl1czogNnB4O1xuICAgICAgYm94LXNoYWRvdzogMCAycHggNHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcbiAgICAgIHotaW5kZXg6IDI7XG5cbiAgICAgIC5tZXJtYWlkLWNvbnRyb2wtYnV0dG9uIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgIHdpZHRoOiAzMnB4O1xuICAgICAgICBoZWlnaHQ6IDMycHg7XG4gICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgICAgY29sb3I6IHZhcigtLWRhcmspO1xuICAgICAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICBmb250LWZhbWlseTogdmFyKC0tYm9keUZvbnQpO1xuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBlYXNlO1xuXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIH1cblxuICAgICAgICAmOmFjdGl2ZSB7XG4gICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDFweCk7XG4gICAgICAgIH1cblxuICAgICAgICAvLyBTdHlsZSB0aGUgcmVzZXQgYnV0dG9uIGRpZmZlcmVudGx5XG4gICAgICAgICY6bnRoLWNoaWxkKDIpIHtcbiAgICAgICAgICB3aWR0aDogYXV0bztcbiAgICAgICAgICBwYWRkaW5nOiAwIDEycHg7XG4gICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iXX0= */</style><script src="../../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://voltaje.solecolombia.org/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://voltaje.solecolombia.org/pt/solve/solv-financial-support-connect-og-image.webp"/><meta property="og:image:url" content="https://voltaje.solecolombia.org/pt/solve/solv-financial-support-connect-og-image.webp"/><meta name="twitter:image" content="https://voltaje.solecolombia.org/pt/solve/solv-financial-support-connect-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="pt/solve/solv-financial-support-connect" data-basepath><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../.." aria-label="SOLE Voltaje"><img src="https://voltaje.solecolombia.org/static/logo.png" alt class="page-logo page-logo--light"/><img src="https://voltaje.solecolombia.org/static/logo_voltaje.svg" alt class="page-logo page-logo--dark"/></a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><details class="lang-toggle" data-lang-toggle="true"><summary class="lang-summary" aria-label="Cambiar idioma"><span class="lang-summary-flag" aria-hidden="true">🇪🇸</span><span class="lang-summary-code">ES</span></summary><div class="lang-menu" role="menu" aria-label="Idiomas disponibles"><button type="button" class="lang-option" role="menuitem" data-lang="es"><span aria-hidden="true">🇪🇸</span> ES</button><button type="button" class="lang-option" role="menuitem" data-lang="en"><span aria-hidden="true">🇺🇸</span> EN</button><button type="button" class="lang-option" role="menuitem" data-lang="pt"><span aria-hidden="true">🇵🇹</span> PT</button></div></details></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Modo oscuro"><title>Modo oscuro</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Modo claro"><title>Modo claro</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div></div><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Buscar</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Busca algo" placeholder="Busca algo"/><div class="search-layout" data-preview="true"></div></div></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-lang-default="es" data-data-fns="{&quot;order&quot;:[&quot;map&quot;,&quot;filter&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>{let customOrder=[\&quot;new-here\&quot;,\&quot;solve\&quot;,\&quot;inspire\&quot;,\&quot;glossary\&quot;,\&quot;disconnected\&quot;,\&quot;answers-comments\&quot;],indexA=customOrder.indexOf(a.slugSegment),indexB=customOrder.indexOf(b.slugSegment);return indexA!==-1&amp;&amp;indexB!==-1?indexA-indexB:indexA!==-1?-1:indexB!==-1?1:!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1}&quot;,&quot;filterFn&quot;:&quot;node=>{let mainMenuOrder=[\&quot;new-here\&quot;,\&quot;solve\&quot;,\&quot;inspire\&quot;,\&quot;glossary\&quot;,\&quot;disconnected\&quot;,\&quot;answers-comments\&quot;];return node.slugSegment===\&quot;tags\&quot;||node.slugSegment===\&quot;_staging\&quot;||node.slugSegment===\&quot;.staging\&quot;||node.slugSegment===\&quot;descargas\&quot;?!1:node.slugSegment?mainMenuOrder.includes(node.slugSegment):!0}&quot;,&quot;mapFn&quot;:&quot;node=>{let langFolders=node.children.filter(child=>child.isFolder&amp;&amp;(child.slugSegment===\&quot;es\&quot;||child.slugSegment===\&quot;en\&quot;||child.slugSegment===\&quot;pt\&quot;));if(langFolders.length>0){let promotedChildren=langFolders.flatMap(langFolder=>langFolder.children);node.children=node.children.filter(child=>!langFolders.includes(child)).concat(promotedChildren)}if(!node.slugSegment)for(let child of node.children)child.slugSegment===\&quot;answers-comments\&quot;&amp;&amp;(child.displayName=\&quot;\\xBFQuieres hablar con otro humano?\&quot;),child.children=[],child.isFolder=!1}&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-506"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><div id="explorer-506" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div><div class="sidebar-credit desktop-only"><p><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" aria-label="Creative Commons BY-SA 4.0" class="cc-icon-link"><img src="/static/logo_CC.svg" alt aria-hidden="true" width="20" height="20" class="cc-icon" loading="lazy"/></a> </p><p>Voltaje es una iniciativa abierta de la <a href="https://www.solecolombia.org/" target="_blank" rel="noopener noreferrer">Fundación SOLE Colombia</a>, con el apoyo de <a href="https://www.internetsocietyfoundation.org/" target="_blank" rel="noopener noreferrer">Internet Society Foundation</a>, que se construye día a día en comunidad.</p></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Inicio</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../pt/">pt</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../pt/solve/">Soluciona</a></div></nav><h1 class="article-title section-solve   ">Sua comunidade precisa de apoio financeiro para se conectar à internet?</h1><p class="section-solve    article-resumen">Algunas organizaciones ofrecen soluciones de Internet a bajo costo.</p></div></div><article class="popover-hint"><p>Olá, sou a Belén. Embora eu não tenha escrito o original desta solução, estou revisando-a hoje para que você possa entendê-la melhor. Às vezes sentimos que estamos sozinhos, trabalhando contra a maré. Gostaria que você soubesse que não precisa ser assim, que existem pessoas e organizações que podem te ajudar. Espero que esta solução lhe mostre caminhos possíveis.</p>
+<h2 id="o-que-é-buscar-apoio-financeiro-em-sua-comunidade-para-se-conectar-à-internet">O que é buscar apoio financeiro em sua comunidade para se conectar à Internet?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#o-que-é-buscar-apoio-financeiro-em-sua-comunidade-para-se-conectar-à-internet" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Existem iniciativas que buscam conectar pessoas que não têm acesso à internet, especialmente em zonas rurais, remotas e de baixa renda.</p>
+<p>Elas oferecem programas de financiamento e recursos para comunidades e organizações locais que estão trabalhando na construção e expansão de infraestruturas de internet, como redes comunitárias e soluções de acesso complementares.</p>
+<p>Além disso, fornecem informações sobre como obter internet a baixo custo por meio de programas governamentais e organizações sem fins lucrativos.</p>
+<hr/>
+<h2 id="para-que-serve"><strong>Para que serve?</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#para-que-serve" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Entrar em contato com algumas delas pode levar você a conseguir acesso à internet para sua comunidade, a preços acessíveis e com garantias de manutenção, formação e sustentabilidade que você nem imagina neste momento… atreva-se!</p>
+<hr/>
+<h2 id="o-que-você-precisa"><strong>O que você precisa?</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#o-que-você-precisa" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li>Um computador com buscador web e conexão à Internet</li>
+<li>Um tradutor web como <a href="https://translate.google.com/?hl=es" class="external">google translate<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, <a href="https://www.deepl.com/es/translator" class="external">deepl<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, ou uma inteligência artificial que te ajude a traduzir (você pode escrever no buscador “IA para traduzir textos”)</li>
+<li>Paciência e tempo para dedicar à busca, é melhor se você fizer isso com outras pessoas</li>
+<li>Uma dose de coragem para enviar sua solicitação a alguma das iniciativas… você tem todo o nosso apoio! Nós fizemos assim.</li>
+</ul>
+<hr/>
+<h2 id="como-fazer"><strong>Como fazer?</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#como-fazer" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<blockquote>
+<h3 id="passo-1--pense-na-melhor-pergunta-que-você-pode-fazer-à-internet-e-atreva-se-a-mergulhar-para-encontrar-você-pode-fazer-um-sole">Passo 1 → Pense na melhor pergunta que você pode fazer à internet e atreva-se a mergulhar para encontrar… você pode fazer um SOLE!<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#passo-1--pense-na-melhor-pergunta-que-você-pode-fazer-à-internet-e-atreva-se-a-mergulhar-para-encontrar-você-pode-fazer-um-sole" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+</blockquote>
+<p>No caso da Colômbia, pode ser algo como “quais iniciativas conectam comunidades rurais, remotas e de baixa renda à internet na Colômbia?”, ou “como conseguir internet subsidiada na Colômbia?”, ou “quais organizações conectam comunidades à Internet de baixo custo na Colômbia?” Seja criativo na pergunta para encontrar respostas variadas!</p>
+<p>Você também pode pesquisar nas sugestões dos buscadores para mergulhar e encontrar mais informações relacionadas.</p>
+<p>Anime-se a entrar em contato com as empresas e programas que o buscador sugerir.
+<br/></p>
+<blockquote>
+<h3 id="passo-2--no-sole-colômbia-conhecemos-algumas-iniciativas-de-conectividade-de-baixo-custo-ao-redor-do-mundo-dê-uma-olhada-nós-te-incentivamos-a-entrar-em-contato-com-elas">Passo 2 → No SOLE Colômbia, conhecemos algumas iniciativas de conectividade de baixo custo ao redor do mundo, dê uma olhada, nós te incentivamos a entrar em contato com elas!<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#passo-2--no-sole-colômbia-conhecemos-algumas-iniciativas-de-conectividade-de-baixo-custo-ao-redor-do-mundo-dê-uma-olhada-nós-te-incentivamos-a-entrar-em-contato-com-elas" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+</blockquote>
+<ul>
+<li><a href="https://mintic.gov.co/portal/715/w3-article-401110.html" class="external">Mintic<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> - Programa “Conectando aos não conectados” do MINTIC e Colnodo</li>
+</ul>
+<p>O programa “Conectando aos não conectados” é uma iniciativa do Ministério de Tecnologias da Informação e Comunicações (MinTIC) da Colômbia, que busca levar Internet a zonas rurais e comunidades com pouca ou nenhuma conectividade.</p>
+<p>Os Centros Digitais são pontos de acesso Wi-Fi gratuitos instalados em lugares estratégicos para facilitar o acesso à internet nessas áreas.</p>
+<p><strong>Passos para acessar, segundo o site do programa:</strong></p>
+<ol>
+<li><strong>Localizar um Centro Digital:</strong> Os Centros Digitais estão localizados em zonas rurais e comunidades com pouca conectividade. Você pode encontrar informações sobre sua localização no site do <a href="https://micrositios.mintic.gov.co/centros_digitales/" class="external"><strong>MinTIC</strong><svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</li>
+<li><strong>Ativar o Wi-Fi do seu dispositivo:</strong> Ligue o Wi-Fi do seu telefone, tablet ou outro dispositivo que deseja conectar.</li>
+<li><strong>Buscar a rede “MinTIC Conecta”:</strong> Seu dispositivo mostrará as redes Wi-Fi disponíveis. Selecione a rede chamada “Mintic Conecta”.</li>
+<li><strong>Preencher os dados solicitados:</strong> Será solicitado que você insira certas informações para se registrar. Preencha os campos necessários.</li>
+<li><strong>Aceitar os termos e condições:</strong> Leia cuidadosamente os termos e condições e, se estiver de acordo, aceite-os para poder se conectar. <strong>Pronto!</strong> Uma vez concluídos os passos anteriores, você já poderá utilizar a conexão à Internet.</li>
+</ol>
+<ul>
+<li><a href="https://www.colnodo.apc.org/es/NOTAS/banda-de-900-mhz-para-las-comunidades-una-oportunidad-para-transformar-el-acceso-a-internet-en-zonas-rurales" class="external">Colnodo<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<p>Na Colômbia, o acesso à banda de 900 MHz para as comunidades está sendo abordado <strong>por meio de uma consulta pública liderada pelo Ministério de Tecnologias da Informação e Comunicações (MinTIC) e a Agência Nacional do Espectro (ANE)</strong>.</p>
+<p>O objetivo é flexibilizar o uso desta banda para redes comunitárias, especialmente em zonas rurais com pouca ou nenhuma cobertura de redes comerciais.</p>
+<p><strong>Processo e Participação:</strong></p>
+<ul>
+<li><strong>Consulta Pública:</strong> Foi aberta uma consulta pública para que as comunidades organizadas, redes comunitárias e outros atores interessados possam expressar seu interesse e contribuir com comentários sobre a proposta.</li>
+<li><strong>Formulário de Participação:</strong> Um formulário online está disponível para que as comunidades descrevam sua situação, interesses e sugestões sobre o uso da banda.</li>
+<li><strong>Informação e Documentação:</strong> A ANE publicou documentos e diretrizes para a consulta, que podem ser consultados e baixados.</li>
+<li><strong>Prazo:</strong> A consulta pública está aberta até 1º de julho de 2025.</li>
+</ul>
+<p><strong>Foco em Zonas Rurais:</strong></p>
+<ul>
+<li>A banda de 900 MHz, com sua capacidade de boa cobertura e penetração, é considerada ideal para apoiar a conectividade em zonas rurais e afastadas.</li>
+<li>Busca-se que as redes comunitárias possam aproveitar esta banda para levar conectividade a lugares onde não há cobertura comercial ou ela é limitada.</li>
+</ul>
+<p><strong>Benefícios Potenciais:</strong></p>
+<ul>
+<li><strong>Conectividade Comunitária:</strong> Facilitar o acesso à internet para comunidades rurais por meio de redes comunitárias.</li>
+<li><strong>Desenvolvimento Econômico e Social:</strong> Impulsionar o acesso a serviços como telemedicina, educação virtual e outras oportunidades graças à conectividade.</li>
+<li><strong>Empoderamento Comunitário:</strong> As redes comunitárias podem gerar experiência e autonomia na gestão de suas próprias redes.</li>
+<li><strong>Preparação para o Futuro:</strong> A experiência com esta banda pode abrir caminho para a adoção de tecnologias e serviços mais avançados no futuro.</li>
+</ul>
+<p><strong>Participação Ativa:</strong></p>
+<p>É crucial que as comunidades interessadas participem ativamente da consulta pública, expressando suas necessidades, expectativas e propostas para o uso da banda de 900 MHz. A participação de todos os setores interessados é fundamental para construir uma estratégia que garanta uma conectividade justa e sustentável para todos.</p>
+<p>Em resumo, a banda de 900 MHz representa uma oportunidade para as comunidades colombianas acessarem a internet e melhorarem sua conectividade, especialmente em zonas rurais, por meio de redes comunitárias.</p>
+<p>A consulta pública é o espaço para que as comunidades expressem suas necessidades e contribuam para a construção de uma política pública que reconheça a importância do espectro para o desenvolvimento social e econômico.</p>
+<ul>
+<li><a href="https://www.internetsociety.org/es/funding-areas/connecting-the-unconnected/" class="external">Internet Society<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<p>Oferece financiamento a organizações que constroem e ampliam redes de internet em áreas desatendidas, o que pode resultar em opções mais acessíveis para os residentes.</p>
+<p>Apoia a criação de redes comunitárias, que muitas vezes são uma alternativa mais econômica às opções comerciais.</p>
+<ul>
+<li><a href="https://nupef.org.br/programas/acesso" class="external">NUPEF<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<p>O NUPEF.org, por meio de seu foco em redes comunitárias e acesso acessível à internet, pode <strong>facilitar o acesso a financiamento e recursos para construir ou fortalecer redes de internet comunitárias, além de oferecer capacitação para gerenciar e manter essas redes</strong>.</p>
+<p>Também promove a criação de comunidades virtuais seguras e inclusivas, empoderando grupos marginalizados para que utilizem a tecnologia e defendam seus direitos digitais:</p>
+<ul>
+<li>
+<p>Pode te ajudar a solicitar subsídios e financiamento para projetos de redes comunitárias, incluindo a construção de novas soluções de acesso ou a ampliação das existentes, especialmente para populações marginalizadas e desatendidas.</p>
+</li>
+<li>
+<p>Oferece capacitação e recursos para que os membros da comunidade desenvolvam habilidades na construção, gestão e manutenção de redes comunitárias.</p>
+</li>
+<li>
+<p>Se já possuem uma rede, o NUPEF pode ajudar a fortalecê-la, melhorando a infraestrutura, atualizando a tecnologia e fornecendo apoio técnico para garantir seu funcionamento contínuo.</p>
+</li>
+<li>
+<p>Promove a criação de comunidades online seguras e acolhedoras, onde a diversidade seja valorizada e os usuários protegidos da violência e do abuso.</p>
+</li>
+<li>
+<p>Trabalha para que pessoas excluídas possam usar e adaptar a internet e a tecnologia digital para suas necessidades, incluindo o desenvolvimento de soluções justas e equitativas para o acesso universal.</p>
+</li>
+<li>
+<p>Busca modelos econômicos que permitam um acesso acessível e sustentável à internet, gerando valor na comunidade e promovendo a autossuficiência.</p>
+</li>
+<li>
+<p>Facilita a troca de conhecimentos e experiências entre diferentes comunidades e movimentos, promovendo a ação coletiva para a inclusão digital.</p>
+</li>
+<li>
+<p><a href="https://www.apc.org/" class="external">APC<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</li>
+</ul>
+<p>É uma rede de organizações da sociedade civil que ajuda as pessoas a acessarem a internet onde não há conectividade ou ela não é acessível.</p>
+<p>Também apoia grupos locais e de base para que possam utilizar a tecnologia para desenvolver suas comunidades e avançar na defesa e exercício de seus direitos.</p>
+<p>Promove que as políticas dos governos em relação às TIC sirvam aos interesses da população, especialmente nos contextos do Sul global.</p>
+<ul>
+<li><a href="http://unconnected.org/" class="external">Unconnected<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<p>É uma iniciativa que busca conectar pessoas que não têm acesso à internet, especialmente em zonas rurais, remotas e de baixa renda.</p>
+<p>Oferecem programas de financiamento e recursos para comunidades e organizações locais que estão trabalhando na construção e expansão de infraestruturas de internet, como redes comunitárias e soluções de acesso complementares.</p>
+<p>Além disso, fornecem informações sobre como obter internet a baixo custo por meio de programas governamentais e organizações sem fins lucrativos.</p>
+<ul>
+<li><a href="https://www.highspeedinternet.com/" class="external">High Speed Internet<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<p>Se você conhece alguma outra maneira de conseguir apoio para conectar sua comunidade à Internet de baixo custo, não se esqueça de comentar esta Solução para que possamos incorporá-la. Também pedimos que, se você vir esta solução obsoleta ou com informações erradas, nos avise para continuarmos pesquisando e levando esta informação aos confins do mundo.</p>
+<hr/>
+<h2 id="como-saber-se-esta-solução-funciona"><strong>Como saber se esta solução funciona?</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#como-saber-se-esta-solução-funciona" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Como pode ajudar ter internet a baixo custo:</p>
+<ul>
+<li><strong>Financiamento para infraestruturas:</strong> existem organizações que oferecem financiamento a organizações que constroem e ampliam redes de internet em áreas desatendidas, o que pode resultar em opções mais acessíveis para os residentes.</li>
+<li><strong>Informação sobre programas de subsídios:</strong> outras organizações fornecem informações sobre programas governamentais e não governamentais que oferecem subsídios ou tarifas reduzidas para o acesso à internet para pessoas de baixa renda.</li>
+<li><strong>Redes comunitárias:</strong> outras apoiam a criação de redes comunitárias, que muitas vezes são uma alternativa mais econômica às opções comerciais.</li>
+<li><strong>Recursos para construir redes:</strong> algumas outras oferecem um kit de ferramentas para construir e manter redes comunitárias, o que pode ajudar a reduzir os custos de infraestrutura.</li>
+<li><strong>Formação</strong> para a instalação e manutenção dos equipamentos e das redes.</li>
+<li><strong>Reforço do tecido social e dos vínculos</strong> entre a comunidade e com a comunidade de prática: geralmente as iniciativas incluem conteúdo e prática em direitos digitais, equidade, laços comunitários e conexão entre humanos, que fazem da internet uma desculpa para ter comunidades mais conscientes e conectadas.</li>
+</ul>
+<hr/>
+<h2 id="o-que-você-pode-alcançar-com-esta-solução"><strong>O que você pode alcançar com esta solução?</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#o-que-você-pode-alcançar-com-esta-solução" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>A busca contínua por Soluções de Internet nos levou no SOLE Colômbia a investigar e ter curiosidade para encontrar os parceiros que nos ajudaram a levar a internet a lugares muito remotos.</p>
+<p>Da mesma maneira, você, sim, você, tendo acesso a esta informação, pode se animar a explorar as relações com pessoas e organizações que possam garantir o direito que você e sua comunidade têm de acessar a internet no lugar onde você estiver.</p>
+<p>Quando as pessoas se unem para conseguir coisas, o limite é o céu.</p>
+<hr/>
+<h2 id="soluções-relacionadas"><strong>Soluções relacionadas</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#soluções-relacionadas" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><a href="../../pt/solve/solv-donated-equipment" class="internal alias" data-slug="pt/solve/solv-donated-equipment">Como conseguir equipamentos doados? →</a></li>
+<li><a href="../../pt/solve/solv-fish-game" class="internal alias" data-slug="pt/solve/solv-fish-game">Como usar o jogo para aprender a cuidar de equipamentos em comunidade? →</a></li>
+<li><a href="../../pt/inspire/insp-make-SOLE" class="internal alias" data-slug="pt/inspire/insp-make-SOLE">Como fazer um SOLE? →</a></li>
+</ul>
+<p>Lembre-se que em <strong>Voltaje</strong> ⚡⚡ você pode encontrar muitas outras soluções para <em>se conectar sem medo</em> de usar a internet em grupo. Anime-se a continuar navegando! <a href="https://sole-colombia.github.io/voltaje/es/solve" class="external">Ver mais soluções →<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p></article><hr/><div class="page-footer"><div id="step-progress-container" class="step-progress-container" style="display:none;"><div class="step-progress-header"><span class="step-progress-icon" aria-hidden="true">SV</span><span class="step-progress-label">Tu progreso</span><span class="step-progress-count">0 de 0 pasos</span></div><div class="step-group-selector" style="display:none;"></div><div class="step-progress-bar-bg"><div class="step-progress-bar-fill" style="width:0%;"></div></div><div class="step-progress-cycle" aria-live="polite"></div><div class="step-progress-message" style="display:none;"></div><div class="step-progress-controls"><button class="step-progress-reset" style="display:none;" type="button">Reiniciar</button><button class="step-progress-feedback-toggle" style="display:none;" type="button">Dar feedback</button><a class="step-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>Pedir ayuda</a></div><div class="step-wa-popup" style="display:none;"><p class="step-wa-popup-title">Copia este mensaje y pégalo en el grupo:</p><textarea class="step-wa-popup-msg" rows="3" readonly></textarea><div class="step-wa-popup-actions"><button class="step-wa-copy-btn" type="button">Copiar mensaje</button><a class="step-wa-group-link" href="https://chat.whatsapp.com/IftWSotIu5bLNJAhDUOW5b" target="_blank" rel="noopener noreferrer">Abrir grupo</a></div><p class="step-wa-copy-status" aria-live="polite"></p></div><div class="step-progress-feedback" style="display:none;"><p class="step-progress-feedback-title">Tu solucion te sirvio?</p><div class="step-progress-feedback-options" role="group" aria-label="Feedback de solucion"><button class="step-feedback-option" data-feedback="atascado" type="button">Me atasque</button><button class="step-feedback-option" data-feedback="parcial" type="button">Me sirvio a medias</button><button class="step-feedback-option" data-feedback="resuelto" type="button">Lo resolvi</button></div><input class="step-progress-feedback-name" type="text" maxlength="60" placeholder="Tu nombre (opcional)" autocomplete="name"/><textarea class="step-progress-feedback-note" rows="3" maxlength="420" placeholder="Opcional: que te faltó o que mejorarías"></textarea><div class="step-progress-feedback-actions"><button class="step-progress-feedback-send" type="button">Enviar feedback</button></div><p class="step-progress-feedback-status" aria-live="polite"></p></div></div></div></div><div class="right sidebar"><div class="solve-meta-sidebar "><h3 class="solve-meta-title">Sobre este artículo</h3><div class="solve-meta-section"><span class="solve-meta-label">Categorías:</span><div class="solve-meta-tags"><span class="solve-meta-tag">#Dispositivos</span><span class="solve-meta-tag">#Señal</span></div></div><div class="solve-meta-metrics"><div class="solve-meta-row"><span class="solve-meta-label">Dificultad:</span><span class="solve-meta-badge" style="background-color: #FFCEA0"><img class="solve-meta-icon" data-icon="solve-difficulty-2.svg" alt aria-hidden="true"/><span class="solve-meta-value">Medio</span></span></div><div class="solve-meta-row"><span class="solve-meta-label">Costo:</span><span class="solve-meta-badge" style="background-color: #FFCEA0"><img class="solve-meta-icon" data-icon="solve-cost-3.svg" alt aria-hidden="true"/><span class="solve-meta-value">USD 25 - 50</span></span></div><div class="solve-meta-row"><span class="solve-meta-label">Tarda:</span><span class="solve-meta-badge" style="background-color: #FFB6B6"><img class="solve-meta-icon" data-icon="solve-time-3.svg" alt aria-hidden="true"/><span class="solve-meta-value">Días</span></span></div><div class="solve-meta-row"><span class="solve-meta-label">Ayudantes:</span><span class="solve-meta-badge" style="background-color: #FFCEA0"><img class="solve-meta-icon" data-icon="solve-helpers-3.svg" alt aria-hidden="true"/><span class="solve-meta-value">2-3 personas</span></span></div><div class="solve-meta-row solve-meta-permite"><span class="solve-meta-label">Permite:</span><div class="solve-meta-permite-badges"><span class="solve-meta-badge solve-meta-badge-small" style="background-color: #A6EFFF"><span class="solve-meta-value">Conseguir</span></span></div></div></div><div class="solve-meta-footer"><div class="solve-meta-author"><span class="solve-meta-label-bold">Autor:</span> SOLE Colombia</div><div class="solve-meta-date"><span class="solve-meta-label-bold">Publicado:</span> <time datetime="2025-12-17T05:00:00.000Z">17 dic 2025</time></div></div></div><div class="backlinks"><h3>Retroenlaces</h3><ul id="list-1" class="overflow"><li><a href="../../pt/solve/solv-bicigenerator" class="internal">Como gerar eletricidade usando uma bicicleta?</a></li><li class="overflow-end"></li></ul></div></div></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="../../postscript.js" type="module"></script></html>

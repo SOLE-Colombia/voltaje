@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr"><head><title>&quot;A internet em uma caixa: Big Box da Jangala&quot;</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=Roboto+Mono:wght@400;500;600;700&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="SOLE Voltaje"/><meta property="og:title" content="&quot;A internet em uma caixa: Big Box da Jangala&quot;"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="&quot;A internet em uma caixa: Big Box da Jangala&quot;"/><meta name="twitter:description" content="Olá, sou o Sanjay e, embora não seja um especialista em temas de conectividade, aprendi na prática, ou seja, na base da tentativa e erro, pesquisando na internet junto com outras pessoas e aprendendo com quem tem experiência."/><meta property="og:description" content="Olá, sou o Sanjay e, embora não seja um especialista em temas de conectividade, aprendi na prática, ou seja, na base da tentativa e erro, pesquisando na internet junto com outras pessoas e aprendendo com quem tem experiência."/><meta property="og:image:alt" content="Olá, sou o Sanjay e, embora não seja um especialista em temas de conectividade, aprendi na prática, ou seja, na base da tentativa e erro, pesquisando na internet junto com outras pessoas e aprendendo com quem tem experiência."/><meta property="twitter:domain" content="voltaje.solecolombia.org"/><meta property="og:url" content="https://voltaje.solecolombia.org/pt/solve/solv-jangala-internet-box"/><meta property="twitter:url" content="https://voltaje.solecolombia.org/pt/solve/solv-jangala-internet-box"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="Olá, sou o Sanjay e, embora não seja um especialista em temas de conectividade, aprendi na prática, ou seja, na base da tentativa e erro, pesquisando na internet junto com outras pessoas e aprendendo com quem tem experiência."/><meta name="generator" content="Quartz"/><script>(function () {
+  var STORAGE_KEY = "contentLang";
+  var FALLBACK_AVAILABLE = { en: true, pt: true };
+  var SITE_ROOT = "/";
+  var normalizePath = function (value) {
+    return (value || "").replace(/\/+$/g, "") || "/";
+  };
+  var isRootPath = function () {
+    return normalizePath(window.location.pathname) === normalizePath(SITE_ROOT);
+  };
+  var resolveLangPath = function (lang) {
+    return SITE_ROOT === "/" ? "/" + lang : SITE_ROOT + "/" + lang;
+  };
+  var detectPreferredLang = function () {
+    var stored = (localStorage.getItem(STORAGE_KEY) || "").toLowerCase();
+    if (stored) return stored;
+    var browser = (navigator.language || (navigator.languages && navigator.languages[0]) || "").toLowerCase();
+    return browser;
+  };
+  var resolveAvailableLanguages = async function () {
+    try {
+      var fetchIndex = globalThis.fetchData;
+      if (!fetchIndex || typeof fetchIndex.then !== "function") {
+        return FALLBACK_AVAILABLE;
+      }
+      var data = await fetchIndex;
+      var slugs = Object.keys(data || {});
+      if (slugs.length === 0) {
+        return FALLBACK_AVAILABLE;
+      }
+      return {
+        en: slugs.some(function (slug) { return slug === "en" || slug.startsWith("en/"); }),
+        pt: slugs.some(function (slug) { return slug === "pt" || slug.startsWith("pt/"); }),
+      };
+    } catch (_err) {
+      return FALLBACK_AVAILABLE;
+    }
+  };
+  if (!isRootPath()) return;
+  resolveAvailableLanguages().then(function (available) {
+    var preferred = detectPreferredLang();
+    if (preferred.startsWith("en") && available.en) {
+      window.location.replace(resolveLangPath("en"));
+      return;
+    }
+    if (preferred.startsWith("pt") && available.pt) {
+      window.location.replace(resolveLangPath("pt"));
+    }
+  });
+})();</script><link href="../../index.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL2hvbWUvcnVubmVyL3dvcmsvdm9sdGFqZS1kZXYvdm9sdGFqZS1kZXYvcXVhcnR6L2NvbXBvbmVudHMvc3R5bGVzIiwic291cmNlcyI6WyJtZXJtYWlkLmlubGluZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFHRjtFQUNFOzs7QUFLRjtFQUNFO0VBQ0E7OztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFOztBQUlGO0VBQ0U7RUFDQTtFQUNBIiwic291cmNlc0NvbnRlbnQiOlsiLmV4cGFuZC1idXR0b24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsb2F0OiByaWdodDtcbiAgcGFkZGluZzogMC40cmVtO1xuICBtYXJnaW46IDAuM3JlbTtcbiAgcmlnaHQ6IDA7IC8vIE5PVEU6IHJpZ2h0IHdpbGwgYmUgc2V0IGluIG1lcm1haWQuaW5saW5lLnRzXG4gIGNvbG9yOiB2YXIoLS1ncmF5KTtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICBib3JkZXI6IDFweCBzb2xpZDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBvcGFjaXR5OiAwO1xuICB0cmFuc2l0aW9uOiAwLjJzO1xuXG4gICYgPiBzdmcge1xuICAgIGZpbGw6IHZhcigtLWxpZ2h0KTtcbiAgICBmaWx0ZXI6IGNvbnRyYXN0KDAuMyk7XG4gIH1cblxuICAmOmhvdmVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgYm9yZGVyLWNvbG9yOiB2YXIoLS1zZWNvbmRhcnkpO1xuICB9XG5cbiAgJjpmb2N1cyB7XG4gICAgb3V0bGluZTogMDtcbiAgfVxufVxuXG5wcmUge1xuICAmOmhvdmVyID4gLmV4cGFuZC1idXR0b24ge1xuICAgIG9wYWNpdHk6IDE7XG4gICAgdHJhbnNpdGlvbjogMC4ycztcbiAgfVxufVxuXG4jbWVybWFpZC1jb250YWluZXIge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGNvbnRhaW46IGxheW91dDtcbiAgei1pbmRleDogOTk5O1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxMDB2dztcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogbm9uZTtcbiAgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDRweCk7XG4gIGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC41KTtcblxuICAmLmFjdGl2ZSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB9XG5cbiAgJiA+ICNtZXJtYWlkLXNwYWNlIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogNTAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICBoZWlnaHQ6IDgwdmg7XG4gICAgd2lkdGg6IDgwdnc7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcblxuICAgICYgPiAubWVybWFpZC1jb250ZW50IHtcbiAgICAgIHBhZGRpbmc6IDJyZW07XG4gICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICB0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7XG4gICAgICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4xcyBlYXNlO1xuICAgICAgb3ZlcmZsb3c6IHZpc2libGU7XG4gICAgICBtaW4taGVpZ2h0OiAyMDBweDtcbiAgICAgIG1pbi13aWR0aDogMjAwcHg7XG5cbiAgICAgIHByZSB7XG4gICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgfVxuXG4gICAgICBzdmcge1xuICAgICAgICBtYXgtd2lkdGg6IG5vbmU7XG4gICAgICAgIGhlaWdodDogYXV0bztcbiAgICAgIH1cbiAgICB9XG5cbiAgICAmID4gLm1lcm1haWQtY29udHJvbHMge1xuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgYm90dG9tOiAyMHB4O1xuICAgICAgcmlnaHQ6IDIwcHg7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZ2FwOiA4cHg7XG4gICAgICBwYWRkaW5nOiA4cHg7XG4gICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgYm9yZGVyLXJhZGl1czogNnB4O1xuICAgICAgYm94LXNoYWRvdzogMCAycHggNHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcbiAgICAgIHotaW5kZXg6IDI7XG5cbiAgICAgIC5tZXJtYWlkLWNvbnRyb2wtYnV0dG9uIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgIHdpZHRoOiAzMnB4O1xuICAgICAgICBoZWlnaHQ6IDMycHg7XG4gICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgICAgY29sb3I6IHZhcigtLWRhcmspO1xuICAgICAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICBmb250LWZhbWlseTogdmFyKC0tYm9keUZvbnQpO1xuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBlYXNlO1xuXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIH1cblxuICAgICAgICAmOmFjdGl2ZSB7XG4gICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDFweCk7XG4gICAgICAgIH1cblxuICAgICAgICAvLyBTdHlsZSB0aGUgcmVzZXQgYnV0dG9uIGRpZmZlcmVudGx5XG4gICAgICAgICY6bnRoLWNoaWxkKDIpIHtcbiAgICAgICAgICB3aWR0aDogYXV0bztcbiAgICAgICAgICBwYWRkaW5nOiAwIDEycHg7XG4gICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iXX0= */</style><script src="../../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://voltaje.solecolombia.org/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://voltaje.solecolombia.org/pt/solve/solv-jangala-internet-box-og-image.webp"/><meta property="og:image:url" content="https://voltaje.solecolombia.org/pt/solve/solv-jangala-internet-box-og-image.webp"/><meta name="twitter:image" content="https://voltaje.solecolombia.org/pt/solve/solv-jangala-internet-box-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="pt/solve/solv-jangala-internet-box" data-basepath><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../.." aria-label="SOLE Voltaje"><img src="https://voltaje.solecolombia.org/static/logo.png" alt class="page-logo page-logo--light"/><img src="https://voltaje.solecolombia.org/static/logo_voltaje.svg" alt class="page-logo page-logo--dark"/></a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><details class="lang-toggle" data-lang-toggle="true"><summary class="lang-summary" aria-label="Cambiar idioma"><span class="lang-summary-flag" aria-hidden="true">🇪🇸</span><span class="lang-summary-code">ES</span></summary><div class="lang-menu" role="menu" aria-label="Idiomas disponibles"><button type="button" class="lang-option" role="menuitem" data-lang="es"><span aria-hidden="true">🇪🇸</span> ES</button><button type="button" class="lang-option" role="menuitem" data-lang="en"><span aria-hidden="true">🇺🇸</span> EN</button><button type="button" class="lang-option" role="menuitem" data-lang="pt"><span aria-hidden="true">🇵🇹</span> PT</button></div></details></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Modo oscuro"><title>Modo oscuro</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Modo claro"><title>Modo claro</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div></div><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Buscar</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Busca algo" placeholder="Busca algo"/><div class="search-layout" data-preview="true"></div></div></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-lang-default="es" data-data-fns="{&quot;order&quot;:[&quot;map&quot;,&quot;filter&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>{let customOrder=[\&quot;new-here\&quot;,\&quot;solve\&quot;,\&quot;inspire\&quot;,\&quot;glossary\&quot;,\&quot;disconnected\&quot;,\&quot;answers-comments\&quot;],indexA=customOrder.indexOf(a.slugSegment),indexB=customOrder.indexOf(b.slugSegment);return indexA!==-1&amp;&amp;indexB!==-1?indexA-indexB:indexA!==-1?-1:indexB!==-1?1:!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1}&quot;,&quot;filterFn&quot;:&quot;node=>{let mainMenuOrder=[\&quot;new-here\&quot;,\&quot;solve\&quot;,\&quot;inspire\&quot;,\&quot;glossary\&quot;,\&quot;disconnected\&quot;,\&quot;answers-comments\&quot;];return node.slugSegment===\&quot;tags\&quot;||node.slugSegment===\&quot;_staging\&quot;||node.slugSegment===\&quot;.staging\&quot;||node.slugSegment===\&quot;descargas\&quot;?!1:node.slugSegment?mainMenuOrder.includes(node.slugSegment):!0}&quot;,&quot;mapFn&quot;:&quot;node=>{let langFolders=node.children.filter(child=>child.isFolder&amp;&amp;(child.slugSegment===\&quot;es\&quot;||child.slugSegment===\&quot;en\&quot;||child.slugSegment===\&quot;pt\&quot;));if(langFolders.length>0){let promotedChildren=langFolders.flatMap(langFolder=>langFolder.children);node.children=node.children.filter(child=>!langFolders.includes(child)).concat(promotedChildren)}if(!node.slugSegment)for(let child of node.children)child.slugSegment===\&quot;answers-comments\&quot;&amp;&amp;(child.displayName=\&quot;\\xBFQuieres hablar con otro humano?\&quot;),child.children=[],child.isFolder=!1}&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-518"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><div id="explorer-518" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div><div class="sidebar-credit desktop-only"><p><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" aria-label="Creative Commons BY-SA 4.0" class="cc-icon-link"><img src="/static/logo_CC.svg" alt aria-hidden="true" width="20" height="20" class="cc-icon" loading="lazy"/></a> </p><p>Voltaje es una iniciativa abierta de la <a href="https://www.solecolombia.org/" target="_blank" rel="noopener noreferrer">Fundación SOLE Colombia</a>, con el apoyo de <a href="https://www.internetsocietyfoundation.org/" target="_blank" rel="noopener noreferrer">Internet Society Foundation</a>, que se construye día a día en comunidad.</p></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Inicio</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../pt/">pt</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../pt/solve/">Soluciona</a></div></nav><h1 class="article-title section-solve   ">&quot;A internet em uma caixa: Big Box da Jangala&quot;</h1><p class="section-solve    article-resumen">Gerencie e configure um potente roteador de internet sem fio.</p></div></div><article class="popover-hint"><p>Olá, sou o Sanjay e, embora não seja um especialista em temas de conectividade, aprendi <em>na prática</em>, ou seja, na base da tentativa e erro, pesquisando na internet junto com outras pessoas e aprendendo com quem tem experiência. Deixe-me contar brevemente o que é o Big Box da Jangala 👇🏽</p>
+<p><iframe class="external-embed youtube" allow="fullscreen" frameborder="0" width="600px" src="https://www.youtube.com/embed/Fox3N4QHVN4"></iframe>
+<em>Vídeo idealizado, criado e produzido pelo SOLE Colômbia, 2024</em></p>
+<h2 id="o-que-é-gerenciar-um-bigbox-da-jangala">O que é gerenciar um BigBox da Jangala?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#o-que-é-gerenciar-um-bigbox-da-jangala" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Nesta solução, você poderá entrar em contato com uma organização na Inglaterra que oferece um modem portátil muito potente, chamado Big Box, que permite que <strong>até 100 pessoas se conectem à internet ao mesmo tempo.</strong></p>
+<p>A organização que o oferece chama-se <strong><a href="https://www.janga.la/" class="external">Jangala<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></strong> e dedica-se a facilitar o acesso à internet para pessoas que necessitam de ajuda humanitária urgente ou apoio para processos de desenvolvimento a longo prazo.</p>
+<blockquote>
+<p>⚠️⚠️ <em>É importante que você saiba que estes dispositivos não são para uso pessoal e que você deve cumprir alguns critérios de elegibilidade. São eles que, com base nas informações que você registra no formulário de solicitação, avaliam se sua comunidade ou projeto pode acessar o produto deles.</em></p>
+</blockquote>
+<p>Nós o incentivamos a, <strong>junto com sua comunidade</strong>, imaginar de que maneira a conexão à internet poderia melhorar suas condições de vida e como podem usá-la para o bem comum. Desenvolvam a ideia e contem para a Jangala. Temos certeza de que eles a considerarão.</p>
+<hr/>
+<h2 id="para-que-serve">Para que serve?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#para-que-serve" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Imagine uma comunidade sem conectividade, sem conhecimentos técnicos para a instalação, configuração e manutenção de uma rede sem fio. Agora pense que, de repente, todos conseguem se conectar a uma única rede <a href="../../pt/glossary/conc-wifi" class="internal alias" data-slug="pt/glossary/conc-wifi">WiFi →</a>. O que aconteceria?</p>
+<p>Entre muitas coisas, <strong>toda uma comunidade poderia pagar um único plano de internet e conectar-se de forma compartilhada.</strong> Melhor ainda, poderiam fazer isso a partir de equipamentos comuns, como computadores ou tablets, e contar com maior velocidade, uma melhor experiência e um processo de aprendizagem coletivo e divertido.</p>
+<p>Isso é o que poderiam alcançar se gerenciassem este dispositivo: o <a href="https://www.janga.la/get-box" class="external"><em>Big Box</em><svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> da <a href="http://janga.la" class="external">Jangala<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</p>
+<p>O Big Box da Jangala é <strong>um dispositivo leve, do tamanho de uma maleta, que transforma qualquer forma de conectividade à internet em uma rede WiFi fácil de gerenciar e ampliar</strong>, desde dezenas até milhares de usuários. É como ter um amplificador da internet de um telefone que pode servir a centenas, ou até milhares, de computadores.</p>
+<p>O acesso à internet é uma necessidade urgente em muitas situações ao redor do mundo: desde pessoas que tentam estabelecer contato após um terremoto até projetos educativos em áreas remotas. No entanto, nestes contextos, a internet muitas vezes não está disponível. As redes costumam cair em situações de emergência, e implementar um acesso efetivo à internet em zonas remotas é complicado, lento e custoso.</p>
+<p><strong>Quem é a Jangala?</strong> A Jangala é uma ONG no Reino Unido que busca solucionar isso com suas máquinas.</p>
+<p>Esta solução servirá para você aprender a gerenciar este potente modem com a organização Jangala e ter o acompanhamento deles para conseguir adaptar o Big Box às necessidades do seu contexto ou, se você faz parte de uma organização, às condições das comunidades com as quais trabalham.</p>
+<p>Se você é uma comunidade de baixa renda, ou em zonas remotas, pode ser considerado para receber um dos equipamentos deles sem custo e para toda a vida.</p>
+<hr/>
+<h2 id="o-que-você-precisa">O que você precisa?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#o-que-você-precisa" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li>Uma conexão à internet e um computador (você também pode usar um celular)</li>
+<li>Entender inglês ou traduzir com o tradutor online <strong><a href="https://www.deepl.com/es/translator" class="external">DeepL<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></strong>.</li>
+<li>Confiança na sua capacidade de gestão</li>
+<li>Condições de exclusão digital; a Jangala estimará se vocês estão aptos para serem receptores de um Big Box.</li>
+<li>¡Entusiasmo!</li>
+</ul>
+<hr/>
+<h2 id="como-fazer">Como fazer?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#como-fazer" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<blockquote>
+<h3 id="passo-1--entrar-em-wwwjangala-e-buscar-o-formulário-de-solicitação-de-um-big-box">Passo 1 → Entrar em <a href="http://www.janga.la" class="external">www.janga.la<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> e buscar o formulário de solicitação de um Big Box<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#passo-1--entrar-em-wwwjangala-e-buscar-o-formulário-de-solicitação-de-um-big-box" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+</blockquote>
+<p>Acessem <a href="https://www.janga.la/get-box" class="external">Jangala get box<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, na seção de solicitar uma caixa (“Request a Box”). Lá vocês podem decidir se o que precisam é um <em>Get Box</em>, que é menor, ou um <em>Big Box</em>.</p>
+<p>Os passos seguintes têm a ver com a solicitação do BigBox.</p>
+<p><img src="https://archive.org/download/f-71-b-658-b-290-e-48-d-3-be-45-e-4733-fe-4874-d/JangalaBixBox/JangalaBigBox_Home.png" alt="box jangala home"/>
+<br/></p>
+<blockquote>
+<h3 id="passo-2--preencher-o-formulário-online">Passo 2 → Preencher o formulário online<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#passo-2--preencher-o-formulário-online" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+</blockquote>
+<p>Na seção de Big Box, vocês encontrarão um botão que diz <em><strong>Apply for a Big Box</strong></em> ou Solicite uma Big Box.</p>
+<p>É necessário responder às perguntas do formulário; isso ajudará a Jangala a configurar um Big Box que satisfaça melhor as necessidades da sua comunidade.</p>
+<p>O questionário é dividido em quatro seções:</p>
+<ul>
+<li>Na seção 1, fazem-se perguntas sobre vocês e/ou sua organização.</li>
+<li>A seção 2 trata sobre o local para o qual precisam de um Big Box, incluindo a localização, a conectividade existente e o fornecimento elétrico.</li>
+<li>A seção 3 trata sobre a configuração Wi-Fi.</li>
+<li>A seção 4 contém perguntas finais sobre como o Big Box fará a diferença.</li>
+</ul>
+<p>Se houver algo neste formulário que não esteja claro, ou não se aplique à situação da sua comunidade, não hesite em enviar um e-mail para <a href="mailto:info@janga.la" class="external">info@janga.la<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</p>
+<p>Preencher este formulário pode levar um tempo e pode ser que vocês não tenham todas as respostas claras. Tentem responder à maior quantidade de perguntas da melhor forma possível e <strong>não se esqueçam de pressionar o botão “Enviar”</strong>.
+<br/></p>
+<blockquote>
+<h3 id="passo-3--aguardar-resposta-e-entrar-em-contato-com-a-jangala">Passo 3 → Aguardar resposta e entrar em contato com a Jangala<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#passo-3--aguardar-resposta-e-entrar-em-contato-com-a-jangala" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+</blockquote>
+<p>Pode levar algumas semanas para receber resposta da equipe da Jangala. <strong>Eles escreverão para o e-mail que vocês registraram no formulário.</strong></p>
+<p>Tenham paciência e fiquem atentos à resposta… esse momento será muito emocionante!</p>
+<p>É possível que haja mais perguntas ou que seja necessária uma reunião virtual com vocês. No momento da reunião, poderão esclarecer mais dúvidas, definir particularidades do seu Big Box e o processo pelo qual o receberão por correio postal.</p>
+<p>A equipe da Jangala é excepcional: sempre muito gentil e disposta a ajudar autenticamente.
+<br/></p>
+<blockquote>
+<h3 id="passo-4--planejar-e-receber-o-big-box-por-correio-postal">Passo 4 → Planejar e receber o Big Box por correio postal<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#passo-4--planejar-e-receber-o-big-box-por-correio-postal" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+</blockquote>
+<p>Depois de esclarecer a forma como a Jangala enviará o equipamento, não levará mais do que algumas semanas para receber o Big Box com as características que vocês precisam.</p>
+<p>É muito importante solicitar à equipe da Jangala que, na remessa do correio certificado, fique claro que se trata de uma <strong>mercadoria sem valor comercial</strong>, porque, dependendo do país onde vocês estão, a alfândega pode exigir informações específicas do equipamento para poder receber o pacote.</p>
+<p>Por exemplo, na Colômbia, para entrar com um celular, é necessário incluir o número de IMEI (com o qual se registra um celular) na fatura de envio do pacote. Se não for feito, deve-se nacionalizar o pacote na alfândega, o que é um processo complexo e custoso. De qualquer maneira, a equipe da Jangala será de grande apoio para resolver qualquer desafio, e eles cobrem esses custos.
+<br/></p>
+<blockquote>
+<h3 id="passo-5--instalar-o-big-box">Passo 5 → Instalar o Big Box<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#passo-5--instalar-o-big-box" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+</blockquote>
+<p>Finalmente, só resta <a href="../../pt/solve/solv-jangala-install-box" class="internal alias" data-slug="pt/solve/solv-jangala-install-box">instalar o Big Box →</a> no local onde será usado e pronto!</p>
+<p>A equipe da Jangala oferecerá apoio durante a instalação ou uso. Uma vez instalado, vocês terão Internet por Wifi para cerca de 100 pessoas a 100 metros de raio!</p>
+<p>Agora, só resta usá-lo para o <strong>bem comum.</strong></p>
+<hr/>
+<h2 id="outras-internets-possíveis">Outras internets possíveis<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#outras-internets-possíveis" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Você saberá no dia em que receber uma resposta da Jangala. Independentemente de a resposta ser positiva ou não, apenas recebê-la é prova de que você fez a gestão corretamente, e isso já é uma grande conquista!</p>
+<p>Se você é uma organização beneficente ou um grupo que precisa de conectividade para algum <strong>propósito comum,</strong> a Jangala adorará conhecê-los. A Jangala pode fornecer aparelhos e ferramentas na forma de <strong>empréstimos sem custo a longo prazo</strong> para organizações com meios econômicos limitados que prestam serviços básicos vitais a pessoas afetadas por catástrofes ou a organizações que precisam de ajuda para o desenvolvimento de projetos a longo prazo.</p>
+<p>Lembre-se de que qualquer um dos Box fornece WiFi através de qualquer forma de sinal de Internet (3G/4G, linha fixa, satélite), pode utilizar energia de diversas fontes (rede elétrica, bateria, acendedor, fonte renovável, gerador) e pode utilizar uma <a href="../../pt/solve/solv-install-3G-antenna" class="internal alias" data-slug="pt/solve/solv-install-3G-antenna">antena externa →</a> para captar sinais 3G/4G onde os telefones não conseguem.</p>
+<ul>
+<li><strong>Para quantas pessoas conecta?</strong> Apenas 100. Com equipamento adicional, pode chegar a 1.000. Com um amplo equipamento, até 5.000</li>
+<li><strong>Pode ser utilizado em um ambiente móvel?</strong> Sim</li>
+<li><strong>Pode ser utilizado em exteriores?</strong> Sim. É impermeável e resistente</li>
+<li><strong>Pode alimentar pontos de acesso Wi-Fi adicionais?</strong> Sim. Podem ser utilizados para conectar até 5.000 pessoas em uma área extensa</li>
+<li><strong>Quantas redes pode transmitir?</strong> Quatro. Cada uma delas pode ser personalizada em termos de controle de conteúdos, restrições de velocidade e restrições de dados.
+<br/>
+</li>
+</ul>
+<blockquote>
+<p>💡 No SOLE Colômbia, realizamos esta solução com comunidades nas quais se instala uma antena em um espaço comunitário ao qual todas as pessoas podem acessar. Lá, a comunidade decide quanto, quando e para que a internet é utilizada.</p>
+<p>Por exemplo, prioriza-se que as crianças possam fazer suas tarefas ou que a comunidade veja um filme <strong>em conjunto</strong>, acima de usos individuais como o acesso a redes sociais. Isso, claro, implica novos desafios. Mas o ponto de partida é claro: vocês já têm acesso à internet!</p>
+<blockquote>
+<p>💬💪🏽 Conheça como foi nossa <a href="../.././inspire/insp-internetimprove-nuevomexico" class="internal alias" data-slug="inspire/insp-internetimprove-nuevomexico">experiência com uma comunidade em Nuevo México, Santander de Quilichao →</a></p>
+</blockquote>
+</blockquote>
+<hr/>
+<h2 id="o-que-você-pode-alcançar-com-esta-solução">O que você pode alcançar com esta solução?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#o-que-você-pode-alcançar-com-esta-solução" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>O Jangala Big Box é uma oportunidade para conseguir conectividade gratuita ou a um custo muito baixo para toda uma comunidade. Por exemplo, uma escola ou um campo de refugiados. Imagine as possibilidades de aprendizagem que teriam se usassem a internet juntos!</p>
+<blockquote>
+<p>⚠️⚠️ <em>Isso sim, leve em conta que o Jangala Big Box não resolverá a conectividade se não houver sinal de Internet (por cabo, móvel ou satelital) na zona.</em></p>
+</blockquote>
+<hr/>
+<h2 id="soluções-relacionadas">Soluções relacionadas<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#soluções-relacionadas" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li>Lembre-se de que o Jangala Big Box precisa de algum tipo de sinal para funcionar. Se você fizer isso através de um cartão SIM (sinal celular), esta solução pode ajudá-lo a decidir qual plano de internet comprar: <a href="../../pt/solve/solv-buy-phone-plan" class="internal alias" data-slug="pt/solve/solv-buy-phone-plan">Como comprar um plano celular adequado para mim? →</a></li>
+<li>Ter um “Big Box” significa que devemos cuidar dele em comunidade. Usando uma ferramenta lúdica, vocês podem aprender a fazer isso juntos: <a href="../../pt/solve/solv-fish-game" class="internal alias" data-slug="pt/solve/solv-fish-game">Como usar o jogo para aprender a cuidar de equipamentos em comunidade? →</a></li>
+<li>A internet comunitária é mais poderosa quando usada em grupo. Compartilho algumas recomendações para buscar um espaço de reunião: <a href="../../pt/solve/solv-organize-space" class="internal alias" data-slug="pt/solve/solv-organize-space">Como adequar um espaço para usar a Internet em grupo? →</a></li>
+</ul>
+<p>Lembre-se de que na <strong>Voltaje</strong> ⚡⚡ você pode encontrar muitas soluções a mais para <em>conectar-se sem medo</em> de usar a internet em grupo. Anime-se a continuar navegando! <a href="https://sole-colombia.github.io/voltaje/es/solve" class="external">Ver mais soluções →<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p></article><hr/><div class="page-footer"><div id="step-progress-container" class="step-progress-container" style="display:none;"><div class="step-progress-header"><span class="step-progress-icon" aria-hidden="true">SV</span><span class="step-progress-label">Tu progreso</span><span class="step-progress-count">0 de 0 pasos</span></div><div class="step-group-selector" style="display:none;"></div><div class="step-progress-bar-bg"><div class="step-progress-bar-fill" style="width:0%;"></div></div><div class="step-progress-cycle" aria-live="polite"></div><div class="step-progress-message" style="display:none;"></div><div class="step-progress-controls"><button class="step-progress-reset" style="display:none;" type="button">Reiniciar</button><button class="step-progress-feedback-toggle" style="display:none;" type="button">Dar feedback</button><a class="step-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>Pedir ayuda</a></div><div class="step-wa-popup" style="display:none;"><p class="step-wa-popup-title">Copia este mensaje y pégalo en el grupo:</p><textarea class="step-wa-popup-msg" rows="3" readonly></textarea><div class="step-wa-popup-actions"><button class="step-wa-copy-btn" type="button">Copiar mensaje</button><a class="step-wa-group-link" href="https://chat.whatsapp.com/IftWSotIu5bLNJAhDUOW5b" target="_blank" rel="noopener noreferrer">Abrir grupo</a></div><p class="step-wa-copy-status" aria-live="polite"></p></div><div class="step-progress-feedback" style="display:none;"><p class="step-progress-feedback-title">Tu solucion te sirvio?</p><div class="step-progress-feedback-options" role="group" aria-label="Feedback de solucion"><button class="step-feedback-option" data-feedback="atascado" type="button">Me atasque</button><button class="step-feedback-option" data-feedback="parcial" type="button">Me sirvio a medias</button><button class="step-feedback-option" data-feedback="resuelto" type="button">Lo resolvi</button></div><input class="step-progress-feedback-name" type="text" maxlength="60" placeholder="Tu nombre (opcional)" autocomplete="name"/><textarea class="step-progress-feedback-note" rows="3" maxlength="420" placeholder="Opcional: que te faltó o que mejorarías"></textarea><div class="step-progress-feedback-actions"><button class="step-progress-feedback-send" type="button">Enviar feedback</button></div><p class="step-progress-feedback-status" aria-live="polite"></p></div></div></div></div><div class="right sidebar"><div class="solve-meta-sidebar "><h3 class="solve-meta-title">Sobre este artículo</h3><div class="solve-meta-section"><span class="solve-meta-label">Categorías:</span><div class="solve-meta-tags"><span class="solve-meta-tag">#Dispositivos</span><span class="solve-meta-tag">#Señal</span></div></div><div class="solve-meta-metrics"><div class="solve-meta-row"><span class="solve-meta-label">Dificultad:</span><span class="solve-meta-badge" style="background-color: #FFCEA0"><img class="solve-meta-icon" data-icon="solve-difficulty-2.svg" alt aria-hidden="true"/><span class="solve-meta-value">Medio</span></span></div><div class="solve-meta-row"><span class="solve-meta-label">Costo:</span><span class="solve-meta-badge" style="background-color: #B6FAA4"><img class="solve-meta-icon" data-icon="solve-cost-1.svg" alt aria-hidden="true"/><span class="solve-meta-value">Gratis</span></span></div><div class="solve-meta-row"><span class="solve-meta-label">Tarda:</span><span class="solve-meta-badge" style="background-color: #FFB6B6"><img class="solve-meta-icon" data-icon="solve-time-3.svg" alt aria-hidden="true"/><span class="solve-meta-value">Días</span></span></div><div class="solve-meta-row"><span class="solve-meta-label">Ayudantes:</span><span class="solve-meta-badge" style="background-color: #FFCEA0"><img class="solve-meta-icon" data-icon="solve-helpers-3.svg" alt aria-hidden="true"/><span class="solve-meta-value">2-3 personas</span></span></div><div class="solve-meta-row solve-meta-permite"><span class="solve-meta-label">Permite:</span><div class="solve-meta-permite-badges"><span class="solve-meta-badge solve-meta-badge-small" style="background-color: #A6EFFF"><span class="solve-meta-value">Conseguir</span></span><span class="solve-meta-badge solve-meta-badge-small" style="background-color: #B6FAA4"><span class="solve-meta-value">Mejorar</span></span><span class="solve-meta-badge solve-meta-badge-small" style="background-color: #FFCEA0"><span class="solve-meta-value">Compartir</span></span></div></div></div><div class="solve-meta-footer"><div class="solve-meta-author"><span class="solve-meta-label-bold">Autor:</span> SOLE Colombia</div><div class="solve-meta-date"><span class="solve-meta-label-bold">Publicado:</span> <time datetime="2026-01-26T05:00:00.000Z">26 ene 2026</time></div></div></div><div class="backlinks"><h3>Retroenlaces</h3><ul id="list-1" class="overflow"><li><a href="../../pt/solve/solv-buy-computer" class="internal">Como comprar um computador?</a></li><li><a href="../../pt/solve/solv-community-meeting-space" class="internal">Como conseguir um salão comunitário ou qualquer espaço comunitário para usar a internet em grupo?</a></li><li><a href="../../pt/solve/solv-create-poweful-message" class="internal">Como mobilizar outras pessoas com a sua causa?</a></li><li><a href="../../pt/solve/solv-express-invite" class="internal">Aprenda a criar um convite expresso sem ser um especialista!</a></li><li><a href="../../pt/solve/solv-jangala-install-box" class="internal">Como instalar um Big Box da Jangala?</a></li><li class="overflow-end"></li></ul></div></div></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="../../postscript.js" type="module"></script></html>

@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr"><head><title>Prueba #02 SOLE Voltaje</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=Roboto+Mono:wght@400;500;600;700&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="SOLE Voltaje"/><meta property="og:title" content="Prueba #02 SOLE Voltaje"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Prueba #02 SOLE Voltaje"/><meta name="twitter:description" content="Este documento tem como objetivo propor o protocolo para a realização do teste 02 do Guia de Soluções, com base nos aprendizados e descobertas do teste 01 realizado em 03/02/2024."/><meta property="og:description" content="Este documento tem como objetivo propor o protocolo para a realização do teste 02 do Guia de Soluções, com base nos aprendizados e descobertas do teste 01 realizado em 03/02/2024."/><meta property="og:image:alt" content="Este documento tem como objetivo propor o protocolo para a realização do teste 02 do Guia de Soluções, com base nos aprendizados e descobertas do teste 01 realizado em 03/02/2024."/><meta property="twitter:domain" content="voltaje.solecolombia.org"/><meta property="og:url" content="https://voltaje.solecolombia.org/pt/inspire/insp-voltaje-test02"/><meta property="twitter:url" content="https://voltaje.solecolombia.org/pt/inspire/insp-voltaje-test02"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="Este documento tem como objetivo propor o protocolo para a realização do teste 02 do Guia de Soluções, com base nos aprendizados e descobertas do teste 01 realizado em 03/02/2024."/><meta name="generator" content="Quartz"/><script>(function () {
+  var STORAGE_KEY = "contentLang";
+  var FALLBACK_AVAILABLE = { en: true, pt: true };
+  var SITE_ROOT = "/";
+  var normalizePath = function (value) {
+    return (value || "").replace(/\/+$/g, "") || "/";
+  };
+  var isRootPath = function () {
+    return normalizePath(window.location.pathname) === normalizePath(SITE_ROOT);
+  };
+  var resolveLangPath = function (lang) {
+    return SITE_ROOT === "/" ? "/" + lang : SITE_ROOT + "/" + lang;
+  };
+  var detectPreferredLang = function () {
+    var stored = (localStorage.getItem(STORAGE_KEY) || "").toLowerCase();
+    if (stored) return stored;
+    var browser = (navigator.language || (navigator.languages && navigator.languages[0]) || "").toLowerCase();
+    return browser;
+  };
+  var resolveAvailableLanguages = async function () {
+    try {
+      var fetchIndex = globalThis.fetchData;
+      if (!fetchIndex || typeof fetchIndex.then !== "function") {
+        return FALLBACK_AVAILABLE;
+      }
+      var data = await fetchIndex;
+      var slugs = Object.keys(data || {});
+      if (slugs.length === 0) {
+        return FALLBACK_AVAILABLE;
+      }
+      return {
+        en: slugs.some(function (slug) { return slug === "en" || slug.startsWith("en/"); }),
+        pt: slugs.some(function (slug) { return slug === "pt" || slug.startsWith("pt/"); }),
+      };
+    } catch (_err) {
+      return FALLBACK_AVAILABLE;
+    }
+  };
+  if (!isRootPath()) return;
+  resolveAvailableLanguages().then(function (available) {
+    var preferred = detectPreferredLang();
+    if (preferred.startsWith("en") && available.en) {
+      window.location.replace(resolveLangPath("en"));
+      return;
+    }
+    if (preferred.startsWith("pt") && available.pt) {
+      window.location.replace(resolveLangPath("pt"));
+    }
+  });
+})();</script><link href="../../index.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL2hvbWUvcnVubmVyL3dvcmsvdm9sdGFqZS1kZXYvdm9sdGFqZS1kZXYvcXVhcnR6L2NvbXBvbmVudHMvc3R5bGVzIiwic291cmNlcyI6WyJtZXJtYWlkLmlubGluZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFHRjtFQUNFOzs7QUFLRjtFQUNFO0VBQ0E7OztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFOztBQUlGO0VBQ0U7RUFDQTtFQUNBIiwic291cmNlc0NvbnRlbnQiOlsiLmV4cGFuZC1idXR0b24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsb2F0OiByaWdodDtcbiAgcGFkZGluZzogMC40cmVtO1xuICBtYXJnaW46IDAuM3JlbTtcbiAgcmlnaHQ6IDA7IC8vIE5PVEU6IHJpZ2h0IHdpbGwgYmUgc2V0IGluIG1lcm1haWQuaW5saW5lLnRzXG4gIGNvbG9yOiB2YXIoLS1ncmF5KTtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICBib3JkZXI6IDFweCBzb2xpZDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBvcGFjaXR5OiAwO1xuICB0cmFuc2l0aW9uOiAwLjJzO1xuXG4gICYgPiBzdmcge1xuICAgIGZpbGw6IHZhcigtLWxpZ2h0KTtcbiAgICBmaWx0ZXI6IGNvbnRyYXN0KDAuMyk7XG4gIH1cblxuICAmOmhvdmVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgYm9yZGVyLWNvbG9yOiB2YXIoLS1zZWNvbmRhcnkpO1xuICB9XG5cbiAgJjpmb2N1cyB7XG4gICAgb3V0bGluZTogMDtcbiAgfVxufVxuXG5wcmUge1xuICAmOmhvdmVyID4gLmV4cGFuZC1idXR0b24ge1xuICAgIG9wYWNpdHk6IDE7XG4gICAgdHJhbnNpdGlvbjogMC4ycztcbiAgfVxufVxuXG4jbWVybWFpZC1jb250YWluZXIge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGNvbnRhaW46IGxheW91dDtcbiAgei1pbmRleDogOTk5O1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxMDB2dztcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogbm9uZTtcbiAgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDRweCk7XG4gIGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC41KTtcblxuICAmLmFjdGl2ZSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB9XG5cbiAgJiA+ICNtZXJtYWlkLXNwYWNlIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogNTAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICBoZWlnaHQ6IDgwdmg7XG4gICAgd2lkdGg6IDgwdnc7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcblxuICAgICYgPiAubWVybWFpZC1jb250ZW50IHtcbiAgICAgIHBhZGRpbmc6IDJyZW07XG4gICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICB0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7XG4gICAgICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4xcyBlYXNlO1xuICAgICAgb3ZlcmZsb3c6IHZpc2libGU7XG4gICAgICBtaW4taGVpZ2h0OiAyMDBweDtcbiAgICAgIG1pbi13aWR0aDogMjAwcHg7XG5cbiAgICAgIHByZSB7XG4gICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgfVxuXG4gICAgICBzdmcge1xuICAgICAgICBtYXgtd2lkdGg6IG5vbmU7XG4gICAgICAgIGhlaWdodDogYXV0bztcbiAgICAgIH1cbiAgICB9XG5cbiAgICAmID4gLm1lcm1haWQtY29udHJvbHMge1xuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgYm90dG9tOiAyMHB4O1xuICAgICAgcmlnaHQ6IDIwcHg7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZ2FwOiA4cHg7XG4gICAgICBwYWRkaW5nOiA4cHg7XG4gICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgYm9yZGVyLXJhZGl1czogNnB4O1xuICAgICAgYm94LXNoYWRvdzogMCAycHggNHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcbiAgICAgIHotaW5kZXg6IDI7XG5cbiAgICAgIC5tZXJtYWlkLWNvbnRyb2wtYnV0dG9uIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgIHdpZHRoOiAzMnB4O1xuICAgICAgICBoZWlnaHQ6IDMycHg7XG4gICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgICAgY29sb3I6IHZhcigtLWRhcmspO1xuICAgICAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICBmb250LWZhbWlseTogdmFyKC0tYm9keUZvbnQpO1xuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBlYXNlO1xuXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIH1cblxuICAgICAgICAmOmFjdGl2ZSB7XG4gICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDFweCk7XG4gICAgICAgIH1cblxuICAgICAgICAvLyBTdHlsZSB0aGUgcmVzZXQgYnV0dG9uIGRpZmZlcmVudGx5XG4gICAgICAgICY6bnRoLWNoaWxkKDIpIHtcbiAgICAgICAgICB3aWR0aDogYXV0bztcbiAgICAgICAgICBwYWRkaW5nOiAwIDEycHg7XG4gICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iXX0= */</style><script src="../../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://voltaje.solecolombia.org/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://voltaje.solecolombia.org/pt/inspire/insp-voltaje-test02-og-image.webp"/><meta property="og:image:url" content="https://voltaje.solecolombia.org/pt/inspire/insp-voltaje-test02-og-image.webp"/><meta name="twitter:image" content="https://voltaje.solecolombia.org/pt/inspire/insp-voltaje-test02-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="pt/inspire/insp-voltaje-test02" data-basepath><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../.." aria-label="SOLE Voltaje"><img src="https://voltaje.solecolombia.org/static/logo.png" alt class="page-logo page-logo--light"/><img src="https://voltaje.solecolombia.org/static/logo_voltaje.svg" alt class="page-logo page-logo--dark"/></a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><details class="lang-toggle" data-lang-toggle="true"><summary class="lang-summary" aria-label="Cambiar idioma"><span class="lang-summary-flag" aria-hidden="true">🇪🇸</span><span class="lang-summary-code">ES</span></summary><div class="lang-menu" role="menu" aria-label="Idiomas disponibles"><button type="button" class="lang-option" role="menuitem" data-lang="es"><span aria-hidden="true">🇪🇸</span> ES</button><button type="button" class="lang-option" role="menuitem" data-lang="en"><span aria-hidden="true">🇺🇸</span> EN</button><button type="button" class="lang-option" role="menuitem" data-lang="pt"><span aria-hidden="true">🇵🇹</span> PT</button></div></details></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Modo oscuro"><title>Modo oscuro</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Modo claro"><title>Modo claro</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div></div><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Buscar</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Busca algo" placeholder="Busca algo"/><div class="search-layout" data-preview="true"></div></div></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-lang-default="es" data-data-fns="{&quot;order&quot;:[&quot;map&quot;,&quot;filter&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>{let customOrder=[\&quot;new-here\&quot;,\&quot;solve\&quot;,\&quot;inspire\&quot;,\&quot;glossary\&quot;,\&quot;disconnected\&quot;,\&quot;answers-comments\&quot;],indexA=customOrder.indexOf(a.slugSegment),indexB=customOrder.indexOf(b.slugSegment);return indexA!==-1&amp;&amp;indexB!==-1?indexA-indexB:indexA!==-1?-1:indexB!==-1?1:!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1}&quot;,&quot;filterFn&quot;:&quot;node=>{let mainMenuOrder=[\&quot;new-here\&quot;,\&quot;solve\&quot;,\&quot;inspire\&quot;,\&quot;glossary\&quot;,\&quot;disconnected\&quot;,\&quot;answers-comments\&quot;];return node.slugSegment===\&quot;tags\&quot;||node.slugSegment===\&quot;_staging\&quot;||node.slugSegment===\&quot;.staging\&quot;||node.slugSegment===\&quot;descargas\&quot;?!1:node.slugSegment?mainMenuOrder.includes(node.slugSegment):!0}&quot;,&quot;mapFn&quot;:&quot;node=>{let langFolders=node.children.filter(child=>child.isFolder&amp;&amp;(child.slugSegment===\&quot;es\&quot;||child.slugSegment===\&quot;en\&quot;||child.slugSegment===\&quot;pt\&quot;));if(langFolders.length>0){let promotedChildren=langFolders.flatMap(langFolder=>langFolder.children);node.children=node.children.filter(child=>!langFolders.includes(child)).concat(promotedChildren)}if(!node.slugSegment)for(let child of node.children)child.slugSegment===\&quot;answers-comments\&quot;&amp;&amp;(child.displayName=\&quot;\\xBFQuieres hablar con otro humano?\&quot;),child.children=[],child.isFolder=!1}&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-484"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><div id="explorer-484" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div><div class="sidebar-credit desktop-only"><p><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" aria-label="Creative Commons BY-SA 4.0" class="cc-icon-link"><img src="/static/logo_CC.svg" alt aria-hidden="true" width="20" height="20" class="cc-icon" loading="lazy"/></a> </p><p>Voltaje es una iniciativa abierta de la <a href="https://www.solecolombia.org/" target="_blank" rel="noopener noreferrer">Fundación SOLE Colombia</a>, con el apoyo de <a href="https://www.internetsocietyfoundation.org/" target="_blank" rel="noopener noreferrer">Internet Society Foundation</a>, que se construye día a día en comunidad.</p></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Inicio</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../pt/">pt</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../pt/inspire/">Inspírate</a></div></nav><h1 class="article-title  section-inspire  ">Prueba #02 SOLE Voltaje</h1><p class=" section-inspire   article-resumen">Protocolo para o teste 02 baseado nos aprendizados do teste 01.</p></div></div><article class="popover-hint"><p>Este documento tem como objetivo propor o protocolo para a realização do teste 02 do Guia de Soluções, com base nos aprendizados e descobertas do teste 01 realizado em 03/02/2024.</p>
+<ol>
+<li><strong>O que aprendemos com o teste 01?</strong></li>
+</ol>
+<ul>
+<li>Focar a redação das soluções em melhorar a escrita, a clareza da linguagem e a ordem das instruções.</li>
+<li>É importante que a redação da solução faça com que os/as participantes se sintam acompanhados em cada um dos passos.</li>
+<li>É fundamental entender que a boa redação dos passos depende do uso estratégico de imagens, esquemas ou fotografias para que forneçam informações-chave e relevantes.</li>
+<li>É importante focar os esforços em melhorar: 1. as imagens que acompanham cada uma das instruções; 2. a ordem, a clareza e a organização das instruções.</li>
+<li>É fundamental ter uma seção inicial com as condições de segurança que devem estar garantidas antes de realizar o teste.</li>
+<li>Antes de começar as soluções (para o Guia), talvez sugerir às pessoas que estejam em um espaço confortável, tranquilo e seguro.</li>
+<li>As participantes disseram que a solução da antena com uma lata lhes trouxe mais motivação do que desafio, e a solução da antena caseira trouxe mais desafio/frustração do que motivação. É preciso revisar como lidar com as frustrações.</li>
+<li>O tom do guia deveria ser de companhia, compaixão; um tom no qual fique claro que as soluções não são para especialistas, que qualquer pessoa interessada pode realizá-las. Este tom não está claro. Deveria ficar clara, neste tom, a aposta ética e política do guia. Não há uma aposta comunicativa clara.</li>
+<li>Vale a pena revisar o que, na tipografia, no tamanho da letra e na diagramação, facilitou a leitura. Valeria a pena fazer o teste com pessoas que tenham dificuldades para ler no computador. Além disso, testar a diagramação com distribuição em colunas.</li>
+</ul>
+<ol>
+<li><strong>Progresso:</strong> as soluções devem fazer com que os/as participantes sintam que estão avançando. As participantes devem saber em que parte do teste estão e quanto falta.</li>
+<li><strong>Companhia:</strong> as soluções devem estar redigidas de tal maneira que as participantes se sintam acompanhadas por meio de um tom coloquial e próximo.
+Estratégia:</li>
+<li><strong>Confirmação:</strong> as soluções devem assegurar aos/às participantes que estão no caminho certo e que seus avanços estão efetivamente corretos.</li>
+</ol>
+<p><em>Tipologia de imagens que serão usadas para os testes</em></p>
+<ol>
+<li><strong>Imagens de resultado:</strong> mostram o resultado final do passo ou da solução que está sendo realizada. Estas imagens permitem que os/as participantes contrastem os avanços que estão alcançando com o que o teste pede.</li>
+<li><strong>Imagens de processo:</strong> mostram os passos necessários para chegar a um resultado ou a um passo determinado.</li>
+<li><strong>Imagens em contexto:</strong> mostram as soluções com pessoas em contextos específicos.</li>
+</ol>
+<p><em>Perfis de participantes</em></p>
+<p>Os seguintes perfis podem se cruzar. Por exemplo, há pessoas que podem ter muito pouco conhecimento sobre como a internet funciona, mas podem estar muito interessadas em aprender para o teste.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>Interesse:</strong> pessoas interessadas em aprender sobre como realizar uma solução.</th><th><strong>Necessidade:</strong> pessoas que precisam das soluções para resolver problemas concretos.</th></tr></thead><tbody><tr><td><strong>Conhecimentos:</strong> pessoas que sabem bastante sobre como a internet funciona, ou algum dos pilares do guia: eletricidade, espaço, convocação de pessoas, gestão de espaços ou conectividade.</td><td><strong>Destrezas:</strong> pessoas que têm habilidades interpessoais (soft skills) e/ou motricidade para realizar as soluções.</td></tr></tbody></table></div>
+<p><strong>2. Objetivos do teste 02:</strong></p>
+<ol>
+<li>Avaliar os avanços realizados nas soluções a partir dos aprendizados do teste 01.</li>
+<li>Comprovar as mudanças que o formato de áudio-leitura produz nos/nas participantes para as soluções.</li>
+<li>Receber feedback das soluções sobre “como convocar sua comunidade” e encontrar as diferenças e semelhanças com os testes de “o sinal de internet está ruim”:</li>
+</ol>
+<p><strong>3. Perguntas para formular o teste 02:</strong></p>
+<ol>
+<li><strong>Perfis de participantes:</strong> Com base nos aprendizados e objetivos, quem e quantas pessoas deveriam fazer parte do teste? Como dividimos o teste para os perfis de interesse, necessidade, conhecimentos e destrezas?</li>
+<li><strong>Formato do teste:</strong> Deveríamos realizar a solução de maneira virtual e remota? Qual é a razão pela qual deveríamos fazer assim? Remoto significa fazer o teste com um observador síncrono ou, pelo contrário, dar um tempo de uma semana e meia (por exemplo) para realizar o teste?</li>
+<li><strong>Cuidados:</strong> Que considerações e cuidados devemos ter com as pessoas que realizarão estes testes?</li>
+<li><strong>Expectativas:</strong> O que esperamos das pessoas que realizarão o teste?</li>
+<li><strong>Feedback/avaliação:</strong> Como receberemos o feedback/avaliação dos/as participantes?</li>
+<li><strong>Papéis:</strong> Quais papéis dentro da equipe SOLE são necessários para realizar este teste?</li>
+</ol>
+<p><strong>4. Proposta para o teste 02 (respostas às perguntas do ponto 3):</strong></p>
+<ol>
+<li><strong>Perfis de participantes</strong>: O teste 02 será realizado pelas participantes de maneira remota, virtual.</li>
+</ol>
+<ul>
+<li><strong>TESTE DE ITERAÇÃO DE UMA SOLUÇÃO: avaliar se a reescrita das soluções do teste 01 melhorou a experiência</strong>. Duas das participantes do teste 01 poderiam repetir os testes realizados no teste 01.
+<ul>
+<li>TESTE DE LEITURA com Áudio-leitura (remoto 1 semana): Com as 4 pessoas iniciais, tanto antena caseira quanto lata.</li>
+<li>TESTE DE EXECUÇÃO (remoto 1 semana): Convidar 2 pessoas novas para que executem o teste da Antena caseira. 2 pessoas novas para a de lata.</li>
+</ul>
+</li>
+<li><strong>TESTE DE INÍCIO DE UMA SOLUÇÃO: comprovar os avanços que realizamos para pessoas que não tiveram contato com o Guia de Soluções.</strong> Duas pessoas novas poderiam trabalhar em uma ou duas soluções diferentes das prototipadas no teste 01.
+<ul>
+<li>REMOTA Instalação da antena 3G: 2 Exploradores Tecelões (Hiladores)</li>
+<li>PRESENCIAL “Reiniciar e compartilhar a internet do seu telefone com outros”.</li>
+</ul>
+</li>
+<li><strong>TESTE DE COMPARAÇÃO ENTRE CATEGORIAS: comprovar as mudanças necessárias entre os testes sobre como “convocar sua comunidade” e “o sinal de internet está ruim”.</strong> As outras duas participantes do teste 01 poderiam trabalhar nos dois testes novos sobre “como convocar sua comunidade”.</li>
+</ul>
+<ol>
+<li><strong>Formato do teste:</strong> As participantes terão um tempo estimado de 1 semana e meia para enviar os resultados do teste; isso nos permitirá avaliar, de maneira orgânica, quanto interesse tiveram em desenvolver o teste.</li>
+<li><strong>Cuidados:</strong> Já que será virtual, dar tempo às pessoas para que realizem o teste no seu próprio ritmo. Fazer com que as pessoas se sintam tranquilas, confortáveis e sejam honestas com a SOLE, tanto para dizer que não querem realizar o teste quanto para dar feedback e avaliar as soluções.</li>
+<li><strong>Expectativas:</strong></li>
+<li><strong>Feedback/avaliação:</strong></li>
+</ol>
+<blockquote>
+<ol>
+<li>
+<p>um formulário de entrada (antes de começar o teste) e outro ao terminar o teste.</p>
+</li>
+<li>
+<p>Sugiro usar o método de documentação própria para que, durante a semana 01, as pessoas possam registrar sua experiência com o teste.</p>
+</li>
+</ol>
+</blockquote>
+<p><strong>Criação da comunidade de “cacharreras” (faz-tudo/inventoras)</strong></p>
+<p><strong>Objetivo</strong></p>
+<p>Gerar um espaço de intercâmbio entre diversos usuários que tenham participado de exercícios de “cacharreo” (invenção/conserto) para melhorar a conectividade à internet.</p>
+<p><strong>Detalhes</strong></p>
+<ul>
+<li>Para os testes virtuais, este será o canal de comunicação.</li>
+<li>O convite para o grupo será feito ao final dos testes presenciais.</li>
+</ul>
+<p><strong>Teste <a href="../.././../tags/02A" class="tag-link internal alias" data-slug="tags/02A">02A</a> - Iteração leitora-virtual das soluções do teste #01</strong></p>
+<p><strong>Objetivo</strong></p>
+<p>Comprovar se foram realizadas as melhorias adequadas nas soluções testadas no teste #01.</p>
+<p><strong>Soluções</strong></p>
+<p>Construa uma antena 3G caseira</p>
+<p>Como melhorar meu sinal com uma lata?</p>
+<p><strong>Participantes e seu perfil (antes de fazer o teste):</strong></p>
+<p>As 4 pessoas do teste #01.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>Interesse</strong></th><th><strong>Conhecimento</strong></th><th><strong>Destreza</strong></th><th><strong>Necessidade</strong></th><th><strong>Participante</strong></th></tr></thead><tbody><tr><td><strong>-</strong></td><td></td><td><strong>+</strong></td><td></td><td>Catalina</td></tr><tr><td><strong>-</strong></td><td><strong>+</strong></td><td></td><td></td><td>Amalia</td></tr><tr><td></td><td><strong>-</strong></td><td></td><td><strong>+</strong></td><td>Sabina</td></tr><tr><td><strong>+</strong></td><td></td><td><strong>-</strong></td><td></td><td>Natalia</td></tr></tbody></table></div>
+<p><strong>Metodologia</strong></p>
+<ol>
+<li>Criar grupo de WhatsApp mediante autorização das participantes.</li>
+<li>Compartilhar o objetivo do grupo.</li>
+<li>Compartilhar as instruções do teste de legibilidade.</li>
+<li>Compartilhar os links no Notion das 2 soluções modificadas.</li>
+<li>Agradecer pela participação.</li>
+</ol>
+<p><strong>Agenda</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>Momento</strong></th><th><strong>Atividade</strong></th></tr></thead><tbody><tr><td>0</td><td>Criar grupo de WhatsApp mediante autorização das participantes.</td></tr><tr><td>1</td><td>Compartilhar o objetivo do grupo.</td></tr><tr><td>Bem-vindas à comunidade de “cacharreras”, SOLE Voltaje!</td><td></td></tr><tr><td>Primeiramente, muito obrigada por aceitar participar desta comunidade; aqui chegarão pessoas interessadas em conhecer e testar soluções que contribuam para melhorar sua conectividade. Neste grupo, focaremos em:</td><td></td></tr></tbody></table></div>
+<ul>
+<li>Você pode compartilhar diversas soluções para a conectividade que estamos criando na SOLE Voltaje.</li>
+<li>Você pode convidar novas pessoas para que façam parte dos nossos testes de usuários e aprendam mais sobre a internet.</li>
+<li>Você pode participar de oficinas sobre como melhorar a conectividade da internet.</li>
+<li>Você pode participar de testes, de maneira remota, que a equipe “cacharrera” da SOLE Colômbia proporá através deste grupo.</li>
+<li>Você pode receber apoio da comunidade de “cacharreras” que estamos criando para a solução em que você esteja trabalhando.</li>
+<li>Você pode propor novas soluções para a comunidade de “cacharreras”.</li>
+<li>Você pode nos contar e propor novos desafios para nos conectarmos à internet.
+As regras deste grupo:</li>
+</ul>
+<ol start="0">
+<li>
+<p>Tratamo-nos com carinho e respeito, sem nos julgar, apesar de não nos conhecermos todos.</p>
+</li>
+<li>
+<p>Você pode sair do grupo quando desejar. Não é uma obrigação estar aqui;</p>
+</li>
+<li>
+<p>Você pode ter um papel de leitora ou ouvinte para aprender, ou também pode participar com suas dúvidas, inquietações ou propostas. Qualquer um dos dois papéis é bem-vindo;</p>
+</li>
+<li>
+<p>Se você conhece pessoas que gostariam de fazer parte desta comunidade de “cacharreros”, conte-nos e entraremos em contato com elas.</p>
+</li>
+<li>
+<p>As conversas são sobre o “cacharreo” (invenção/conserto) da internet.
+Se em qualquer momento você perder o interesse no tema, sentir-se saturada ou surgir qualquer outro motivo para não pertencer ao grupo de “cacharreras”, não há nenhum inconveniente em que você se retire silenciosamente. |
+| 2 | Boas-vindas
+Damos as boas-vindas a esta comunidade de “cacharreras”!
+Estamos muito contentes que façam parte das primeiras pessoas interessadas em aprender, participar, ouvir e testar soluções para construir a internet que queremos e precisamos.
+Lembrem-se de que na descrição do grupo encontrarão o objetivo e as regras do grupo.
+Podem ler a mensagem |
+| 3 | Compartilhar as instruções do teste de legibilidade.
+De novo, muito obrigada por participar deste espaço!
+Graças ao feedback que nos deram no dia do primeiro teste, no qual testamos duas soluções (Antena 3G caseira e Melhorar meu sinal com uma lata), melhoramos a escrita, a redação, as imagens e o tom para as pessoas interessadas em continuar aprendendo e melhorar sua internet. Por esta razão, queremos compartilhar com vocês as duas soluções redesenhadas. Gostaríamos que pudessem lê-las e responder, em um áudio com a duração que vocês considerarem, às seguintes perguntas: Quais aspectos da solução melhoraram a partir do teste 01? Quais aspectos da solução ainda precisam ser melhorados?
+Como cada uma conseguiu terminar uma das soluções, pensamos na seguinte divisão para que nos deem seu feedback:
+• Catalina e Amalia (Antena 3G caseira).
+• Sabina e Natalia (Melhorar meu sinal com uma lata).
+Sua voz é muito importante para nós! |
+| 4 | Compartilhar os links no Notion das 2 soluções modificadas.
+Compartilhamos as soluções que modificamos a partir dos comentários de 4 de nossas “cacharreras” (Amalia, Catalina, Sabina e Natalia):
+<strong>Construa uma antena 3G caseira</strong>
+<a href="https://www.notion.so/solecolombia/Construye-una-antena-3G-casera-79b996e8129d4fc2afd6b7a75fa20627" class="external">https://www.notion.so/solecolombia/Construye-una-antena-3G-casera-79b996e8129d4fc2afd6b7a75fa20627<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<em>Como melhorar meu sinal com uma lata?</em>
+<a href="https://www.notion.so/solecolombia/C-mo-mejorar-mi-se-al-con-una-lata-446b12a0cf3f43f8950660d603383f3c" class="external">https://www.notion.so/solecolombia/C-mo-mejorar-mi-se-al-con-una-lata-446b12a0cf3f43f8950660d603383f3c<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> |</p>
+</li>
+</ol>
+<p><strong>Teste <a href="../.././../tags/02B" class="tag-link internal alias" data-slug="tags/02B">02B</a> - Execução-virtual de duas soluções novas</strong></p>
+<p><strong>Tamanho da amostra:</strong></p>
+<p><strong>Objetivo</strong></p>
+<p>Receber feedback da solução quanto à acessibilidade, aprendizado, legibilidade, clareza, motivação, segurança e viabilidade.</p>
+<p>Receber feedback sobre a experiência segundo o formato:</p>
+<ul>
+<li>Texto</li>
+<li>Imagem</li>
+<li>Áudio-leitura</li>
+<li>Vídeo</li>
+</ul>
+<p><strong>Soluções</strong></p>
+<ul>
+<li>Instalação da antena 3G <a href="https://solecolombia.notion.site/C-mo-instalar-una-antena-3-4G-37213361ffa344c4b9723952b4bc0d63?pvs=4" class="external">https://solecolombia.notion.site/C-mo-instalar-una-antena-3-4G-37213361ffa344c4b9723952b4bc0d63?pvs=4<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<p><strong>Participantes e seu perfil (antes de fazer o teste):</strong> Embaixadoras da OIM.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>Interesse</strong></th><th><strong>Conhecimento</strong></th><th><strong>Destreza</strong></th><th><strong>Necessidade</strong></th><th><strong>Participante</strong></th><th><strong>Detalhes</strong></th></tr></thead><tbody><tr><td></td><td></td><td><strong>-</strong></td><td><strong>+</strong></td><td>Elizabeth (Nico), Antioquia</td><td>não conseguiu</td></tr><tr><td></td><td><strong>-</strong></td><td><strong>+</strong></td><td></td><td>Gabriel e Jackelin (Mateo), Antioquia.</td><td>começar com Gabriel</td></tr><tr><td></td><td><strong>-</strong></td><td></td><td><strong>+</strong></td><td>Orcelis (manu) Montes de María</td><td>não soube como instalá-la, se a ajudarmos quer fazer… não sabe se tem tanto tempo para o grupo de “cacharreros”, mas tem o interesse de poder instalar sua antena.</td></tr><tr><td><strong>+</strong></td><td><strong>-</strong></td><td></td><td></td><td>Arduin (Mateo), Cauca</td><td></td></tr><tr><td><strong>-</strong></td><td></td><td></td><td><strong>+</strong></td><td>Yuneris (Manu), Montes de María</td><td>não soube como instalá-la, quer fazer, mas com ajuda, a maior dificuldade que teve foi que… e sim, quer se juntar ao grupo de “cacharreros”!</td></tr><tr><td><strong>+</strong></td><td><strong>-</strong></td><td></td><td></td><td>Yarleny, (Nico) Antioquia</td><td></td></tr><tr><td><strong>+</strong></td><td></td><td><strong>-</strong></td><td></td><td>Islena (Manu) Montes de María</td><td></td></tr></tbody></table></div>
+<p><strong>Metodologia</strong></p>
+<ol>
+<li>Linha de base e convidar as participantes para o grupo de WhatsApp mediante autorização.</li>
+<li>Compartilhar de maneira direta o objetivo do grupo.</li>
+<li>Enviar instrução do teste.</li>
+<li>Se a comunidade propuser conversa e perguntas, nós a acompanhamos.</li>
+<li>Pedir feedback final (pendente ver se é síncrono e grupal ou não).</li>
+<li>Agradecer pela participação.</li>
+</ol>
+<p><em>Linha de base: antes de colocar os participantes no grupo de WhatsApp, fazer-lhes algumas perguntas em forma de conversa para “mapear” qual é o estado inicial da internet com a antena 3G.</em></p>
+<p><em><strong>Linha de base</strong></em></p>
+<ol>
+<li><strong>Acesso:</strong> Você tentou instalar sua antena 3G? Sim ou Não</li>
+<li><strong>Acesso:</strong> Sua antena funciona? Sim / Não / Não sei</li>
+<li><strong>Percepção:</strong> Quão boa é a qualidade da internet desde que deixamos a antena 3G?</li>
+<li><strong>Speedtest:</strong> teste a internet</li>
+<li><strong>Conhecimentos</strong>: Que dificuldades você teve?</li>
+<li><strong>Convite:</strong> Você gostaria de entrar em uma comunidade de “cacharreros/as” para que possa testar e melhorar seu sinal de internet com a antena 3G? Explicar as regras do grupo.</li>
+</ol>
+<p><strong>Mini roteiro para ter conversa sobre a antena</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th></th><th><strong>Não</strong></th></tr></thead><tbody><tr><td></td><td><strong>Perguntas</strong></td></tr><tr><td></td><td><strong>Sim</strong></td></tr><tr><td></td><td><strong>Informação a completar</strong></td></tr></tbody></table></div>
+<p><strong>OLHO: Esta é uma base para ter a conversa, acredito que a partir da relação que cada um tem com os usuários podem existir outros tipos de interações, podem adicionar ou remover, ou personalizar. No final, as vozes de cada um de nós estão na Voltaje.</strong></p>
+<ul>
+<li>Olá! Sou (Nome do integrante da equipe da SOLE Voltaje), o/a (papel na SOLE Voltaje). Como você tem passado? Como vai tudo?</li>
+</ul>
+<p>R: - Olá XXX, estou bem, obrigado(a), e você?</p>
+<ul>
+<li>Bem. Liz/Manuela me deu seu número e escrevo/ligo porque estamos criando a SOLE Voltaje, uma plataforma para ajudar a que mais pessoas possam se conectar autonomamente à Internet para usá-la em grupo e que, entre todos, criemos o futuro da Internet juntos.</li>
+</ul>
+<p>Por isso, queria perguntar como foi com a antena que doamos no ano passado. Minha intenção é que, na comunidade de “cacharreros” que estamos criando, possamos ajudá-lo(a) a resolver qualquer problema que tenha tido no momento de instalá-la… Você tentou instalá-la?</p>
+<ol>
+<li>Pergunta: Você instalou a antena?</li>
+</ol>
+<ul>
+<li>SIM/NÃO</li>
+<li>R: SIM. Uau, que esperta! Como você fez? Ficou funcionando?</li>
+<li>R: NÃO. Não tem problema se não a instalou, na comunidade de “cacharreros” que estamos criando gostaríamos de ajudá-lo(a) a instalá-la e que possa tirar proveito dela… Você teve alguma dificuldade ou problema no momento de instalá-la?</li>
+</ul>
+<ol>
+<li>Pergunta: A antena funciona?</li>
+</ol>
+<ul>
+<li>SIM/NÃO</li>
+<li>R: SIM. Tremendo! E… a qualidade da Internet é boa? Faço estas perguntas porque queremos ajudá-lo(a) a configurar, caso seja necessário, e que possa tirar proveito dela…</li>
+<li>R: NÃO. Poxa, é que a instalação é um pouco difícil. Você teve alguma dificuldade específica que nos dê luzes sobre como podemos ajudá-lo(a) na comunidade de “cacharreros”?</li>
+</ul>
+<ol>
+<li>Pergunta: Quão boa é a qualidade da Internet desde que deixamos a antena 3G?</li>
+</ol>
+<ul>
+<li>R: É BOA. Muito bom! Você me enviaria um teste de velocidade? Usaremos esta informação para poder revisar quão potente é esta solução para acessar a Internet; queremos saber se mais pessoas podem usá-la ou não…</li>
+<li>R: É RUIM. Sinto muito, mas com certeza é algo que podemos ajudá-lo(a) a resolver no grupo de “cacharreros”. Você gostaria de se juntar?</li>
+</ul>
+<ol>
+<li>Pergunta: Você me envia um teste de velocidade?</li>
+</ol>
+<ul>
+<li>SIM/NÃO/NÃO SEI</li>
+</ul>
+<p>R: Sim. Obrigado(a) por compartilhá-lo. Agora temos mais informação para saber que esta solução funciona e que mais pessoas podem usá-la.</p>
+<p>R: Não. Não é uma obrigação, fique tranquilo(a). Antes de tudo, mil obrigadas por estar disponível; esta conversa ou o que levamos é muito importante para nós e para a comunidade de “cacharreros”.</p>
+<p>R: Não sei. Para fazer um teste de velocidade, você deve entrar no SpeedTest -enquanto usa a Internet da antena- e clicar onde diz “Go”.</p>
+<ol>
+<li>Pergunta: Que dificuldades você teve?</li>
+</ol>
+<blockquote>
+<p>R: Obrigado(a) por me contar tudo isso. Entendo tudo o que me conta. Na comunidade de “cacharreros” queremos ajudá-lo(a) e acompanhá-lo(a) para que possa usar a antena. O que me diz? Você gostaria de se juntar à nossa comunidade para que possa testar e melhorar seu sinal?</p>
+</blockquote>
+<ol>
+<li>Pergunta: Você gostaria de entrar em uma comunidade de “cacharreros/as” para que possa testar e melhorar seu sinal de internet com a antena 3G?</li>
+</ol>
+<blockquote>
+<p>R: Sim. Obrigado(a) por resolver todas as minhas perguntas e por se animar a fazer parte desta comunidade, já compartilho todas as informações do grupo… (ADICIONAR INFO GRUPO)</p>
+<p>R: Não. Muito obrigado(a) por responder a todas as minhas perguntas. Se em algum momento você quiser fazer parte da comunidade, escreva-me para adicioná-lo(a) ao grupo.</p>
+</blockquote>
+<p>Neste arquivo podemos preencher a informação: <a href="https://docs.google.com/spreadsheets/d/1LddOW8frG6leoJDBi0oMs7s-xIhtoBAVOUBwbc_pbLA/edit#gid=0" class="external">20240318_SOLE+BOLT_Línea de base para Antena 3G<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p><strong>Aprendizados</strong></p>
+<ul>
+<li>Das 7 pessoas que receberam a antena, apenas uma decidiu contatar a SOLE para pedir apoio na instalação.</li>
+<li>Não se pode voltar a entregar antenas nas comunidades sem fazer um processo de acompanhamento e deixar explícito o valor e a potencialidade das mesmas.</li>
+<li>É preciso fazer teste, sim ou sim, nos contatos com as pessoas para gerar o hábito.</li>
+</ul>
+<p><em><strong>Grupo de WhatsApp</strong></em></p>
+<p>Boas-vindas e instrução do teste. Na mensagem deve estar explícito que adoraríamos receber suas perguntas e fotografias de seus avanços no grupo. O teste durará duas semanas.</p>
+<p>🔍 Bem-vindos, exploradores e exploradoras, à comunidade de “Cacharreras” da SOLE Voltaje!</p>
+<ul>
+<li>Este é um espaço para que juntos criemos o futuro da Internet. Podem ler mais sobre esta comunidade na descrição do grupo.</li>
+</ul>
+<p>Lembram daquela Antena 3G que lhes demos no ano passado? Sabemos que não conseguiram usá-la… <strong>Por isso criamos algo para vocês… uma SOLUÇÃO DETALHADA sobre como instalar a Antena 3G. <em>(O link está no final)</em></strong></p>
+<p>Vocês não estão sozinhos; convidamos vocês a enviar fotos, perguntas ou comentários a este grupo durante seu processo de instalação. Assim podemos acompanhá-los e responder agilmente suas dúvidas. <em><strong>Pedimos que tentem completar a instalação em um prazo de duas semanas</strong>..</em> Vamos ao “cacharreo”! 💻🔧</p>
+<p><strong>Encontro final:</strong></p>
+<p>Com base no que ocorrer nas duas semanas de teste, avaliaremos a pertinência de fazer o feedback e “relatório”: enquetes de WhatsApp, chamada pessoal, reunião síncrona ou formulário.</p>
+<p><em>O objetivo deste encontro final é:</em></p>
+<ol>
+<li>Receber feedback da solução quanto à acessibilidade, aprendizado, legibilidade, clareza, motivação, segurança e viabilidade.</li>
+</ol>
+<ul>
+<li>.<strong>Acesso:</strong> Você tentou instalar sua antena 3G? Sim ou Não</li>
+<li><strong>Acesso:</strong> Sua antena funciona? Sim ou Não ou Não sei.</li>
+<li><strong>Percepção:</strong> Quão boa é a qualidade da internet desde que deixamos a antena 3G?</li>
+<li><strong>Speedtest:</strong> teste a internet</li>
+<li><strong>Conhecimentos</strong>: Que dificuldades você teve?</li>
+</ul>
+<blockquote>
+<ol start="3">
+<li>O que você acha que sua comunidade pode fazer com o funcionamento da antena?</li>
+</ol>
+</blockquote>
+<p><strong>Agenda</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>Momento</strong></th><th><strong>Atividade</strong></th></tr></thead><tbody><tr><td>0</td><td>Criar grupo de WhatsApp mediante autorização das participantes.</td></tr><tr><td>1</td><td>Convidar as participantes para o grupo de WhatsApp mediante autorização (para as embaixadoras é melhor uma chamada).</td></tr><tr><td>2</td><td>Compartilhar de maneira direta o objetivo do grupo.</td></tr><tr><td>3</td><td>Fazer perguntas de linha de base por WhatsApp e chamada.</td></tr><tr><td>4</td><td>Compartilhar as instruções do teste.</td></tr><tr><td>5</td><td>Realização do teste (2 semanas).</td></tr><tr><td>6</td><td>Fazer perguntas de feedback por chamadas, videochamadas ou enquetes por WhatsApp.</td></tr><tr><td>7</td><td></td></tr><tr><td>8</td><td></td></tr></tbody></table></div>
+<p><strong>Conclusões teste 02B</strong></p>
+<ul>
+<li>(Mt) Se leram, mas por partes, (Mn) não leram,</li>
+<li>3 de 7 tentaram fazer.</li>
+<li>Destes 3, não conseguiram sinal.</li>
+<li>Graças ao teste houve uma segunda tentativa de conexão.</li>
+<li>Arduin e Gabriel temos evidência de que conectaram.</li>
+<li>Para Yarleny a antena funcionou ocasionalmente antes de nós fazermos o teste.</li>
+<li>É preciso desenhar uma comunicação que permita identificar qual é o perfil de pessoas que são motivadas para serem “cacharreros”.</li>
+<li>Não podemos deixar que entrem na Voltaje apenas pela “necessidade”, devemos fazer com que também entrem pela “motivação”.</li>
+</ul>
+<p><strong>Teste <a href="../.././../tags/02C" class="tag-link internal alias" data-slug="tags/02C">02C</a> - Execução-presencial de duas soluções novas</strong></p>
+<p><strong>Objetivo</strong></p>
+<p><strong>Soluções</strong></p>
+<p>Reiniciar e compartilhar a internet do seu telefone com outros.</p>
+<p>Internet para lugares não interconectados.</p>
+<p><strong>Público</strong></p>
+<p>2 Exploradores Tecelões (Hiladores)</p>
+<p><strong>Metodologia</strong></p>
+<ul>
+<li>Boas-vindas</li>
+<li>Exploração da Voltaje</li>
+<li>Apresentação da SOLE Voltaje e do exercício</li>
+<li>Teste das soluções</li>
+<li>Feedback grupal</li>
+</ul>
+<p><strong>Agenda</strong></p>
+<p><strong>Teste <a href="../.././../tags/02D" class="tag-link internal alias" data-slug="tags/02D">02D</a> - Execução-presencial comparação entre categorias</strong></p>
+<p><strong>Objetivo</strong></p>
+<p><strong>Soluções</strong></p>
+<p><strong>Público</strong></p>
+<p><strong>Metodologia</strong></p>
+<ul>
+<li>Boas-vindas</li>
+<li>Exploração da Voltaje</li>
+<li>Apresentação da SOLE Voltaje e do exercício</li>
+<li>Teste das soluções</li>
+<li>Feedback grupal</li>
+</ul>
+<p><strong>Agenda</strong></p>
+<ul>
+<li><strong>TESTE DE ITERAÇÃO DE UMA SOLUÇÃO: avaliar se a reescrita das soluções do teste 01 melhorou a experiência</strong>. Duas das participantes do teste 01 poderiam repetir os testes realizados no teste 01.
+<ul>
+<li>TESTE DE LEITURA com Áudio-leitura (remoto 1 semana): Com as 4 pessoas iniciais, tanto antena caseira quanto lata.</li>
+<li>TESTE DE EXECUÇÃO (remoto 1 semana): Convidar 2 pessoas novas para que executem o teste da Antena caseira. 2 pessoas novas para a de lata.</li>
+</ul>
+</li>
+<li><strong>TESTE DE INÍCIO DE UMA SOLUÇÃO: comprovar os avanços que realizamos para pessoas que não tiveram contato com o Guia de Soluções.</strong> Duas pessoas novas poderiam trabalhar em uma ou duas soluções diferentes das prototipadas no teste 01.
+<ul>
+<li>REMOTA Instalação da antena 3G: 2 Exploradores Tecelões (Hiladores)</li>
+<li>PRESENCIAL “Reiniciar e compartilhar a internet do seu telefone com outros”.</li>
+</ul>
+</li>
+<li><strong>TESTE DE COMPARAÇÃO ENTRE CATEGORIAS: comprovar as mudanças necessárias entre os testes sobre como “convocar sua comunidade” e “o sinal de internet está ruim”.</strong> As outras duas participantes do teste 01 poderiam trabalhar nos dois testes novos sobre “como convocar sua comunidade”.</li>
+</ul>
+<img src="../../assets\images\Prueba-#-02-sole-voltaje-12a2bd68c5b68020bb47d48c9175a22fimage1-800wwebp" alt srcset="/assets\images\Prueba # 02 SOLE Voltaje 12a2bd68c5b68020bb47d48c9175a22f\image1-400w.webp 400w, /assets\images\Prueba # 02 SOLE Voltaje 12a2bd68c5b68020bb47d48c9175a22f\image1-800w.webp 800w, /assets\images\Prueba # 02 SOLE Voltaje 12a2bd68c5b68020bb47d48c9175a22f\image1-1200w.webp 1200w" sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px" loading="lazy"/>
+<ol start="3">
+<li>
+<p>Reunião virtual opcional para que o ou a participante nos conte como foi com o teste.</p>
+</li>
+<li>
+<p><strong>Papéis:</strong></p>
+<p>Cuidador/a: pessoa que cuida e está atenta às pessoas durante a semana e meia do teste.</p>
+</li>
+</ol>
+<blockquote>
+<p>Observador: estas pessoas falarão com os/as participantes ao terminar o teste.</p>
+<p>Analista: pessoa encarregada de analisar os dados do teste, tanto dos formulários quanto do método de documentação própria.</p>
+</blockquote></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="section-meta-sidebar section-inspire "><h3 class="section-meta-title">Sobre este artículo</h3><div class="section-meta-section"><span class="section-meta-label">Categorías:</span><div class="section-meta-tags"><span class="section-meta-tag">#Metodologías</span><span class="section-meta-tag">#02A</span><span class="section-meta-tag">#02B</span><span class="section-meta-tag">#02C</span><span class="section-meta-tag">#02D</span></div></div><div class="section-meta-footer"><div class="section-meta-author"><span class="section-meta-label-bold">Autor:</span> Nicolás</div><div class="section-meta-date"><span class="section-meta-label-bold">Publicado:</span> <time datetime="2024-10-25T05:00:00.000Z">25 oct 2024</time></div></div></div></div></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="../../postscript.js" type="module"></script></html>

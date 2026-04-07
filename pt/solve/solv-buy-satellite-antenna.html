@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr"><head><title>Como comprar uma antena satélite?</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=Roboto+Mono:wght@400;500;600;700&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="SOLE Voltaje"/><meta property="og:title" content="Como comprar uma antena satélite?"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Como comprar uma antena satélite?"/><meta name="twitter:description" content="Foto: Antena satelital - Wikipedia Olá, sou o Nicolás e estou aprendendo sobre como a internet funciona."/><meta property="og:description" content="Foto: Antena satelital - Wikipedia Olá, sou o Nicolás e estou aprendendo sobre como a internet funciona."/><meta property="og:image:alt" content="Foto: Antena satelital - Wikipedia Olá, sou o Nicolás e estou aprendendo sobre como a internet funciona."/><meta property="twitter:domain" content="voltaje.solecolombia.org"/><meta property="og:url" content="https://voltaje.solecolombia.org/pt/solve/solv-buy-satellite-antenna"/><meta property="twitter:url" content="https://voltaje.solecolombia.org/pt/solve/solv-buy-satellite-antenna"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="Foto: Antena satelital - Wikipedia Olá, sou o Nicolás e estou aprendendo sobre como a internet funciona."/><meta name="generator" content="Quartz"/><script>(function () {
+  var STORAGE_KEY = "contentLang";
+  var FALLBACK_AVAILABLE = { en: true, pt: true };
+  var SITE_ROOT = "/";
+  var normalizePath = function (value) {
+    return (value || "").replace(/\/+$/g, "") || "/";
+  };
+  var isRootPath = function () {
+    return normalizePath(window.location.pathname) === normalizePath(SITE_ROOT);
+  };
+  var resolveLangPath = function (lang) {
+    return SITE_ROOT === "/" ? "/" + lang : SITE_ROOT + "/" + lang;
+  };
+  var detectPreferredLang = function () {
+    var stored = (localStorage.getItem(STORAGE_KEY) || "").toLowerCase();
+    if (stored) return stored;
+    var browser = (navigator.language || (navigator.languages && navigator.languages[0]) || "").toLowerCase();
+    return browser;
+  };
+  var resolveAvailableLanguages = async function () {
+    try {
+      var fetchIndex = globalThis.fetchData;
+      if (!fetchIndex || typeof fetchIndex.then !== "function") {
+        return FALLBACK_AVAILABLE;
+      }
+      var data = await fetchIndex;
+      var slugs = Object.keys(data || {});
+      if (slugs.length === 0) {
+        return FALLBACK_AVAILABLE;
+      }
+      return {
+        en: slugs.some(function (slug) { return slug === "en" || slug.startsWith("en/"); }),
+        pt: slugs.some(function (slug) { return slug === "pt" || slug.startsWith("pt/"); }),
+      };
+    } catch (_err) {
+      return FALLBACK_AVAILABLE;
+    }
+  };
+  if (!isRootPath()) return;
+  resolveAvailableLanguages().then(function (available) {
+    var preferred = detectPreferredLang();
+    if (preferred.startsWith("en") && available.en) {
+      window.location.replace(resolveLangPath("en"));
+      return;
+    }
+    if (preferred.startsWith("pt") && available.pt) {
+      window.location.replace(resolveLangPath("pt"));
+    }
+  });
+})();</script><link href="../../index.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL2hvbWUvcnVubmVyL3dvcmsvdm9sdGFqZS1kZXYvdm9sdGFqZS1kZXYvcXVhcnR6L2NvbXBvbmVudHMvc3R5bGVzIiwic291cmNlcyI6WyJtZXJtYWlkLmlubGluZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFHRjtFQUNFOzs7QUFLRjtFQUNFO0VBQ0E7OztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFOztBQUlGO0VBQ0U7RUFDQTtFQUNBIiwic291cmNlc0NvbnRlbnQiOlsiLmV4cGFuZC1idXR0b24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsb2F0OiByaWdodDtcbiAgcGFkZGluZzogMC40cmVtO1xuICBtYXJnaW46IDAuM3JlbTtcbiAgcmlnaHQ6IDA7IC8vIE5PVEU6IHJpZ2h0IHdpbGwgYmUgc2V0IGluIG1lcm1haWQuaW5saW5lLnRzXG4gIGNvbG9yOiB2YXIoLS1ncmF5KTtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICBib3JkZXI6IDFweCBzb2xpZDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBvcGFjaXR5OiAwO1xuICB0cmFuc2l0aW9uOiAwLjJzO1xuXG4gICYgPiBzdmcge1xuICAgIGZpbGw6IHZhcigtLWxpZ2h0KTtcbiAgICBmaWx0ZXI6IGNvbnRyYXN0KDAuMyk7XG4gIH1cblxuICAmOmhvdmVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgYm9yZGVyLWNvbG9yOiB2YXIoLS1zZWNvbmRhcnkpO1xuICB9XG5cbiAgJjpmb2N1cyB7XG4gICAgb3V0bGluZTogMDtcbiAgfVxufVxuXG5wcmUge1xuICAmOmhvdmVyID4gLmV4cGFuZC1idXR0b24ge1xuICAgIG9wYWNpdHk6IDE7XG4gICAgdHJhbnNpdGlvbjogMC4ycztcbiAgfVxufVxuXG4jbWVybWFpZC1jb250YWluZXIge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGNvbnRhaW46IGxheW91dDtcbiAgei1pbmRleDogOTk5O1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxMDB2dztcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogbm9uZTtcbiAgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDRweCk7XG4gIGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC41KTtcblxuICAmLmFjdGl2ZSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB9XG5cbiAgJiA+ICNtZXJtYWlkLXNwYWNlIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogNTAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICBoZWlnaHQ6IDgwdmg7XG4gICAgd2lkdGg6IDgwdnc7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcblxuICAgICYgPiAubWVybWFpZC1jb250ZW50IHtcbiAgICAgIHBhZGRpbmc6IDJyZW07XG4gICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICB0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7XG4gICAgICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4xcyBlYXNlO1xuICAgICAgb3ZlcmZsb3c6IHZpc2libGU7XG4gICAgICBtaW4taGVpZ2h0OiAyMDBweDtcbiAgICAgIG1pbi13aWR0aDogMjAwcHg7XG5cbiAgICAgIHByZSB7XG4gICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgfVxuXG4gICAgICBzdmcge1xuICAgICAgICBtYXgtd2lkdGg6IG5vbmU7XG4gICAgICAgIGhlaWdodDogYXV0bztcbiAgICAgIH1cbiAgICB9XG5cbiAgICAmID4gLm1lcm1haWQtY29udHJvbHMge1xuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgYm90dG9tOiAyMHB4O1xuICAgICAgcmlnaHQ6IDIwcHg7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZ2FwOiA4cHg7XG4gICAgICBwYWRkaW5nOiA4cHg7XG4gICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgYm9yZGVyLXJhZGl1czogNnB4O1xuICAgICAgYm94LXNoYWRvdzogMCAycHggNHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcbiAgICAgIHotaW5kZXg6IDI7XG5cbiAgICAgIC5tZXJtYWlkLWNvbnRyb2wtYnV0dG9uIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgIHdpZHRoOiAzMnB4O1xuICAgICAgICBoZWlnaHQ6IDMycHg7XG4gICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgICAgY29sb3I6IHZhcigtLWRhcmspO1xuICAgICAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICBmb250LWZhbWlseTogdmFyKC0tYm9keUZvbnQpO1xuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBlYXNlO1xuXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIH1cblxuICAgICAgICAmOmFjdGl2ZSB7XG4gICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDFweCk7XG4gICAgICAgIH1cblxuICAgICAgICAvLyBTdHlsZSB0aGUgcmVzZXQgYnV0dG9uIGRpZmZlcmVudGx5XG4gICAgICAgICY6bnRoLWNoaWxkKDIpIHtcbiAgICAgICAgICB3aWR0aDogYXV0bztcbiAgICAgICAgICBwYWRkaW5nOiAwIDEycHg7XG4gICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iXX0= */</style><script src="../../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://voltaje.solecolombia.org/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://voltaje.solecolombia.org/pt/solve/solv-buy-satellite-antenna-og-image.webp"/><meta property="og:image:url" content="https://voltaje.solecolombia.org/pt/solve/solv-buy-satellite-antenna-og-image.webp"/><meta name="twitter:image" content="https://voltaje.solecolombia.org/pt/solve/solv-buy-satellite-antenna-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="pt/solve/solv-buy-satellite-antenna" data-basepath><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../.." aria-label="SOLE Voltaje"><img src="https://voltaje.solecolombia.org/static/logo.png" alt class="page-logo page-logo--light"/><img src="https://voltaje.solecolombia.org/static/logo_voltaje.svg" alt class="page-logo page-logo--dark"/></a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><details class="lang-toggle" data-lang-toggle="true"><summary class="lang-summary" aria-label="Cambiar idioma"><span class="lang-summary-flag" aria-hidden="true">🇪🇸</span><span class="lang-summary-code">ES</span></summary><div class="lang-menu" role="menu" aria-label="Idiomas disponibles"><button type="button" class="lang-option" role="menuitem" data-lang="es"><span aria-hidden="true">🇪🇸</span> ES</button><button type="button" class="lang-option" role="menuitem" data-lang="en"><span aria-hidden="true">🇺🇸</span> EN</button><button type="button" class="lang-option" role="menuitem" data-lang="pt"><span aria-hidden="true">🇵🇹</span> PT</button></div></details></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Modo oscuro"><title>Modo oscuro</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Modo claro"><title>Modo claro</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div></div><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Buscar</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Busca algo" placeholder="Busca algo"/><div class="search-layout" data-preview="true"></div></div></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-lang-default="es" data-data-fns="{&quot;order&quot;:[&quot;map&quot;,&quot;filter&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>{let customOrder=[\&quot;new-here\&quot;,\&quot;solve\&quot;,\&quot;inspire\&quot;,\&quot;glossary\&quot;,\&quot;disconnected\&quot;,\&quot;answers-comments\&quot;],indexA=customOrder.indexOf(a.slugSegment),indexB=customOrder.indexOf(b.slugSegment);return indexA!==-1&amp;&amp;indexB!==-1?indexA-indexB:indexA!==-1?-1:indexB!==-1?1:!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1}&quot;,&quot;filterFn&quot;:&quot;node=>{let mainMenuOrder=[\&quot;new-here\&quot;,\&quot;solve\&quot;,\&quot;inspire\&quot;,\&quot;glossary\&quot;,\&quot;disconnected\&quot;,\&quot;answers-comments\&quot;];return node.slugSegment===\&quot;tags\&quot;||node.slugSegment===\&quot;_staging\&quot;||node.slugSegment===\&quot;.staging\&quot;||node.slugSegment===\&quot;descargas\&quot;?!1:node.slugSegment?mainMenuOrder.includes(node.slugSegment):!0}&quot;,&quot;mapFn&quot;:&quot;node=>{let langFolders=node.children.filter(child=>child.isFolder&amp;&amp;(child.slugSegment===\&quot;es\&quot;||child.slugSegment===\&quot;en\&quot;||child.slugSegment===\&quot;pt\&quot;));if(langFolders.length>0){let promotedChildren=langFolders.flatMap(langFolder=>langFolder.children);node.children=node.children.filter(child=>!langFolders.includes(child)).concat(promotedChildren)}if(!node.slugSegment)for(let child of node.children)child.slugSegment===\&quot;answers-comments\&quot;&amp;&amp;(child.displayName=\&quot;\\xBFQuieres hablar con otro humano?\&quot;),child.children=[],child.isFolder=!1}&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-498"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><div id="explorer-498" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div><div class="sidebar-credit desktop-only"><p><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" aria-label="Creative Commons BY-SA 4.0" class="cc-icon-link"><img src="/static/logo_CC.svg" alt aria-hidden="true" width="20" height="20" class="cc-icon" loading="lazy"/></a> </p><p>Voltaje es una iniciativa abierta de la <a href="https://www.solecolombia.org/" target="_blank" rel="noopener noreferrer">Fundación SOLE Colombia</a>, con el apoyo de <a href="https://www.internetsocietyfoundation.org/" target="_blank" rel="noopener noreferrer">Internet Society Foundation</a>, que se construye día a día en comunidad.</p></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Inicio</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../pt/">pt</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../pt/solve/">Soluciona</a></div></nav><h1 class="article-title section-solve   ">Como comprar uma antena satélite?</h1><p class="section-solve    article-resumen">Escoge un servicio de internet para lugares con cero conexión.</p></div></div><article class="popover-hint"><p><img src="https://images.pexels.com/photos/5790645/pexels-photo-5790645.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" alt="Antena satelital"/>
+<em>Foto: <a href="https://upload.wikimedia.org/wikipedia/commons/7/7e/Tooway_satellite_antenna_drawing.png" class="external">Antena satelital<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> - Wikipedia</em></p>
+<p>Olá, sou o Nicolás e estou aprendendo sobre como a internet funciona. Não sou um especialista no assunto, mas através de pesquisas na internet, tutoriais e, acima de tudo, muita curiosidade, aprendi a realizar a montagem de soluções de internet funcionais.</p>
+<h2 id="o-que-é-escolher-um-serviço-de-internet-para-locais-não-interconectados">O que é escolher um serviço de internet para locais não interconectados?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#o-que-é-escolher-um-serviço-de-internet-para-locais-não-interconectados" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><strong>Nesta solução em particular, aprenderemos sobre como escolher um serviço de internet via satélite para zonas rurais ou remotas</strong> que não possuem conexão à internet Wi-Fi ou por cabo de rede. Para isso, veremos três tecnologias disponíveis na Colômbia: Antena parabólica, WiMax e Starlink.</p>
+<hr/>
+<h2 id="para-que-serve">Para que serve?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#para-que-serve" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Esta solução serve para ter maior clareza sobre qual serviço de internet via satélite você pode escolher se estiver localizado em zonas que não possuem conexão à internet Wi-Fi ou por cabo de rede.</p>
+<hr/>
+<h2 id="como-saber-se-preciso-disso">Como saber se preciso disso?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#como-saber-se-preciso-disso" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Bem, a qualidade do serviço de internet que você pode escolher dependerá de suas possibilidades e necessidades, assim como da disponibilidade de provedores de internet em sua região.</p>
+<p>Esta solução é uma opção que você pode pagar junto com as pessoas da comunidade em que vive. Consulte as pessoas para ter um critério comum e decidir em conjunto, compartilhando a decisão, o cuidado, os gastos, as prestações e as vantagens dos serviços; isso fará com que, a longo prazo, a decisão que tomarem seja mais sustentável e duradoura.</p>
+<hr/>
+<h2 id="opções-a-revisar">Opções a revisar<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#opções-a-revisar" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>O que você precisa:</p>
+<ul>
+<li>Um orçamento, ou seja, saber quanto você pode gastar</li>
+<li>Uma lista de provedores de internet em sua região</li>
+<li>Muita curiosidade!</li>
+<li>Pode ajudar ter pessoas de referência na sua comunidade com as quais revisar as informações; tomar uma decisão entre todos será mais simples e proveitoso para todos</li>
+</ul>
+<hr/>
+<h2 id="como-fazer"><strong>Como fazer?</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#como-fazer" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<blockquote>
+<h3 id="passo-0--quais-são-os-tipos-de-conexão-à-internet-que-funcionam-em-regiões-não-interconectadas">Passo 0 → Quais são os tipos de conexão à internet que funcionam em regiões não interconectadas?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#passo-0--quais-são-os-tipos-de-conexão-à-internet-que-funcionam-em-regiões-não-interconectadas" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+</blockquote>
+<p>Agora vamos ao que interessa. As tecnologias digitais mudam rapidamente com o passar dos anos. Neste artigo, queremos apresentar uma pesquisa das opções disponíveis na Colômbia para 2024: antena parabólica, WiMax e Starlink.</p>
+<ul>
+<li><strong>Antena parabólica</strong></li>
+</ul>
+<p><img src="https://cdn.colombia.com/sdi/2018/05/04/mas-internet-satelital-en-colombia-la-meta-de-bansat-632396.webp" alt/></p>
+<p>A opção mais popular de internet para zonas rurais ou remotas nestes tempos é a antena parabólica. A grande vantagem desta solução é sua cobertura, acessibilidade e preço, o que a torna uma opção viável e funcional. Para acessar esta tecnologia, a empresa responsável deverá instalar uma antena parabólica em sua casa.</p>
+<ul>
+<li><strong>WiMax</strong></li>
+</ul>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Alvarion_CPE.jpg" alt="Equipamento CPE WiMAX Alvarion"/>
+<em>Imagem: <a href="https://es.wikipedia.org/wiki/WiMAX#/media/Archivo:Alvarion_CPE.jpg" class="external">Equipamento CPE WiMAX Alvarion<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> - Wikipedia</em></p>
+<p>A primeira coisa que você precisa é entrar em contato com uma empresa que ofereça esses serviços e que tenha uma repetidora perto de sua casa para poder enviar o sinal de internet. Posteriormente, você deve colocar uma antena na fachada de sua casa. Esta antena terá que apontar diretamente para a repetidora da empresa que vai lhe fornecer o serviço ou para um ponto de conexão intermediário usado para superar os obstáculos que se interpõem entre sua antena e a repetidora. A instalação da antena será feita pela própria empresa.</p>
+<ul>
+<li><strong>Starlink</strong></li>
+</ul>
+<p><img src="https://api.starlink.com/public-files/Starlink_StandardActuated_500x500.png" alt="Antena Starlink Standard Actuated"/>
+<em>Imagem: <a href="https://www.starlink.com/es/specifications" class="external">Antena Starlink Standard Actuated<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> - Starlink</em></p>
+<p>Starlink é o projeto de internet via satélite de Elon Musk. Trata-se de uma internet via satélite particular que facilita as conexões, especialmente em zonas rurais. A empresa é considerada a primeira e maior constelação de satélites do mundo que utiliza uma órbita terrestre baixa para oferecer internet via satélite de banda larga, alta velocidade e baixa latência, o que permite ver conteúdo por streaming, jogar online, fazer videochamadas e muito mais.</p>
+<p>Para colocá-la em funcionamento, você deve comprar um kit com a antena, que deverá ser colocada no exterior de sua casa e que se orienta automaticamente para estabelecer conexão em questão de minutos, desde que se tenha uma visão desobstruída do céu.</p>
+<p>Já temos uma introdução das opções disponíveis, agora podemos passar ao momento 1, onde falaremos das vantagens e desvantagens de cada opção.
+<br/></p>
+<blockquote>
+<h3 id="passo-1--vantagens-e-desvantagens-da-conexão-por-antena-parabólica">Passo 1 → Vantagens e desvantagens da conexão por antena parabólica<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#passo-1--vantagens-e-desvantagens-da-conexão-por-antena-parabólica" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+</blockquote>
+<p><strong>Vantagens</strong></p>
+<ul>
+<li><strong>Cobertura global:</strong> Isso significa que as pessoas que vivem em regiões remotas ou em zonas rurais podem acessar a internet de maneira confiável.</li>
+<li><strong>Acesso rápido:</strong> Mais rápido que os serviços DSL e de acesso discado, com velocidades de até 25 Mbps e 100 Mbps. Embora a internet via satélite costumasse ter a reputação de ser lenta, atualmente é possível desfrutar de velocidades comparáveis às conexões terrestres.</li>
+<li><strong>Conectividade constante:</strong> Uma das vantagens mais destacadas da antena parabólica é sua capacidade de proporcionar uma conexão constante e estável. Diferente das conexões terrestres que podem ser afetadas por interrupções na infraestrutura ou por condições climáticas adversas, a internet via satélite não depende de cabos físicos e se baseia em satélites em órbita para a transmissão de dados. Isso garante uma conexão confiável e contínua, mesmo em áreas propensas a desastres naturais.</li>
+<li><strong>Alta flexibilidade e mobilidade:</strong> A internet via satélite também oferece flexibilidade e mobilidade. Você pode ter acesso à internet de qualquer lugar coberto pelo sinal do satélite, o que a torna uma opção ideal para pessoas que viajam com frequência, trabalhadores remotos ou aqueles que precisam de conectividade em áreas temporárias ou em expansão.</li>
+<li><strong>Não precisa de um serviço telefônico residencial:</strong> Não é um requisito ter linha telefônica para acessar este serviço de internet.</li>
+</ul>
+<p><strong>Desvantagens</strong></p>
+<ul>
+<li><strong>Alta</strong> <a href="../../pt/glossary/conc-latency" class="internal alias" data-slug="pt/glossary/conc-latency">latência →</a>: Uma das principais desvantagens da antena parabólica é a <a href="../../pt/glossary/conc-latency" class="internal alias" data-slug="pt/glossary/conc-latency">latência →</a>, ou seja, o tempo que o sinal leva para viajar do satélite até a Terra. Devido à distância que o sinal deve percorrer, a latência pode ser maior em comparação com as conexões terrestres. Isso pode afetar atividades em tempo real, como videoconferências ou jogos online, onde até pequenos atrasos podem ser notáveis.</li>
+<li><strong>Alto custo:</strong> A internet via satélite tende a ser mais cara em comparação com outras opções de conectividade. Os preços do serviço são mais altos que outros tipos de internet, devido aos custos elevados de equipamento, operação e satélites.</li>
+<li><strong>Condições climáticas:</strong> O bom funcionamento da internet via satélite pode depender de boas condições climáticas. Para o uso da antena parabólica, é necessário um céu limpo. A estabilidade do sinal poderia ser comprometida pela chuva ou tempestades elétricas.</li>
+<li><strong>Limitações de dados:</strong> Muitos provedores de internet via satélite aplicam limites de dados mensais em seus planos. Isso significa que os usuários têm uma quantidade limitada de dados que podem baixar e enviar durante um período determinado. Se esse limite for excedido, a velocidade pode ser reduzida ou podem ser aplicadas taxas adicionais.
+<br/>
+</li>
+</ul>
+<blockquote>
+<h3 id="passo-2--vantagens-e-desvantagens-da-conexão-wimax">Passo 2 → Vantagens e desvantagens da conexão WiMax<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#passo-2--vantagens-e-desvantagens-da-conexão-wimax" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+</blockquote>
+<p><strong>Vantagens</strong></p>
+<ul>
+<li><strong>Alta fluidez e baixa latência:</strong> Isso permite ter uma conexão rápida e fluida com baixas latências.</li>
+<li><strong>Não precisa de um serviço telefônico residencial:</strong> Não é um requisito ter linha telefônica para acessar o serviço de internet.</li>
+<li><strong>Chamadas por VoIP:</strong> Haverá empresas que, com a instalação desta tecnologia, permitirão realizar chamadas VoIP (é uma tecnologia que permite realizar e receber chamadas de voz através da internet).</li>
+</ul>
+<p><strong>Desvantagens</strong></p>
+<ul>
+<li><strong>É necessário um contato direto com a repetidora:</strong> Isso quer dizer que a antena que você instalar em sua casa tem que estar orientada diretamente para o local de onde a conexão está sendo enviada e, se possível, evitando obstáculos que impeçam a visão direta, como árvores ou edifícios. Isso, às vezes, pode tornar necessário instalar pontos de conexão intermediários para superar os obstáculos.</li>
+<li><strong>Velocidades assimétricas:</strong> o que quer dizer que a velocidade de download será muito superior à de upload. <strong>As conexões WiMAX podem alcançar velocidades de até 1Gbps em pontos fixos, por exemplo, uma casa, e de 365Mbps em pontos móveis.</strong> Ainda assim, sempre dependerá do que for oferecido pela empresa à qual você contrata o serviço.</li>
+<li><strong>Tráfego por congestionamento:</strong> A velocidade pode ser afetada mais facilmente em horários de pico.
+<br/>
+</li>
+</ul>
+<blockquote>
+<h3 id="passo-3--vantagens-e-desvantagens-da-conexão-starlink">Passo 3 → Vantagens e desvantagens da conexão Starlink<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#passo-3--vantagens-e-desvantagens-da-conexão-starlink" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+</blockquote>
+<p><strong>Vantagens</strong></p>
+<ul>
+<li><strong>Fácil instalação:</strong> O usuário compra um kit e pode montá-lo de forma autônoma.</li>
+<li><strong>Alta fluidez e baixa latência:</strong> Internet de banda larga de alta velocidade e baixa latência. Terá latências de cerca de 20ms, comparado com a média de 600ms.</li>
+<li><strong>Alta flexibilidade e mobilidade:</strong> A Starlink também oferece flexibilidade e mobilidade. Você pode ter acesso à internet de qualquer lugar coberto pelo sinal do satélite, o que a torna uma opção ideal para pessoas que viajam com frequência, trabalhadores remotos ou aqueles que precisam de conectividade em áreas temporárias ou em expansão.</li>
+<li><strong>Possibilidade de reembolso total do custo do equipamento no primeiro mês:</strong> Se adquirir o serviço diretamente com a Starlink, existe esta possibilidade: “Teste por 30 dias e, se não estiver satisfeito, devolva o equipamento e obtenha um reembolso total”, diz a <strong>Starlink</strong> em seu site.</li>
+</ul>
+<p><strong>Desvantagens</strong></p>
+<ul>
+<li><strong>Condições climáticas:</strong> O bom funcionamento da internet via satélite pode depender de boas condições climáticas. Para o uso da antena parabólica, é necessário um céu limpo. A estabilidade do sinal poderia ser comprometida pela chuva ou tempestades elétricas.</li>
+<li><strong>Alto custo:</strong> A internet via satélite da Starlink tende a ser mais cara em comparação com outras opções de conectividade. Isso se deve aos altos custos associados ao lançamento e manutenção de satélites, bem como à infraestrutura necessária na Terra para o funcionamento das estações terrestres. O custo deste serviço é de <strong><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align:-0.464ex;" xmlns="http://www.w3.org/2000/svg" width="70.614ex" height="2.161ex" role="img" focusable="false" viewBox="0 -750 31211.6 955" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="MJX-1-TEX-N-33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path><path id="MJX-1-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path id="MJX-1-TEX-N-2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path><path id="MJX-1-TEX-I-1D436" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"></path><path id="MJX-1-TEX-I-1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path id="MJX-1-TEX-I-1D443" d="M287 628Q287 635 230 637Q206 637 199 638T192 648Q192 649 194 659Q200 679 203 681T397 683Q587 682 600 680Q664 669 707 631T751 530Q751 453 685 389Q616 321 507 303Q500 302 402 301H307L277 182Q247 66 247 59Q247 55 248 54T255 50T272 48T305 46H336Q342 37 342 35Q342 19 335 5Q330 0 319 0Q316 0 282 1T182 2Q120 2 87 2T51 1Q33 1 33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM645 554Q645 567 643 575T634 597T609 619T560 635Q553 636 480 637Q463 637 445 637T416 636T404 636Q391 635 386 627Q384 621 367 550T332 412T314 344Q314 342 395 342H407H430Q542 342 590 392Q617 419 631 471T645 554Z"></path><path id="MJX-1-TEX-N-2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"></path><path id="MJX-1-TEX-I-1D45D" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"></path><path id="MJX-1-TEX-I-1D45C" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"></path><path id="MJX-1-TEX-I-1D45F" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-1-TEX-I-1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-1-TEX-I-1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path><path id="MJX-1-TEX-N-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path><path id="MJX-1-TEX-I-1D450" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"></path><path id="MJX-1-TEX-I-1D462" d="M21 287Q21 295 30 318T55 370T99 420T158 442Q204 442 227 417T250 358Q250 340 216 246T182 105Q182 62 196 45T238 27T291 44T328 78L339 95Q341 99 377 247Q407 367 413 387T427 416Q444 431 463 431Q480 431 488 421T496 402L420 84Q419 79 419 68Q419 43 426 35T447 26Q469 29 482 57T512 145Q514 153 532 153Q551 153 551 144Q550 139 549 130T540 98T523 55T498 17T462 -8Q454 -10 438 -10Q372 -10 347 46Q345 45 336 36T318 21T296 6T267 -6T233 -11Q189 -11 155 7Q103 38 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-1-TEX-I-1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path><path id="MJX-1-TEX-I-1D454" d="M311 43Q296 30 267 15T206 0Q143 0 105 45T66 160Q66 265 143 353T314 442Q361 442 401 394L404 398Q406 401 409 404T418 412T431 419T447 422Q461 422 470 413T480 394Q480 379 423 152T363 -80Q345 -134 286 -169T151 -205Q10 -205 10 -137Q10 -111 28 -91T74 -71Q89 -71 102 -80T116 -111Q116 -121 114 -130T107 -144T99 -154T92 -162L90 -164H91Q101 -167 151 -167Q189 -167 211 -155Q234 -144 254 -122T282 -75Q288 -56 298 -13Q311 35 311 43ZM384 328L380 339Q377 350 375 354T369 368T359 382T346 393T328 402T306 405Q262 405 221 352Q191 313 171 233T151 117Q151 38 213 38Q269 38 323 108L331 118L384 328Z"></path><path id="MJX-1-TEX-I-1D452" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"></path><path id="MJX-1-TEX-I-1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-1-TEX-I-1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path><path id="MJX-1-TEX-I-1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path><path id="MJX-1-TEX-I-1D459" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"></path><path id="MJX-1-TEX-I-1D45E" d="M33 157Q33 258 109 349T280 441Q340 441 372 389Q373 390 377 395T388 406T404 418Q438 442 450 442Q454 442 457 439T460 434Q460 425 391 149Q320 -135 320 -139Q320 -147 365 -148H390Q396 -156 396 -157T393 -175Q389 -188 383 -194H370Q339 -192 262 -192Q234 -192 211 -192T174 -192T157 -193Q143 -193 143 -185Q143 -182 145 -170Q149 -154 152 -151T172 -148Q220 -148 230 -141Q238 -136 258 -53T279 32Q279 33 272 29Q224 -10 172 -10Q117 -10 75 30T33 157ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path><path id="MJX-1-TEX-I-1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><use data-c="33" xlink:href="#MJX-1-TEX-N-33"></use><use data-c="30" xlink:href="#MJX-1-TEX-N-30" transform="translate(500,0)"></use><use data-c="30" xlink:href="#MJX-1-TEX-N-30" transform="translate(1000,0)"></use><use data-c="2E" xlink:href="#MJX-1-TEX-N-2E" transform="translate(1500,0)"></use><use data-c="30" xlink:href="#MJX-1-TEX-N-30" transform="translate(1778,0)"></use><use data-c="30" xlink:href="#MJX-1-TEX-N-30" transform="translate(2278,0)"></use><use data-c="30" xlink:href="#MJX-1-TEX-N-30" transform="translate(2778,0)"></use></g><g data-mml-node="mi" transform="translate(3278,0)"><use data-c="1D436" xlink:href="#MJX-1-TEX-I-1D436"></use></g><g data-mml-node="mi" transform="translate(4038,0)"><use data-c="1D442" xlink:href="#MJX-1-TEX-I-1D442"></use></g><g data-mml-node="mi" transform="translate(4801,0)"><use data-c="1D443" xlink:href="#MJX-1-TEX-I-1D443"></use></g><g data-mml-node="mo" transform="translate(5774.2,0)"><use data-c="2217" xlink:href="#MJX-1-TEX-N-2217"></use></g><g data-mml-node="mo" transform="translate(6496.4,0)"><use data-c="2217" xlink:href="#MJX-1-TEX-N-2217"></use></g><g data-mml-node="mi" transform="translate(6996.4,0)"><use data-c="1D45D" xlink:href="#MJX-1-TEX-I-1D45D"></use></g><g data-mml-node="mi" transform="translate(7499.4,0)"><use data-c="1D45C" xlink:href="#MJX-1-TEX-I-1D45C"></use></g><g data-mml-node="mi" transform="translate(7984.4,0)"><use data-c="1D45F" xlink:href="#MJX-1-TEX-I-1D45F"></use></g><g data-mml-node="mi" transform="translate(8435.4,0)"><use data-c="1D45A" xlink:href="#MJX-1-TEX-I-1D45A"></use></g><g data-mml-node="mi" transform="translate(9313.4,0)"><text data-variant="italic" transform="scale(1,-1)" font-size="884px" font-family="serif" font-style="italic">ê</text></g><g data-mml-node="mi" transform="translate(9913.4,0)"><use data-c="1D460" xlink:href="#MJX-1-TEX-I-1D460"></use></g><g data-mml-node="mo" transform="translate(10382.4,0)"><use data-c="2C" xlink:href="#MJX-1-TEX-N-2C"></use></g><g data-mml-node="mi" transform="translate(10827.1,0)"><use data-c="1D450" xlink:href="#MJX-1-TEX-I-1D450"></use></g><g data-mml-node="mi" transform="translate(11260.1,0)"><use data-c="1D45C" xlink:href="#MJX-1-TEX-I-1D45C"></use></g><g data-mml-node="mi" transform="translate(11745.1,0)"><use data-c="1D45A" xlink:href="#MJX-1-TEX-I-1D45A"></use></g><g data-mml-node="mi" transform="translate(12623.1,0)"><use data-c="1D462" xlink:href="#MJX-1-TEX-I-1D462"></use></g><g data-mml-node="mi" transform="translate(13195.1,0)"><use data-c="1D45A" xlink:href="#MJX-1-TEX-I-1D45A"></use></g><g data-mml-node="mi" transform="translate(14073.1,0)"><use data-c="1D45D" xlink:href="#MJX-1-TEX-I-1D45D"></use></g><g data-mml-node="mi" transform="translate(14576.1,0)"><use data-c="1D44E" xlink:href="#MJX-1-TEX-I-1D44E"></use></g><g data-mml-node="mi" transform="translate(15105.1,0)"><use data-c="1D454" xlink:href="#MJX-1-TEX-I-1D454"></use></g><g data-mml-node="mi" transform="translate(15582.1,0)"><use data-c="1D44E" xlink:href="#MJX-1-TEX-I-1D44E"></use></g><g data-mml-node="mi" transform="translate(16111.1,0)"><use data-c="1D45A" xlink:href="#MJX-1-TEX-I-1D45A"></use></g><g data-mml-node="mi" transform="translate(16989.1,0)"><use data-c="1D452" xlink:href="#MJX-1-TEX-I-1D452"></use></g><g data-mml-node="mi" transform="translate(17455.1,0)"><use data-c="1D45B" xlink:href="#MJX-1-TEX-I-1D45B"></use></g><g data-mml-node="mi" transform="translate(18055.1,0)"><use data-c="1D461" xlink:href="#MJX-1-TEX-I-1D461"></use></g><g data-mml-node="mi" transform="translate(18416.1,0)"><use data-c="1D45C" xlink:href="#MJX-1-TEX-I-1D45C"></use></g><g data-mml-node="mi" transform="translate(18901.1,0)"><text data-variant="italic" transform="scale(1,-1)" font-size="884px" font-family="serif" font-style="italic">ú</text></g><g data-mml-node="mi" transform="translate(19501.1,0)"><use data-c="1D45B" xlink:href="#MJX-1-TEX-I-1D45B"></use></g><g data-mml-node="mi" transform="translate(20101.1,0)"><use data-c="1D456" xlink:href="#MJX-1-TEX-I-1D456"></use></g><g data-mml-node="mi" transform="translate(20446.1,0)"><use data-c="1D450" xlink:href="#MJX-1-TEX-I-1D450"></use></g><g data-mml-node="mi" transform="translate(20879.1,0)"><use data-c="1D45C" xlink:href="#MJX-1-TEX-I-1D45C"></use></g><g data-mml-node="mi" transform="translate(21364.1,0)"><use data-c="1D45D" xlink:href="#MJX-1-TEX-I-1D45D"></use></g><g data-mml-node="mi" transform="translate(21867.1,0)"><use data-c="1D452" xlink:href="#MJX-1-TEX-I-1D452"></use></g><g data-mml-node="mi" transform="translate(22333.1,0)"><use data-c="1D459" xlink:href="#MJX-1-TEX-I-1D459"></use></g><g data-mml-node="mi" transform="translate(22631.1,0)"><use data-c="1D45C" xlink:href="#MJX-1-TEX-I-1D45C"></use></g><g data-mml-node="mi" transform="translate(23116.1,0)"><use data-c="1D452" xlink:href="#MJX-1-TEX-I-1D452"></use></g><g data-mml-node="mi" transform="translate(23582.1,0)"><use data-c="1D45E" xlink:href="#MJX-1-TEX-I-1D45E"></use></g><g data-mml-node="mi" transform="translate(24042.1,0)"><use data-c="1D462" xlink:href="#MJX-1-TEX-I-1D462"></use></g><g data-mml-node="mi" transform="translate(24614.1,0)"><use data-c="1D456" xlink:href="#MJX-1-TEX-I-1D456"></use></g><g data-mml-node="mi" transform="translate(24959.1,0)"><use data-c="1D45D" xlink:href="#MJX-1-TEX-I-1D45D"></use></g><g data-mml-node="mi" transform="translate(25462.1,0)"><use data-c="1D44E" xlink:href="#MJX-1-TEX-I-1D44E"></use></g><g data-mml-node="mi" transform="translate(25991.1,0)"><use data-c="1D45A" xlink:href="#MJX-1-TEX-I-1D45A"></use></g><g data-mml-node="mi" transform="translate(26869.1,0)"><use data-c="1D452" xlink:href="#MJX-1-TEX-I-1D452"></use></g><g data-mml-node="mi" transform="translate(27335.1,0)"><use data-c="1D45B" xlink:href="#MJX-1-TEX-I-1D45B"></use></g><g data-mml-node="mi" transform="translate(27935.1,0)"><use data-c="1D461" xlink:href="#MJX-1-TEX-I-1D461"></use></g><g data-mml-node="mi" transform="translate(28296.1,0)"><use data-c="1D45C" xlink:href="#MJX-1-TEX-I-1D45C"></use></g><g data-mml-node="mi" transform="translate(28781.1,0)"><use data-c="1D451" xlink:href="#MJX-1-TEX-I-1D451"></use></g><g data-mml-node="mi" transform="translate(29301.1,0)"><use data-c="1D452" xlink:href="#MJX-1-TEX-I-1D452"></use></g><g data-mml-node="mo" transform="translate(29989.3,0)"><use data-c="2217" xlink:href="#MJX-1-TEX-N-2217"></use></g><g data-mml-node="mo" transform="translate(30711.6,0)"><use data-c="2217" xlink:href="#MJX-1-TEX-N-2217"></use></g></g></g></svg></mjx-container>1.900.000 COP.</strong></li>
+<li><strong>Limitações de capacidade:</strong> Dado que o sistema Starlink se baseia em satélites em órbita baixa, a capacidade é limitada e compartilhada entre os usuários em uma determinada área. Em áreas congestionadas, isso poderia resultar em velocidade reduzida durante os horários de pico.</li>
+<li><strong>Problemas de interferência:</strong> Alguns relatórios sugerem que a Starlink pode experimentar problemas de interferência, especialmente em áreas densamente povoadas ou em regiões com alta atividade de satélites.</li>
+<li><strong>Impacto ambiental:</strong> O lançamento de milhares de satélites em órbita baixa gerou preocupações sobre o impacto ambiental e a geração de lixo espacial.</li>
+<li><strong>Necessidade de visão direta para o céu:</strong> Para utilizar a Starlink, é necessário contar com uma visão direta para o céu, o que pode limitar sua viabilidade em áreas com obstruções significativas, como árvores altas ou edifícios.
+<br/>
+</li>
+</ul>
+<blockquote>
+<h3 id="passo-4--como-escolher-a-melhor-opção-para-minha-comunidade">Passo 4 → Como escolher a melhor opção para minha comunidade?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#passo-4--como-escolher-a-melhor-opção-para-minha-comunidade" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+</blockquote>
+<p>Agora que você já tem mais clareza sobre em que consiste cada uma das três opções, suas vantagens e desvantagens, você pode tomar uma decisão mais informada junto com sua comunidade. Consideramos que os seguintes são elementos importantes na hora de escolher uma opção:</p>
+<ul>
+<li>
+<p><strong>Disponibilidade</strong>
+Embora tenhamos feito esta análise em 2024 para a Colômbia, ela pode ser útil para outros países. No entanto, o primeiro passo é entrar em contato com as empresas que oferecem serviços de internet em sua região; elas poderão orientá-lo melhor e dizer se oferecem a tecnologia WiMax. Mas lembre-se: o interesse delas é vender, mas quem decide é você. A internet via satélite e a Starlink têm cobertura global, portanto, não dependerão exclusivamente dos provedores da sua região.</p>
+</li>
+<li>
+<p><strong>Orçamento</strong>
+Antes de tudo, defina qual será seu orçamento. Para isso, você pode fazer as contas de quantos dias de trabalho está disposto a investir junto com sua comunidade para contratar este serviço. Não se endivide por um plano de internet!</p>
+</li>
+</ul>
+<p><img src="../../assets/images/solv-buy-satelliteantenna/solv-buy-satelliteantenna-money.webp" alt="Pessoa com camisa xadrez contando notas de 100 rúpias da Índia."/>
+<em>Foto: <a href="https://www.pexels.com/photo/close-up-photo-of-money-4636069/" class="external">Maxi Gagliano<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> - Pexels</em></p>
+<ul>
+<li>
+<p><strong>Confiabilidade</strong>
+É importante saber se a empresa que você selecionou tem boa reputação ou não. Isso você pode descobrir com outros usuários que a contrataram e será vital caso você tenha algum inconveniente ou precise fazer algum tipo de manutenção nos equipamentos.</p>
+</li>
+<li>
+<p><strong>Hábitos de uso</strong>
+Dependendo de para que sua comunidade usa a internet, você poderá escolher uma tecnologia que o beneficie mais. Aqui você pode avaliar se a latência é importante porque precisam fazer videochamadas ou jogar online, se estão dispostos a contratar um serviço de pagamento mensal ou se, simplesmente, como o uso é ocasional, pagam o serviço de internet apenas nos meses de maior uso, ou se, simplesmente, essas opções não são as mais adequadas e preferem continuar sem uma conexão à internet.</p>
+</li>
+</ul>
+<hr/>
+<h2 id="não-se-deixe-enganar"><strong>Não se deixe enganar</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#não-se-deixe-enganar" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Defina seu uso e número de dispositivos para estimar a velocidade e a <a href="../../pt/glossary/conc-bandwidth" class="internal alias" data-slug="pt/glossary/conc-bandwidth">Largura de Banda →</a> necessários, e então avalie a tecnologia disponível (satelital é uma opção comum) e a confiabilidade e suporte técnico do provedor.</p>
+<p>Investigue a reputação do provedor com vizinhos e consulte se oferecem planos específicos para zonas rurais. A velocidade de upload, download e a latência devem ser adequadas para suas atividades, e é útil perguntar sobre as restrições de dados e a qualidade da infraestrutura do provedor.</p>
+<hr/>
+<h2 id="quanto-é-suficiente"><strong>Quanto é suficiente?</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#quanto-é-suficiente" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Uma dessas três soluções pode ser a adequada para resolver a conectividade em sua região, pois todas são pensadas para locais afastados de centros urbanos e não dependem de um serviço de internet cabeada para seu funcionamento.</p>
+<p>Você pode levar em conta os seguintes critérios e pensá-los em função das pessoas e dos conteúdos aos quais precisa ter acesso:</p>
+<ul>
+<li><strong>Para uso básico (e-mails, redes sociais, navegação):</strong> Uma velocidade de download moderada e um plano de dados básico poderiam ser suficientes.</li>
+<li><strong>Para streaming e trabalho online:</strong> Requer-se uma velocidade de download mais alta e uma largura de banda maior para não ter interrupções.</li>
+<li><strong>Para uso intensivo de upload (nuvem, arquivos grandes):</strong> É importante buscar uma conexão simétrica, onde a velocidade de upload seja próxima à de download.</li>
+</ul>
+<hr/>
+<h2 id="soluções-relacionadas">Soluções relacionadas<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#soluções-relacionadas" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><a href="../../pt/solve/solv-choose-satellite-internet" class="internal alias" data-slug="pt/solve/solv-choose-satellite-internet">Que internet via satélite escolher de acordo com minhas necessidades? →</a></li>
+<li><a href="../../pt/solve/solv-funding-community-internet" class="internal alias" data-slug="pt/solve/solv-funding-community-internet">Faça uma vaquinha para pagar internet comunitária →</a></li>
+<li><a href="../../pt/solve/solv-endless" class="internal alias" data-slug="pt/solve/solv-endless">Como acessar a internet sem conexão? →</a></li>
+<li><a href="../../pt/solve/solv-donated-equipment" class="internal alias" data-slug="pt/solve/solv-donated-equipment">Como conseguir equipamentos doados? →</a></li>
+</ul>
+<p>Lembre-se de que na <strong>Voltaje</strong> ⚡⚡ você pode encontrar muitas outras soluções para <em>conectar-se sem medo</em> de usar a internet em grupo. Anime-se a continuar navegando! <a href="https://sole-colombia.github.io/voltaje/es/solve" class="external">Ver mais soluções →<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<hr/>
+<h2 id="referências">Referências<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#referências" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><a href="https://ibred.es/pros-y-contras-de-conectarse-a-internet-wimax-o-satelite/" class="external">Ibred<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://www.xataka.com/basics/wimax-que-como-funciona" class="external">Xataka<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://www.lafm.com.co/sociedad/starlink-internet-de-elon-musk-como-comprarlo-en-colombia-320194#:~:text=As%C3%AD%20las%20cosas%2C%20lo%20mejor,Starlink%20en%20su%20p%C3%A1gina%20web.&amp;text=Directamente%20en%20la%20p%C3%A1gina%2C%20el,en%20total%202.299.600%20pesos" class="external">Lafm<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</li>
+<li><a href="https://codigoespagueti.com/noticias/tecnologia/starlink-ventajas-y-desventajas-del-servicio-de-internet-de-elon-musk/" class="external">Codigoespagueti<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://www.prensalibre.com/vida/tecnologia/starlink-ventajas-y-desventajas-del-servicio-de-internet-satelital-de-spacex-compania-de-elon-musk/" class="external">Prensalibre<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul><style>
+mjx-container[jax=&quot;SVG&quot;] {
+  direction: ltr;
+}
+
+mjx-container[jax=&quot;SVG&quot;] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax=&quot;SVG&quot;] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-container[jax=&quot;SVG&quot;][display=&quot;true&quot;] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax=&quot;SVG&quot;][display=&quot;true&quot;][width=&quot;full&quot;] {
+  display: flex;
+}
+
+mjx-container[jax=&quot;SVG&quot;][justify=&quot;left&quot;] {
+  text-align: left;
+}
+
+mjx-container[jax=&quot;SVG&quot;][justify=&quot;right&quot;] {
+  text-align: right;
+}
+
+g[data-mml-node=&quot;merror&quot;] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node=&quot;merror&quot;] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node=&quot;mtable&quot;] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node=&quot;mtable&quot;] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node=&quot;mtable&quot;] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node=&quot;mtable&quot;] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node=&quot;mtable&quot;] > g > svg {
+  overflow: visible;
+}
+
+[jax=&quot;SVG&quot;] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax=&quot;SVG&quot;] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node=&quot;maction&quot;][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax=&quot;SVG&quot;] path[data-c], mjx-container[jax=&quot;SVG&quot;] use[data-c] {
+  stroke-width: 3;
+}
+</style></article><hr/><div class="page-footer"><div id="step-progress-container" class="step-progress-container" style="display:none;"><div class="step-progress-header"><span class="step-progress-icon" aria-hidden="true">SV</span><span class="step-progress-label">Tu progreso</span><span class="step-progress-count">0 de 0 pasos</span></div><div class="step-group-selector" style="display:none;"></div><div class="step-progress-bar-bg"><div class="step-progress-bar-fill" style="width:0%;"></div></div><div class="step-progress-cycle" aria-live="polite"></div><div class="step-progress-message" style="display:none;"></div><div class="step-progress-controls"><button class="step-progress-reset" style="display:none;" type="button">Reiniciar</button><button class="step-progress-feedback-toggle" style="display:none;" type="button">Dar feedback</button><a class="step-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>Pedir ayuda</a></div><div class="step-wa-popup" style="display:none;"><p class="step-wa-popup-title">Copia este mensaje y pégalo en el grupo:</p><textarea class="step-wa-popup-msg" rows="3" readonly></textarea><div class="step-wa-popup-actions"><button class="step-wa-copy-btn" type="button">Copiar mensaje</button><a class="step-wa-group-link" href="https://chat.whatsapp.com/IftWSotIu5bLNJAhDUOW5b" target="_blank" rel="noopener noreferrer">Abrir grupo</a></div><p class="step-wa-copy-status" aria-live="polite"></p></div><div class="step-progress-feedback" style="display:none;"><p class="step-progress-feedback-title">Tu solucion te sirvio?</p><div class="step-progress-feedback-options" role="group" aria-label="Feedback de solucion"><button class="step-feedback-option" data-feedback="atascado" type="button">Me atasque</button><button class="step-feedback-option" data-feedback="parcial" type="button">Me sirvio a medias</button><button class="step-feedback-option" data-feedback="resuelto" type="button">Lo resolvi</button></div><input class="step-progress-feedback-name" type="text" maxlength="60" placeholder="Tu nombre (opcional)" autocomplete="name"/><textarea class="step-progress-feedback-note" rows="3" maxlength="420" placeholder="Opcional: que te faltó o que mejorarías"></textarea><div class="step-progress-feedback-actions"><button class="step-progress-feedback-send" type="button">Enviar feedback</button></div><p class="step-progress-feedback-status" aria-live="polite"></p></div></div></div></div><div class="right sidebar"><div class="solve-meta-sidebar "><h3 class="solve-meta-title">Sobre este artículo</h3><div class="solve-meta-section"><span class="solve-meta-label">Categorías:</span><div class="solve-meta-tags"><span class="solve-meta-tag">#Señal</span></div></div><div class="solve-meta-metrics"><div class="solve-meta-row"><span class="solve-meta-label">Dificultad:</span><span class="solve-meta-badge" style="background-color: #FFCEA0"><img class="solve-meta-icon" data-icon="solve-difficulty-2.svg" alt aria-hidden="true"/><span class="solve-meta-value">Medio</span></span></div><div class="solve-meta-row"><span class="solve-meta-label">Costo:</span><span class="solve-meta-badge" style="background-color: #B6FAA4"><img class="solve-meta-icon" data-icon="solve-cost-1.svg" alt aria-hidden="true"/><span class="solve-meta-value">Gratis</span></span></div><div class="solve-meta-row"><span class="solve-meta-label">Tarda:</span><span class="solve-meta-badge" style="background-color: #FFCEA0"><img class="solve-meta-icon" data-icon="solve-time-2.svg" alt aria-hidden="true"/><span class="solve-meta-value">Horas</span></span></div><div class="solve-meta-row"><span class="solve-meta-label">Ayudantes:</span><span class="solve-meta-badge" style="background-color: #FFB6B6"><img class="solve-meta-icon" data-icon="solve-helpers-4.svg" alt aria-hidden="true"/><span class="solve-meta-value">Más de 3 personas</span></span></div><div class="solve-meta-row solve-meta-permite"><span class="solve-meta-label">Permite:</span><div class="solve-meta-permite-badges"><span class="solve-meta-badge solve-meta-badge-small" style="background-color: #A6EFFF"><span class="solve-meta-value">Conseguir</span></span></div></div></div><div class="solve-meta-footer"><div class="solve-meta-author"><span class="solve-meta-label-bold">Autor:</span> SOLE Colombia</div><div class="solve-meta-date"><span class="solve-meta-label-bold">Publicado:</span> <time datetime="2025-12-17T05:00:00.000Z">17 dic 2025</time></div></div></div><div class="backlinks"><h3>Retroenlaces</h3><ul id="list-1" class="overflow"><li><a href="../../pt/solve/solv-choose-satellite-internet" class="internal">Qual internet satélite escolher de acordo com minhas necessidades?</a></li><li><a href="../../pt/solve/solv-install-3G-antenna" class="internal">Como instalar minha antena 3G/4G?</a></li><li><a href="../../pt/solve/solv-need-3Gantenna" class="internal">Preciso comprar uma antena 3G/4G?</a></li><li class="overflow-end"></li></ul></div></div></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="../../postscript.js" type="module"></script></html>
