@@ -6,6 +6,24 @@
       <description>Últimas 10 notas on SOLE Voltaje</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>Desconectado</title>
+    <link>https://voltaje.solecolombia.org/disconnected/</link>
+    <guid>https://voltaje.solecolombia.org/disconnected/</guid>
+    <description><![CDATA[ Aprende sobre Internet sin estar conectado a Internet ]]></description>
+    <pubDate>Fri, 10 Apr 2026 16:45:50 GMT</pubDate>
+  </item><item>
+    <title>¿Cómo usar la televisión para aprender en grupo?</title>
+    <link>https://voltaje.solecolombia.org/solve/solv-sole-tv</link>
+    <guid>https://voltaje.solecolombia.org/solve/solv-sole-tv</guid>
+    <description><![CDATA[ ¡Buenaaas! Qué alegría saludarlos por aquí. ]]></description>
+    <pubDate>Wed, 08 Apr 2026 05:00:00 GMT</pubDate>
+  </item><item>
+    <title>¿Es una USB módem la mejor opción para mí?</title>
+    <link>https://voltaje.solecolombia.org/solve/solv-usb-internet-router</link>
+    <guid>https://voltaje.solecolombia.org/solve/solv-usb-internet-router</guid>
+    <description><![CDATA[ ¡Hola! Soy Catalina, bienvenido 👋🏽. ]]></description>
+    <pubDate>Wed, 08 Apr 2026 05:00:00 GMT</pubDate>
+  </item><item>
     <title>SOLE Voltaje</title>
     <link>https://voltaje.solecolombia.org/en/</link>
     <guid>https://voltaje.solecolombia.org/en/</guid>
@@ -46,24 +64,6 @@
     <link>https://voltaje.solecolombia.org/en/inspire/insp-make-SOLE</link>
     <guid>https://voltaje.solecolombia.org/en/inspire/insp-make-SOLE</guid>
     <description><![CDATA[ Tutorial for fostering self-managed learning. In this video tutorial, we explain how you can create your own self-organized learning space. ]]></description>
-    <pubDate>Tue, 07 Apr 2026 03:46:36 GMT</pubDate>
-  </item><item>
-    <title>¿Nuevo aquí?</title>
-    <link>https://voltaje.solecolombia.org/en/new-here</link>
-    <guid>https://voltaje.solecolombia.org/en/new-here</guid>
-    <description><![CDATA[ ¿Primera vez en Voltaje? Empieza aquí para entender cómo funciona la plataforma y cómo puedes contribuir. ]]></description>
-    <pubDate>Tue, 07 Apr 2026 03:46:36 GMT</pubDate>
-  </item><item>
-    <title>Soluciona</title>
-    <link>https://voltaje.solecolombia.org/en/solve/</link>
-    <guid>https://voltaje.solecolombia.org/en/solve/</guid>
-    <description><![CDATA[ Encuentra soluciones prácticas y herramientas para mejorar la conectividad y resolver problemas técnicos en tu comunidad. ]]></description>
-    <pubDate>Tue, 07 Apr 2026 03:46:36 GMT</pubDate>
-  </item><item>
-    <title>Desconectado</title>
-    <link>https://voltaje.solecolombia.org/pt/disconnected/</link>
-    <guid>https://voltaje.solecolombia.org/pt/disconnected/</guid>
-    <description><![CDATA[ Aprenda sobre a Internet sem estar conectado. ]]></description>
     <pubDate>Tue, 07 Apr 2026 03:46:36 GMT</pubDate>
   </item>
     </channel>
