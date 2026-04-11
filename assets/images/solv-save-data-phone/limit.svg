@@ -1,0 +1,103 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 960 540"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">Pending image placeholder</title>
+  <desc id="desc">
+    Generic Voltaje-style placeholder shown when the expected screenshot is still missing.
+  </desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#17120f" />
+      <stop offset="55%" stop-color="#241b17" />
+      <stop offset="100%" stop-color="#15110e" />
+    </linearGradient>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#2c211d" />
+      <stop offset="100%" stop-color="#1d1512" />
+    </linearGradient>
+    <linearGradient id="frame" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#27bfb8" />
+      <stop offset="100%" stop-color="#1a84ae" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#000000" flood-opacity="0.28" />
+    </filter>
+  </defs>
+  <rect width="960" height="540" rx="40" fill="url(#bg)" />
+  <circle cx="154" cy="116" r="118" fill="#1a84ae" opacity="0.12" />
+  <circle cx="822" cy="426" r="138" fill="#27bfb8" opacity="0.1" />
+  <path
+    d="M78 442c58-21 105-21 162 0s104 21 162 0 104-21 162 0 104 21 162 0 104-21 156 0"
+    fill="none"
+    stroke="#f9c369"
+    stroke-linecap="round"
+    stroke-width="8"
+    opacity="0.22"
+  />
+  <g filter="url(#shadow)">
+    <rect
+      x="114"
+      y="74"
+      width="732"
+      height="392"
+      rx="32"
+      fill="url(#panel)"
+      stroke="#f9c369"
+      stroke-width="4"
+    />
+    <rect
+      x="222"
+      y="132"
+      width="516"
+      height="204"
+      rx="24"
+      fill="#140f0d"
+      stroke="url(#frame)"
+      stroke-dasharray="16 14"
+      stroke-width="6"
+    />
+    <path
+      d="M292 288l98-96 82 74 68-58 128 80"
+      fill="none"
+      stroke="#27bfb8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="10"
+    />
+    <circle cx="626" cy="190" r="22" fill="#f9c369" />
+    <path d="M434 148l-38 76 43 8-49 104 142-133-52-8 36-47z" fill="#ff7b4d" />
+    <path
+      d="M300 304l352-136"
+      fill="none"
+      stroke="#ff7b4d"
+      stroke-linecap="round"
+      stroke-width="10"
+    />
+  </g>
+  <text
+    x="480"
+    y="402"
+    fill="#f9c369"
+    font-family="IBM Plex Sans, Arial, sans-serif"
+    font-size="42"
+    font-weight="700"
+    letter-spacing="1.2"
+    text-anchor="middle"
+  >
+    IMAGEN PENDIENTE
+  </text>
+  <text
+    x="480"
+    y="438"
+    fill="#f2e7da"
+    font-family="IBM Plex Sans, Arial, sans-serif"
+    font-size="20"
+    font-weight="600"
+    text-anchor="middle"
+  >
+    Pending image · Imagem pendente
+  </text>
+</svg>
