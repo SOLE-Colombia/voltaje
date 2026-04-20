@@ -6,6 +6,18 @@
       <description>Últimas 10 notas on SOLE Voltaje</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>How to do SOLE?</title>
+    <link>https://voltaje.solecolombia.org/en/inspire/insp-make-SOLE</link>
+    <guid>https://voltaje.solecolombia.org/en/inspire/insp-make-SOLE</guid>
+    <description><![CDATA[ Tutorial for fostering self-managed learning. In this video tutorial, we’ll show you how to set up your own self-organized learning space. ]]></description>
+    <pubDate>Mon, 20 Apr 2026 22:44:08 GMT</pubDate>
+  </item><item>
+    <title>Como fazer SOLE?</title>
+    <link>https://voltaje.solecolombia.org/pt/inspire/insp-make-SOLE</link>
+    <guid>https://voltaje.solecolombia.org/pt/inspire/insp-make-SOLE</guid>
+    <description><![CDATA[ Tutorial para incentivar o aprendizado autogerenciado. ]]></description>
+    <pubDate>Mon, 20 Apr 2026 22:44:08 GMT</pubDate>
+  </item><item>
     <title>Disconnected</title>
     <link>https://voltaje.solecolombia.org/en/disconnected/</link>
     <guid>https://voltaje.solecolombia.org/en/disconnected/</guid>
@@ -53,18 +65,6 @@
     <guid>https://voltaje.solecolombia.org/pt/solve/</guid>
     <description><![CDATA[ Encontre soluções práticas e ferramentas para melhorar a conectividade e resolver problemas técnicos na sua comunidade. ]]></description>
     <pubDate>Mon, 20 Apr 2026 21:08:54 GMT</pubDate>
-  </item><item>
-    <title>¿Cómo hacer SOLE?</title>
-    <link>https://voltaje.solecolombia.org/en/inspire/insp-make-SOLE</link>
-    <guid>https://voltaje.solecolombia.org/en/inspire/insp-make-SOLE</guid>
-    <description><![CDATA[ Tutorial for fostering self-managed learning. In this video tutorial, we’ll show you how to set up your own self-organized learning space. ]]></description>
-    <pubDate>Mon, 20 Apr 2026 18:43:52 GMT</pubDate>
-  </item><item>
-    <title>¿Nuevo aquí?</title>
-    <link>https://voltaje.solecolombia.org/en/new-here</link>
-    <guid>https://voltaje.solecolombia.org/en/new-here</guid>
-    <description><![CDATA[ ¿Primera vez en Voltaje? Empieza aquí para entender cómo funciona la plataforma y cómo puedes contribuir. ]]></description>
-    <pubDate>Mon, 20 Apr 2026 18:43:52 GMT</pubDate>
   </item>
     </channel>
   </rss>
