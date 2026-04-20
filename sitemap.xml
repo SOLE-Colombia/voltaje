@@ -1,15 +1,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
+    <loc>https://voltaje.solecolombia.org/CLAUDE</loc>
+    <lastmod>2026-04-16T00:07:00.000Z</lastmod>
+  </url><url>
     <loc>https://voltaje.solecolombia.org/assets/images/solv-spread-message/solv-spread-message-wallsign-2.webp</loc>
     <lastmod>2026-02-23T14:42:16.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/assets/images/solv-spread-message/solv-spread-message-wapp-2.jpeg</loc>
     <lastmod>2026-02-23T14:42:16.000Z</lastmod>
   </url><url>
+    <loc>https://voltaje.solecolombia.org/bases-datos/conceptos</loc>
+    <lastmod>2026-04-15T05:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://voltaje.solecolombia.org/bases-datos/desconectados</loc>
+    <lastmod>2026-04-15T05:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://voltaje.solecolombia.org/bases-datos/</loc>
+    <lastmod>2026-04-15T05:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://voltaje.solecolombia.org/bases-datos/inspiraciones</loc>
+    <lastmod>2026-04-15T05:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://voltaje.solecolombia.org/bases-datos/soluciones</loc>
+    <lastmod>2026-04-15T05:00:00.000Z</lastmod>
+  </url><url>
     <loc>https://voltaje.solecolombia.org/en/answers-comments/</loc>
     <lastmod>2026-04-11T16:36:48.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/en/disconnected/</loc>
-    <lastmod>2026-04-11T16:36:48.000Z</lastmod>
+    <lastmod>2026-04-20T18:43:52.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/en/glossary/conc-2g-net</loc>
     <lastmod>2025-08-25T05:00:00.000Z</lastmod>
@@ -125,6 +143,9 @@
     <loc>https://voltaje.solecolombia.org/en/glossary/conc-operating-system</loc>
     <lastmod>2026-04-05T05:00:00.000Z</lastmod>
   </url><url>
+    <loc>https://voltaje.solecolombia.org/en/glossary/conc-paquetes-internet</loc>
+    <lastmod>2026-04-15T05:00:00.000Z</lastmod>
+  </url><url>
     <loc>https://voltaje.solecolombia.org/en/glossary/conc-php-language</loc>
     <lastmod>2026-04-05T05:00:00.000Z</lastmod>
   </url><url>
@@ -133,6 +154,9 @@
   </url><url>
     <loc>https://voltaje.solecolombia.org/en/glossary/conc-python-language</loc>
     <lastmod>2026-04-05T05:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://voltaje.solecolombia.org/en/glossary/conc-radio-enlace</loc>
+    <lastmod>2026-04-15T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/en/glossary/conc-ram-memory</loc>
     <lastmod>2026-04-05T05:00:00.000Z</lastmod>
@@ -195,13 +219,13 @@
     <lastmod>2025-09-11T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/en/glossary/</loc>
-    <lastmod>2026-04-11T16:36:48.000Z</lastmod>
+    <lastmod>2026-04-20T18:43:52.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/en/</loc>
     <lastmod>2026-04-08T01:51:45.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/en/inspire/</loc>
-    <lastmod>2026-04-11T16:36:48.000Z</lastmod>
+    <lastmod>2026-04-20T18:43:52.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/en/inspire/insp-big-questions</loc>
     <lastmod>2025-10-11T05:00:00.000Z</lastmod>
@@ -291,7 +315,7 @@
     <lastmod>2025-10-11T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/en/inspire/insp-make-SOLE</loc>
-    <lastmod>2026-04-07T03:46:36.000Z</lastmod>
+    <lastmod>2026-04-20T18:43:52.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/en/inspire/insp-others-build-antenna3g</loc>
     <lastmod>2024-10-23T05:00:00.000Z</lastmod>
@@ -363,10 +387,10 @@
     <lastmod>2024-10-24T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/en/new-here</loc>
-    <lastmod>2026-04-11T16:36:48.000Z</lastmod>
+    <lastmod>2026-04-20T18:43:52.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/en/solve/</loc>
-    <lastmod>2026-04-11T16:36:48.000Z</lastmod>
+    <lastmod>2026-04-20T18:43:52.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/en/solve/solv-ally-with-places</loc>
     <lastmod>2025-12-17T05:00:00.000Z</lastmod>
@@ -458,6 +482,9 @@
     <loc>https://voltaje.solecolombia.org/en/solve/solv-know-wifi-passwords</loc>
     <lastmod>2026-02-02T05:00:00.000Z</lastmod>
   </url><url>
+    <loc>https://voltaje.solecolombia.org/en/solve/solv-microwave</loc>
+    <lastmod>2026-04-15T05:00:00.000Z</lastmod>
+  </url><url>
     <loc>https://voltaje.solecolombia.org/en/solve/solv-need-3Gantenna</loc>
     <lastmod>2025-12-17T05:00:00.000Z</lastmod>
   </url><url>
@@ -467,8 +494,8 @@
     <loc>https://voltaje.solecolombia.org/en/solve/solv-pocket-wikipedia</loc>
     <lastmod>2026-04-05T05:00:00.000Z</lastmod>
   </url><url>
-    <loc>https://voltaje.solecolombia.org/en/solve/solv-powerbank</loc>
-    <lastmod>2026-03-11T05:00:00.000Z</lastmod>
+    <loc>https://voltaje.solecolombia.org/en/solve/solv-prueba-ia</loc>
+    <lastmod>2026-04-06T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/en/solve/solv-purchase-temp-satellite</loc>
     <lastmod>2025-12-17T05:00:00.000Z</lastmod>
@@ -494,6 +521,9 @@
     <loc>https://voltaje.solecolombia.org/en/solve/solv-share-internet-wirelessly</loc>
     <lastmod>2025-12-17T05:00:00.000Z</lastmod>
   </url><url>
+    <loc>https://voltaje.solecolombia.org/en/solve/solv-sole-tv</loc>
+    <lastmod>2026-04-08T05:00:00.000Z</lastmod>
+  </url><url>
     <loc>https://voltaje.solecolombia.org/en/solve/solv-spread-message</loc>
     <lastmod>2025-12-17T05:00:00.000Z</lastmod>
   </url><url>
@@ -502,6 +532,9 @@
   </url><url>
     <loc>https://voltaje.solecolombia.org/en/solve/solv-type-internet-signal</loc>
     <lastmod>2025-12-17T05:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://voltaje.solecolombia.org/en/solve/solv-usb-internet-router</loc>
+    <lastmod>2026-04-08T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/en/solve/solv-wiki-phone</loc>
     <lastmod>2026-04-06T05:00:00.000Z</lastmod>
@@ -638,6 +671,9 @@
     <loc>https://voltaje.solecolombia.org/glossary/conc-operating-system</loc>
     <lastmod>2026-04-05T05:00:00.000Z</lastmod>
   </url><url>
+    <loc>https://voltaje.solecolombia.org/glossary/conc-paquetes-internet</loc>
+    <lastmod>2026-04-15T05:00:00.000Z</lastmod>
+  </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-php-language</loc>
     <lastmod>2026-04-05T05:00:00.000Z</lastmod>
   </url><url>
@@ -646,6 +682,9 @@
   </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-python-language</loc>
     <lastmod>2026-04-05T05:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://voltaje.solecolombia.org/glossary/conc-radio-enlace</loc>
+    <lastmod>2026-04-15T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/glossary/conc-ram-memory</loc>
     <lastmod>2026-04-05T05:00:00.000Z</lastmod>
@@ -968,6 +1007,9 @@
     <loc>https://voltaje.solecolombia.org/solve/solv-know-wifi-passwords</loc>
     <lastmod>2026-02-02T05:00:00.000Z</lastmod>
   </url><url>
+    <loc>https://voltaje.solecolombia.org/solve/solv-microwave</loc>
+    <lastmod>2026-04-15T05:00:00.000Z</lastmod>
+  </url><url>
     <loc>https://voltaje.solecolombia.org/solve/solv-need-3Gantenna</loc>
     <lastmod>2025-12-17T05:00:00.000Z</lastmod>
   </url><url>
@@ -1035,7 +1077,7 @@
     <lastmod>2026-04-11T16:36:48.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/pt/disconnected/</loc>
-    <lastmod>2026-04-11T16:36:48.000Z</lastmod>
+    <lastmod>2026-04-20T18:43:52.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/pt/glossary/conc-2g-net</loc>
     <lastmod>2025-08-25T05:00:00.000Z</lastmod>
@@ -1151,6 +1193,9 @@
     <loc>https://voltaje.solecolombia.org/pt/glossary/conc-operating-system</loc>
     <lastmod>2026-04-05T05:00:00.000Z</lastmod>
   </url><url>
+    <loc>https://voltaje.solecolombia.org/pt/glossary/conc-paquetes-internet</loc>
+    <lastmod>2026-04-15T05:00:00.000Z</lastmod>
+  </url><url>
     <loc>https://voltaje.solecolombia.org/pt/glossary/conc-php-language</loc>
     <lastmod>2026-04-05T05:00:00.000Z</lastmod>
   </url><url>
@@ -1159,6 +1204,9 @@
   </url><url>
     <loc>https://voltaje.solecolombia.org/pt/glossary/conc-python-language</loc>
     <lastmod>2026-04-05T05:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://voltaje.solecolombia.org/pt/glossary/conc-radio-enlace</loc>
+    <lastmod>2026-04-15T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/pt/glossary/conc-ram-memory</loc>
     <lastmod>2026-04-05T05:00:00.000Z</lastmod>
@@ -1221,13 +1269,13 @@
     <lastmod>2025-09-11T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/pt/glossary/</loc>
-    <lastmod>2026-04-11T16:36:48.000Z</lastmod>
+    <lastmod>2026-04-20T18:43:52.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/pt/</loc>
     <lastmod>2026-04-08T01:51:45.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/pt/inspire/</loc>
-    <lastmod>2026-04-11T16:36:48.000Z</lastmod>
+    <lastmod>2026-04-20T18:43:52.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/pt/inspire/insp-big-questions</loc>
     <lastmod>2025-10-11T05:00:00.000Z</lastmod>
@@ -1317,7 +1365,7 @@
     <lastmod>2025-10-11T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/pt/inspire/insp-make-SOLE</loc>
-    <lastmod>2026-04-07T03:46:36.000Z</lastmod>
+    <lastmod>2026-04-20T18:43:52.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/pt/inspire/insp-others-build-antenna3g</loc>
     <lastmod>2024-10-23T05:00:00.000Z</lastmod>
@@ -1389,10 +1437,10 @@
     <lastmod>2024-10-24T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/pt/new-here</loc>
-    <lastmod>2026-04-11T16:36:48.000Z</lastmod>
+    <lastmod>2026-04-20T18:43:52.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/pt/solve/</loc>
-    <lastmod>2026-04-11T16:36:48.000Z</lastmod>
+    <lastmod>2026-04-20T18:43:52.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/pt/solve/solv-ally-with-places</loc>
     <lastmod>2025-12-17T05:00:00.000Z</lastmod>
@@ -1484,6 +1532,9 @@
     <loc>https://voltaje.solecolombia.org/pt/solve/solv-know-wifi-passwords</loc>
     <lastmod>2026-02-02T05:00:00.000Z</lastmod>
   </url><url>
+    <loc>https://voltaje.solecolombia.org/pt/solve/solv-microwave</loc>
+    <lastmod>2026-04-15T05:00:00.000Z</lastmod>
+  </url><url>
     <loc>https://voltaje.solecolombia.org/pt/solve/solv-need-3Gantenna</loc>
     <lastmod>2025-12-17T05:00:00.000Z</lastmod>
   </url><url>
@@ -1493,8 +1544,8 @@
     <loc>https://voltaje.solecolombia.org/pt/solve/solv-pocket-wikipedia</loc>
     <lastmod>2026-04-05T05:00:00.000Z</lastmod>
   </url><url>
-    <loc>https://voltaje.solecolombia.org/pt/solve/solv-powerbank</loc>
-    <lastmod>2026-03-11T05:00:00.000Z</lastmod>
+    <loc>https://voltaje.solecolombia.org/pt/solve/solv-prueba-ia</loc>
+    <lastmod>2026-04-06T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/pt/solve/solv-purchase-temp-satellite</loc>
     <lastmod>2025-12-17T05:00:00.000Z</lastmod>
@@ -1520,6 +1571,9 @@
     <loc>https://voltaje.solecolombia.org/pt/solve/solv-share-internet-wirelessly</loc>
     <lastmod>2025-12-17T05:00:00.000Z</lastmod>
   </url><url>
+    <loc>https://voltaje.solecolombia.org/pt/solve/solv-sole-tv</loc>
+    <lastmod>2026-04-08T05:00:00.000Z</lastmod>
+  </url><url>
     <loc>https://voltaje.solecolombia.org/pt/solve/solv-spread-message</loc>
     <lastmod>2025-12-17T05:00:00.000Z</lastmod>
   </url><url>
@@ -1529,12 +1583,12 @@
     <loc>https://voltaje.solecolombia.org/pt/solve/solv-type-internet-signal</loc>
     <lastmod>2025-12-17T05:00:00.000Z</lastmod>
   </url><url>
+    <loc>https://voltaje.solecolombia.org/pt/solve/solv-usb-internet-router</loc>
+    <lastmod>2026-04-08T05:00:00.000Z</lastmod>
+  </url><url>
     <loc>https://voltaje.solecolombia.org/pt/solve/solv-wiki-phone</loc>
     <lastmod>2026-04-06T05:00:00.000Z</lastmod>
   </url><url>
     <loc>https://voltaje.solecolombia.org/pt/solve/solv-write-invitation</loc>
     <lastmod>2025-12-17T05:00:00.000Z</lastmod>
-  </url><url>
-    <loc>https://voltaje.solecolombia.org/test</loc>
-    <lastmod>2026-04-01T23:55:07.000Z</lastmod>
   </url></urlset>
