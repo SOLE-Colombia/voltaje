@@ -6,6 +6,12 @@
       <description>Últimas 10 notas on SOLE Voltaje</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>¿Cómo hacer SOLE?</title>
+    <link>https://voltaje.solecolombia.org/inspire/insp-make-SOLE</link>
+    <guid>https://voltaje.solecolombia.org/inspire/insp-make-SOLE</guid>
+    <description><![CDATA[ Tutorial para fomentar el aprendizaje autogestionado. En este video tutorial te explicamos cómo puedes crear tu espacio aprendizaje auto organizado. ]]></description>
+    <pubDate>Tue, 21 Apr 2026 22:08:36 GMT</pubDate>
+  </item><item>
     <title>How to do SOLE?</title>
     <link>https://voltaje.solecolombia.org/en/inspire/insp-make-SOLE</link>
     <guid>https://voltaje.solecolombia.org/en/inspire/insp-make-SOLE</guid>
@@ -58,12 +64,6 @@
     <link>https://voltaje.solecolombia.org/pt/inspire/</link>
     <guid>https://voltaje.solecolombia.org/pt/inspire/</guid>
     <description><![CDATA[ Descubra histórias de sucesso, ideias inovadoras e exemplos de como outras comunidades conseguiram se conectar. ]]></description>
-    <pubDate>Mon, 20 Apr 2026 21:08:54 GMT</pubDate>
-  </item><item>
-    <title>Solucione</title>
-    <link>https://voltaje.solecolombia.org/pt/solve/</link>
-    <guid>https://voltaje.solecolombia.org/pt/solve/</guid>
-    <description><![CDATA[ Encontre soluções práticas e ferramentas para melhorar a conectividade e resolver problemas técnicos na sua comunidade. ]]></description>
     <pubDate>Mon, 20 Apr 2026 21:08:54 GMT</pubDate>
   </item>
     </channel>
