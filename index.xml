@@ -6,23 +6,41 @@
       <description>Últimas 10 notas on SOLE Voltaje</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>¿Cómo hacer SOLE?</title>
-    <link>https://voltaje.solecolombia.org/inspire/insp-make-SOLE</link>
-    <guid>https://voltaje.solecolombia.org/inspire/insp-make-SOLE</guid>
-    <description><![CDATA[ Tutorial para fomentar el aprendizaje autogestionado. En este video tutorial te explicamos cómo puedes crear tu espacio aprendizaje auto organizado. ]]></description>
-    <pubDate>Tue, 21 Apr 2026 22:08:36 GMT</pubDate>
-  </item><item>
     <title>How to do SOLE?</title>
     <link>https://voltaje.solecolombia.org/en/inspire/insp-make-SOLE</link>
     <guid>https://voltaje.solecolombia.org/en/inspire/insp-make-SOLE</guid>
     <description><![CDATA[ Tutorial for fostering self-managed learning. In this video tutorial, we’ll show you how to set up your own self-organized learning space. ]]></description>
-    <pubDate>Mon, 20 Apr 2026 22:44:08 GMT</pubDate>
+    <pubDate>Wed, 22 Apr 2026 12:48:13 GMT</pubDate>
+  </item><item>
+    <title>¿Nuevo aquí?</title>
+    <link>https://voltaje.solecolombia.org/en/new-here</link>
+    <guid>https://voltaje.solecolombia.org/en/new-here</guid>
+    <description><![CDATA[ ¿Primera vez en Voltaje? Empieza aquí para entender cómo funciona la plataforma y cómo puedes contribuir. ]]></description>
+    <pubDate>Wed, 22 Apr 2026 12:48:13 GMT</pubDate>
+  </item><item>
+    <title>¿Cómo hacer SOLE?</title>
+    <link>https://voltaje.solecolombia.org/inspire/insp-make-SOLE</link>
+    <guid>https://voltaje.solecolombia.org/inspire/insp-make-SOLE</guid>
+    <description><![CDATA[ Tutorial para fomentar el aprendizaje autogestionado. En este video tutorial te explicamos cómo puedes crear tu espacio aprendizaje auto organizado. ]]></description>
+    <pubDate>Wed, 22 Apr 2026 12:48:13 GMT</pubDate>
+  </item><item>
+    <title>¿Nuevo aquí?</title>
+    <link>https://voltaje.solecolombia.org/new-here</link>
+    <guid>https://voltaje.solecolombia.org/new-here</guid>
+    <description><![CDATA[ ¿Primera vez en Voltaje? Empieza aquí para entender cómo funciona la plataforma y cómo puedes contribuir. ]]></description>
+    <pubDate>Wed, 22 Apr 2026 12:48:13 GMT</pubDate>
   </item><item>
     <title>Como fazer SOLE?</title>
     <link>https://voltaje.solecolombia.org/pt/inspire/insp-make-SOLE</link>
     <guid>https://voltaje.solecolombia.org/pt/inspire/insp-make-SOLE</guid>
     <description><![CDATA[ Tutorial para incentivar o aprendizado autogerenciado. ]]></description>
-    <pubDate>Mon, 20 Apr 2026 22:44:08 GMT</pubDate>
+    <pubDate>Wed, 22 Apr 2026 12:48:13 GMT</pubDate>
+  </item><item>
+    <title>¿Nuevo aquí?</title>
+    <link>https://voltaje.solecolombia.org/pt/new-here</link>
+    <guid>https://voltaje.solecolombia.org/pt/new-here</guid>
+    <description><![CDATA[ ¿Primera vez en Voltaje? Empieza aquí para entender cómo funciona la plataforma y cómo puedes contribuir. ]]></description>
+    <pubDate>Wed, 22 Apr 2026 12:48:13 GMT</pubDate>
   </item><item>
     <title>Disconnected</title>
     <link>https://voltaje.solecolombia.org/en/disconnected/</link>
@@ -46,24 +64,6 @@
     <link>https://voltaje.solecolombia.org/en/solve/</link>
     <guid>https://voltaje.solecolombia.org/en/solve/</guid>
     <description><![CDATA[ Find practical solutions and tools to improve connectivity and solve technical problems in your community. ]]></description>
-    <pubDate>Mon, 20 Apr 2026 21:08:54 GMT</pubDate>
-  </item><item>
-    <title>Desconectado</title>
-    <link>https://voltaje.solecolombia.org/pt/disconnected/</link>
-    <guid>https://voltaje.solecolombia.org/pt/disconnected/</guid>
-    <description><![CDATA[ Aprenda sobre a Internet sem estar conectado à Internet ]]></description>
-    <pubDate>Mon, 20 Apr 2026 21:08:54 GMT</pubDate>
-  </item><item>
-    <title>Conceituário</title>
-    <link>https://voltaje.solecolombia.org/pt/glossary/</link>
-    <guid>https://voltaje.solecolombia.org/pt/glossary/</guid>
-    <description><![CDATA[ Glossário de termos técnicos e conceitos-chave. ]]></description>
-    <pubDate>Mon, 20 Apr 2026 21:08:54 GMT</pubDate>
-  </item><item>
-    <title>Inspire-se</title>
-    <link>https://voltaje.solecolombia.org/pt/inspire/</link>
-    <guid>https://voltaje.solecolombia.org/pt/inspire/</guid>
-    <description><![CDATA[ Descubra histórias de sucesso, ideias inovadoras e exemplos de como outras comunidades conseguiram se conectar. ]]></description>
     <pubDate>Mon, 20 Apr 2026 21:08:54 GMT</pubDate>
   </item>
     </channel>
