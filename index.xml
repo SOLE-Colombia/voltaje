@@ -42,6 +42,12 @@
     <description><![CDATA[ ¿Primera vez en Voltaje? Empieza aquí para entender cómo funciona la plataforma y cómo puedes contribuir. ]]></description>
     <pubDate>Wed, 22 Apr 2026 14:03:44 GMT</pubDate>
   </item><item>
+    <title>¿Cómo armar un servidor robusto con Debian en un portátil ThinkPad?</title>
+    <link>https://voltaje.solecolombia.org/solve/solv-debian-thinkpad-server</link>
+    <guid>https://voltaje.solecolombia.org/solve/solv-debian-thinkpad-server</guid>
+    <description><![CDATA[ ¡Hola! Soy David. He logrado mejorar la estabilidad de nuestros laboratorios SOLE a punta de prueba y error. ]]></description>
+    <pubDate>Wed, 22 Apr 2026 05:00:00 GMT</pubDate>
+  </item><item>
     <title>Disconnected</title>
     <link>https://voltaje.solecolombia.org/en/disconnected/</link>
     <guid>https://voltaje.solecolombia.org/en/disconnected/</guid>
@@ -58,12 +64,6 @@
     <link>https://voltaje.solecolombia.org/en/inspire/</link>
     <guid>https://voltaje.solecolombia.org/en/inspire/</guid>
     <description><![CDATA[ Discover success stories, innovative ideas, and examples of how other communities have managed to connect. ]]></description>
-    <pubDate>Mon, 20 Apr 2026 21:08:54 GMT</pubDate>
-  </item><item>
-    <title>Solve</title>
-    <link>https://voltaje.solecolombia.org/en/solve/</link>
-    <guid>https://voltaje.solecolombia.org/en/solve/</guid>
-    <description><![CDATA[ Find practical solutions and tools to improve connectivity and solve technical problems in your community. ]]></description>
     <pubDate>Mon, 20 Apr 2026 21:08:54 GMT</pubDate>
   </item>
     </channel>
