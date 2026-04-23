@@ -20,14 +20,14 @@
     </linearGradient>
     <linearGradient id="frame" x1="0" x2="1" y1="0" y2="1">
       <stop offset="0%" stop-color="#27bfb8" />
-      <stop offset="100%" stop-color="#1a84ae" />
+      <stop offset="100%" stop-color="#045da5" />
     </linearGradient>
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
       <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#000000" flood-opacity="0.28" />
     </filter>
   </defs>
   <rect width="960" height="540" rx="40" fill="url(#bg)" />
-  <circle cx="154" cy="116" r="118" fill="#1a84ae" opacity="0.12" />
+  <circle cx="154" cy="116" r="118" fill="#045da5" opacity="0.12" />
   <circle cx="822" cy="426" r="138" fill="#27bfb8" opacity="0.1" />
   <path
     d="M78 442c58-21 105-21 162 0s104 21 162 0 104-21 162 0 104 21 162 0 104-21 156 0"
@@ -101,3 +101,4 @@
     Pending image · Imagem pendente
   </text>
 </svg>
+
