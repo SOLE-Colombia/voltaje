@@ -1,0 +1,21 @@
+{
+  "name": "SOLE Voltaje",
+  "short_name": "Voltaje",
+  "description": "Jardín digital de conocimiento práctico para comunidades rurales con baja conectividad.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#15110e",
+  "theme_color": "#045da5",
+  "icons": [
+    {
+      "src": "/static/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -6,65 +6,65 @@
       <description>Últimas 10 notas on SOLE Voltaje</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>¿Cómo hacer SOLE?</title>
-    <link>https://voltaje.solecolombia.org/inspire/insp-make-SOLE</link>
-    <guid>https://voltaje.solecolombia.org/inspire/insp-make-SOLE</guid>
-    <description><![CDATA[ Tutorial para fomentar el aprendizaje autogestionado. En este video tutorial te explicamos cómo puedes crear tu espacio aprendizaje auto organizado. ]]></description>
-    <pubDate>Wed, 22 Apr 2026 21:07:20 GMT</pubDate>
-  </item><item>
-    <title>How to do SOLE?</title>
-    <link>https://voltaje.solecolombia.org/en/inspire/insp-make-SOLE</link>
-    <guid>https://voltaje.solecolombia.org/en/inspire/insp-make-SOLE</guid>
-    <description><![CDATA[ Tutorial for fostering self-managed learning. In this video tutorial, we’ll show you how to set up your own self-organized learning space. ]]></description>
-    <pubDate>Wed, 22 Apr 2026 14:03:44 GMT</pubDate>
-  </item><item>
-    <title>¿Nuevo aquí?</title>
-    <link>https://voltaje.solecolombia.org/en/new-here</link>
-    <guid>https://voltaje.solecolombia.org/en/new-here</guid>
-    <description><![CDATA[ ¿Primera vez en Voltaje? Empieza aquí para entender cómo funciona la plataforma y cómo puedes contribuir. ]]></description>
-    <pubDate>Wed, 22 Apr 2026 14:03:44 GMT</pubDate>
-  </item><item>
-    <title>¿Nuevo aquí?</title>
-    <link>https://voltaje.solecolombia.org/new-here</link>
-    <guid>https://voltaje.solecolombia.org/new-here</guid>
-    <description><![CDATA[ ¿Primera vez en Voltaje? Empieza aquí para entender cómo funciona la plataforma y cómo puedes contribuir. ]]></description>
-    <pubDate>Wed, 22 Apr 2026 14:03:44 GMT</pubDate>
-  </item><item>
-    <title>Como fazer SOLE?</title>
-    <link>https://voltaje.solecolombia.org/pt/inspire/insp-make-SOLE</link>
-    <guid>https://voltaje.solecolombia.org/pt/inspire/insp-make-SOLE</guid>
-    <description><![CDATA[ Tutorial para incentivar o aprendizado autogerenciado. ]]></description>
-    <pubDate>Wed, 22 Apr 2026 14:03:44 GMT</pubDate>
-  </item><item>
-    <title>¿Nuevo aquí?</title>
-    <link>https://voltaje.solecolombia.org/pt/new-here</link>
-    <guid>https://voltaje.solecolombia.org/pt/new-here</guid>
-    <description><![CDATA[ ¿Primera vez en Voltaje? Empieza aquí para entender cómo funciona la plataforma y cómo puedes contribuir. ]]></description>
-    <pubDate>Wed, 22 Apr 2026 14:03:44 GMT</pubDate>
-  </item><item>
-    <title>¿Cómo armar un servidor robusto con Debian en un portátil ThinkPad?</title>
-    <link>https://voltaje.solecolombia.org/solve/solv-debian-thinkpad-server</link>
-    <guid>https://voltaje.solecolombia.org/solve/solv-debian-thinkpad-server</guid>
-    <description><![CDATA[ ¡Hola! Soy David. He logrado mejorar la estabilidad de nuestros laboratorios SOLE a punta de prueba y error. ]]></description>
-    <pubDate>Wed, 22 Apr 2026 05:00:00 GMT</pubDate>
-  </item><item>
-    <title>Disconnected</title>
+    <title>Offline</title>
     <link>https://voltaje.solecolombia.org/en/disconnected/</link>
     <guid>https://voltaje.solecolombia.org/en/disconnected/</guid>
-    <description><![CDATA[ Learn about the Internet without being connected to the Internet ]]></description>
-    <pubDate>Mon, 20 Apr 2026 21:08:54 GMT</pubDate>
+    <description><![CDATA[ Learn how to handle the Internet even when you're totally disconnected. ]]></description>
+    <pubDate>Mon, 27 Apr 2026 21:53:17 GMT</pubDate>
   </item><item>
-    <title>Glossary</title>
+    <title>Conceptorium</title>
     <link>https://voltaje.solecolombia.org/en/glossary/</link>
     <guid>https://voltaje.solecolombia.org/en/glossary/</guid>
-    <description><![CDATA[ Glossary of technical terms and key concepts. ]]></description>
-    <pubDate>Mon, 20 Apr 2026 21:08:54 GMT</pubDate>
+    <description><![CDATA[ A glossary of technical terms and key concepts for the curious mind. ]]></description>
+    <pubDate>Mon, 27 Apr 2026 21:53:17 GMT</pubDate>
   </item><item>
     <title>Get Inspired</title>
     <link>https://voltaje.solecolombia.org/en/inspire/</link>
     <guid>https://voltaje.solecolombia.org/en/inspire/</guid>
     <description><![CDATA[ Discover success stories, innovative ideas, and examples of how other communities have managed to connect. ]]></description>
-    <pubDate>Mon, 20 Apr 2026 21:08:54 GMT</pubDate>
+    <pubDate>Mon, 27 Apr 2026 21:53:17 GMT</pubDate>
+  </item><item>
+    <title>insp-convince-sharing-internet</title>
+    <link>https://voltaje.solecolombia.org/en/inspire/insp-convince-sharing-internet</link>
+    <guid>https://voltaje.solecolombia.org/en/inspire/insp-convince-sharing-internet</guid>
+    <description><![CDATA[ Aquí tienes una traducción con un tono práctico y cercano: title: “Think you could convince your neighbors to ditch their Wi-Fi password?” date: “2025-10-11” tags: [] permite: “Share” autor: “SOLE Colombia” draft: false resumen: “A question about sharing connectivity within your community.” . ]]></description>
+    <pubDate>Mon, 27 Apr 2026 21:53:17 GMT</pubDate>
+  </item><item>
+    <title>insp-data-for-dollar</title>
+    <link>https://voltaje.solecolombia.org/en/inspire/insp-data-for-dollar</link>
+    <guid>https://voltaje.solecolombia.org/en/inspire/insp-data-for-dollar</guid>
+    <description><![CDATA[ Aquí tienes una propuesta con un tono práctico y cercano: title: “How much data do you get for $1 USD? Let’s check your plan.” date: “2025-10-11” tags: [] author: “SOLE Colombia” draft: false summary: “A quick look at what you’re really paying for connectivity.” permits: “Improve” . ]]></description>
+    <pubDate>Mon, 27 Apr 2026 21:53:17 GMT</pubDate>
+  </item><item>
+    <title>insp-data-usage</title>
+    <link>https://voltaje.solecolombia.org/en/inspire/insp-data-usage</link>
+    <guid>https://voltaje.solecolombia.org/en/inspire/insp-data-usage</guid>
+    <description><![CDATA[ Aquí tienes una propuesta con un tono práctico y cercano: title: “How many GB of data do you think you use each month?” date: “2025-10-11” tags: [] autor: “SOLE Colombia” draft: false resumen: “Take a moment to think about your data usage.” permite: “Improve” . ]]></description>
+    <pubDate>Mon, 27 Apr 2026 21:53:17 GMT</pubDate>
+  </item><item>
+    <title>insp-free-internet-for-all</title>
+    <link>https://voltaje.solecolombia.org/en/inspire/insp-free-internet-for-all</link>
+    <guid>https://voltaje.solecolombia.org/en/inspire/insp-free-internet-for-all</guid>
+    <description><![CDATA[ Aquí tienes la traducción con un tono práctico y cercano: title: “Do you think internet access should be free for everyone?” date: “2025-10-11” tags: [] autor: “SOLE Colombia” draft: false resumen: “A question about universal connectivity.” permite: “Improve” . ]]></description>
+    <pubDate>Mon, 27 Apr 2026 21:53:17 GMT</pubDate>
+  </item><item>
+    <title>insp-internet-ate-homework</title>
+    <link>https://voltaje.solecolombia.org/en/inspire/insp-internet-ate-homework</link>
+    <guid>https://voltaje.solecolombia.org/en/inspire/insp-internet-ate-homework</guid>
+    <description><![CDATA[ Aquí tienes una traducción con un tono práctico y cercano: title: “Did the internet or your dog eat your homework?” date: “2025-10-11” tags: [] autor: “SOLE Colombia” draft: false resumen: “Taking responsibility in the digital world.” permite: “Improve” . ]]></description>
+    <pubDate>Mon, 27 Apr 2026 21:53:17 GMT</pubDate>
+  </item><item>
+    <title>How to build SOLE?</title>
+    <link>https://voltaje.solecolombia.org/en/inspire/insp-make-SOLE</link>
+    <guid>https://voltaje.solecolombia.org/en/inspire/insp-make-SOLE</guid>
+    <description><![CDATA[ A guide to setting up your own Self-Organized Learning Environment ]]></description>
+    <pubDate>Mon, 27 Apr 2026 21:53:17 GMT</pubDate>
+  </item><item>
+    <title>insp-privileged-finance-internet</title>
+    <link>https://voltaje.solecolombia.org/en/inspire/insp-privileged-finance-internet</link>
+    <guid>https://voltaje.solecolombia.org/en/inspire/insp-privileged-finance-internet</guid>
+    <description><![CDATA[ Aquí tienes una traducción con un tono práctico y cercano, ideal para un blog o plataforma digital: title: “Do you think the privileged should subsidize internet for everyone?” date: “2025-10-11” tags: [] autor: “SOLE Colombia” draft: false resumen: “A question about digital equity.” permite: “Impro... ]]></description>
+    <pubDate>Mon, 27 Apr 2026 21:53:17 GMT</pubDate>
   </item>
     </channel>
   </rss>

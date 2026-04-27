@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr"><head><title>¿Cómo conectar dos lugares con un radio enlace?</title><meta charset="utf-8"/><link rel="manifest" href="/manifest.json"/><script>if ('serviceWorker' in navigator) { window.addEventListener('load', () => { navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW setup failed', err)); }); }</script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=Roboto+Mono:wght@400;500;600;700&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/><meta name="og:site_name" content="SOLE Voltaje"/><meta property="og:title" content="¿Cómo conectar dos lugares con un radio enlace?"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="¿Cómo conectar dos lugares con un radio enlace?"/><meta name="twitter:description" content="Hola, soy David, y esta es una de esas soluciones que llegué a entender después de mucho explorar, preguntar, cacharrear y darle vueltas a algo que al principio me parecía imposible."/><meta property="og:description" content="Hola, soy David, y esta es una de esas soluciones que llegué a entender después de mucho explorar, preguntar, cacharrear y darle vueltas a algo que al principio me parecía imposible."/><meta property="og:image:alt" content="Hola, soy David, y esta es una de esas soluciones que llegué a entender después de mucho explorar, preguntar, cacharrear y darle vueltas a algo que al principio me parecía imposible."/><meta property="twitter:domain" content="voltaje.solecolombia.org"/><meta property="og:url" content="https://voltaje.solecolombia.org/solve/solv-radio-link"/><meta property="twitter:url" content="https://voltaje.solecolombia.org/solve/solv-radio-link"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="Hola, soy David, y esta es una de esas soluciones que llegué a entender después de mucho explorar, preguntar, cacharrear y darle vueltas a algo que al principio me parecía imposible."/><meta name="generator" content="Quartz"/><script>(function () {
+  var STORAGE_KEY = "contentLang";
+  var FALLBACK_AVAILABLE = { en: true, pt: true };
+  var SITE_ROOT = "/";
+  var normalizePath = function (value) {
+    return (value || "").replace(/\/+$/g, "") || "/";
+  };
+  var isRootPath = function () {
+    return normalizePath(window.location.pathname) === normalizePath(SITE_ROOT);
+  };
+  var resolveLangPath = function (lang) {
+    return SITE_ROOT === "/" ? "/" + lang : SITE_ROOT + "/" + lang;
+  };
+  var detectPreferredLang = function () {
+    var stored = (localStorage.getItem(STORAGE_KEY) || "").toLowerCase();
+    if (stored) return stored;
+    var browser = (navigator.language || (navigator.languages && navigator.languages[0]) || "").toLowerCase();
+    return browser;
+  };
+  var resolveAvailableLanguages = async function () {
+    try {
+      var fetchIndex = globalThis.fetchData;
+      if (!fetchIndex || typeof fetchIndex.then !== "function") {
+        return FALLBACK_AVAILABLE;
+      }
+      var data = await fetchIndex;
+      var slugs = Object.keys(data || {});
+      if (slugs.length === 0) {
+        return FALLBACK_AVAILABLE;
+      }
+      return {
+        en: slugs.some(function (slug) { return slug === "en" || slug.startsWith("en/"); }),
+        pt: slugs.some(function (slug) { return slug === "pt" || slug.startsWith("pt/"); }),
+      };
+    } catch (_err) {
+      return FALLBACK_AVAILABLE;
+    }
+  };
+  if (!isRootPath()) return;
+  resolveAvailableLanguages().then(function (available) {
+    var preferred = detectPreferredLang();
+    if (preferred.startsWith("en") && available.en) {
+      window.location.replace(resolveLangPath("en"));
+      return;
+    }
+    if (preferred.startsWith("pt") && available.pt) {
+      window.location.replace(resolveLangPath("pt"));
+    }
+  });
+})();</script><link href="../index.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL2hvbWUvcnVubmVyL3dvcmsvdm9sdGFqZS1kZXYvdm9sdGFqZS1kZXYvcXVhcnR6L2NvbXBvbmVudHMvc3R5bGVzIiwic291cmNlcyI6WyJtZXJtYWlkLmlubGluZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFHRjtFQUNFOzs7QUFLRjtFQUNFO0VBQ0E7OztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFOztBQUlGO0VBQ0U7RUFDQTtFQUNBIiwic291cmNlc0NvbnRlbnQiOlsiLmV4cGFuZC1idXR0b24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsb2F0OiByaWdodDtcbiAgcGFkZGluZzogMC40cmVtO1xuICBtYXJnaW46IDAuM3JlbTtcbiAgcmlnaHQ6IDA7IC8vIE5PVEU6IHJpZ2h0IHdpbGwgYmUgc2V0IGluIG1lcm1haWQuaW5saW5lLnRzXG4gIGNvbG9yOiB2YXIoLS1ncmF5KTtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICBib3JkZXI6IDFweCBzb2xpZDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBvcGFjaXR5OiAwO1xuICB0cmFuc2l0aW9uOiAwLjJzO1xuXG4gICYgPiBzdmcge1xuICAgIGZpbGw6IHZhcigtLWxpZ2h0KTtcbiAgICBmaWx0ZXI6IGNvbnRyYXN0KDAuMyk7XG4gIH1cblxuICAmOmhvdmVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgYm9yZGVyLWNvbG9yOiB2YXIoLS1zZWNvbmRhcnkpO1xuICB9XG5cbiAgJjpmb2N1cyB7XG4gICAgb3V0bGluZTogMDtcbiAgfVxufVxuXG5wcmUge1xuICAmOmhvdmVyID4gLmV4cGFuZC1idXR0b24ge1xuICAgIG9wYWNpdHk6IDE7XG4gICAgdHJhbnNpdGlvbjogMC4ycztcbiAgfVxufVxuXG4jbWVybWFpZC1jb250YWluZXIge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGNvbnRhaW46IGxheW91dDtcbiAgei1pbmRleDogOTk5O1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxMDB2dztcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogbm9uZTtcbiAgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDRweCk7XG4gIGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC41KTtcblxuICAmLmFjdGl2ZSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB9XG5cbiAgJiA+ICNtZXJtYWlkLXNwYWNlIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogNTAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICBoZWlnaHQ6IDgwdmg7XG4gICAgd2lkdGg6IDgwdnc7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcblxuICAgICYgPiAubWVybWFpZC1jb250ZW50IHtcbiAgICAgIHBhZGRpbmc6IDJyZW07XG4gICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICB0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7XG4gICAgICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4xcyBlYXNlO1xuICAgICAgb3ZlcmZsb3c6IHZpc2libGU7XG4gICAgICBtaW4taGVpZ2h0OiAyMDBweDtcbiAgICAgIG1pbi13aWR0aDogMjAwcHg7XG5cbiAgICAgIHByZSB7XG4gICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgfVxuXG4gICAgICBzdmcge1xuICAgICAgICBtYXgtd2lkdGg6IG5vbmU7XG4gICAgICAgIGhlaWdodDogYXV0bztcbiAgICAgIH1cbiAgICB9XG5cbiAgICAmID4gLm1lcm1haWQtY29udHJvbHMge1xuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgYm90dG9tOiAyMHB4O1xuICAgICAgcmlnaHQ6IDIwcHg7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZ2FwOiA4cHg7XG4gICAgICBwYWRkaW5nOiA4cHg7XG4gICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgYm9yZGVyLXJhZGl1czogNnB4O1xuICAgICAgYm94LXNoYWRvdzogMCAycHggNHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcbiAgICAgIHotaW5kZXg6IDI7XG5cbiAgICAgIC5tZXJtYWlkLWNvbnRyb2wtYnV0dG9uIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgIHdpZHRoOiAzMnB4O1xuICAgICAgICBoZWlnaHQ6IDMycHg7XG4gICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgICAgY29sb3I6IHZhcigtLWRhcmspO1xuICAgICAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICBmb250LWZhbWlseTogdmFyKC0tYm9keUZvbnQpO1xuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBlYXNlO1xuXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIH1cblxuICAgICAgICAmOmFjdGl2ZSB7XG4gICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDFweCk7XG4gICAgICAgIH1cblxuICAgICAgICAvLyBTdHlsZSB0aGUgcmVzZXQgYnV0dG9uIGRpZmZlcmVudGx5XG4gICAgICAgICY6bnRoLWNoaWxkKDIpIHtcbiAgICAgICAgICB3aWR0aDogYXV0bztcbiAgICAgICAgICBwYWRkaW5nOiAwIDEycHg7XG4gICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iXX0= */</style><script src="../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://voltaje.solecolombia.org/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://voltaje.solecolombia.org/solve/solv-radio-link-og-image.webp"/><meta property="og:image:url" content="https://voltaje.solecolombia.org/solve/solv-radio-link-og-image.webp"/><meta name="twitter:image" content="https://voltaje.solecolombia.org/solve/solv-radio-link-og-image.webp"/><meta property="og:image:type" content="image/.webp"/><script defer src="https://analitica.solecolombia.org/script.js" data-website-id="ab95914f-5ff4-4591-a6e6-7ef52d78f792"></script></head><body data-slug="solve/solv-radio-link" data-basepath><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".." aria-label="SOLE Voltaje"><img src="https://voltaje.solecolombia.org/static/logo.png" alt class="page-logo page-logo--light"/><img src="https://voltaje.solecolombia.org/static/logo_voltaje.svg" alt class="page-logo page-logo--dark"/></a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1.5rem;"><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><details class="lang-toggle" data-lang-toggle="true"><summary class="lang-summary" aria-label="Cambiar idioma"><span class="lang-summary-flag" aria-hidden="true">🇪🇸</span><span class="lang-summary-code">ES</span></summary><div class="lang-menu" role="menu" aria-label="Idiomas disponibles"><button type="button" class="lang-option" role="menuitem" data-lang="es"><span aria-hidden="true">🇪🇸</span> ES</button><button type="button" class="lang-option" role="menuitem" data-lang="en"><span aria-hidden="true">🇺🇸</span> EN</button><button type="button" class="lang-option" role="menuitem" data-lang="pt"><span aria-hidden="true">🇵🇹</span> PT</button></div></details></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Modo oscuro"><title>Modo oscuro</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Modo claro"><title>Modo claro</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div></div><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Buscar</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Busca algo" placeholder="Busca algo"/><div class="search-layout" data-preview="true"></div></div></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-lang-default="es" data-data-fns="{&quot;order&quot;:[&quot;map&quot;,&quot;filter&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>{let customOrder=[\&quot;new-here\&quot;,\&quot;solve\&quot;,\&quot;inspire\&quot;,\&quot;glossary\&quot;,\&quot;disconnected\&quot;,\&quot;answers-comments\&quot;],indexA=customOrder.indexOf(a.slugSegment),indexB=customOrder.indexOf(b.slugSegment);return indexA!==-1&amp;&amp;indexB!==-1?indexA-indexB:indexA!==-1?-1:indexB!==-1?1:!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1}&quot;,&quot;filterFn&quot;:&quot;node=>{let mainMenuOrder=[\&quot;new-here\&quot;,\&quot;solve\&quot;,\&quot;inspire\&quot;,\&quot;glossary\&quot;,\&quot;disconnected\&quot;,\&quot;answers-comments\&quot;];return node.slugSegment===\&quot;tags\&quot;||node.slugSegment===\&quot;_staging\&quot;||node.slugSegment===\&quot;.staging\&quot;||node.slugSegment===\&quot;descargas\&quot;?!1:node.slugSegment?mainMenuOrder.includes(node.slugSegment):!0}&quot;,&quot;mapFn&quot;:&quot;node=>{let langFolders=node.children.filter(child=>child.isFolder&amp;&amp;(child.slugSegment===\&quot;es\&quot;||child.slugSegment===\&quot;en\&quot;||child.slugSegment===\&quot;pt\&quot;));if(langFolders.length>0){let promotedChildren=langFolders.flatMap(langFolder=>langFolder.children);node.children=node.children.filter(child=>!langFolders.includes(child)).concat(promotedChildren)}}&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-519"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><div id="explorer-519" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div><div class="sidebar-credit desktop-only"><p class="sidebar-credit__license"><a href="https://voltaje.solecolombia.org/es/disconnected" target="_blank" rel="noopener noreferrer">SOLE Voltaje</a> es una iniciativa abierta de la <a href="https://solecolombia.org/" target="_blank" rel="noopener noreferrer">Fundación SOLE Colombia</a>, con el apoyo de <a href="https://www.isocfoundation.org/" target="_blank" rel="noopener noreferrer">Internet Society Foundation</a>, que se construye día a día en comunidad. <br/>SOLE Voltaje se encuentra bajo la licencia <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" aria-label="Licencia Creative Commons BY-SA 4.0">CC Atribución-CompartirIgual 4.0 Internacional</a></p><div class="sidebar-credit__icons"><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt aria-hidden="true" class="cc-icon"/><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt aria-hidden="true" class="cc-icon"/><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt aria-hidden="true" class="cc-icon"/></div></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Inicio</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../solve/">Soluciona</a></div></nav><h1 class="article-title section-solve">¿Cómo conectar dos lugares con un radio enlace?</h1><p class="article-resumen section-solve">Instala un puente de internet inalámbrico entre dos puntos distantes usando antenas direccionales.</p></div></div><article class="popover-hint"><p>Hola, soy David, y esta es una de esas soluciones que llegué a entender después de mucho explorar, preguntar, cacharrear y darle vueltas a algo que al principio me parecía imposible.</p>
+<p>No llegué a esto desde un salón de clases. Llegué preguntándome: ¿habrá manera de conectar dos lugares distantes usando el aire como camino, sin tener que tender un cable? Todavía no lo he hecho — esta guía es parte del proceso de prepararse para intentarlo. Cuando empecé a investigar, no había señal celular confiable disponible, y la primera respuesta que encontré fue que era imposible.</p>
+<p>Pero exploré, pregunté, investigué, y descubrí que eso que parecía imposible tiene nombre y se hace con dos antenas, un poco de paciencia y ganas de entender cómo viaja la información por el aire.</p>
+<p>A eso le llaman <strong>radio enlace</strong>. Y esta guía es lo que me hubiera gustado encontrar desde el principio.</p>
+<hr/>
+<h2 id="qué-es-un-radio-enlace">¿Qué es un radio enlace?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#qué-es-un-radio-enlace" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Un <a href="../es/glossary/conc-radio-enlace" class="internal alias" data-slug="es/glossary/conc-radio-enlace">radio enlace</a> es un sistema que conecta dos lugares usando ondas de radio como si fueran un puente invisible en el aire.</p>
+<p>Imagínate que tienes una linterna muy potente y la apuntas directamente hacia otra persona que tiene un espejo. La luz viaja de uno al otro sin tocar nada en el medio. Eso hace un radio enlace: en lugar de luz, usa señal de internet; en lugar de linternas, usa <a href="../es/glossary/conc-antenna" class="internal alias" data-slug="es/glossary/conc-antenna">antenas</a> especiales.</p>
+<p>Lo que hace especial a este tipo de conexión es que las antenas no transmiten en todas las direcciones (como el WiFi de tu casa, que es omnidireccional), sino que <strong>apuntan toda su energía hacia un solo punto</strong>, como un megáfono que dirige tu voz exactamente hacia donde quieres que llegue. Eso les permite llegar muy lejos, desde unos cientos de metros hasta decenas de kilómetros.</p>
+<p>Técnicamente, “radio enlace” es el nombre general. Cuando se usan frecuencias altas (por encima de 1 GHz), también se les llama <strong>enlaces de microondas</strong>. Son los mismos equipos que usan las empresas de telecomunicaciones para conectar torres celulares, pero en versiones más pequeñas y accesibles para comunidades.</p>
+<hr/>
+<h2 id="para-qué-sirve">¿Para qué sirve?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#para-qué-sirve" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Esta solución sirve para <strong>llevar internet desde un lugar que tiene conexión hasta otro que no la tiene</strong>, cuando entre los dos hay una distancia que hace imposible o muy costoso tender un cable.</p>
+<p>Piénsalo así: si en la cabecera municipal hay internet de fibra óptica, y a 8 kilómetros hay una vereda que nunca ha tenido conexión, un radio enlace puede ser el puente que une esos dos espacios.</p>
+<p>Algunas de las posibilidades que abre:</p>
+<ul>
+<li>Una sola conexión de internet compartida entre varias familias o una comunidad entera, reduciendo el costo para cada una.</li>
+<li>Conectar la escuela de la vereda con internet sin pagar infraestructura de cables.</li>
+<li>Hacer llegar la señal de un punto alto (una antena, una torre, un cerro) hacia los hogares del valle.</li>
+<li>Conectar la sede de una organización comunitaria con una antena vecina que sí tiene señal.</li>
+</ul>
+<p>En Colombia, comunidades como las de Buenos Aires (Cauca) han armado redes comunitarias usando exactamente este principio: un punto con acceso a internet que distribuye la señal a través de radio enlaces hasta llegar a las casas.
+<a href="https://redinc.colnodo.apc.org/pdf/construccion.pdf" class="external">Buenos Aires - Cauca referencia<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<hr/>
+<h2 id="antes-de-empezar">Antes de empezar…<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#antes-de-empezar" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<blockquote>
+<p><em>Atención: este proyecto requiere trabajo en altura y manipulación de equipos eléctricos. Si vas a instalar antenas en tejados, postes o torres, asegúrate de tener a alguien que cuide desde abajo, usar calzado antideslizante, arneses y equipos de seguridad en altura (si los tienes o puedes conseguirlos prestados), y nunca trabajar solo en altura.</em></p>
+</blockquote>
+<blockquote>
+<p><em>Atención: esta solución tiene un costo inicial. Los equipos más básicos cuestan entre USD 25 y USD 100 dependiendo de la distancia que necesitas cubrir (aproximadamente entre $100.000 y $500.000 pesos colombianos). Aunque los equipos son duraderos (4–8 años si se cuidan bien), el desembolso inicial requiere planificación.</em></p>
+</blockquote>
+<blockquote>
+<p><em>Para pensar: antes de comprar cualquier equipo, haz el estudio de línea de vista (te explicamos cómo más adelante). Si no hay visión directa entre los dos puntos, el radio enlace no funcionará y el dinero se pierde. Ese paso es gratis y vale la pena hacerlo primero.</em></p>
+</blockquote>
+<hr/>
+<h2 id="qué-necesitas">¿Qué necesitas?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#qué-necesitas" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="equipos-electrónicos">Equipos electrónicos<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#equipos-electrónicos" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Los equipos se consiguen en dos unidades iguales: una para cada extremo del enlace.</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Equipo</th><th>Para qué distancia</th><th>Precio aprox.</th><th>Frecuencia</th></tr></thead><tbody><tr><td>TP-Link CPE210 (x2)</td><td>Hasta 5 km</td><td>USD 25–35 c/u</td><td>2.4 GHz</td></tr><tr><td>TP-Link CPE510 (x2)</td><td>Hasta 15 km</td><td>USD 35–50 c/u</td><td>5 GHz</td></tr><tr><td>TP-Link CPE610 (x2)</td><td>Hasta 23 km</td><td>USD 55–80 c/u</td><td>5 GHz</td></tr><tr><td>Ubiquiti NanoStation 5AC (x2)</td><td>Hasta 15 km</td><td>USD 80–100 c/u</td><td>5 GHz</td></tr></tbody></table></div>
+<blockquote>
+<p><em>Consejo: para la mayoría de proyectos comunitarios en Colombia, el CPE510 es el mejor punto de partida. Llega hasta 15 km, funciona en la banda de 5 GHz (que tiene menos interferencia que 2.4 GHz), y su precio es accesible. Si la distancia es menor a 5 km o hay mucha vegetación en el camino, el CPE210 en 2.4 GHz puede funcionar mejor.</em></p>
+</blockquote>
+<p>Cada CPE incluye en su caja:</p>
+<ul>
+<li>La <a href="../es/glossary/conc-antenna" class="internal alias" data-slug="es/glossary/conc-antenna">antena</a> (el equipo en sí)</li>
+<li>Un adaptador PoE pasivo (la “cajita” que alimenta la antena con corriente eléctrica por el <a href="../es/glossary/conc-ethernet" class="internal alias" data-slug="es/glossary/conc-ethernet">cable de red</a>)</li>
+<li>Un cable de red corto</li>
+</ul>
+<h3 id="materiales-de-instalación">Materiales de instalación<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#materiales-de-instalación" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong><a href="../es/glossary/conc-ethernet" class="internal alias" data-slug="es/glossary/conc-ethernet">Cable de red UTP</a> Cat5e o Cat6</strong> — se necesita desde la antena hasta el <a href="../es/glossary/conc-router" class="internal alias" data-slug="es/glossary/conc-router">router</a> en cada extremo. La distancia máxima recomendada es <strong>60 metros</strong> por tramo. El Cat6 soporta velocidades de hasta 1 Gbps, lo que es conveniente si en algún momento tienes una conexión de alta velocidad.</li>
+<li><strong>2 postes o mástiles</strong> — uno para cada extremo. Pueden ser tubos de PVC de 2 pulgadas, tubos de hierro galvanizado o incluso postes de madera rectos y resistentes. La altura depende de lo que hay entre los dos puntos (árboles, edificios, lomas).</li>
+<li><strong>Abrazaderas metálicas</strong> para fijar la antena al poste. Generalmente las incluye el equipo.</li>
+<li><strong>Cable amarrar o zuncho plástico</strong> para sujetar el cable de red al poste.</li>
+<li><strong>Tubo termocontráctil o cinta autofundente</strong> para impermeabilizar los conectores del cable a la intemperie.</li>
+<li><strong>Broca y taco</strong> si hay que pasar el cable por paredes.</li>
+</ul>
+<h3 id="herramientas">Herramientas<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#herramientas" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Llave de tuerca o llave bristol para apretar abrazaderas</li>
+<li>Ponchadora RJ-45 y conectores (si vas a hacer los extremos del cable tú mismo)</li>
+<li>Multímetro (para verificar el cable)</li>
+<li>Nivel de burbuja (para instalar el poste derecho)</li>
+<li>Un computador o <a href="../es/glossary/conc-smartphone" class="internal alias" data-slug="es/glossary/conc-smartphone">celular</a> para acceder a la interfaz de configuración</li>
+<li>Brújula o una app de brújula en el celular</li>
+</ul>
+<h3 id="saberes-previos">Saberes previos<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#saberes-previos" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Saber usar un computador y un navegador web</li>
+<li>Comodidad con trabajos en altura sencillos (instalar en tejados o sobre postes bajos)</li>
+<li>Paciencia para la alineación: es el paso más delicado</li>
+<li>Alguien que tenga celular en ambos extremos para comunicarse durante la instalación (o radio de dos vías)</li>
+</ul>
+<hr/>
+<h2 id="cómo-hacerlo">¿Cómo hacerlo?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#cómo-hacerlo" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<hr/>
+<blockquote>
+<h3 id="paso-1--estudia-el-terreno-antes-de-comprar-nada">Paso 1 → Estudia el terreno antes de comprar nada<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#paso-1--estudia-el-terreno-antes-de-comprar-nada" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+</blockquote>
+<p>Antes de gastar un solo peso, necesitas saber si entre los dos puntos existe <strong>línea de vista</strong>: que desde un extremo puedas ver directamente el otro sin que nada esté en el medio.</p>
+<p>Las ondas de radio de un enlace punto a punto no pueden atravesar colinas, edificios ni bosques densos. Si hay un obstáculo en el camino, el enlace no funciona o funciona muy mal.</p>
+<p><strong>Cómo verificar la línea de vista:</strong></p>
+<p>La forma más rápida es ir físicamente a ambos puntos y mirar si desde uno puedes ver claramente el otro. Si se ven, es probable que funcione. Si no se ven, necesitas elevar las antenas.</p>
+<p>También puedes hacerlo desde casa usando herramientas digitales:</p>
+<ol>
+<li>Abre <a href="https://www.google.com/earth/about/versions/" class="external">Google Earth Pro<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> (es gratuito).</li>
+<li>Ubica ambos puntos en el mapa.</li>
+<li>Usa la herramienta “Perfil de elevación” (en el menú <em>Herramientas → Regla</em>) para trazar una línea entre los dos puntos y ver el perfil del terreno. Si el terreno sube en el medio, hay un problema.</li>
+<li>También puedes usar <a href="https://www.heywhatsthat.com/" class="external">HeyWhatsThat<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> — una herramienta web gratuita que muestra qué puedes ver desde un punto a determinada altura. Funciona muy bien en Estados Unidos; en Colombia hay que hacer algunas pruebas porque no siempre es tan preciso como aparenta.</li>
+</ol>
+<p><strong>La Zona de Fresnel: más que solo línea de vista</strong></p>
+<p>Aquí viene algo que mucha gente no sabe y que le cuesta caro: no basta con que los dos puntos se “vean”. Las ondas de radio no viajan exactamente en línea recta como la luz. Viajan en una especie de burbuja elipsoide llamada <strong>zona de Fresnel</strong>.</p>
+<p><em>Imagínate lanzar una piedra al agua. El punto donde cae crea ondas circulares que se expanden. Algo similar pasa con las ondas de radio: aunque el “rayo principal” va de antena a antena, alrededor de ese rayo hay una zona esférica de energía que también necesita estar despejada.</em></p>
+<p>Para que el enlace funcione bien, <strong>al menos el 60% del radio de la primera zona de Fresnel debe estar libre de obstáculos</strong>. La fórmula exacta es complicada, pero la regla práctica es:</p>
+<ul>
+<li>Para un enlace de 5 km en 5 GHz, la zona de Fresnel tiene un radio máximo de unos 5–6 metros en el punto medio del trayecto.</li>
+<li>Para un enlace de 15–20 km en 5 GHz, ese radio sube a unos <strong>15–17 metros</strong>.</li>
+</ul>
+<p>Eso significa que si hay un árbol de 8 metros exactamente en la mitad de tu enlace de 5 km, debes elevar tus antenas para que el árbol quede por debajo del “cono” de la señal.</p>
+<blockquote>
+<p><em>Consejo: usa la calculadora de zona de Fresnel de <a href="https://www.scadacore.com/tools/rf-path/rf-line-of-sight/" class="external">RF Line of Sight Calculator<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> para calcular exactamente cuánto debes elevar tus antenas.</em></p>
+</blockquote>
+<br/>
+<hr/>
+<blockquote>
+<h3 id="paso-2--planifica-la-altura-de-las-antenas">Paso 2 → Planifica la altura de las antenas<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#paso-2--planifica-la-altura-de-las-antenas" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+</blockquote>
+<p>Una vez confirmada la línea de vista, decide a qué altura instalar cada antena.</p>
+<p>La regla general: <strong>cuanto más alto, mejor</strong>, porque reduces la posibilidad de que árboles o construcciones nuevas bloqueen la señal en el futuro. Pero más alto también significa postes más grandes, más costosos y más difíciles de instalar.</p>
+<p>Una altura práctica para proyectos comunitarios en terreno relativamente llano:</p>
+<ul>
+<li><strong>Para distancias menores de 5 km:</strong> 4–6 metros sobre el obstáculo más alto en el trayecto.</li>
+<li><strong>Para distancias de 5–15 km:</strong> 6–10 metros o más, dependiendo del terreno.</li>
+</ul>
+<p>Si hay colinas en el camino, a veces conviene poner la antena <strong>en la cresta de la colina</strong> en lugar de elevarla. Eso se llama un “nodo repetidor” y puede ser más económico que una torre altísima.</p>
+<blockquote>
+<p><em>Para pensar: si tienes dudas sobre la altura, errar hacia arriba es menos costoso que repetir la instalación. Un poste más alto se consigue antes que hacer todo de nuevo.</em></p>
+</blockquote>
+<br/>
+<hr/>
+<blockquote>
+<h3 id="paso-3--instala-los-postes-o-mástiles">Paso 3 → Instala los postes o mástiles<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#paso-3--instala-los-postes-o-mástiles" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+</blockquote>
+<p>Con las alturas definidas, instala los soportes físicos donde van a quedar las antenas.</p>
+<p><strong>Opciones de soporte:</strong></p>
+<ul>
+<li><strong>Poste de hierro galvanizado de 1.5–2 pulgadas:</strong> La opción más duradera. Resiste viento, lluvia y humedad. Se puede clavar en el suelo con cemento o atornillar a una pared.</li>
+<li><strong>Tubo PVC de 2 pulgadas:</strong> Más económico. Funciona bien para alturas menores de 4 metros. A mayor altura, puede vibrar con el viento y desalinear la antena. Además, la exposición prolongada al sol lo degrada con el tiempo y puede volverse frágil — si va a quedar a la intemperie, considera pintarlo o cubrirlo.</li>
+<li><strong>Mástil de techo:</strong> Una estructura metálica diseñada para anclarse a un tejado sin dañarlo. Ideal si la instalación es en una casa o edificio.</li>
+</ul>
+<p><strong>Cómo fijar el poste:</strong></p>
+<p>Si va al suelo: haz un hueco de 40–60 cm de profundidad, mete el poste y rellena con cemento. Deja secar 24 horas antes de montar cualquier cosa encima.</p>
+<p>Si va a una pared: usa tarugos de expansión (como los Fischer) con tornillos de acero inoxidable. El acero inoxidable no se oxida con la lluvia.</p>
+<blockquote>
+<p><em>Atención: si hay vientos fuertes en tu zona, añade tirantes (cuerdas o varillas metálicas) que estabilicen el poste en varios ángulos. Un poste caído arrastra la antena y puede dañarla o herir a alguien.</em></p>
+</blockquote>
+<br/>
+<hr/>
+<blockquote>
+<h3 id="paso-4--monta-la-antena-en-el-poste">Paso 4 → Monta la antena en el poste<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#paso-4--monta-la-antena-en-el-poste" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+</blockquote>
+<p>Cada CPE de TP-Link viene con una abrazadera de acero. El proceso es:</p>
+<ol>
+<li>Pasa la abrazadera alrededor del poste.</li>
+<li>Engancha la antena en la abrazadera (entra por una ranura).</li>
+<li>Aprieta los tornillos <strong>sin apretar del todo todavía</strong> — necesitas poder girar la antena para alinearla en el siguiente paso.</li>
+</ol>
+<p>La antena tiene una orientación correcta. El CPE510 y CPE210 de TP-Link tienen la etiqueta mirando hacia adelante (hacia donde va la señal). La parte trasera (donde está el puerto LAN) queda mirando hacia ti cuando estás detrás del poste.</p>
+<blockquote>
+<p><em>Consejo: antes de subir la antena al poste, conecta el cable de red y ponla en marcha en el suelo para verificar que enciende correctamente. Es mucho más fácil solucionar un problema técnico allí abajo que trepado en un poste.</em></p>
+</blockquote>
+<br/>
+<hr/>
+<blockquote>
+<h3 id="paso-5--tiende-el-cable-de-red-desde-la-antena-hasta-el-router">Paso 5 → Tiende el cable de red desde la antena hasta el router<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#paso-5--tiende-el-cable-de-red-desde-la-antena-hasta-el-router" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+</blockquote>
+<p>El cable de red (UTP Cat5e o Cat6) es el que lleva tanto la energía eléctrica (a través del PoE) como los datos entre la antena y el router de tu red.</p>
+<p><strong>Longitud máxima:</strong> 60 metros por tramo. Si necesitas más distancia entre la antena y el router, debes usar un switch o repetidor en el medio.</p>
+<p><strong>Cómo tender el cable correctamente:</strong></p>
+<ol>
+<li>Mide la longitud necesaria antes de cortar — agrega un 20% extra para dobladuras.</li>
+<li>Si el cable va por el exterior, <strong>fíjalo cada 50 cm</strong> con zuncho plástico o grapas de cable para que el viento no lo golpee.</li>
+<li>En los puntos donde el cable dobla (al entrar por una pared, por ejemplo), deja una curva suave. Las curvas bruscas dañan las fibras internas del cable.</li>
+<li>Donde el cable entre a un edificio, sella el hueco con silicona para que no entre agua.</li>
+</ol>
+<p><strong>Impermeabilización del conector exterior:</strong></p>
+<p>La unión entre el cable y la antena queda a la intemperie. Es uno de los puntos que más falla con el tiempo. Protégela así:</p>
+<ul>
+<li>Envuelve el conector RJ-45 con cinta autofundente (se consigue en cualquier ferretería), comenzando desde abajo hacia arriba para que el agua escurra.</li>
+<li>Si quieres más protección, añade una capa de cinta de caucho encima.</li>
+</ul>
+<blockquote>
+<p><em>Atención: el agua que entra por el conector es la causa número uno de fallas en radio enlaces instalados en campo. Tómate tu tiempo en impermeabilizar bien. Vale la pena.</em></p>
+</blockquote>
+<br/>
+<hr/>
+<blockquote>
+<h3 id="paso-6--conecta-el-adaptador-poe-y-accede-a-la-interfaz-de-configuración">Paso 6 → Conecta el adaptador PoE y accede a la interfaz de configuración<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#paso-6--conecta-el-adaptador-poe-y-accede-a-la-interfaz-de-configuración" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+</blockquote>
+<p>El adaptador PoE (la “cajita” que viene con el CPE) tiene dos puertos:</p>
+<ul>
+<li><strong>POE:</strong> Va conectado a la antena (el cable que viene desde arriba).</li>
+<li><strong>LAN:</strong> Va conectado al computador o al router de tu red.</li>
+</ul>
+<p>También tiene un conector de corriente para enchufar a la toma eléctrica. La antena NO necesita corriente directa — la recibe a través del cable de red gracias al PoE.</p>
+<p><strong>Para acceder a la interfaz de configuración:</strong></p>
+<ol>
+<li>Conecta el adaptador PoE al computador con un cable de red en el puerto LAN.</li>
+<li>Configura la <a href="../es/glossary/conc-ip-address" class="internal alias" data-slug="es/glossary/conc-ip-address">dirección IP</a> de tu computador manualmente como <code>192.168.0.100</code> (máscara <code>255.255.255.0</code>).</li>
+<li>Abre un navegador web y escribe <code>http://192.168.0.254</code> en la barra de direcciones.</li>
+<li>Aparecerá el panel de configuración. El usuario y contraseña por defecto son <code>admin / admin</code> (o los que vengan en la etiqueta del equipo).</li>
+</ol>
+<blockquote>
+<p><em>Consejo: si el CPE no responde en esa dirección, prueba con <code>192.168.1.1</code> o <code>192.168.0.1</code>. Si aún nada, restablece el equipo a fábrica manteniendo presionado el botón RESET durante 10 segundos.</em></p>
+</blockquote>
+<br/>
+<hr/>
+<blockquote>
+<h3 id="paso-7--configura-el-primer-extremo-como-punto-de-acceso">Paso 7 → Configura el primer extremo como “Punto de Acceso”<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#paso-7--configura-el-primer-extremo-como-punto-de-acceso" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+</blockquote>
+<p>El extremo que tiene la conexión de internet (el que está conectado al router principal o al proveedor) se configura como <strong>Access Point (AP)</strong> o <strong>Punto de Acceso</strong>.</p>
+<p>En la interfaz del CPE de TP-Link (software Pharos):</p>
+<ol>
+<li>Ve a la sección <strong>Wireless</strong> (Inalámbrico).</li>
+<li>En <strong>Modo</strong>, selecciona <strong>Access Point</strong>.</li>
+<li>Escribe un nombre de red (<strong>SSID</strong>) — puede ser algo como <code>enlace-comunidad-AP</code>. Ponle un nombre que reconozcas.</li>
+<li>En <strong>Frecuencia</strong>, si usas el CPE510, elige un canal en la banda de <strong>5 GHz</strong> que no esté siendo usado por otras redes cercanas. Si no hay otras redes, cualquier canal funciona.</li>
+<li>En <strong>Seguridad</strong>, pon una contraseña robusta. Este enlace no debe ser accesible para cualquiera.</li>
+<li>Guarda los cambios y reinicia el equipo.</li>
+</ol>
+<blockquote>
+<p><em>Para pensar: el nombre de red (SSID) del enlace puede hacerse invisible para que no sea visible desde dispositivos externos. Eso lo configuras en la opción “Hide SSID” o “SSID oculto”. Hace el enlace más seguro en zonas con muchas redes.</em></p>
+</blockquote>
+<br/>
+<hr/>
+<blockquote>
+<h3 id="paso-8--configura-el-segundo-extremo-como-cliente">Paso 8 → Configura el segundo extremo como “Cliente”<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#paso-8--configura-el-segundo-extremo-como-cliente" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+</blockquote>
+<p>El segundo equipo (el que está en el punto remoto, donde quieres llevar el internet) se configura como <strong>Client</strong> (Cliente).</p>
+<p>Repite la conexión física del Paso 6 con el segundo CPE. Luego:</p>
+<ol>
+<li>Accede a la interfaz del equipo de la misma manera.</li>
+<li>Ve a <strong>Wireless → Modo → Client</strong> (Cliente).</li>
+<li>Haz clic en <strong>Survey</strong> (Escanear). El equipo buscará redes disponibles.</li>
+<li>En la lista que aparece, selecciona el SSID que le pusiste al primer equipo.</li>
+<li>Escribe la contraseña de red.</li>
+<li>Guarda y reinicia.</li>
+</ol>
+<p>Cuando los dos equipos estén configurados, uno buscará al otro automáticamente y establecerán la conexión… siempre y cuando estén apuntando uno hacia el otro.</p>
+<blockquote>
+<p><em>Vas bien: si llegaste hasta aquí, tienes los dos equipos configurados. Lo que queda es lo más emocionante — y también lo más delicado: alinearlos.</em></p>
+</blockquote>
+<br/>
+<hr/>
+<blockquote>
+<h3 id="paso-9--alinea-las-antenas-buscando-la-señal-más-fuerte">Paso 9 → Alinea las antenas buscando la señal más fuerte<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#paso-9--alinea-las-antenas-buscando-la-señal-más-fuerte" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+</blockquote>
+<p>Este es el corazón de toda la instalación. Una antena mal alineada puede tener señal débil o ninguna, aunque los equipos estén perfectamente configurados.</p>
+<p>La alineación se hace en dos etapas: primero <strong>orientación gruesa</strong> (apuntar hacia el área correcta) y luego <strong>alineación fina</strong> (buscar el punto exacto de máxima señal).</p>
+<p><strong>Herramienta clave:</strong> La interfaz web del CPE cliente tiene una sección llamada <strong>Signal Strength</strong> o <strong>Signal Survey</strong> que muestra el nivel de señal en tiempo real. También puedes usar la app <strong>tpPharOS</strong> en tu celular conectado al AP.</p>
+<p><strong>El valor que buscas:</strong> El <strong>RSSI</strong> (Received Signal Strength Indicator), medido en dBm. Los rangos de referencia:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Valor RSSI</th><th>Calidad</th></tr></thead><tbody><tr><td>-45 a -55 dBm</td><td>Excelente. Enlace muy estable.</td></tr><tr><td>-55 a -65 dBm</td><td>Bueno. Funcionará bien para la mayoría de usos.</td></tr><tr><td>-65 a -75 dBm</td><td>Aceptable. Puede haber cortes en lluvia intensa.</td></tr><tr><td>Peor de -75 dBm</td><td>Malo. Probable inestabilidad. Necesitas revisar alineación o altura.</td></tr></tbody></table></div>
+<p><strong>Proceso de alineación paso a paso:</strong></p>
+<ol>
+<li>Comunícate con la persona en el otro extremo (por celular, radio o señas si son visibles).</li>
+<li>Orienta la antena cliente mirando aproximadamente hacia la dirección donde está el AP. Una brújula o app de brújula te ayuda.</li>
+<li>En la interfaz web (o en la app), observa el valor de RSSI. Si no ves señal del AP, mueve la antena lentamente en arco horizontal hasta encontrarla.</li>
+<li>Una vez encuentres señal, empieza el ajuste fino: mueve la antena <strong>muy lentamente</strong> hacia la derecha y hacia la izquierda, buscando el punto donde el RSSI es más alto (número menos negativo).</li>
+<li>Fija la antena en ese punto y repite el movimiento en vertical (arriba y abajo) para optimizar también ese eje.</li>
+<li>Cuando tengas el máximo en ambos ejes, aprieta completamente los tornillos de la abrazadera.</li>
+<li>La persona en el otro extremo hace exactamente lo mismo con el AP.</li>
+</ol>
+<blockquote>
+<p><em>Ánimo: la alineación puede tomar entre 20 minutos y dos horas, especialmente si los dos puntos están muy lejos o si el terreno es irregular. Es normal. Cada décima de dB que ganas en RSSI vale la pena. No te apresures en esta etapa.</em></p>
+</blockquote>
+<blockquote>
+<p><em>Consejo: si tienes dos personas en cada extremo y se pueden hablar por celular, la alineación es mucho más rápida. Una persona mueve, la otra informa el valor. Van ajustando juntos.</em></p>
+</blockquote>
+<br/>
+<hr/>
+<blockquote>
+<h3 id="paso-10--verifica-que-el-enlace-funciona-correctamente">Paso 10 → Verifica que el enlace funciona correctamente<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#paso-10--verifica-que-el-enlace-funciona-correctamente" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+</blockquote>
+<p>Con las antenas alineadas y los equipos en funcionamiento, es momento de verificar que el enlace tiene la calidad necesaria para el uso que le darás.</p>
+<p>Desde la interfaz web del cliente, ve a la sección de estado (<strong>Status</strong> o <strong>Monitor</strong>). Busca estos indicadores:</p>
+<p><strong>RSSI (nivel de señal):</strong>
+Que esté en el rango verde: entre -45 y -65 dBm. Ya lo viste en el paso anterior.</p>
+<p><strong>CCQ (Client Connection Quality):</strong>
+Es un porcentaje que indica la eficiencia de la conexión. Un CCQ de <strong>90% o más</strong> es excelente. Por debajo del 70% el enlace está teniendo problemas para transmitir <a href="../es/glossary/conc-paquetes-internet" class="internal alias" data-slug="es/glossary/conc-paquetes-internet">paquetes de internet</a> correctamente.</p>
+<p><strong>Throughput real:</strong>
+Abre un navegador en un computador conectado al cliente y prueba la velocidad con <a href="https://fast.com" class="external">Fast.com<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> o <a href="https://speedtest.net" class="external">Speedtest.net<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. El resultado debe ser cercano (no igual, pero sí proporcional) a la velocidad que tiene el punto de origen.</p>
+<blockquote>
+<p><em>Para pensar: si el RSSI es bueno pero la velocidad es baja, revisa si hay interferencia de otras redes en el mismo canal. Los canales son como carriles de tráfico o como colores distintos: si muchas redes comparten el mismo canal, el espacio se satura y los datos se pisan. Cambia el canal en la configuración del AP y observa si mejora.</em></p>
+</blockquote>
+<p><strong>Prueba de estabilidad:</strong>
+Deja el enlace funcionando durante 30 minutos y observa si el RSSI se mantiene estable o fluctúa. Un enlace estable debe variar menos de ±3 dBm. Si la señal sube y baja mucho, puede indicar que hay obstáculos intermitentes (como árboles que se mueven con el viento) o que la alineación no está completamente fija.</p>
+<blockquote>
+<p><em>Vas bien: si el RSSI está entre -45 y -65 dBm, el CCQ supera el 90% y la prueba de velocidad da resultados coherentes, tienes un radio enlace funcional. Ese “puente invisible” que imaginaste al principio ya existe.</em></p>
+</blockquote>
+<br/>
+<hr/>
+<h2 id="recomendaciones">Recomendaciones<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#recomendaciones" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><em>La lluvia intensa y la niebla espesa pueden degradar temporalmente la señal, especialmente en la banda de 5 GHz. Es normal. Si el enlace falla solo durante aguaceros fuertes, considera mejorar la alineación o aumentar ligeramente la potencia de transmisión en la configuración del equipo. Ten en cuenta que aumentar la potencia consume más electricidad y puede acelerar el desgaste del equipo con el tiempo.</em></p>
+<p><em>Los conectores y cables a la intemperie son el punto más vulnerable de la instalación. Revísalos cada 6 meses. El agua que entra por una grieta pequeña puede dañar el equipo en semanas. Una buena impermeabilización inicial vale mucho más que reparar o reemplazar equipo.</em></p>
+<p><em>Si el enlace tiene que pasar cerca de árboles, instala las antenas con más margen de lo que crees necesario. Los árboles crecen. Un árbol que hoy tiene 4 metros en dos años puede tener 6 y empezar a bloquear la señal sin que te hayas movido.</em></p>
+<p><em>No mezcles equipos de diferentes marcas en el mismo enlace si puedes evitarlo. TP-Link CPE con TP-Link CPE, Ubiquiti con Ubiquiti. Técnicamente pueden funcionar en combinaciones cruzadas, pero a veces hay incompatibilidades en los protocolos propietarios que reducen la velocidad o la estabilidad.</em></p>
+<p><em>Documenta todo: la dirección de cada antena en grados, el RSSI en el momento de la instalación, la altura del mástil, la longitud del cable. Puedes hacerlo en vídeo, en un cuaderno, en un papel impreso guardado en una bolsa plástica cerca del equipo, o en el celular. Ese registro te ahorrará horas si algún día tienes que revisar o repetir la instalación.</em></p>
+<hr/>
+<h2 id="cómo-saber-si-esta-solución-funciona">¿Cómo saber si esta solución funciona?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#cómo-saber-si-esta-solución-funciona" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><strong>Señales técnicas de éxito:</strong></p>
+<ul>
+<li>RSSI entre -45 y -65 dBm de manera estable</li>
+<li>CCQ por encima del 90% de manera constante</li>
+<li>Prueba de velocidad en el punto remoto con resultados razonables (mínimo 5–10 Mbps para uso comunitario básico)</li>
+<li>El enlace se mantiene activo durante 24 horas sin cortes</li>
+</ul>
+<p><strong>Señales de impacto comunitario:</strong></p>
+<ul>
+<li>Las personas en el punto remoto pueden hacer videollamadas o ver videos sin cortes.</li>
+<li>Los niños de la escuela pueden usar plataformas educativas en línea.</li>
+<li>La organización puede subir fotos, documentos o informes sin tener que desplazarse al casco urbano.</li>
+<li>Alguien que antes pagaba tener internet por separado ahora lo comparte de manera más económica con la comunidad.</li>
+</ul>
+<hr/>
+<h2 id="otros-internets-posibles">Otros internets posibles<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#otros-internets-posibles" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Un radio enlace no es solo tecnología. Es una decisión política de una comunidad que dice: nosotros también tenemos derecho a conectarnos, y vamos a construir nuestra propia forma de hacerlo.</p>
+<p>En México, las comunidades indígenas de Oaxaca llevan años operando sus propias redes de telecomunicaciones comunitarias usando exactamente este principio. En el campo colombiano, proyectos como los de Colnodo y ISOC han demostrado que es posible. No necesitas ser una empresa de telecomunicaciones para tender un puente de datos entre dos veredas.</p>
+<p>También puedes explorar si hay empresas de telecomunicaciones, cooperativas o entidades que puedan hacer donaciones de equipos o establecer una alianza con tu comunidad. En Colombia hay convocatorias del FONTIC y organizaciones internacionales que apoyan proyectos de conectividad rural — eso puede reducir el costo inicial.</p>
+<p>Una vez que tengas el enlace instalado, considera también configurar un <a href="../es/glossary/conc-dns" class="internal alias" data-slug="es/glossary/conc-dns">servidor DNS</a> seguro (como el 1.1.1.1 de Cloudflare o el 9.9.9.9 de Quad9) en tu red para que la navegación sea más segura y privada para las personas que se conecten.</p>
+<p>Y si esta guía te resultó útil, puedes descargarla o imprimirla para tenerla disponible sin necesidad de estar conectado cuando más la necesites.</p>
+<p>¿Qué pasaría si la vereda de arriba del cerro y la de abajo del río decidieran conectarse entre sí, sin depender de un operador que no llega? ¿Qué comunidades conoces que estén a la distancia correcta para hacer esto realidad?</p>
+<hr/>
+<h2 id="soluciones-relacionadas">Soluciones relacionadas<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#soluciones-relacionadas" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Un <a href="../es/glossary/conc-radio-enlace" class="internal alias" data-slug="es/glossary/conc-radio-enlace">radio enlace</a> lleva internet de un punto a otro, pero en ese punto remoto también necesitas distribuirlo. Estas soluciones te muestran cómo dar ese siguiente paso:</p>
+<ul>
+<li>Cuando el internet ya llega al punto remoto, esta solución te explica cómo distribuirlo entre varias personas sin cable: <a href="../es/solve/solv-share-internet-wirelessly" class="internal alias" data-slug="es/solve/solv-share-internet-wirelessly">¿Cómo compartir internet de forma inalámbrica?</a></li>
+<li>Si quieres llevar internet hasta zonas que no tienen electricidad constante, el bicigenerador puede complementar tu proyecto: <a href="../es/solve/solv-bicigenerator" class="internal alias" data-slug="es/solve/solv-bicigenerator">¿Cómo generar electricidad usando una bicicleta?</a></li>
+<li>Antes de instalar el <a href="../es/glossary/conc-radio-enlace" class="internal alias" data-slug="es/glossary/conc-radio-enlace">radio enlace</a>, es útil saber qué tipo de señal y velocidad tienes en el punto de origen: <a href="../es/solve/solv-internet-quality-diagnosis" class="internal alias" data-slug="es/solve/solv-internet-quality-diagnosis">¿Cómo hacer un diagnóstico de calidad de internet?</a></li>
+<li>Si la distancia es demasiado grande para un <a href="../es/glossary/conc-radio-enlace" class="internal alias" data-slug="es/glossary/conc-radio-enlace">radio enlace</a> en bandas libres, una antena satelital puede ser la alternativa: <a href="../es/solve/solv-buy-satellite-antenna" class="internal alias" data-slug="es/solve/solv-buy-satellite-antenna">¿Cómo conseguir una antena satelital?</a></li>
+<li>Para que más gente se conecte una vez que tienes el internet en el punto remoto, esta guía te ayuda a organizar el espacio: <a href="../es/solve/solv-community-meeting-space" class="internal alias" data-slug="es/solve/solv-community-meeting-space">¿Cómo organizar un espacio comunitario de internet?</a></li>
+</ul>
+<hr/>
+<h2 id="referencias">Referencias<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#referencias" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li>TP-Link. <em>CPE510 — 5GHz 300Mbps 13dBi Outdoor CPE.</em> Especificaciones técnicas oficiales: <a href="https://www.tp-link.com/us/business-networking/pharos-cpe/cpe510/" class="external">tp-link.com/us/business-networking/pharos-cpe/cpe510/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>TP-Link. <em>CPE210 — 2.4GHz 300Mbps 9dBi Outdoor CPE.</em> Especificaciones técnicas oficiales: <a href="https://www.tp-link.com/us/business-networking/pharos-cpe/cpe210/" class="external">tp-link.com/us/business-networking/pharos-cpe/cpe210/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Sistelec. <em>Radioenlaces: Guía Completa.</em> <a href="https://sistelec.es/blog/radioenlaces/" class="external">sistelec.es/blog/radioenlaces/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Data Alliance. <em>Zona Fresnel: clave para enlaces WiFi de largo alcance.</em> <a href="https://www.data-alliance.net/es/zona-fresnel-clave-para-enlaces-wifi-de-largo-alcance" class="external">data-alliance.net<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Todotelco. <em>Zonas de Fresnel en radioenlaces: Definición y Fórmulas.</em> <a href="https://todotelco.com/zonas-de-fresnel/" class="external">todotelco.com<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Colnodo / APC. <em>Redes Comunitarias: servicios de comunicación rural en América Latina.</em> <a href="https://www.colnodo.apc.org/es/impactos/redes-comunitarias-servicios-de-comunicacion-rural-en-america-latina" class="external">colnodo.apc.org<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Comunicaciones Inalámbricas Hoy. <em>Las bandas libres de frecuencias.</em> <a href="https://www.comunicacionesinalambricashay.com/wireless/las-bandas-libres-de-frecuencias/" class="external">comunicacionesinalambricashoy.com<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>WifiSafe. <em>Manual de configuración de un enlace Punto a Punto entre 2 Ubiquiti.</em> <a href="https://wifisafe.com/blog/manual-configuracion-enlace-punto-a-punto/" class="external">wifisafe.com<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul></article><hr/><div class="page-footer"><div id="step-progress-container" class="step-progress-container" data-lang="es" data-copy="{&quot;label&quot;:&quot;Tu progreso&quot;,&quot;progressCount&quot;:&quot;{completed} de {total} pasos&quot;,&quot;reset&quot;:&quot;Reiniciar&quot;,&quot;feedback&quot;:&quot;Dar feedback&quot;,&quot;hideFeedback&quot;:&quot;Ocultar feedback&quot;,&quot;help&quot;:&quot;Pedir ayuda&quot;,&quot;popupTitle&quot;:&quot;Copia este mensaje y pégalo en el grupo:&quot;,&quot;copyMessage&quot;:&quot;Copiar mensaje&quot;,&quot;openGroup&quot;:&quot;Abrir grupo&quot;,&quot;feedbackTitle&quot;:&quot;¿Tu solución te sirvió?&quot;,&quot;feedbackAriaLabel&quot;:&quot;Feedback de solución&quot;,&quot;feedbackOptions&quot;:{&quot;atascado&quot;:&quot;Me atasqué&quot;,&quot;parcial&quot;:&quot;Me sirvió a medias&quot;,&quot;resuelto&quot;:&quot;Lo resolví&quot;},&quot;namePlaceholder&quot;:&quot;Tu nombre&quot;,&quot;emailPlaceholder&quot;:&quot;Tu correo (opcional)&quot;,&quot;notePlaceholder&quot;:&quot;Opcional: ¿qué te faltó o qué mejorarías?&quot;,&quot;sendFeedback&quot;:&quot;Enviar feedback&quot;,&quot;statusDone&quot;:&quot;Completo&quot;,&quot;statusActive&quot;:&quot;En curso&quot;,&quot;statusPending&quot;:&quot;Pendiente&quot;,&quot;completeMessage&quot;:&quot;Terminaste todos los pasos. Excelente trabajo.&quot;,&quot;completeCycle&quot;:&quot;Ciclo cerrado: {completed}/{total}. Puedes reiniciar o enviar feedback.&quot;,&quot;partialMessages&quot;:[&quot;Vas por buen camino.&quot;,&quot;Sigue así, ya llevas {completed}.&quot;,&quot;Cada paso cuenta.&quot;,&quot;No pares, ya casi llegas.&quot;],&quot;partialCycle&quot;:&quot;Ciclo activo: paso {current} de {total}.&quot;,&quot;startCycle&quot;:&quot;Ciclo activo: empieza por el paso 1 de {total}.&quot;,&quot;checkboxAria&quot;:&quot;Marcar paso {step} como completado&quot;,&quot;selectionSaved&quot;:&quot;Selección guardada.&quot;,&quot;feedbackRequired&quot;:&quot;Selecciona una opción o agrega un comentario.&quot;,&quot;nameRequired&quot;:&quot;Por favor, dinos tu nombre para enviarlo.&quot;,&quot;feedbackThanks&quot;:&quot;Gracias. Tu feedback quedó guardado.&quot;,&quot;groupQuestion&quot;:&quot;¿Qué tipo de equipo tienes?&quot;,&quot;groupLabel&quot;:&quot;Equipo:&quot;,&quot;noRating&quot;:&quot;Sin evaluación&quot;,&quot;ratingLabels&quot;:{&quot;atascado&quot;:&quot;Me atasqué&quot;,&quot;parcial&quot;:&quot;Me sirvió a medias&quot;,&quot;resuelto&quot;:&quot;Lo resolví&quot;,&quot;sin_rating&quot;:&quot;Sin evaluación&quot;},&quot;waTemplate&quot;:&quot;Hola Cacharreras. Estoy siguiendo la guía: \&quot;{title}\&quot;\n{url}\nLlevo {completed} de {total} pasos.\n\nMi problema es: &quot;,&quot;waCopySuccess&quot;:&quot;Copiado. Ahora abre el grupo y pega el mensaje.&quot;,&quot;waCopyShortcut&quot;:&quot;Selecciona el texto y presiona Ctrl+C para copiar.&quot;,&quot;waCopySelected&quot;:&quot;Seleccionado. Presiona Ctrl+C para copiar.&quot;,&quot;waGroupCopied&quot;:&quot;Mensaje copiado. Pégalo en el grupo cuando abra.&quot;,&quot;stepQuestion&quot;:&quot;¡Listo! ¿Lo lograste?&quot;,&quot;successTitle&quot;:&quot;¡Eso es! Mensaje recibido.&quot;,&quot;successMsg&quot;:&quot;Gracias por ayudarnos a que este conocimiento vuele más lejos. ¡Sigue cacharreando!&quot;}" style="display:none;"><div class="step-progress-header"><span class="step-progress-icon" aria-hidden="true">SV</span><span class="step-progress-label">Tu progreso</span><span class="step-progress-count">0 de 0 pasos</span></div><div class="step-group-selector" style="display:none;"></div><div class="step-progress-bar-bg"><div class="step-progress-bar-fill" style="width:0%;"></div></div><div class="step-progress-cycle" aria-live="polite"></div><div class="step-progress-message" style="display:none;"></div><div class="step-progress-controls"><button class="step-progress-reset" style="display:none;" type="button">Reiniciar</button><button class="step-progress-feedback-toggle" style="display:none;" type="button">Dar feedback</button><a class="step-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>Pedir ayuda</a></div><div class="step-wa-popup" style="display:none;"><p class="step-wa-popup-title">Copia este mensaje y pégalo en el grupo:</p><textarea class="step-wa-popup-msg" rows="3" readonly></textarea><div class="step-wa-popup-actions"><button class="step-wa-copy-btn" type="button">Copiar mensaje</button><a class="step-wa-group-link" href="https://chat.whatsapp.com/IftWSotIu5bLNJAhDUOW5b" target="_blank" rel="noopener noreferrer">Abrir grupo</a></div><p class="step-wa-copy-status" aria-live="polite"></p></div><div class="step-progress-feedback" style="display:none;"><p class="step-progress-feedback-title">¿Tu solución te sirvió?</p><div class="step-progress-feedback-options" role="group" aria-label="Feedback de solución"><button class="step-feedback-option" data-feedback="atascado" type="button">Me atasqué</button><button class="step-feedback-option" data-feedback="parcial" type="button">Me sirvió a medias</button><button class="step-feedback-option" data-feedback="resuelto" type="button">Lo resolví</button></div><input class="step-progress-feedback-name" type="text" maxlength="60" placeholder="Tu nombre" autocomplete="name"/><input class="step-progress-feedback-email" type="email" maxlength="100" placeholder="Tu correo (opcional)" autocomplete="email" style="margin-top:0.42rem;width:100%;border:2px solid #94a3b8;border-radius:9px;background:var(--light, #ffffff);color:var(--darkgray, #1f2937);padding:0.42rem 0.58rem;font:inherit;font-size:0.76rem;box-sizing:border-box;"/><textarea class="step-progress-feedback-note" rows="3" maxlength="420" placeholder="Opcional: ¿qué te faltó o qué mejorarías?"></textarea><div class="step-progress-feedback-actions"><button class="step-progress-feedback-send" type="button">Enviar feedback</button></div><p class="step-progress-feedback-status" aria-live="polite"></p></div></div></div></div><div class="right sidebar"><div class="solve-meta-sidebar "><h3 class="solve-meta-title">Sobre este artículo</h3><div class="solve-meta-section"><span class="solve-meta-label">Categorías:</span><div class="solve-meta-tags"><span class="solve-meta-tag">#Señal</span></div></div><div class="solve-meta-metrics"><div class="solve-meta-row"><span class="solve-meta-label">Dificultad:</span><span class="solve-meta-badge" style="background-color: #FFB6B6"><img class="solve-meta-icon" data-icon="solve-difficulty-4.svg" alt aria-hidden="true"/><span class="solve-meta-value">Complejo</span></span></div><div class="solve-meta-row"><span class="solve-meta-label">Costo:</span><span class="solve-meta-badge" style="background-color: #FFCEA0"><img class="solve-meta-icon" data-icon="solve-cost-3.svg" alt aria-hidden="true"/><span class="solve-meta-value">USD 25 - 50</span></span></div><div class="solve-meta-row"><span class="solve-meta-label">Tarda:</span><span class="solve-meta-badge" style="background-color: #FFB6B6"><img class="solve-meta-icon" data-icon="solve-time-3.svg" alt aria-hidden="true"/><span class="solve-meta-value">Días</span></span></div><div class="solve-meta-row"><span class="solve-meta-label">Ayudantes:</span><span class="solve-meta-badge" style="background-color: #FFCEA0"><img class="solve-meta-icon" data-icon="solve-helpers-3.svg" alt aria-hidden="true"/><span class="solve-meta-value">2-3 personas</span></span></div><div class="solve-meta-row solve-meta-permite"><span class="solve-meta-label">Permite:</span><div class="solve-meta-permite-badges"><span class="solve-meta-badge solve-meta-badge-small" style="background-color: #A6EFFF"><span class="solve-meta-value">Conseguir</span></span><span class="solve-meta-badge solve-meta-badge-small" style="background-color: #B6FAA4"><span class="solve-meta-value">Mejorar</span></span><span class="solve-meta-badge solve-meta-badge-small" style="background-color: #FFCEA0"><span class="solve-meta-value">Compartir</span></span></div></div></div><div class="solve-meta-footer"><div class="solve-meta-author"><span class="solve-meta-label-bold">Autor:</span> SOLE Colombia</div><div class="solve-meta-date"><span class="solve-meta-label-bold">Publicado:</span> <time datetime="2026-04-15T05:00:00.000Z">15 abr 2026</time></div></div></div><div class="solve-relations-graph"><h3>Conexión con otros contenidos</h3><p class="solve-relations-context">Relaciones directas por enlaces y conexiones por categorías con Soluciona, Conceptorio, Inspírate y Desconectado.</p><div class="solve-relations-legends" aria-hidden="true"><div class="solve-relations-legend"><span class="solve-relations-legend-item"><span class="solve-relations-legend-dot is-current"></span>Contenido actual</span><span class="solve-relations-legend-item"><span class="solve-relations-legend-dot is-direct"></span>Relación directa</span><span class="solve-relations-legend-item"><span class="solve-relations-legend-dot is-indirect"></span>Relación indirecta</span></div><div class="solve-relations-legend solve-relations-legend-sections"><span class="solve-relations-legend-item"><span class="solve-relations-legend-swatch is-section-solve"></span>Soluciona</span><span class="solve-relations-legend-item"><span class="solve-relations-legend-swatch is-section-glossary"></span>Conceptorio</span><span class="solve-relations-legend-item"><span class="solve-relations-legend-swatch is-section-inspire"></span>Inspírate</span><span class="solve-relations-legend-item"><span class="solve-relations-legend-swatch is-section-disconnected"></span>Desconectado</span></div></div><div class="solve-relations-viewport" data-graph="{&quot;nodes&quot;:[{&quot;id&quot;:&quot;solve/solv-radio-link&quot;,&quot;title&quot;:&quot;¿Cómo conectar dos lugares con un radio enlace?&quot;,&quot;href&quot;:&quot;&quot;,&quot;relation&quot;:&quot;current&quot;,&quot;isCurrent&quot;:true,&quot;sharedTags&quot;:[&quot;Señal&quot;],&quot;section&quot;:&quot;solve&quot;},{&quot;id&quot;:&quot;solve/solv-bandwidth&quot;,&quot;title&quot;:&quot;¿Cómo aprovechar mi ancho de banda?&quot;,&quot;href&quot;:&quot;../solve/solv-bandwidth&quot;,&quot;relation&quot;:&quot;indirect&quot;,&quot;isCurrent&quot;:false,&quot;sharedTags&quot;:[&quot;Señal&quot;],&quot;section&quot;:&quot;solve&quot;},{&quot;id&quot;:&quot;solve/solv-share-internet-cellphone&quot;,&quot;title&quot;:&quot;¿Cómo compartir Internet desde mi celular?&quot;,&quot;href&quot;:&quot;../solve/solv-share-internet-cellphone&quot;,&quot;relation&quot;:&quot;indirect&quot;,&quot;isCurrent&quot;:false,&quot;sharedTags&quot;:[&quot;Señal&quot;],&quot;section&quot;:&quot;solve&quot;},{&quot;id&quot;:&quot;solve/solv-share-internet-computer&quot;,&quot;title&quot;:&quot;¿Cómo compartir internet desde tu computador?&quot;,&quot;href&quot;:&quot;../solve/solv-share-internet-computer&quot;,&quot;relation&quot;:&quot;indirect&quot;,&quot;isCurrent&quot;:false,&quot;sharedTags&quot;:[&quot;Señal&quot;],&quot;section&quot;:&quot;solve&quot;},{&quot;id&quot;:&quot;solve/solv-buy-satellite-antenna&quot;,&quot;title&quot;:&quot;¿Cómo comprar una antena satelital?&quot;,&quot;href&quot;:&quot;../solve/solv-buy-satellite-antenna&quot;,&quot;relation&quot;:&quot;indirect&quot;,&quot;isCurrent&quot;:false,&quot;sharedTags&quot;:[&quot;Señal&quot;],&quot;section&quot;:&quot;solve&quot;},{&quot;id&quot;:&quot;solve/solv-purchase-temp-satellite&quot;,&quot;title&quot;:&quot;¿Cómo comprar una conexión temporal a internet satelital?&quot;,&quot;href&quot;:&quot;../solve/solv-purchase-temp-satellite&quot;,&quot;relation&quot;:&quot;indirect&quot;,&quot;isCurrent&quot;:false,&quot;sharedTags&quot;:[&quot;Señal&quot;],&quot;section&quot;:&quot;solve&quot;},{&quot;id&quot;:&quot;solve/solv-prueba-ia&quot;,&quot;title&quot;:&quot;¿Cómo descargar una enciclopedia en tu celular?&quot;,&quot;href&quot;:&quot;../solve/solv-prueba-ia&quot;,&quot;relation&quot;:&quot;indirect&quot;,&quot;isCurrent&quot;:false,&quot;sharedTags&quot;:[&quot;Señal&quot;],&quot;section&quot;:&quot;solve&quot;},{&quot;id&quot;:&quot;solve/solv-wiki-phone&quot;,&quot;title&quot;:&quot;¿Cómo descargar una enciclopedia en tu celular?&quot;,&quot;href&quot;:&quot;../solve/solv-wiki-phone&quot;,&quot;relation&quot;:&quot;indirect&quot;,&quot;isCurrent&quot;:false,&quot;sharedTags&quot;:[&quot;Señal&quot;],&quot;section&quot;:&quot;solve&quot;},{&quot;id&quot;:&quot;solve/solv-install-3G-antenna&quot;,&quot;title&quot;:&quot;¿Cómo instalar mi antena 3G/4G?&quot;,&quot;href&quot;:&quot;../solve/solv-install-3G-antenna&quot;,&quot;relation&quot;:&quot;indirect&quot;,&quot;isCurrent&quot;:false,&quot;sharedTags&quot;:[&quot;Señal&quot;],&quot;section&quot;:&quot;solve&quot;},{&quot;id&quot;:&quot;solve/solv-jangala-install-box&quot;,&quot;title&quot;:&quot;¿Cómo instalar un Big Box de Jangala?&quot;,&quot;href&quot;:&quot;../solve/solv-jangala-install-box&quot;,&quot;relation&quot;:&quot;indirect&quot;,&quot;isCurrent&quot;:false,&quot;sharedTags&quot;:[&quot;Señal&quot;],&quot;section&quot;:&quot;solve&quot;},{&quot;id&quot;:&quot;solve/solv-improve-signal-router&quot;,&quot;title&quot;:&quot;¿Cómo mejorar la señal de tu módem?&quot;,&quot;href&quot;:&quot;../solve/solv-improve-signal-router&quot;,&quot;relation&quot;:&quot;indirect&quot;,&quot;isCurrent&quot;:false,&quot;sharedTags&quot;:[&quot;Señal&quot;],&quot;section&quot;:&quot;solve&quot;}],&quot;links&quot;:[{&quot;source&quot;:&quot;solve/solv-radio-link&quot;,&quot;target&quot;:&quot;solve/solv-bandwidth&quot;,&quot;type&quot;:&quot;tag&quot;,&quot;sharedTags&quot;:[&quot;Señal&quot;],&quot;section&quot;:&quot;solve&quot;},{&quot;source&quot;:&quot;solve/solv-radio-link&quot;,&quot;target&quot;:&quot;solve/solv-share-internet-cellphone&quot;,&quot;type&quot;:&quot;tag&quot;,&quot;sharedTags&quot;:[&quot;Señal&quot;],&quot;section&quot;:&quot;solve&quot;},{&quot;source&quot;:&quot;solve/solv-radio-link&quot;,&quot;target&quot;:&quot;solve/solv-share-internet-computer&quot;,&quot;type&quot;:&quot;tag&quot;,&quot;sharedTags&quot;:[&quot;Señal&quot;],&quot;section&quot;:&quot;solve&quot;},{&quot;source&quot;:&quot;solve/solv-radio-link&quot;,&quot;target&quot;:&quot;solve/solv-buy-satellite-antenna&quot;,&quot;type&quot;:&quot;tag&quot;,&quot;sharedTags&quot;:[&quot;Señal&quot;],&quot;section&quot;:&quot;solve&quot;},{&quot;source&quot;:&quot;solve/solv-radio-link&quot;,&quot;target&quot;:&quot;solve/solv-purchase-temp-satellite&quot;,&quot;type&quot;:&quot;tag&quot;,&quot;sharedTags&quot;:[&quot;Señal&quot;],&quot;section&quot;:&quot;solve&quot;},{&quot;source&quot;:&quot;solve/solv-radio-link&quot;,&quot;target&quot;:&quot;solve/solv-prueba-ia&quot;,&quot;type&quot;:&quot;tag&quot;,&quot;sharedTags&quot;:[&quot;Señal&quot;],&quot;section&quot;:&quot;solve&quot;},{&quot;source&quot;:&quot;solve/solv-radio-link&quot;,&quot;target&quot;:&quot;solve/solv-wiki-phone&quot;,&quot;type&quot;:&quot;tag&quot;,&quot;sharedTags&quot;:[&quot;Señal&quot;],&quot;section&quot;:&quot;solve&quot;},{&quot;source&quot;:&quot;solve/solv-radio-link&quot;,&quot;target&quot;:&quot;solve/solv-install-3G-antenna&quot;,&quot;type&quot;:&quot;tag&quot;,&quot;sharedTags&quot;:[&quot;Señal&quot;],&quot;section&quot;:&quot;solve&quot;},{&quot;source&quot;:&quot;solve/solv-radio-link&quot;,&quot;target&quot;:&quot;solve/solv-jangala-install-box&quot;,&quot;type&quot;:&quot;tag&quot;,&quot;sharedTags&quot;:[&quot;Señal&quot;],&quot;section&quot;:&quot;solve&quot;},{&quot;source&quot;:&quot;solve/solv-radio-link&quot;,&quot;target&quot;:&quot;solve/solv-improve-signal-router&quot;,&quot;type&quot;:&quot;tag&quot;,&quot;sharedTags&quot;:[&quot;Señal&quot;],&quot;section&quot;:&quot;solve&quot;}]}" data-copy="{&quot;title&quot;:&quot;Conexión con otros contenidos&quot;,&quot;context&quot;:&quot;Relaciones directas por enlaces y conexiones por categorías con Soluciona, Conceptorio, Inspírate y Desconectado.&quot;,&quot;current&quot;:&quot;Contenido actual&quot;,&quot;direct&quot;:&quot;Relación directa&quot;,&quot;indirect&quot;:&quot;Relación indirecta&quot;,&quot;sharedTags&quot;:&quot;Categorías compartidas&quot;,&quot;empty&quot;:&quot;Todavía no encontramos otras relaciones para este contenido.&quot;,&quot;sections&quot;:{&quot;solve&quot;:&quot;Soluciona&quot;,&quot;glossary&quot;:&quot;Conceptorio&quot;,&quot;inspire&quot;:&quot;Inspírate&quot;,&quot;disconnected&quot;:&quot;Desconectado&quot;},&quot;zoomControls&quot;:&quot;Controles del grafo&quot;,&quot;zoomIn&quot;:&quot;Acercar&quot;,&quot;zoomOut&quot;:&quot;Alejar&quot;,&quot;resetZoom&quot;:&quot;Restablecer zoom&quot;}"><div class="solve-relations-controls" role="group" aria-label="Controles del grafo"><button type="button" class="solve-relations-control" data-zoom-action="out" aria-label="Alejar" title="Alejar">-</button><button type="button" class="solve-relations-control" data-zoom-action="in" aria-label="Acercar" title="Acercar">+</button><button type="button" class="solve-relations-control is-reset" data-zoom-action="reset" aria-label="Restablecer zoom" title="Restablecer zoom">1:1</button></div><svg class="solve-relations-canvas" role="img" aria-label="Conexión con otros contenidos"></svg><p class="solve-relations-empty" hidden>Todavía no encontramos otras relaciones para este contenido.</p><div class="solve-relations-tooltip" hidden></div></div></div></div></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}container;content;isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="../postscript.js" type="module"></script></html>
