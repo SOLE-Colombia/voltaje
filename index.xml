@@ -6,6 +6,24 @@
       <description>Últimas 10 notas on SOLE Voltaje</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>Conceptório</title>
+    <link>https://voltaje.solecolombia.org/pt/glossary/</link>
+    <guid>https://voltaje.solecolombia.org/pt/glossary/</guid>
+    <description><![CDATA[ Um glossário pra você não se perder nos termos técnicos e conceitos que a gente usa por aqui. ]]></description>
+    <pubDate>Tue, 28 Apr 2026 15:57:44 GMT</pubDate>
+  </item><item>
+    <title>Inspire-se</title>
+    <link>https://voltaje.solecolombia.org/pt/inspire/</link>
+    <guid>https://voltaje.solecolombia.org/pt/inspire/</guid>
+    <description><![CDATA[ Descubra histórias de sucesso, ideias inovadoras e exemplos de como outras comunidades conseguiram se conectar. ]]></description>
+    <pubDate>Tue, 28 Apr 2026 15:57:44 GMT</pubDate>
+  </item><item>
+    <title>Soluciona</title>
+    <link>https://voltaje.solecolombia.org/pt/solve/</link>
+    <guid>https://voltaje.solecolombia.org/pt/solve/</guid>
+    <description><![CDATA[ Encontre soluções práticas e ferramentas para melhorar a conectividade e resolver aqueles pepinos técnicos na sua comunidade. ]]></description>
+    <pubDate>Tue, 28 Apr 2026 15:57:44 GMT</pubDate>
+  </item><item>
     <title>Disconnected</title>
     <link>https://voltaje.solecolombia.org/en/disconnected/</link>
     <guid>https://voltaje.solecolombia.org/en/disconnected/</guid>
@@ -47,24 +65,6 @@
     <guid>https://voltaje.solecolombia.org/pt/disconnected/</guid>
     <description><![CDATA[ Aprenda a se virar com a tecnologia mesmo quando a internet te deixa na mão. ]]></description>
     <pubDate>Mon, 27 Apr 2026 22:15:15 GMT</pubDate>
-  </item><item>
-    <title>insp-convince-sharing-internet</title>
-    <link>https://voltaje.solecolombia.org/en/inspire/insp-convince-sharing-internet</link>
-    <guid>https://voltaje.solecolombia.org/en/inspire/insp-convince-sharing-internet</guid>
-    <description><![CDATA[ Aquí tienes una traducción con un tono práctico y cercano: title: “Think you could convince your neighbors to ditch their Wi-Fi password?” date: “2025-10-11” tags: [] permite: “Share” autor: “SOLE Colombia” draft: false resumen: “A question about sharing connectivity within your community.” . ]]></description>
-    <pubDate>Mon, 27 Apr 2026 21:53:17 GMT</pubDate>
-  </item><item>
-    <title>insp-data-for-dollar</title>
-    <link>https://voltaje.solecolombia.org/en/inspire/insp-data-for-dollar</link>
-    <guid>https://voltaje.solecolombia.org/en/inspire/insp-data-for-dollar</guid>
-    <description><![CDATA[ Aquí tienes una propuesta con un tono práctico y cercano: title: “How much data do you get for $1 USD? Let’s check your plan.” date: “2025-10-11” tags: [] author: “SOLE Colombia” draft: false summary: “A quick look at what you’re really paying for connectivity.” permits: “Improve” . ]]></description>
-    <pubDate>Mon, 27 Apr 2026 21:53:17 GMT</pubDate>
-  </item><item>
-    <title>insp-data-usage</title>
-    <link>https://voltaje.solecolombia.org/en/inspire/insp-data-usage</link>
-    <guid>https://voltaje.solecolombia.org/en/inspire/insp-data-usage</guid>
-    <description><![CDATA[ Aquí tienes una propuesta con un tono práctico y cercano: title: “How many GB of data do you think you use each month?” date: “2025-10-11” tags: [] autor: “SOLE Colombia” draft: false resumen: “Take a moment to think about your data usage.” permite: “Improve” . ]]></description>
-    <pubDate>Mon, 27 Apr 2026 21:53:17 GMT</pubDate>
   </item>
     </channel>
   </rss>
