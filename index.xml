@@ -6,6 +6,12 @@
       <description>Últimas 10 notas on SOLE Voltaje</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>Desconectado</title>
+    <link>https://voltaje.solecolombia.org/disconnected/</link>
+    <guid>https://voltaje.solecolombia.org/disconnected/</guid>
+    <description><![CDATA[ Aprenda a manejar sus equipos y programas incluso cuando la conexión se fue al carajo. ]]></description>
+    <pubDate>Tue, 28 Apr 2026 18:12:09 GMT</pubDate>
+  </item><item>
     <title>Conceptório</title>
     <link>https://voltaje.solecolombia.org/pt/glossary/</link>
     <guid>https://voltaje.solecolombia.org/pt/glossary/</guid>
@@ -53,12 +59,6 @@
     <guid>https://voltaje.solecolombia.org/en/solve/</guid>
     <description><![CDATA[ Find practical hacks and tools to boost connectivity and troubleshoot technical glitches in your community. ]]></description>
     <pubDate>Mon, 27 Apr 2026 22:56:01 GMT</pubDate>
-  </item><item>
-    <title>Modo Desconectado</title>
-    <link>https://voltaje.solecolombia.org/disconnected/</link>
-    <guid>https://voltaje.solecolombia.org/disconnected/</guid>
-    <description><![CDATA[ Aprenda a manejar sus equipos y programas incluso cuando la conexión se fue al carajo. ]]></description>
-    <pubDate>Mon, 27 Apr 2026 22:15:15 GMT</pubDate>
   </item><item>
     <title>Offline</title>
     <link>https://voltaje.solecolombia.org/pt/disconnected/</link>
