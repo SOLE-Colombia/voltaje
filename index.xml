@@ -7,6 +7,18 @@
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
     <title>Desconectado</title>
+    <link>https://voltaje.solecolombia.org/en/disconnected/</link>
+    <guid>https://voltaje.solecolombia.org/en/disconnected/</guid>
+    <description><![CDATA[ Learn how to manage your gear and software even when the connection goes to hell. ]]></description>
+    <pubDate>Fri, 01 May 2026 13:45:46 GMT</pubDate>
+  </item><item>
+    <title>Desconectado</title>
+    <link>https://voltaje.solecolombia.org/pt/disconnected/</link>
+    <guid>https://voltaje.solecolombia.org/pt/disconnected/</guid>
+    <description><![CDATA[ Aprenda a dominar seus equipamentos e programas mesmo quando a conexão for pro beleléu. ]]></description>
+    <pubDate>Fri, 01 May 2026 13:45:46 GMT</pubDate>
+  </item><item>
+    <title>Desconectado</title>
     <link>https://voltaje.solecolombia.org/disconnected/</link>
     <guid>https://voltaje.solecolombia.org/disconnected/</guid>
     <description><![CDATA[ Aprenda a manejar sus equipos y programas incluso cuando la conexión se fue al carajo. ]]></description>
@@ -29,12 +41,6 @@
     <guid>https://voltaje.solecolombia.org/pt/solve/</guid>
     <description><![CDATA[ Encontre soluções práticas e ferramentas para melhorar a conectividade e resolver aqueles pepinos técnicos na sua comunidade. ]]></description>
     <pubDate>Tue, 28 Apr 2026 15:57:44 GMT</pubDate>
-  </item><item>
-    <title>Disconnected</title>
-    <link>https://voltaje.solecolombia.org/en/disconnected/</link>
-    <guid>https://voltaje.solecolombia.org/en/disconnected/</guid>
-    <description><![CDATA[ Learn how to handle the Internet even when you're totally disconnected. ]]></description>
-    <pubDate>Mon, 27 Apr 2026 22:56:01 GMT</pubDate>
   </item><item>
     <title>Concepts</title>
     <link>https://voltaje.solecolombia.org/en/glossary/</link>
@@ -59,12 +65,6 @@
     <guid>https://voltaje.solecolombia.org/en/solve/</guid>
     <description><![CDATA[ Find practical hacks and tools to boost connectivity and troubleshoot technical glitches in your community. ]]></description>
     <pubDate>Mon, 27 Apr 2026 22:56:01 GMT</pubDate>
-  </item><item>
-    <title>Offline</title>
-    <link>https://voltaje.solecolombia.org/pt/disconnected/</link>
-    <guid>https://voltaje.solecolombia.org/pt/disconnected/</guid>
-    <description><![CDATA[ Aprenda a se virar com a tecnologia mesmo quando a internet te deixa na mão. ]]></description>
-    <pubDate>Mon, 27 Apr 2026 22:15:15 GMT</pubDate>
   </item>
     </channel>
   </rss>
