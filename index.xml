@@ -6,6 +6,12 @@
       <description>Últimas 10 notas on SOLE Voltaje</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>¿Cómo acordar con un vecino el uso compartido del internet?</title>
+    <link>https://voltaje.solecolombia.org/solve/solv-agree-with-neighbors</link>
+    <guid>https://voltaje.solecolombia.org/solve/solv-agree-with-neighbors</guid>
+    <description><![CDATA[ Hola. ]]></description>
+    <pubDate>Tue, 05 May 2026 05:00:00 GMT</pubDate>
+  </item><item>
     <title>Desconectado</title>
     <link>https://voltaje.solecolombia.org/en/disconnected/</link>
     <guid>https://voltaje.solecolombia.org/en/disconnected/</guid>
@@ -58,12 +64,6 @@
     <link>https://voltaje.solecolombia.org/en/new-here</link>
     <guid>https://voltaje.solecolombia.org/en/new-here</guid>
     <description><![CDATA[ First time at Voltaje? Start here to get the hang of how the platform works and how you can chip in. ]]></description>
-    <pubDate>Mon, 27 Apr 2026 22:56:01 GMT</pubDate>
-  </item><item>
-    <title>Solve</title>
-    <link>https://voltaje.solecolombia.org/en/solve/</link>
-    <guid>https://voltaje.solecolombia.org/en/solve/</guid>
-    <description><![CDATA[ Find practical hacks and tools to boost connectivity and troubleshoot technical glitches in your community. ]]></description>
     <pubDate>Mon, 27 Apr 2026 22:56:01 GMT</pubDate>
   </item>
     </channel>
