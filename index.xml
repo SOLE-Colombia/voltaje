@@ -6,10 +6,28 @@
       <description>Últimas 10 notas on SOLE Voltaje</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>Desconectado</title>
+    <link>https://voltaje.solecolombia.org/disconnected/</link>
+    <guid>https://voltaje.solecolombia.org/disconnected/</guid>
+    <description><![CDATA[ Aprenda a manejar sus equipos y programas incluso cuando la conexión se fue al carajo. ]]></description>
+    <pubDate>Thu, 07 May 2026 14:25:53 GMT</pubDate>
+  </item><item>
+    <title>How to strike a deal with a neighbor to share your internet?</title>
+    <link>https://voltaje.solecolombia.org/en/solve/solv-agree-with-neighbors</link>
+    <guid>https://voltaje.solecolombia.org/en/solve/solv-agree-with-neighbors</guid>
+    <description><![CDATA[ Hi. I’m Sanjay, and over the last few years, I’ve been working with communities in remote rural areas where the internet is scarce. ]]></description>
+    <pubDate>Tue, 05 May 2026 05:00:00 GMT</pubDate>
+  </item><item>
     <title>¿Cómo acordar con un vecino el uso compartido del internet?</title>
     <link>https://voltaje.solecolombia.org/solve/solv-agree-with-neighbors</link>
     <guid>https://voltaje.solecolombia.org/solve/solv-agree-with-neighbors</guid>
     <description><![CDATA[ Hola. ]]></description>
+    <pubDate>Tue, 05 May 2026 05:00:00 GMT</pubDate>
+  </item><item>
+    <title>Como combinar com um vizinho o uso compartilhado da internet?</title>
+    <link>https://voltaje.solecolombia.org/pt/solve/solv-agree-with-neighbors</link>
+    <guid>https://voltaje.solecolombia.org/pt/solve/solv-agree-with-neighbors</guid>
+    <description><![CDATA[ Um guia prático para organizar a rede com a vizinhança, garantindo que todo mundo fique conectado sem dor de cabeça. ]]></description>
     <pubDate>Tue, 05 May 2026 05:00:00 GMT</pubDate>
   </item><item>
     <title>Desconectado</title>
@@ -23,12 +41,6 @@
     <guid>https://voltaje.solecolombia.org/pt/disconnected/</guid>
     <description><![CDATA[ Aprenda a dominar seus equipamentos e programas mesmo quando a conexão for pro beleléu. ]]></description>
     <pubDate>Fri, 01 May 2026 13:45:46 GMT</pubDate>
-  </item><item>
-    <title>Desconectado</title>
-    <link>https://voltaje.solecolombia.org/disconnected/</link>
-    <guid>https://voltaje.solecolombia.org/disconnected/</guid>
-    <description><![CDATA[ Aprenda a manejar sus equipos y programas incluso cuando la conexión se fue al carajo. ]]></description>
-    <pubDate>Tue, 28 Apr 2026 18:12:09 GMT</pubDate>
   </item><item>
     <title>Conceptório</title>
     <link>https://voltaje.solecolombia.org/pt/glossary/</link>
@@ -52,18 +64,6 @@
     <link>https://voltaje.solecolombia.org/en/glossary/</link>
     <guid>https://voltaje.solecolombia.org/en/glossary/</guid>
     <description><![CDATA[ A glossary of technical terms and key concepts for the curious mind. ]]></description>
-    <pubDate>Mon, 27 Apr 2026 22:56:01 GMT</pubDate>
-  </item><item>
-    <title>Get inspired</title>
-    <link>https://voltaje.solecolombia.org/en/inspire/</link>
-    <guid>https://voltaje.solecolombia.org/en/inspire/</guid>
-    <description><![CDATA[ Discover success stories, innovative ideas, and examples of how other communities have managed to connect. ]]></description>
-    <pubDate>Mon, 27 Apr 2026 22:56:01 GMT</pubDate>
-  </item><item>
-    <title>New here</title>
-    <link>https://voltaje.solecolombia.org/en/new-here</link>
-    <guid>https://voltaje.solecolombia.org/en/new-here</guid>
-    <description><![CDATA[ First time at Voltaje? Start here to get the hang of how the platform works and how you can chip in. ]]></description>
     <pubDate>Mon, 27 Apr 2026 22:56:01 GMT</pubDate>
   </item>
     </channel>
