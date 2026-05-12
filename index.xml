@@ -6,16 +6,22 @@
       <description>Últimas 10 notas on SOLE Voltaje</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>Disconnected</title>
+    <link>https://voltaje.solecolombia.org/en/disconnected/</link>
+    <guid>https://voltaje.solecolombia.org/en/disconnected/</guid>
+    <description><![CDATA[ Learn to manage your gear and software even when the connection goes to hell. ]]></description>
+    <pubDate>Tue, 12 May 2026 15:50:05 GMT</pubDate>
+  </item><item>
+    <title>Desconectado</title>
+    <link>https://voltaje.solecolombia.org/pt/disconnected/</link>
+    <guid>https://voltaje.solecolombia.org/pt/disconnected/</guid>
+    <description><![CDATA[ Aprenda a lidar com seus equipamentos e programas mesmo quando a conexão foi pro beleléu. ]]></description>
+    <pubDate>Tue, 12 May 2026 15:50:05 GMT</pubDate>
+  </item><item>
     <title>Get in touch</title>
     <link>https://voltaje.solecolombia.org/en/answers-comments/</link>
     <guid>https://voltaje.solecolombia.org/en/answers-comments/</guid>
     <description><![CDATA[ Option 1 → Do you have questions about a connectivity solution? You are not alone. In Voltaje, we connect without fear of tinkering. ]]></description>
-    <pubDate>Mon, 11 May 2026 23:29:28 GMT</pubDate>
-  </item><item>
-    <title>Disconnected</title>
-    <link>https://voltaje.solecolombia.org/en/disconnected/</link>
-    <guid>https://voltaje.solecolombia.org/en/disconnected/</guid>
-    <description><![CDATA[ How to connect the “disconnected”? This is one of the big questions that inspired the creation of the platform you’re on right now: SOLE Voltaje ⚡⚡ But… how can the 2.6 billion people who don’t have Internet access connect to a connectivity platform without being connected? 🤔 This is the big questi... ]]></description>
     <pubDate>Mon, 11 May 2026 23:29:28 GMT</pubDate>
   </item><item>
     <title>Concepts</title>
@@ -52,12 +58,6 @@
     <link>https://voltaje.solecolombia.org/pt/answers-comments/</link>
     <guid>https://voltaje.solecolombia.org/pt/answers-comments/</guid>
     <description><![CDATA[ Opção 1 → Você tem perguntas sobre alguma solução de conectividade? Você não está sozinho. No Voltaje, nos conectamos sem medo de fuçar. ]]></description>
-    <pubDate>Mon, 11 May 2026 23:29:28 GMT</pubDate>
-  </item><item>
-    <title>Desconectado</title>
-    <link>https://voltaje.solecolombia.org/pt/disconnected/</link>
-    <guid>https://voltaje.solecolombia.org/pt/disconnected/</guid>
-    <description><![CDATA[ Como conectar os “desconectados”? Essa é uma das grandes perguntas que inspirou a criação da plataforma em que você está agora mesmo: SOLE Voltaje ⚡⚡ Mas… como é que os 2,6 bilhões de pessoas que não têm acesso à Internet podem se conectar a uma plataforma de conectividade sem estarem conectados? 🤔... ]]></description>
     <pubDate>Mon, 11 May 2026 23:29:28 GMT</pubDate>
   </item><item>
     <title>Conceptório</title>
