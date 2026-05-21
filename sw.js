@@ -1,8 +1,8 @@
-// SOLE Voltaje — Service Worker (voltaje-v2)
+// SOLE Voltaje — Service Worker (voltaje-v3)
 // Generado automáticamente por el emitter PWA de Quartz.
 // NO editar manualmente — se sobreescribe en cada build.
 
-const SW_VERSION = 'voltaje-v2';
+const SW_VERSION = 'voltaje-v3';
 const CACHE_SHELL   = SW_VERSION + '-shell';
 const CACHE_ASSETS  = SW_VERSION + '-assets';
 const CACHE_PAGES   = SW_VERSION + '-pages';
@@ -61,14 +61,15 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // Assets estáticos (webp, png, svg, fuentes, css, js) → CacheFirst
-  const cacheFirstExts = new Set(['webp','png','jpg','svg','woff2','woff','ttf','css','js']);
+  // Imágenes y fuentes (inmutables) → CacheFirst
+  const cacheFirstExts = new Set(['webp','png','jpg','svg','woff2','woff','ttf']);
   if (cacheFirstExts.has(ext)) {
     event.respondWith(cacheFirst(request, CACHE_ASSETS));
     return;
   }
 
-  // HTML → StaleWhileRevalidate
+  // CSS/JS (nombre fijo sin hash) y HTML → StaleWhileRevalidate para que se
+  // actualicen tras cada deploy en lugar de quedar cacheados para siempre.
   event.respondWith(staleWhileRevalidate(request, CACHE_PAGES));
 });
 
