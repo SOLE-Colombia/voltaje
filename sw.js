@@ -1,8 +1,8 @@
-// SOLE Voltaje — Service Worker (voltaje-v5)
+// SOLE Voltaje — Service Worker (voltaje-v6)
 // Generado automáticamente por el emitter PWA de Quartz.
 // NO editar manualmente — se sobreescribe en cada build.
 
-const SW_VERSION = 'voltaje-v5';
+const SW_VERSION = 'voltaje-v6';
 const CACHE_SHELL   = SW_VERSION + '-shell';
 const CACHE_ASSETS  = SW_VERSION + '-assets';
 const CACHE_PAGES   = SW_VERSION + '-pages';
@@ -21,13 +21,20 @@ const SHELL_URLS = [
 
 self.addEventListener('install', event => {
   self.skipWaiting();
-  event.waitUntil(
-    caches.open(CACHE_SHELL).then(cache =>
-      cache.addAll(SHELL_URLS.filter(u => {
+  event.waitUntil((async () => {
+    try {
+      const cache = await caches.open(CACHE_SHELL);
+      // addAll es atómico: si un solo URL falla, falla todo. Hacemos add por
+      // separado y tragamos errores individuales para que el SW quede instalado
+      // aunque algún asset secundario falle.
+      const valid = SHELL_URLS.filter(u => {
         try { new URL(u, self.location.origin); return true; } catch { return false; }
-      }))
-    ).catch(err => console.warn('[SW] install precache parcial:', err))
-  );
+      });
+      await Promise.allSettled(valid.map(u => cache.add(u)));
+    } catch (err) {
+      console.warn('[SW] install precache parcial:', err);
+    }
+  })());
 });
 
 // ─── Activate: limpiar cachés viejas ──────────────────────────────────────
@@ -68,6 +75,14 @@ self.addEventListener('fetch', event => {
     return;
   }
 
+  // Navegaciones HTML sin caché previo → NetworkFirst rápido con fallback al
+  // shell. Evita el escenario donde el SPA recibe un 503 y hace location.assign
+  // dando sensación de "página caída".
+  if (request.mode === 'navigate') {
+    event.respondWith(navigationStrategy(request));
+    return;
+  }
+
   // CSS/JS (nombre fijo sin hash) y HTML → StaleWhileRevalidate para que se
   // actualicen tras cada deploy en lugar de quedar cacheados para siempre.
   event.respondWith(staleWhileRevalidate(request, CACHE_PAGES));
@@ -99,7 +114,35 @@ async function staleWhileRevalidate(request, cacheName) {
     return response;
   }).catch(() => null);
 
-  return cached ?? (await fetchPromise) ?? new Response('Sin conexión', { status: 503 });
+  const fresh = cached ?? (await fetchPromise);
+  if (fresh) return fresh;
+
+  // Fallback final: si es navegación, devolver el shell para que el SPA pueda
+  // pintar algo en lugar de provocar location.assign() → recarga en loop.
+  if (request.mode === 'navigate') {
+    const shell = await cache.match('/') ?? await cache.match('/index.html');
+    if (shell) return shell;
+  }
+  return new Response('Sin conexión', { status: 503 });
+}
+
+async function navigationStrategy(request) {
+  const cache = await caches.open(CACHE_PAGES);
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 3000);
+  try {
+    const response = await fetch(request, { signal: controller.signal });
+    clearTimeout(timeout);
+    if (response.ok) cache.put(request, response.clone());
+    return response;
+  } catch {
+    clearTimeout(timeout);
+    const cached = await cache.match(request);
+    if (cached) return cached;
+    const shell = await cache.match('/') ?? await cache.match('/index.html');
+    if (shell) return shell;
+    return new Response('Sin conexión', { status: 503 });
+  }
 }
 
 async function networkFirstWithTimeout(request, cacheName, timeoutMs) {
