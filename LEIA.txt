@@ -1,0 +1,45 @@
+SOLE Voltaje — Leitura sem internet
+===================================
+
+Olá! Esta pasta é uma cópia completa do SOLE Voltaje para
+ler sem conexão à internet.
+
+COMO ABRIR
+----------
+1. Clique duas vezes em "_ABRE_VOLTAJE.html"
+   (ou em "pt/index.html" para ir direto em português).
+2. Seu navegador será aberto. Se perguntarem qual programa usar,
+   escolha seu navegador habitual (Chrome, Firefox, Edge, etc.).
+3. Pronto: já pode navegar pelo SOLE Voltaje sem internet.
+
+O QUE FUNCIONA SEM INTERNET
+---------------------------
+- Leitura de todas as notas (Solve, Inspire, Conceptorio,
+  Desconectado).
+- Busca interna do site.
+- Troca entre espanhol, inglês e português.
+- Galeria de imagens e reprodução dos áudios incluídos.
+
+O QUE PRECISA DE INTERNET
+-------------------------
+- Vídeos do YouTube/Vimeo embedados.
+- Comentários.
+- Receber atualizações de conteúdo.
+
+ATUALIZAR PARA A VERSÃO MAIS NOVA
+---------------------------------
+Quando tiver internet, acesse:
+  https://voltaje.solecolombia.org
+
+Se houver uma versão mais nova, o site mostra um banner azul
+no topo com um link "Baixar".
+
+VERSÃO QUE VOCÊ TEM
+-------------------
+Veja o arquivo "version.json" (se existir) ou o nome desta pasta
+(voltaje-AAAA.MM.DD) para saber qual versão baixou.
+
+PRECISA DE AJUDA?
+-----------------
+E-mail: hola@solecolombia.org
+Web:    https://solecolombia.org

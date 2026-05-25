@@ -1,8 +1,8 @@
-// SOLE Voltaje — Service Worker (voltaje-v4)
+// SOLE Voltaje — Service Worker (voltaje-v5)
 // Generado automáticamente por el emitter PWA de Quartz.
 // NO editar manualmente — se sobreescribe en cada build.
 
-const SW_VERSION = 'voltaje-v4';
+const SW_VERSION = 'voltaje-v5';
 const CACHE_SHELL   = SW_VERSION + '-shell';
 const CACHE_ASSETS  = SW_VERSION + '-assets';
 const CACHE_PAGES   = SW_VERSION + '-pages';
@@ -14,7 +14,7 @@ const SHELL_URLS = [
   "/index.html",
   "/static/icon.png",
   "/static/prescript.js",
-  "/CLAUDE"
+  "/assets/images/solv-spread-message/solv-spread-message-wallsign-2.webp"
 ];
 
 // ─── Install: precachear shell mínimo ──────────────────────────────────────
