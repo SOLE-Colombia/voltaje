@@ -588,13 +588,13 @@ const SHELL_URLS = [
   "/static/custom.js",
   "/static/i18n-switcher.css",
   "/static/i18n-switcher.js",
+  "/tags/Community.html",
+  "/tags/Computing.html",
   "/tags/Devices.html",
-  "/tags/Redes-y-conexiones.html",
-  "/tags/cacharreo.html",
-  "/tags/conectividad.html",
-  "/tags/ddd.html",
-  "/tags/offline.html",
-  "/tags/sin-internet.html"
+  "/tags/Internet.html",
+  "/tags/Networks.html",
+  "/tags/Offline.html",
+  "/tags/ddd.html"
 ];
 const PRECACHE_IMAGES = [
   "/static/home-main.png",
