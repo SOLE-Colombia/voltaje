@@ -41,4 +41,4 @@ Proyecto de [SOLE Colombia](https://solecolombia.org).
 
 ---
 
-_Generado automáticamente · commit `47feb1ed003f7540c16128f08c16d5be42daad05` · 2026-06-26 UTC_
+_Generado automáticamente · commit `812384bc8b1f5a98367078d0daa4973f90c22b0b` · 2026-06-26 UTC_
