@@ -580,7 +580,6 @@ const SHELL_URLS = [
   "/es/answers-comments/tienes-preguntas-o-comentarios-responses.html",
   "/es/disconnected/index.html",
   "/es/glossary/conc-2g-net.html",
-  "/es/glossary/conc-3g-4g-antennas.html",
   "/prescript.js",
   "/static/custom.js",
   "/static/i18n-switcher.css",
@@ -596,8 +595,7 @@ const PRECACHE_IMAGES = [
   "/static/home-main.png",
   "/static/icon-192.png",
   "/static/icon-512.png",
-  "/static/icon-maskable-512.png",
-  "/static/icon.png"
+  "/static/icon-maskable-512.png"
 ];
 
 // ─── Install: precachear todas las páginas + assets ────────────────────────
