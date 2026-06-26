@@ -2,5 +2,11 @@
   "version": "2026-06-26",
   "built_at": "2026-06-26T03:42:53.472Z",
   "slug_count": 542,
-  "asset_count": 36
+  "asset_count": 36,
+  "release": {
+    "url": "https://github.com/SOLE-Colombia/voltaje/releases/download/v2026.06.26-0344/voltaje-2026.06.26.zip",
+    "sha256": "78e99134791bf1eb00e12ee56e504bd667a8dec3652347bdc1668a86803b645f",
+    "size": 263749213,
+    "tag": "v2026.06.26-0344"
+  }
 }
