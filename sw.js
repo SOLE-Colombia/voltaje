@@ -595,8 +595,7 @@ const PRECACHE_IMAGES = [
   "/static/home-main.png",
   "/static/icon-192.png",
   "/static/icon-512.png",
-  "/static/icon-maskable-512.png",
-  "/static/icon.png"
+  "/static/icon-maskable-512.png"
 ];
 
 // ─── Install: precachear todas las páginas + assets ────────────────────────
