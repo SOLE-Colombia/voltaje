@@ -580,9 +580,10 @@ const SHELL_URLS = [
   "/es/answers-comments/tienes-preguntas-o-comentarios-responses.html",
   "/es/disconnected/index.html",
   "/es/glossary/conc-2g-net.html",
-  "/es/glossary/conc-3g-4g-antennas.html",
   "/prescript.js",
   "/static/custom.js",
+  "/static/i18n-switcher.css",
+  "/static/i18n-switcher.js",
   "/tags/Community.html",
   "/tags/Computing.html",
   "/tags/Devices.html",
@@ -591,9 +592,11 @@ const SHELL_URLS = [
   "/tags/ddd.html"
 ];
 const PRECACHE_IMAGES = [
+  "/static/home-main.png",
   "/static/icon-192.png",
   "/static/icon-512.png",
-  "/static/icon-maskable-512.png"
+  "/static/icon-maskable-512.png",
+  "/static/icon.png"
 ];
 
 // ─── Install: precachear todas las páginas + assets ────────────────────────
