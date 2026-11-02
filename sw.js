@@ -572,7 +572,10 @@ const SHELL_URLS = [
   "/bases-datos/desconectados.html",
   "/bases-datos/index.html",
   "/bases-datos/inspiraciones.html",
+  "/bases-datos/soluciones.html",
   "/en/answers-comments/index.html",
+  "/en/glossary/conc-2g-net.html",
+  "/en/glossary/conc-3g-4g-antennas.html",
   "/en/index.html",
   "/es/answers-comments/es-importante-aprender-a-transmitir-un-buen-mensaje-para-hacer-una-buena-invitacionna-responses.html",
   "/es/answers-comments/index.html",
@@ -580,13 +583,15 @@ const SHELL_URLS = [
   "/es/answers-comments/tienes-preguntas-o-comentarios-responses.html",
   "/es/disconnected/index.html",
   "/es/glossary/conc-2g-net.html",
-  "/prescript.js",
+  "/es/glossary/conc-3g-4g-antennas.html",
+  "/es/glossary/conc-ai-helper.html",
   "/static/custom.js",
   "/static/i18n-switcher.css",
   "/static/i18n-switcher.js",
   "/tags/Community.html",
   "/tags/Computing.html",
   "/tags/Devices.html",
+  "/tags/Internet.html",
   "/tags/Networks.html",
   "/tags/Offline.html",
   "/tags/ddd.html"
@@ -596,7 +601,9 @@ const PRECACHE_IMAGES = [
   "/static/icon-192.png",
   "/static/icon-512.png",
   "/static/icon-maskable-512.png",
-  "/static/icon.png"
+  "/static/icon.png",
+  "/static/line.svg",
+  "/static/logo-dark.png"
 ];
 
 // ─── Install: precachear todas las páginas + assets ────────────────────────
